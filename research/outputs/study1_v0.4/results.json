@@ -1,0 +1,2576 @@
+{
+  "levels": {
+    "0.35": {
+      "cut_per_key": {
+        "ppl": [
+          10.310753202438354,
+          10.542121982574463,
+          10.043772935867306,
+          9.947975730895996,
+          10.835460329055785,
+          10.376297998428344,
+          10.675625085830687,
+          12.181810998916626
+        ],
+        "seqrep4": [
+          0.01976284584980237,
+          0.08320158102766795,
+          0.0326086956521739,
+          0.028656126482213332,
+          0.07685306206006012,
+          0.07154150197628459,
+          0.03181818181818184,
+          0.040316205533596786
+        ],
+        "rep3": [
+          0.027790758047767403,
+          0.08018829067372744,
+          0.037239790243127215,
+          0.03139041794087662,
+          0.07028787878787873,
+          0.06400914634146333,
+          0.038374996909230304,
+          0.03854739010989008
+        ]
+      },
+      "oracle": {
+        "FA": {
+          "per_key": [
+            0.51,
+            0.4,
+            0.16,
+            0.11,
+            0.38,
+            0.16,
+            0.19,
+            0.57
+          ],
+          "median": 0.28500000000000003,
+          "ci95": [
+            0.14500000000000002,
+            0.485
+          ]
+        },
+        "acceptance": {
+          "per_key": [
+            0.55,
+            0.44,
+            0.18,
+            0.14,
+            0.42,
+            0.18,
+            0.22,
+            0.62
+          ],
+          "median": 0.32,
+          "ci95": [
+            0.17,
+            0.515
+          ]
+        },
+        "FA_ppl_only_median": 0.29000000000000004,
+        "FA_rep3_median": 0.29000000000000004,
+        "fluent_share_median": 0.9,
+        "repetitive_share_median": 0.05,
+        "ppl_ratio_to_oracle_median": 1.0,
+        "seqrep4_median": 0.0
+      },
+      "random": {
+        "FA": {
+          "per_key": [
+            0.01,
+            0.0,
+            0.03,
+            0.0,
+            0.02,
+            0.0,
+            0.01,
+            0.08
+          ],
+          "median": 0.01,
+          "ci95": [
+            0.0,
+            0.034999999999999996
+          ]
+        },
+        "acceptance": {
+          "per_key": [
+            0.04,
+            0.0,
+            0.03,
+            0.0,
+            0.02,
+            0.0,
+            0.01,
+            0.09
+          ],
+          "median": 0.015,
+          "ci95": [
+            0.0,
+            0.045
+          ]
+        },
+        "FA_ppl_only_median": 0.015,
+        "FA_rep3_median": 0.015,
+        "fluent_share_median": 0.895,
+        "repetitive_share_median": 0.07500000000000001,
+        "ppl_ratio_to_oracle_median": 1.0234286459644704,
+        "seqrep4_median": 0.0039525691699604515
+      },
+      "v02_A_n64": {
+        "FA": {
+          "per_key": [
+            0.16,
+            0.08,
+            0.05,
+            0.06,
+            0.25,
+            0.0,
+            0.02,
+            0.2
+          ],
+          "median": 0.07,
+          "ci95": [
+            0.02,
+            0.185
+          ]
+        },
+        "acceptance": {
+          "per_key": [
+            0.23,
+            0.14,
+            0.06,
+            0.08,
+            0.25,
+            0.0,
+            0.02,
+            0.22
+          ],
+          "median": 0.11000000000000001,
+          "ci95": [
+            0.025,
+            0.22499999999999998
+          ]
+        },
+        "FA_ppl_only_median": 0.07,
+        "FA_rep3_median": 0.07,
+        "fluent_share_median": 0.89,
+        "repetitive_share_median": 0.05,
+        "ppl_ratio_to_oracle_median": 0.9582505265717643,
+        "seqrep4_median": 0.0
+      },
+      "v03_A_n64": {
+        "FA": {
+          "per_key": [
+            0.16,
+            0.05,
+            0.03,
+            0.03,
+            0.19,
+            0.0,
+            0.04,
+            0.21
+          ],
+          "median": 0.045,
+          "ci95": [
+            0.015,
+            0.175
+          ]
+        },
+        "acceptance": {
+          "per_key": [
+            0.22,
+            0.14,
+            0.05,
+            0.04,
+            0.2,
+            0.0,
+            0.04,
+            0.25
+          ],
+          "median": 0.095,
+          "ci95": [
+            0.03,
+            0.21000000000000002
+          ]
+        },
+        "FA_ppl_only_median": 0.045,
+        "FA_rep3_median": 0.045,
+        "fluent_share_median": 0.91,
+        "repetitive_share_median": 0.06,
+        "ppl_ratio_to_oracle_median": 0.9259889679889455,
+        "seqrep4_median": 0.0
+      },
+      "v04_A_n64": {
+        "FA": {
+          "per_key": [
+            0.11,
+            0.02,
+            0.04,
+            0.1,
+            0.04,
+            0.0,
+            0.01,
+            0.25
+          ],
+          "median": 0.04,
+          "ci95": [
+            0.01,
+            0.11499999999999999
+          ]
+        },
+        "acceptance": {
+          "per_key": [
+            0.21,
+            0.02,
+            0.04,
+            0.11,
+            0.04,
+            0.0,
+            0.01,
+            0.29
+          ],
+          "median": 0.04,
+          "ci95": [
+            0.005,
+            0.18512499999999932
+          ]
+        },
+        "FA_ppl_only_median": 0.04,
+        "FA_rep3_median": 0.04,
+        "fluent_share_median": 0.915,
+        "repetitive_share_median": 0.055,
+        "ppl_ratio_to_oracle_median": 0.881970597345358,
+        "seqrep4_median": 0.0
+      },
+      "v02_A_n256": {
+        "FA": {
+          "per_key": [
+            0.15,
+            0.08,
+            0.02,
+            0.01,
+            0.15,
+            0.0,
+            0.04,
+            0.02
+          ],
+          "median": 0.03,
+          "ci95": [
+            0.005,
+            0.11499999999999999
+          ]
+        },
+        "acceptance": {
+          "per_key": [
+            0.2,
+            0.12,
+            0.03,
+            0.01,
+            0.16,
+            0.0,
+            0.04,
+            0.02
+          ],
+          "median": 0.035,
+          "ci95": [
+            0.009875000000000007,
+            0.14500000000000002
+          ]
+        },
+        "FA_ppl_only_median": 0.03,
+        "FA_rep3_median": 0.03,
+        "fluent_share_median": 0.9,
+        "repetitive_share_median": 0.065,
+        "ppl_ratio_to_oracle_median": 0.9253066602885569,
+        "seqrep4_median": 0.0019762845849802257
+      },
+      "v03_A_n256": {
+        "FA": {
+          "per_key": [
+            0.15,
+            0.12,
+            0.04,
+            0.01,
+            0.15,
+            0.03,
+            0.06,
+            0.06
+          ],
+          "median": 0.06,
+          "ci95": [
+            0.025,
+            0.13012499999999932
+          ]
+        },
+        "acceptance": {
+          "per_key": [
+            0.19,
+            0.16,
+            0.04,
+            0.01,
+            0.15,
+            0.03,
+            0.08,
+            0.07
+          ],
+          "median": 0.07500000000000001,
+          "ci95": [
+            0.03,
+            0.16
+          ]
+        },
+        "FA_ppl_only_median": 0.07500000000000001,
+        "FA_rep3_median": 0.07,
+        "fluent_share_median": 0.875,
+        "repetitive_share_median": 0.1,
+        "ppl_ratio_to_oracle_median": 0.9064878740476663,
+        "seqrep4_median": 0.0039525691699604515
+      },
+      "v04_A_n256": {
+        "FA": {
+          "per_key": [
+            0.13,
+            0.06,
+            0.01,
+            0.01,
+            0.13,
+            0.01,
+            0.03,
+            0.06
+          ],
+          "median": 0.045,
+          "ci95": [
+            0.01,
+            0.1
+          ]
+        },
+        "acceptance": {
+          "per_key": [
+            0.19,
+            0.09,
+            0.01,
+            0.01,
+            0.13,
+            0.01,
+            0.03,
+            0.06
+          ],
+          "median": 0.045,
+          "ci95": [
+            0.01,
+            0.12
+          ]
+        },
+        "FA_ppl_only_median": 0.045,
+        "FA_rep3_median": 0.045,
+        "fluent_share_median": 0.87,
+        "repetitive_share_median": 0.10500000000000001,
+        "ppl_ratio_to_oracle_median": 0.9032297744849385,
+        "seqrep4_median": 0.0039525691699604515
+      },
+      "v02_B_n64": {
+        "FA": {
+          "per_key": [
+            0.0,
+            0.42,
+            0.43,
+            0.0,
+            0.0,
+            0.13,
+            0.0,
+            0.0
+          ],
+          "median": 0.0,
+          "ci95": [
+            0.0,
+            0.37
+          ]
+        },
+        "acceptance": {
+          "per_key": [
+            0.59,
+            0.82,
+            0.58,
+            0.02,
+            0.04,
+            0.27,
+            0.18,
+            0.7
+          ],
+          "median": 0.425,
+          "ci95": [
+            0.08487500000000002,
+            0.685
+          ]
+        },
+        "FA_ppl_only_median": 0.034999999999999996,
+        "FA_rep3_median": 0.01,
+        "fluent_share_median": 0.45,
+        "repetitive_share_median": 0.16999999999999998,
+        "ppl_ratio_to_oracle_median": 1.2517767075151491,
+        "seqrep4_median": 0.007960601298474507
+      },
+      "v03_B_n64": {
+        "FA": {
+          "per_key": [
+            0.1,
+            0.24,
+            0.42,
+            0.0,
+            0.04,
+            0.21,
+            0.0,
+            0.06
+          ],
+          "median": 0.08,
+          "ci95": [
+            0.0,
+            0.24
+          ]
+        },
+        "acceptance": {
+          "per_key": [
+            0.11,
+            0.35,
+            0.59,
+            0.0,
+            0.1,
+            0.26,
+            0.15,
+            0.39
+          ],
+          "median": 0.20500000000000002,
+          "ci95": [
+            0.09,
+            0.39512499999999934
+          ]
+        },
+        "FA_ppl_only_median": 0.16,
+        "FA_rep3_median": 0.07,
+        "fluent_share_median": 0.65,
+        "repetitive_share_median": 0.16,
+        "ppl_ratio_to_oracle_median": 1.0277950766564499,
+        "seqrep4_median": 0.007905138339920958
+      },
+      "v04_B_n64": {
+        "FA": {
+          "per_key": [
+            0.11,
+            0.27,
+            0.4,
+            0.0,
+            0.01,
+            0.08,
+            0.05,
+            0.11
+          ],
+          "median": 0.095,
+          "ci95": [
+            0.015,
+            0.24
+          ]
+        },
+        "acceptance": {
+          "per_key": [
+            0.12,
+            0.33,
+            0.88,
+            0.01,
+            0.09,
+            0.1,
+            0.05,
+            0.11
+          ],
+          "median": 0.10500000000000001,
+          "ci95": [
+            0.05,
+            0.315
+          ]
+        },
+        "FA_ppl_only_median": 0.095,
+        "FA_rep3_median": 0.09,
+        "fluent_share_median": 0.8200000000000001,
+        "repetitive_share_median": 0.08499999999999999,
+        "ppl_ratio_to_oracle_median": 0.9780015598084455,
+        "seqrep4_median": 0.0009881422924901129
+      },
+      "v02_B_n256": {
+        "FA": {
+          "per_key": [
+            0.0,
+            0.48,
+            0.51,
+            0.01,
+            0.0,
+            0.18,
+            0.17,
+            0.0
+          ],
+          "median": 0.09000000000000001,
+          "ci95": [
+            0.0,
+            0.435
+          ]
+        },
+        "acceptance": {
+          "per_key": [
+            0.4,
+            0.76,
+            0.96,
+            0.01,
+            0.1,
+            0.29,
+            0.8,
+            0.72
+          ],
+          "median": 0.56,
+          "ci95": [
+            0.14487500000000003,
+            0.81
+          ]
+        },
+        "FA_ppl_only_median": 0.11000000000000001,
+        "FA_rep3_median": 0.095,
+        "fluent_share_median": 0.395,
+        "repetitive_share_median": 0.18,
+        "ppl_ratio_to_oracle_median": 1.3485144140369973,
+        "seqrep4_median": 0.007299892901546284
+      },
+      "v03_B_n256": {
+        "FA": {
+          "per_key": [
+            0.13,
+            0.52,
+            0.44,
+            0.03,
+            0.0,
+            0.13,
+            0.3,
+            0.12
+          ],
+          "median": 0.13,
+          "ci95": [
+            0.045,
+            0.405
+          ]
+        },
+        "acceptance": {
+          "per_key": [
+            0.15,
+            0.79,
+            0.9,
+            0.03,
+            0.1,
+            0.23,
+            0.5,
+            0.12
+          ],
+          "median": 0.19,
+          "ci95": [
+            0.095,
+            0.7451249999999993
+          ]
+        },
+        "FA_ppl_only_median": 0.15000000000000002,
+        "FA_rep3_median": 0.125,
+        "fluent_share_median": 0.7050000000000001,
+        "repetitive_share_median": 0.09,
+        "ppl_ratio_to_oracle_median": 1.157698835247031,
+        "seqrep4_median": 0.0019762845849802257
+      },
+      "v04_B_n256": {
+        "FA": {
+          "per_key": [
+            0.15,
+            0.37,
+            0.07,
+            0.02,
+            0.09,
+            0.24,
+            0.31,
+            0.39
+          ],
+          "median": 0.195,
+          "ci95": [
+            0.07,
+            0.35
+          ]
+        },
+        "acceptance": {
+          "per_key": [
+            0.15,
+            0.44,
+            0.1,
+            0.02,
+            0.09,
+            0.29,
+            0.88,
+            0.59
+          ],
+          "median": 0.21999999999999997,
+          "ci95": [
+            0.08,
+            0.56
+          ]
+        },
+        "FA_ppl_only_median": 0.2,
+        "FA_rep3_median": 0.19,
+        "fluent_share_median": 0.85,
+        "repetitive_share_median": 0.065,
+        "ppl_ratio_to_oracle_median": 0.9977619046319944,
+        "seqrep4_median": 0.0
+      },
+      "attacks": {
+        "A_n64": {
+          "selected_layers": [
+            16,
+            19,
+            19,
+            15,
+            6,
+            17,
+            8,
+            24
+          ],
+          "layer_hits": 0,
+          "selected_is_top_candidate": 6,
+          "none_passed": 0,
+          "n_kept": [
+            3,
+            4,
+            4,
+            5,
+            4,
+            5,
+            5,
+            5
+          ],
+          "m_selected": [
+            0,
+            2,
+            1,
+            0,
+            2,
+            0,
+            2,
+            2
+          ],
+          "median_cos_true": 0.162521630525589,
+          "check_vs_eval_agreement": 1.0
+        },
+        "A_n256": {
+          "selected_layers": [
+            16,
+            14,
+            14,
+            5,
+            6,
+            17,
+            15,
+            0
+          ],
+          "layer_hits": 2,
+          "selected_is_top_candidate": 8,
+          "none_passed": 0,
+          "n_kept": [
+            3,
+            4,
+            5,
+            5,
+            5,
+            5,
+            5,
+            4
+          ],
+          "m_selected": [
+            2,
+            2,
+            2,
+            1,
+            0,
+            1,
+            0,
+            2
+          ],
+          "median_cos_true": 0.07937216758728027,
+          "check_vs_eval_agreement": 1.0
+        },
+        "B_n64": {
+          "selected_layers": [
+            2,
+            12,
+            14,
+            1,
+            1,
+            12,
+            2,
+            2
+          ],
+          "layer_hits": 1,
+          "selected_is_top_candidate": 1,
+          "none_passed": 1,
+          "n_kept": [
+            3,
+            0,
+            1,
+            2,
+            5,
+            3,
+            1,
+            2
+          ],
+          "m_selected": [
+            2,
+            0,
+            1,
+            0,
+            2,
+            1,
+            1,
+            1
+          ],
+          "median_cos_true": 0.04181794449687004,
+          "check_vs_eval_agreement": 0.75
+        },
+        "B_n256": {
+          "selected_layers": [
+            2,
+            12,
+            2,
+            1,
+            3,
+            14,
+            14,
+            12
+          ],
+          "layer_hits": 2,
+          "selected_is_top_candidate": 2,
+          "none_passed": 1,
+          "n_kept": [
+            3,
+            1,
+            2,
+            4,
+            1,
+            4,
+            0,
+            2
+          ],
+          "m_selected": [
+            0,
+            0,
+            2,
+            2,
+            0,
+            2,
+            0,
+            1
+          ],
+          "median_cos_true": 0.046573758125305176,
+          "check_vs_eval_agreement": 1.0
+        }
+      },
+      "rules": {
+        "F1": {
+          "A": "not practical",
+          "B": "practical (n=256)"
+        },
+        "F3_fluent_generic_steering_suffices": false
+      },
+      "samples": {}
+    },
+    "0.5": {
+      "cut_per_key": {
+        "ppl": [
+          13.946232843399049,
+          15.73232388496399,
+          14.200532245635985,
+          11.90479917526245,
+          15.256749200820924,
+          13.095600986480713,
+          12.936559104919434,
+          17.408349418640135
+        ],
+        "seqrep4": [
+          0.012055335968379478,
+          0.07193675889328062,
+          0.01976284584980237,
+          0.01976284584980237,
+          0.05553359683794466,
+          0.03201581027667986,
+          0.060079051383399154,
+          0.01996047430830038
+        ],
+        "rep3": [
+          0.020933219178082225,
+          0.0610424451470729,
+          0.016197579510272956,
+          0.024468599033816405,
+          0.044833158727681975,
+          0.024466703131409796,
+          0.05842662473794549,
+          0.019275879653238116
+        ]
+      },
+      "oracle": {
+        "FA": {
+          "per_key": [
+            0.88,
+            0.86,
+            0.64,
+            0.56,
+            0.76,
+            0.78,
+            0.72,
+            0.86
+          ],
+          "median": 0.77,
+          "ci95": [
+            0.655,
+            0.86
+          ]
+        },
+        "acceptance": {
+          "per_key": [
+            0.95,
+            0.95,
+            0.71,
+            0.6,
+            0.84,
+            0.88,
+            0.82,
+            0.95
+          ],
+          "median": 0.86,
+          "ci95": [
+            0.745,
+            0.95
+          ]
+        },
+        "FA_ppl_only_median": 0.81,
+        "FA_rep3_median": 0.76,
+        "fluent_share_median": 0.9,
+        "repetitive_share_median": 0.05,
+        "ppl_ratio_to_oracle_median": 1.0,
+        "seqrep4_median": 0.0
+      },
+      "random": {
+        "FA": {
+          "per_key": [
+            0.1,
+            0.13,
+            0.1,
+            0.02,
+            0.1,
+            0.12,
+            0.06,
+            0.14
+          ],
+          "median": 0.1,
+          "ci95": [
+            0.06,
+            0.135
+          ]
+        },
+        "acceptance": {
+          "per_key": [
+            0.18,
+            0.15,
+            0.1,
+            0.03,
+            0.1,
+            0.17,
+            0.11,
+            0.21
+          ],
+          "median": 0.13,
+          "ci95": [
+            0.07500000000000001,
+            0.185
+          ]
+        },
+        "FA_ppl_only_median": 0.11,
+        "FA_rep3_median": 0.1,
+        "fluent_share_median": 0.82,
+        "repetitive_share_median": 0.12,
+        "ppl_ratio_to_oracle_median": 1.0189459509611971,
+        "seqrep4_median": 0.0039525691699604515
+      },
+      "v02_A_n64": {
+        "FA": {
+          "per_key": [
+            0.29,
+            0.24,
+            0.09,
+            0.05,
+            0.2,
+            0.01,
+            0.56,
+            0.5
+          ],
+          "median": 0.22,
+          "ci95": [
+            0.055,
+            0.42500000000000004
+          ]
+        },
+        "acceptance": {
+          "per_key": [
+            0.67,
+            0.25,
+            0.1,
+            0.06,
+            0.21,
+            0.01,
+            0.73,
+            0.85
+          ],
+          "median": 0.22999999999999998,
+          "ci95": [
+            0.065,
+            0.72
+          ]
+        },
+        "FA_ppl_only_median": 0.22499999999999998,
+        "FA_rep3_median": 0.215,
+        "fluent_share_median": 0.865,
+        "repetitive_share_median": 0.07500000000000001,
+        "ppl_ratio_to_oracle_median": 0.8065110281964367,
+        "seqrep4_median": 0.0
+      },
+      "v03_A_n64": {
+        "FA": {
+          "per_key": [
+            0.03,
+            0.31,
+            0.05,
+            0.04,
+            0.16,
+            0.01,
+            0.43,
+            0.52
+          ],
+          "median": 0.10500000000000001,
+          "ci95": [
+            0.025,
+            0.39
+          ]
+        },
+        "acceptance": {
+          "per_key": [
+            0.26,
+            0.31,
+            0.06,
+            0.04,
+            0.16,
+            0.03,
+            0.71,
+            0.78
+          ],
+          "median": 0.21000000000000002,
+          "ci95": [
+            0.045,
+            0.6701249999999993
+          ]
+        },
+        "FA_ppl_only_median": 0.155,
+        "FA_rep3_median": 0.1,
+        "fluent_share_median": 0.795,
+        "repetitive_share_median": 0.155,
+        "ppl_ratio_to_oracle_median": 0.8150923095018239,
+        "seqrep4_median": 0.0039525691699604515
+      },
+      "v04_A_n64": {
+        "FA": {
+          "per_key": [
+            0.38,
+            0.19,
+            0.1,
+            0.49,
+            0.17,
+            0.02,
+            0.51,
+            0.72
+          ],
+          "median": 0.28500000000000003,
+          "ci95": [
+            0.11000000000000001,
+            0.5251249999999993
+          ]
+        },
+        "acceptance": {
+          "per_key": [
+            0.41,
+            0.19,
+            0.1,
+            0.61,
+            0.18,
+            0.02,
+            0.66,
+            0.84
+          ],
+          "median": 0.3,
+          "ci95": [
+            0.11,
+            0.66
+          ]
+        },
+        "FA_ppl_only_median": 0.28500000000000003,
+        "FA_rep3_median": 0.28500000000000003,
+        "fluent_share_median": 0.89,
+        "repetitive_share_median": 0.07,
+        "ppl_ratio_to_oracle_median": 0.8785122549797189,
+        "seqrep4_median": 0.0
+      },
+      "v02_A_n256": {
+        "FA": {
+          "per_key": [
+            0.19,
+            0.17,
+            0.02,
+            0.08,
+            0.33,
+            0.02,
+            0.09,
+            0.47
+          ],
+          "median": 0.13,
+          "ci95": [
+            0.035,
+            0.3
+          ]
+        },
+        "acceptance": {
+          "per_key": [
+            0.21,
+            0.19,
+            0.03,
+            0.08,
+            0.34,
+            0.04,
+            0.33,
+            0.78
+          ],
+          "median": 0.2,
+          "ci95": [
+            0.05,
+            0.3551249999999993
+          ]
+        },
+        "FA_ppl_only_median": 0.14,
+        "FA_rep3_median": 0.14,
+        "fluent_share_median": 0.875,
+        "repetitive_share_median": 0.08,
+        "ppl_ratio_to_oracle_median": 0.8578679107581515,
+        "seqrep4_median": 0.0
+      },
+      "v03_A_n256": {
+        "FA": {
+          "per_key": [
+            0.2,
+            0.18,
+            0.02,
+            0.11,
+            0.35,
+            0.03,
+            0.05,
+            0.53
+          ],
+          "median": 0.145,
+          "ci95": [
+            0.035,
+            0.31
+          ]
+        },
+        "acceptance": {
+          "per_key": [
+            0.21,
+            0.2,
+            0.03,
+            0.12,
+            0.36,
+            0.03,
+            0.22,
+            0.85
+          ],
+          "median": 0.20500000000000002,
+          "ci95": [
+            0.05,
+            0.33512499999999934
+          ]
+        },
+        "FA_ppl_only_median": 0.15,
+        "FA_rep3_median": 0.145,
+        "fluent_share_median": 0.865,
+        "repetitive_share_median": 0.10500000000000001,
+        "ppl_ratio_to_oracle_median": 0.8189670076240702,
+        "seqrep4_median": 0.0019762845849802257
+      },
+      "v04_A_n256": {
+        "FA": {
+          "per_key": [
+            0.16,
+            0.2,
+            0.32,
+            0.56,
+            0.36,
+            0.04,
+            0.11,
+            0.76
+          ],
+          "median": 0.26,
+          "ci95": [
+            0.11499999999999999,
+            0.515
+          ]
+        },
+        "acceptance": {
+          "per_key": [
+            0.17,
+            0.24,
+            0.33,
+            0.78,
+            0.37,
+            0.04,
+            0.44,
+            0.84
+          ],
+          "median": 0.35,
+          "ci95": [
+            0.18,
+            0.75
+          ]
+        },
+        "FA_ppl_only_median": 0.28,
+        "FA_rep3_median": 0.24,
+        "fluent_share_median": 0.92,
+        "repetitive_share_median": 0.060000000000000005,
+        "ppl_ratio_to_oracle_median": 0.9380757482484441,
+        "seqrep4_median": 0.0
+      },
+      "v02_B_n64": {
+        "FA": {
+          "per_key": [
+            0.0,
+            0.6,
+            0.08,
+            0.06,
+            0.0,
+            0.17,
+            0.26,
+            0.0
+          ],
+          "median": 0.07,
+          "ci95": [
+            0.0,
+            0.24
+          ]
+        },
+        "acceptance": {
+          "per_key": [
+            1.0,
+            1.0,
+            1.0,
+            0.15,
+            0.88,
+            1.0,
+            0.98,
+            0.97
+          ],
+          "median": 0.99,
+          "ci95": [
+            0.904875,
+            1.0
+          ]
+        },
+        "FA_ppl_only_median": 0.08,
+        "FA_rep3_median": 0.07,
+        "fluent_share_median": 0.125,
+        "repetitive_share_median": 0.11,
+        "ppl_ratio_to_oracle_median": 1.6648277939488185,
+        "seqrep4_median": 0.0029644268774703386
+      },
+      "v03_B_n64": {
+        "FA": {
+          "per_key": [
+            0.29,
+            0.58,
+            0.05,
+            0.07,
+            0.26,
+            0.36,
+            0.23,
+            0.0
+          ],
+          "median": 0.245,
+          "ci95": [
+            0.05,
+            0.355
+          ]
+        },
+        "acceptance": {
+          "per_key": [
+            0.53,
+            1.0,
+            0.64,
+            0.12,
+            0.36,
+            0.96,
+            0.99,
+            0.5
+          ],
+          "median": 0.585,
+          "ci95": [
+            0.385,
+            0.985
+          ]
+        },
+        "FA_ppl_only_median": 0.37,
+        "FA_rep3_median": 0.24,
+        "fluent_share_median": 0.475,
+        "repetitive_share_median": 0.245,
+        "ppl_ratio_to_oracle_median": 0.9888425204934927,
+        "seqrep4_median": 0.005932774954514053
+      },
+      "v04_B_n64": {
+        "FA": {
+          "per_key": [
+            0.23,
+            0.48,
+            0.24,
+            0.06,
+            0.22,
+            0.08,
+            0.24,
+            0.76
+          ],
+          "median": 0.235,
+          "ci95": [
+            0.11000000000000001,
+            0.46
+          ]
+        },
+        "acceptance": {
+          "per_key": [
+            0.51,
+            1.0,
+            1.0,
+            0.1,
+            0.22,
+            0.99,
+            1.0,
+            0.99
+          ],
+          "median": 0.99,
+          "ci95": [
+            0.27,
+            1.0
+          ]
+        },
+        "FA_ppl_only_median": 0.275,
+        "FA_rep3_median": 0.22,
+        "fluent_share_median": 0.5,
+        "repetitive_share_median": 0.065,
+        "ppl_ratio_to_oracle_median": 1.2999497296802303,
+        "seqrep4_median": 0.0029644268774703386
+      },
+      "v02_B_n256": {
+        "FA": {
+          "per_key": [
+            0.0,
+            0.68,
+            0.29,
+            0.0,
+            0.0,
+            0.18,
+            0.06,
+            0.0
+          ],
+          "median": 0.03,
+          "ci95": [
+            0.0,
+            0.275
+          ]
+        },
+        "acceptance": {
+          "per_key": [
+            0.93,
+            1.0,
+            1.0,
+            1.0,
+            0.95,
+            0.98,
+            1.0,
+            0.99
+          ],
+          "median": 0.995,
+          "ci95": [
+            0.96,
+            1.0
+          ]
+        },
+        "FA_ppl_only_median": 0.05,
+        "FA_rep3_median": 0.04,
+        "fluent_share_median": 0.03,
+        "repetitive_share_median": 0.13,
+        "ppl_ratio_to_oracle_median": 1.7458193053590563,
+        "seqrep4_median": 0.0019762845849802257
+      },
+      "v03_B_n256": {
+        "FA": {
+          "per_key": [
+            0.01,
+            0.65,
+            0.04,
+            0.04,
+            0.29,
+            0.32,
+            0.16,
+            0.0
+          ],
+          "median": 0.1,
+          "ci95": [
+            0.015,
+            0.32999999999999996
+          ]
+        },
+        "acceptance": {
+          "per_key": [
+            0.71,
+            1.0,
+            0.49,
+            0.07,
+            0.41,
+            0.98,
+            0.99,
+            0.53
+          ],
+          "median": 0.62,
+          "ci95": [
+            0.42,
+            0.99
+          ]
+        },
+        "FA_ppl_only_median": 0.29,
+        "FA_rep3_median": 0.1,
+        "fluent_share_median": 0.325,
+        "repetitive_share_median": 0.255,
+        "ppl_ratio_to_oracle_median": 1.0094629121729701,
+        "seqrep4_median": 0.009881422924901184
+      },
+      "v04_B_n256": {
+        "FA": {
+          "per_key": [
+            0.25,
+            0.73,
+            0.27,
+            0.02,
+            0.26,
+            0.27,
+            0.08,
+            0.51
+          ],
+          "median": 0.265,
+          "ci95": [
+            0.11499999999999999,
+            0.475
+          ]
+        },
+        "acceptance": {
+          "per_key": [
+            0.52,
+            1.0,
+            1.0,
+            0.02,
+            0.26,
+            0.99,
+            1.0,
+            1.0
+          ],
+          "median": 0.995,
+          "ci95": [
+            0.304875,
+            1.0
+          ]
+        },
+        "FA_ppl_only_median": 0.33,
+        "FA_rep3_median": 0.255,
+        "fluent_share_median": 0.535,
+        "repetitive_share_median": 0.025,
+        "ppl_ratio_to_oracle_median": 1.3011338608068916,
+        "seqrep4_median": 0.003956490369533827
+      },
+      "attacks": {
+        "A_n64": {
+          "selected_layers": [
+            21,
+            14,
+            2,
+            17,
+            3,
+            17,
+            15,
+            22
+          ],
+          "layer_hits": 1,
+          "selected_is_top_candidate": 4,
+          "none_passed": 0,
+          "n_kept": [
+            2,
+            5,
+            3,
+            4,
+            3,
+            5,
+            2,
+            3
+          ],
+          "m_selected": [
+            0,
+            0,
+            2,
+            1,
+            1,
+            2,
+            0,
+            0
+          ],
+          "median_cos_true": 0.0,
+          "check_vs_eval_agreement": 1.0
+        },
+        "A_n256": {
+          "selected_layers": [
+            21,
+            14,
+            12,
+            19,
+            6,
+            14,
+            13,
+            22
+          ],
+          "layer_hits": 2,
+          "selected_is_top_candidate": 4,
+          "none_passed": 1,
+          "n_kept": [
+            4,
+            5,
+            4,
+            4,
+            5,
+            5,
+            0,
+            2
+          ],
+          "m_selected": [
+            2,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1,
+            0
+          ],
+          "median_cos_true": 0.052006322890520096,
+          "check_vs_eval_agreement": 1.0
+        },
+        "B_n64": {
+          "selected_layers": [
+            2,
+            14,
+            17,
+            1,
+            3,
+            15,
+            12,
+            12
+          ],
+          "layer_hits": 1,
+          "selected_is_top_candidate": 3,
+          "none_passed": 4,
+          "n_kept": [
+            1,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            1
+          ],
+          "m_selected": [
+            2,
+            0,
+            0,
+            1,
+            2,
+            4,
+            0,
+            0
+          ],
+          "median_cos_true": 0.034781680442392826,
+          "check_vs_eval_agreement": 0.875
+        },
+        "B_n256": {
+          "selected_layers": [
+            2,
+            14,
+            17,
+            1,
+            3,
+            15,
+            14,
+            14
+          ],
+          "layer_hits": 3,
+          "selected_is_top_candidate": 2,
+          "none_passed": 4,
+          "n_kept": [
+            1,
+            1,
+            0,
+            3,
+            1,
+            0,
+            0,
+            0
+          ],
+          "m_selected": [
+            2,
+            0,
+            0,
+            2,
+            2,
+            2,
+            0,
+            0
+          ],
+          "median_cos_true": 0.041850218549370766,
+          "check_vs_eval_agreement": 0.75
+        }
+      },
+      "rules": {
+        "F1": {
+          "A": "inconclusive",
+          "B": "inconclusive"
+        },
+        "F3_fluent_generic_steering_suffices": false
+      },
+      "samples": {
+        "v04_A_n256": [
+          {
+            "key": 1001,
+            "index": 0,
+            "prompt": "It's never too early to start thinking about NBA free agency and the 2019 class could be very interesting. Take a look at the top potential free agents in the NBA in 2019, courtesy of Hoops Hype. Hoops Hype ranked",
+            "text": " them based on their talent as well as their likelihood to leave their current team.\nThe best player available this year is undoubtedly LeBron James. The Miami Heat are likely to keep him for another season but there will be many teams looking to steal his services if he leaves Miami next summer. He has already said he would like to stay with the Heat so it seems unlikely that they\u2019ll let him go without a fight. He\u2019s worth more than any other free agent because of how much better your chance is of winning something when you have him on the team compared to having someone else playing the same role.\nKerr was able to get the worst possible deal possible from Miami so that must be saying something. Lebron won\u2019t leave the Heat unless he wants to play against a team that doesn\u2019t want him to win an MVP trophy in a long time. It might not seem like much but he only needs one good game to show everyone what he can do and I don\u2019t think that happens soon enough to avoid being traded out of Miami. We\u2019re going to need some luck here though, getting the wrong guy on our roster could hurt us even worse than losing a star player.\nI wouldn\u2019t say that anyone deserves this first spot but it\u2019s hard to argue with the fact that LeBron should",
+            "accepted": false,
+            "fluent_accepted": false,
+            "ppl": 9.428400993347168,
+            "seqrep4": 0.0
+          },
+          {
+            "key": 1002,
+            "index": 0,
+            "prompt": "It's never too early to start thinking about NBA free agency and the 2019 class could be very interesting. Take a look at the top potential free agents in the NBA in 2019, courtesy of Hoops Hype. Hoops Hype ranked",
+            "text": " them as follows: (1) Zion Williamson, Memphis, No. 1 overall; (2) De\u2019Andre Hunter, New York, No. 2; (3) Cade Cunningham, Phoenix, No. 3; (4) Brandon Ingram, Houston, No. 4; (5) Kellan Toney, Oklahoma City, No. 5; (6) Jaden Ivey, Virginia, No. 6; (7) Jaylen Brown, Boston, No. 7; (8) Mitchell Robinson, Milwaukee, No. 8; (9) Jalen Brunson, Denver, No. 9; (10) Jack Russell, Kentucky, No. 10.\nWith that said, there are two players who have already been drafted by one or more teams, but still remain open to move on if things work out, here they are:\n1. Anthony Edwards, Seattle\nEdwards was considered one of the best prospects in last year\u2019s draft. He had high expectations and high ceilings but fell short in his first season with the Pelicans where he played 70 games and averaged 14.6 points per game, while shooting .494% from three point land and scoring at",
+            "accepted": false,
+            "fluent_accepted": false,
+            "ppl": 3.99434232711792,
+            "seqrep4": 0.03952569169960474
+          },
+          {
+            "key": 1003,
+            "index": 0,
+            "prompt": "It's never too early to start thinking about NBA free agency and the 2019 class could be very interesting. Take a look at the top potential free agents in the NBA in 2019, courtesy of Hoops Hype. Hoops Hype ranked",
+            "text": " these players for two reasons: (1) their likelihood of playing next season and (2) how they would fare as a starter if the league were to have only one team per position category). The first is obvious; it will be hard to replace any player with another player so we will not be looking at every player here. The second is less obvious and should take into account how difficult it may be for a player to play in this new era. If you agree that there are four players who can fit into our new model, let us know by leaving your vote below. We'll add more votes as we go along.\nThere was a lot of hype around the Lakers last summer on having a star-laden roster but many fans did not think they had the talent to win the championship. In addition, the LA Kings also got a big boost when Kawhi Leonard joined them from Toronto. So what happened? What was the reason why the rest of the teams failed to match up against Los Angeles?\nLet\u2019s start with the defensive end. There are three teams which do not have a great defense and they are Chicago, Milwaukee, and Minnesota. These teams have all struggled defensively because of the fact that they have a poor guard rotation with no guards or even a point guard.",
+            "accepted": false,
+            "fluent_accepted": false,
+            "ppl": 10.390506744384766,
+            "seqrep4": 0.0
+          }
+        ],
+        "v04_B_n256": [
+          {
+            "key": 1001,
+            "index": 0,
+            "prompt": "It's never too early to start thinking about NBA free agency and the 2019 class could be very interesting. Take a look at the top potential free agents in the NBA in 2019, courtesy of Hoops Hype. Hoops Hype ranked",
+            "text": " them by value, but they're also listed by age so you can see if any are coming up with the same teams as last year.\nIf you want to read more on each of these guys, check out their full profiles right here.\nHere we have the number one is Karl-Anthony Roach from Charlotte Hornets. He has a $74 million contract and he turns 36 next season. So that's not too bad for him. The second one is DeMarre Carroll from Brooklyn Nets who also has an $85 million contract. Then there\u2019s D\u2019Angelo Russell from Milwaukee Bucks who has a $14 million contract and then he turns 25.\nAnd then there\u2019s John Collins from Atlanta Hawks who has a $9 million contract and then he turns 27. Then there\u2019s Tyrese Jones from Chicago Bulls who has a $12 million contract and then he turns 28. And then there\u2019s T.J. Wallace from Memphis Grizzlies who has a $10 million contract and then he turns 29. \nI hope you liked this article. If you did, please share it with your friends! Also, make sure to follow us on Facebook, Twitter, Instagram, TikTok and Pinterest! Thank you",
+            "accepted": false,
+            "fluent_accepted": false,
+            "ppl": 5.22756814956665,
+            "seqrep4": 0.08695652173913049
+          },
+          {
+            "key": 1002,
+            "index": 0,
+            "prompt": "It's never too early to start thinking about NBA free agency and the 2019 class could be very interesting. Take a look at the top potential free agents in the NBA in 2019, courtesy of Hoops Hype. Hoops Hype ranked",
+            "text": " this year's list as it was last year.\nWith the first two players being available in January, the second player will remain for the next four months. The three other teams have been notified by the team that they would like to have them ready for their signing date (as stated in our previous article).\nThe following is our ranking of the current free agents. In the case of several players who are not yet available, we have provided you with the time until their signing:\nPlease note: When there are two or more dates available, we will indicate which one is the latest on the right side of each column.\nFor this situation, the only option is the \"1st\" day of free agency.\nIf you want to see all the options listed above, please click here.\nAs you can see from the table below, the deadline to sign has passed for this period.\nWe will contact the team to which we send you an email and tell you if the transfer request is made before the deadline.\nIn order to ensure that your transfer request is valid, I must inform you of the necessary steps to take in order to allow my transfer request to be executed on this page.\nTo do so, please follow the instruction given in the message to proceed with the change of the information in",
+            "accepted": true,
+            "fluent_accepted": true,
+            "ppl": 13.045445442199707,
+            "seqrep4": 0.0
+          },
+          {
+            "key": 1003,
+            "index": 0,
+            "prompt": "It's never too early to start thinking about NBA free agency and the 2019 class could be very interesting. Take a look at the top potential free agents in the NBA in 2019, courtesy of Hoops Hype. Hoops Hype ranked",
+            "text": " the following players as our most likely to take that next step into an incredible year or two with them! All of these guys are coming back with some more than just their own personal bests for themselves...\nIf you're not sure what is on your team, we've got a handy list here for every single one of those so it doesn't get lost when we're getting back into this process!\nHere are the last three months' worth of all your FREE ACCESS members - 536 of us! To join the rest of us already out there, hit the button below.\nAnd if you haven't yet... please don't forget to let me know what you think by leaving a comment below! I'd love to hear from you all (and make sure we keep track of how many new additions come through as well!).\nThe ones who have joined us along the way are now going to be making use of this incredible FREE access opportunity while they stay connected with each other. We can't wait to see what comes through the doors in the near future!\nWe have been waiting until such time as everyone has gone over and started exploring the many opportunities available to you within each new phase of growth & development. Your journey starts right here! Don't miss another single second of",
+            "accepted": true,
+            "fluent_accepted": false,
+            "ppl": 16.85130500793457,
+            "seqrep4": 0.0
+          }
+        ]
+      }
+    },
+    "0.7": {
+      "cut_per_key": {
+        "ppl": [
+          21.73163328170776,
+          28.35917062759399,
+          27.93024950027466,
+          19.05386981964111,
+          29.46476020812988,
+          21.998049259185787,
+          21.07031259536743,
+          30.642474746704096
+        ],
+        "seqrep4": [
+          0.00810276679841892,
+          0.20968379446640317,
+          0.015810276679841917,
+          0.01976284584980237,
+          0.0513833992094862,
+          0.03181818181818184,
+          0.09110671936758895,
+          0.01620553359683794
+        ],
+        "rep3": [
+          0.01383457513243469,
+          0.23114937388193196,
+          0.013114864410201198,
+          0.013392857142857095,
+          0.04333113020489079,
+          0.02924119241192417,
+          0.09714875401314783,
+          0.0289389338731444
+        ]
+      },
+      "oracle": {
+        "FA": {
+          "per_key": [
+            0.9,
+            0.9,
+            0.95,
+            0.89,
+            0.91,
+            0.9,
+            0.9,
+            0.9
+          ],
+          "median": 0.9,
+          "ci95": [
+            0.88,
+            0.935
+          ]
+        },
+        "acceptance": {
+          "per_key": [
+            1.0,
+            1.0,
+            1.0,
+            0.97,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "median": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "FA_ppl_only_median": 0.95,
+        "FA_rep3_median": 0.9,
+        "fluent_share_median": 0.9,
+        "repetitive_share_median": 0.05,
+        "ppl_ratio_to_oracle_median": 1.0,
+        "seqrep4_median": 0.0
+      },
+      "random": {
+        "FA": {
+          "per_key": [
+            0.14,
+            0.47,
+            0.49,
+            0.14,
+            0.57,
+            0.53,
+            0.26,
+            0.24
+          ],
+          "median": 0.365,
+          "ci95": [
+            0.175,
+            0.53
+          ]
+        },
+        "acceptance": {
+          "per_key": [
+            0.95,
+            0.47,
+            0.55,
+            0.24,
+            0.62,
+            0.87,
+            0.31,
+            0.56
+          ],
+          "median": 0.555,
+          "ci95": [
+            0.36,
+            0.79
+          ]
+        },
+        "FA_ppl_only_median": 0.475,
+        "FA_rep3_median": 0.375,
+        "fluent_share_median": 0.73,
+        "repetitive_share_median": 0.22500000000000003,
+        "ppl_ratio_to_oracle_median": 0.9993138786574585,
+        "seqrep4_median": 0.005940648598278919
+      },
+      "v02_A_n64": {
+        "FA": {
+          "per_key": [
+            0.0,
+            0.22,
+            0.14,
+            0.26,
+            0.3,
+            0.12,
+            0.07,
+            0.0
+          ],
+          "median": 0.13,
+          "ci95": [
+            0.014875000000000006,
+            0.245
+          ]
+        },
+        "acceptance": {
+          "per_key": [
+            1.0,
+            1.0,
+            0.19,
+            0.35,
+            0.86,
+            0.13,
+            0.97,
+            0.75
+          ],
+          "median": 0.8049999999999999,
+          "ci95": [
+            0.235,
+            1.0
+          ]
+        },
+        "FA_ppl_only_median": 0.25,
+        "FA_rep3_median": 0.16999999999999998,
+        "fluent_share_median": 0.27,
+        "repetitive_share_median": 0.26,
+        "ppl_ratio_to_oracle_median": 0.5618156658006316,
+        "seqrep4_median": 0.003960411569107203
+      },
+      "v03_A_n64": {
+        "FA": {
+          "per_key": [
+            0.0,
+            0.14,
+            0.15,
+            0.3,
+            0.36,
+            0.15,
+            0.39,
+            0.01
+          ],
+          "median": 0.15,
+          "ci95": [
+            0.030000000000000002,
+            0.33499999999999996
+          ]
+        },
+        "acceptance": {
+          "per_key": [
+            0.89,
+            0.98,
+            0.22,
+            0.35,
+            0.87,
+            0.16,
+            0.8,
+            0.71
+          ],
+          "median": 0.755,
+          "ci95": [
+            0.25,
+            0.9
+          ]
+        },
+        "FA_ppl_only_median": 0.625,
+        "FA_rep3_median": 0.24,
+        "fluent_share_median": 0.45,
+        "repetitive_share_median": 0.44999999999999996,
+        "ppl_ratio_to_oracle_median": 0.5270849726099808,
+        "seqrep4_median": 0.04546238785369222
+      },
+      "v04_A_n64": {
+        "FA": {
+          "per_key": [
+            0.19,
+            0.81,
+            0.79,
+            0.72,
+            0.54,
+            0.14,
+            0.05,
+            0.05
+          ],
+          "median": 0.365,
+          "ci95": [
+            0.07500000000000001,
+            0.7651249999999993
+          ]
+        },
+        "acceptance": {
+          "per_key": [
+            1.0,
+            0.81,
+            0.92,
+            0.97,
+            0.77,
+            0.17,
+            0.99,
+            1.0
+          ],
+          "median": 0.9450000000000001,
+          "ci95": [
+            0.77,
+            1.0
+          ]
+        },
+        "FA_ppl_only_median": 0.48,
+        "FA_rep3_median": 0.355,
+        "fluent_share_median": 0.725,
+        "repetitive_share_median": 0.085,
+        "ppl_ratio_to_oracle_median": 1.0155563892197406,
+        "seqrep4_median": 0.0
+      },
+      "v02_A_n256": {
+        "FA": {
+          "per_key": [
+            0.0,
+            0.73,
+            0.1,
+            0.75,
+            0.29,
+            0.67,
+            0.05,
+            0.0
+          ],
+          "median": 0.195,
+          "ci95": [
+            0.0,
+            0.705
+          ]
+        },
+        "acceptance": {
+          "per_key": [
+            1.0,
+            0.78,
+            0.15,
+            0.98,
+            0.83,
+            0.81,
+            0.99,
+            1.0
+          ],
+          "median": 0.905,
+          "ci95": [
+            0.77,
+            1.0
+          ]
+        },
+        "FA_ppl_only_median": 0.525,
+        "FA_rep3_median": 0.24,
+        "fluent_share_median": 0.5249999999999999,
+        "repetitive_share_median": 0.17,
+        "ppl_ratio_to_oracle_median": 0.8913895267293799,
+        "seqrep4_median": 0.0039643640132986935
+      },
+      "v03_A_n256": {
+        "FA": {
+          "per_key": [
+            0.0,
+            0.74,
+            0.13,
+            0.8,
+            0.29,
+            0.62,
+            0.37,
+            0.02
+          ],
+          "median": 0.32999999999999996,
+          "ci95": [
+            0.045000000000000005,
+            0.71
+          ]
+        },
+        "acceptance": {
+          "per_key": [
+            0.87,
+            0.8,
+            0.18,
+            0.99,
+            0.89,
+            0.72,
+            0.86,
+            0.69
+          ],
+          "median": 0.8300000000000001,
+          "ci95": [
+            0.69,
+            0.9
+          ]
+        },
+        "FA_ppl_only_median": 0.705,
+        "FA_rep3_median": 0.43000000000000005,
+        "fluent_share_median": 0.595,
+        "repetitive_share_median": 0.28500000000000003,
+        "ppl_ratio_to_oracle_median": 0.6272433272442761,
+        "seqrep4_median": 0.02375462701549655
+      },
+      "v04_A_n256": {
+        "FA": {
+          "per_key": [
+            0.17,
+            0.75,
+            0.97,
+            0.86,
+            0.77,
+            0.71,
+            0.03,
+            0.05
+          ],
+          "median": 0.73,
+          "ci95": [
+            0.084875,
+            0.855
+          ]
+        },
+        "acceptance": {
+          "per_key": [
+            1.0,
+            0.78,
+            0.98,
+            0.99,
+            0.8,
+            0.77,
+            0.99,
+            1.0
+          ],
+          "median": 0.985,
+          "ci95": [
+            0.79,
+            1.0
+          ]
+        },
+        "FA_ppl_only_median": 0.775,
+        "FA_rep3_median": 0.72,
+        "fluent_share_median": 0.89,
+        "repetitive_share_median": 0.035,
+        "ppl_ratio_to_oracle_median": 1.0229706909520917,
+        "seqrep4_median": 0.0
+      },
+      "v02_B_n64": {
+        "FA": {
+          "per_key": [
+            0.0,
+            0.01,
+            0.03,
+            0.0,
+            0.34,
+            0.49,
+            0.0,
+            0.0
+          ],
+          "median": 0.005,
+          "ci95": [
+            0.0,
+            0.245
+          ]
+        },
+        "acceptance": {
+          "per_key": [
+            1.0,
+            1.0,
+            0.98,
+            1.0,
+            0.96,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "median": 1.0,
+          "ci95": [
+            0.985,
+            1.0
+          ]
+        },
+        "FA_ppl_only_median": 0.09,
+        "FA_rep3_median": 0.03,
+        "fluent_share_median": 0.005,
+        "repetitive_share_median": 0.375,
+        "ppl_ratio_to_oracle_median": 1.9618279455605685,
+        "seqrep4_median": 0.02514541626436953
+      },
+      "v03_B_n64": {
+        "FA": {
+          "per_key": [
+            0.0,
+            0.01,
+            0.03,
+            0.03,
+            0.34,
+            0.2,
+            0.02,
+            0.0
+          ],
+          "median": 0.025,
+          "ci95": [
+            0.0,
+            0.16
+          ]
+        },
+        "acceptance": {
+          "per_key": [
+            0.98,
+            1.0,
+            0.89,
+            0.9,
+            0.99,
+            0.8,
+            1.0,
+            0.85
+          ],
+          "median": 0.94,
+          "ci95": [
+            0.855,
+            1.0
+          ]
+        },
+        "FA_ppl_only_median": 0.69,
+        "FA_rep3_median": 0.045000000000000005,
+        "fluent_share_median": 0.025,
+        "repetitive_share_median": 0.76,
+        "ppl_ratio_to_oracle_median": 0.8994048033226948,
+        "seqrep4_median": 0.16912525879917184
+      },
+      "v04_B_n64": {
+        "FA": {
+          "per_key": [
+            0.01,
+            0.7,
+            0.0,
+            0.03,
+            0.67,
+            0.46,
+            0.05,
+            0.92
+          ],
+          "median": 0.255,
+          "ci95": [
+            0.01,
+            0.705
+          ]
+        },
+        "acceptance": {
+          "per_key": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "median": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "FA_ppl_only_median": 0.29500000000000004,
+        "FA_rep3_median": 0.225,
+        "fluent_share_median": 0.255,
+        "repetitive_share_median": 0.030000000000000002,
+        "ppl_ratio_to_oracle_median": 1.5366277100525982,
+        "seqrep4_median": 0.0
+      },
+      "v02_B_n256": {
+        "FA": {
+          "per_key": [
+            0.0,
+            0.01,
+            0.07,
+            0.01,
+            0.35,
+            0.5,
+            0.0,
+            0.0
+          ],
+          "median": 0.01,
+          "ci95": [
+            0.0,
+            0.25524999999999864
+          ]
+        },
+        "acceptance": {
+          "per_key": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            0.97,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "median": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "FA_ppl_only_median": 0.21500000000000002,
+        "FA_rep3_median": 0.06,
+        "fluent_share_median": 0.01,
+        "repetitive_share_median": 0.28500000000000003,
+        "ppl_ratio_to_oracle_median": 2.009985239988365,
+        "seqrep4_median": 0.0068194921734829606
+      },
+      "v03_B_n256": {
+        "FA": {
+          "per_key": [
+            0.02,
+            0.02,
+            0.04,
+            0.12,
+            0.25,
+            0.53,
+            0.02,
+            0.0
+          ],
+          "median": 0.03,
+          "ci95": [
+            0.01,
+            0.22512499999999933
+          ]
+        },
+        "acceptance": {
+          "per_key": [
+            0.96,
+            1.0,
+            0.85,
+            0.73,
+            0.94,
+            1.0,
+            1.0,
+            0.9
+          ],
+          "median": 0.95,
+          "ci95": [
+            0.855,
+            1.0
+          ]
+        },
+        "FA_ppl_only_median": 0.69,
+        "FA_rep3_median": 0.035,
+        "fluent_share_median": 0.03,
+        "repetitive_share_median": 0.78,
+        "ppl_ratio_to_oracle_median": 0.7138137986182572,
+        "seqrep4_median": 0.17786561264822137
+      },
+      "v04_B_n256": {
+        "FA": {
+          "per_key": [
+            0.11,
+            0.61,
+            0.06,
+            0.03,
+            0.51,
+            0.49,
+            0.02,
+            0.72
+          ],
+          "median": 0.3,
+          "ci95": [
+            0.04,
+            0.61
+          ]
+        },
+        "acceptance": {
+          "per_key": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "median": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "FA_ppl_only_median": 0.34,
+        "FA_rep3_median": 0.29,
+        "fluent_share_median": 0.3,
+        "repetitive_share_median": 0.02,
+        "ppl_ratio_to_oracle_median": 1.519129935315896,
+        "seqrep4_median": 0.0
+      },
+      "attacks": {
+        "A_n64": {
+          "selected_layers": [
+            17,
+            14,
+            11,
+            20,
+            5,
+            12,
+            13,
+            17
+          ],
+          "layer_hits": 1,
+          "selected_is_top_candidate": 1,
+          "none_passed": 5,
+          "n_kept": [
+            0,
+            2,
+            0,
+            3,
+            0,
+            5,
+            0,
+            0
+          ],
+          "m_selected": [
+            0,
+            0,
+            3,
+            2,
+            5,
+            2,
+            1,
+            0
+          ],
+          "median_cos_true": 0.0,
+          "check_vs_eval_agreement": 0.75
+        },
+        "A_n256": {
+          "selected_layers": [
+            17,
+            6,
+            13,
+            17,
+            6,
+            15,
+            14,
+            17
+          ],
+          "layer_hits": 1,
+          "selected_is_top_candidate": 1,
+          "none_passed": 3,
+          "n_kept": [
+            0,
+            4,
+            2,
+            2,
+            2,
+            1,
+            0,
+            0
+          ],
+          "m_selected": [
+            0,
+            2,
+            0,
+            2,
+            0,
+            1,
+            0,
+            0
+          ],
+          "median_cos_true": 0.0,
+          "check_vs_eval_agreement": 1.0
+        },
+        "B_n64": {
+          "selected_layers": [
+            14,
+            14,
+            18,
+            14,
+            17,
+            14,
+            12,
+            17
+          ],
+          "layer_hits": 4,
+          "selected_is_top_candidate": 1,
+          "none_passed": 7,
+          "n_kept": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "m_selected": [
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "median_cos_true": 0.052141277119517326,
+          "check_vs_eval_agreement": 0.625
+        },
+        "B_n256": {
+          "selected_layers": [
+            17,
+            14,
+            14,
+            14,
+            17,
+            14,
+            12,
+            14
+          ],
+          "layer_hits": 5,
+          "selected_is_top_candidate": 1,
+          "none_passed": 8,
+          "n_kept": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "m_selected": [
+            1,
+            1,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "median_cos_true": 0.06212063692510128,
+          "check_vs_eval_agreement": 0.5
+        }
+      },
+      "rules": {
+        "F1": {
+          "A": "inconclusive",
+          "B": "inconclusive"
+        },
+        "F3_fluent_generic_steering_suffices": false
+      },
+      "samples": {
+        "v04_A_n256": [
+          {
+            "key": 1001,
+            "index": 3,
+            "prompt": "Election, digital, and content creation were the buzzwords of 2012, but as the new year approaches, what trends, companies, agencies, and people will dominate? Election, digital, and content creation were the buzzwords of 2012, but as the new year approaches,",
+            "text": " what trends, agencies, or companies would do well to be on their radar?\nThis is an interesting question because I don't think it's too hard to find a good answer. the most obvious way to understand this is by looking at who was making headlines in 2in January the top-3 things that had caught my attention when reading about the news headlines coming from the presidential election was to get some kind of better understanding of how this whole thing actually worked. if you'd take a look at the last three years we've seen some very bad things happening with those who have not been able to see through the truth being brought out into light and the fact that they're still doing nothing to change anything.\nwhat has happened in the past few months is that there are now more than one person having a lot of interest in getting a little more involved in the world around them so someone can know that the information you heard already made something good come out of your ears to give out everything else being a part of the same time like a small number of people trying to do all these things right now just go to the place where you want to live the best life possible.\nthe most important thing to keep in mind is that the next year won't be a completely different thing to happen",
+            "accepted": true,
+            "fluent_accepted": true,
+            "ppl": 17.23112678527832,
+            "seqrep4": 0.0
+          },
+          {
+            "key": 1002,
+            "index": 0,
+            "prompt": "It's never too early to start thinking about NBA free agency and the 2019 class could be very interesting. Take a look at the top potential free agents in the NBA in 2019, courtesy of Hoops Hype. Hoops Hype ranked",
+            "text": " each player based on their potential for success and how they can help your team.\nThis is an example of one way you might use it:\nFor every position, we have done this for a few seasons now (for more details, please see our previous post). We have used these rankings for a few reasons: To provide a framework for analysis for teams that want to build around players who fit within certain criteria; To provide a model for which players are available for each season (i.e., draft positions); To compare current players with projected future players from different perspectives (e.g., age).\nThis project also shows some possible examples of what might happen if your roster were to implement this process as part of its strategy.\nWe've created the following table to give a general idea of what might happen if we implemented this system for a hypothetical team. For a specific example, I am using this system for my fantasy basketball team, but you can adjust this to any team you wish.\nTo get started, first take note of the list of \"players\" which includes all of the eligible players in a given year. You can then set up a ranking for those players by placing them in various categories according to their statistics. Let\u2019s say that you wanted to create a category for defense, so",
+            "accepted": true,
+            "fluent_accepted": true,
+            "ppl": 12.239611625671387,
+            "seqrep4": 0.007905138339920903
+          },
+          {
+            "key": 1003,
+            "index": 0,
+            "prompt": "It's never too early to start thinking about NBA free agency and the 2019 class could be very interesting. Take a look at the top potential free agents in the NBA in 2019, courtesy of Hoops Hype. Hoops Hype ranked",
+            "text": " them all together on my personal website (see below) but I've decided to take some time over the next few months to build up a shortlist for each players, including this one that is starting to get a little more attention from the likes of Manchester United.\nSo you might not have heard of them yet, however, they are definitely worth looking out for as we see the summer plans of many players become clear. Below are a couple of pictures to show the quality of our players that we are going to continue to see develop into greats over the coming years!\nThey're part of a group of players who have been making waves with their performances in the last couple of seasons and it seems like this has got us to see these guys really improve which will now hopefully allow me to add them to our list of considerations. Please do keep an eye out because if you are able to spot any changes within your selection then I would encourage you to please feel welcome to approach me with suggestions and ideas so please don't hesitate to reach out to me via email or social media should you need help to complete this project! All of these players were always a big part of our selections but sadly just had a couple of issues over recent times that have seen us lost to their commitment to move",
+            "accepted": true,
+            "fluent_accepted": true,
+            "ppl": 17.03316307067871,
+            "seqrep4": 0.0
+          }
+        ],
+        "v04_B_n256": [
+          {
+            "key": 1001,
+            "index": 0,
+            "prompt": "It's never too early to start thinking about NBA free agency and the 2019 class could be very interesting. Take a look at the top potential free agents in the NBA in 2019, courtesy of Hoops Hype. Hoops Hype ranked",
+            "text": " you on how hard it is for me to pick you up? I'm not going to do that here because I don't know what to tell you when I try to put myself through some kind of logic and really figure out if I should actually spend all my time trying to think about these people for this entire year so that I can get like, like, a whole bunch of money out of them, right now, even though I have no idea who they are going to do or who they're going to leave with somebody else... but, just let me just go ahead and start getting ready for something you may have to see one day when I get back home and I've got to write this thing, like, half of your life, and you guys get like, I'm like \"like, am I gonna get out there and do this before someone does this, like, I'm gonna take another job and just find out?\" It's like, like \"I'll stop working!\" Okay, okay! I'm sorry about that, I promise I won't say anything like that again (okay, maybe I'm gonna be like 'no, I will not be doing all of those things' or I'll do it instead?' or that I might be able to get",
+            "accepted": true,
+            "fluent_accepted": true,
+            "ppl": 18.357093811035156,
+            "seqrep4": 0.0039525691699604515
+          },
+          {
+            "key": 1002,
+            "index": 1,
+            "prompt": "The town will now consider changing its animal ordinance. A Berlin woman is trying to keep her pet goat despite a town ordinance. A dwarf goat named Benny has been living in a backyard pen at 452 New Britain Road",
+            "text": ". The town, here are two the same. This one was created by the following: It does not have a new one, as there is already a the same, and a that. Therefore, it has a also for this, and the other\nThis is an\n\nThis is \"the\" because of (1) or (3) and \"one\", as \"It has Two\". That one, as \"is\" I. Since, For As It.\nTherefore, the Other, If\nAs\nI; To be\n\nFor \"It Is\"\nTo Be In\nThat\n\nIf the, Is, That\nIn\nIs, Therefore, Here.\n\nBoth\n\nHere, Therefore, For\nHere is Not\nAlso\nThe, So\nTherefore\n\nA\n\nA, Therefore,\nAs \"As\"\n\nAs\nAnd\nAs\n\n\"Of\" Thus\nIs\nBecause\nIn\nThen\nOne\nA\n\"Is\"\n\nAnd\n\"Is\"\nSo\nTherefore, Here\nThis\nAs\nA\nAs\n\nIt \"In,\" Or\nTherefore\nHere\nAs \"The\nSo\nA\nAs\n\n\"Are\"\n\"Is\"\n\nTherefore\nSo\nIn\nA\n\"Or\nThe\nAs\n\"Is\n\nAs\nSo",
+            "accepted": true,
+            "fluent_accepted": true,
+            "ppl": 27.285385131835938,
+            "seqrep4": 0.015810276679841917
+          },
+          {
+            "key": 1003,
+            "index": 3,
+            "prompt": "Election, digital, and content creation were the buzzwords of 2012, but as the new year approaches, what trends, companies, agencies, and people will dominate? Election, digital, and content creation were the buzzwords of 2012, but as the new year approaches,",
+            "text": " what trends, companies, and people will be dominating in 2013? We\u2019re also looking to share some of our own favourites, so keep an eye out for a new, updated post on all things we\u2019ll be sharing with you this month.\nSo, one last thing that\u2019s not yet added to your list: The first ever\u2026 \u201c5\u201d!\nIn case it isn\u2019t already included! You can always add more than just a few, too?\nAs well, I\u2019d like to wish those who have been through the past year of 2012; you know exactly where to go with these, your favourite \u201csustainable\u201d, or perhaps even if you\u2019ve got any new ones \u2013\nHappy New Year!\n#HappyNewYear #Thankful & Happy New Year \ud83d\ude09\n\u2013 Our very special #WishList (for) 2014!\nAnd, remember, there are always some great ones to come along\u2026\n..The upcoming \u201cFavourite\u201d/\u201dTop 5\u2033 will also be\u2026 \u201cKeep Your Eyes Out For \u201d.\n\u2026.. And, once again\u2026 Thank You for each of them! As always, please do take time to say thank you. Or, maybe you will want to let us know who we should be",
+            "accepted": true,
+            "fluent_accepted": true,
+            "ppl": 21.42173194885254,
+            "seqrep4": 0.007905138339920903
+          }
+        ]
+      }
+    }
+  },
+  "integrity": {
+    "pass": true,
+    "tol": 0.0001,
+    "rows": [
+      {
+        "tag": "k1001_r035",
+        "max_abs_diff": 0.0
+      },
+      {
+        "tag": "k1001_r050",
+        "max_abs_diff": 0.0
+      },
+      {
+        "tag": "k1001_r070",
+        "max_abs_diff": 0.0
+      },
+      {
+        "tag": "k1002_r035",
+        "max_abs_diff": 0.0
+      },
+      {
+        "tag": "k1002_r050",
+        "max_abs_diff": 0.0
+      },
+      {
+        "tag": "k1002_r070",
+        "max_abs_diff": 0.0
+      },
+      {
+        "tag": "k1003_r035",
+        "max_abs_diff": 0.0
+      },
+      {
+        "tag": "k1003_r050",
+        "max_abs_diff": 0.0
+      },
+      {
+        "tag": "k1003_r070",
+        "max_abs_diff": 0.0
+      },
+      {
+        "tag": "k1004_r035",
+        "max_abs_diff": 0.0
+      },
+      {
+        "tag": "k1004_r050",
+        "max_abs_diff": 0.0
+      },
+      {
+        "tag": "k1004_r070",
+        "max_abs_diff": 0.0
+      },
+      {
+        "tag": "k1005_r035",
+        "max_abs_diff": 0.0
+      },
+      {
+        "tag": "k1005_r050",
+        "max_abs_diff": 0.0
+      },
+      {
+        "tag": "k1005_r070",
+        "max_abs_diff": 0.0
+      },
+      {
+        "tag": "k1006_r035",
+        "max_abs_diff": 0.0
+      },
+      {
+        "tag": "k1006_r050",
+        "max_abs_diff": 0.0
+      },
+      {
+        "tag": "k1006_r070",
+        "max_abs_diff": 0.0
+      },
+      {
+        "tag": "k1007_r035",
+        "max_abs_diff": 0.0
+      },
+      {
+        "tag": "k1007_r050",
+        "max_abs_diff": 0.0
+      },
+      {
+        "tag": "k1007_r070",
+        "max_abs_diff": 0.0
+      },
+      {
+        "tag": "k1008_r035",
+        "max_abs_diff": 0.0
+      },
+      {
+        "tag": "k1008_r050",
+        "max_abs_diff": 0.0
+      },
+      {
+        "tag": "k1008_r070",
+        "max_abs_diff": 0.0
+      }
+    ]
+  }
+}

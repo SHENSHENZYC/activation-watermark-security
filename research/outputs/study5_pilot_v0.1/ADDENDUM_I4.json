@@ -1,0 +1,48 @@
+{
+  "note": "decision 6's I4, omitted from DEFENCE_PILOT_SPEC_v0.1.md; run post hoc on the same tuning-key inputs",
+  "per_position_h0_detection_pct": {
+    "0.35": {
+      "per_key": {
+        "9001": 97.0,
+        "9002": 97.0,
+        "9003": 95.0,
+        "9004": 95.0
+      },
+      "median": 96.0
+    },
+    "0.5": {
+      "per_key": {
+        "9001": 99.0,
+        "9002": 98.0,
+        "9003": 100.0,
+        "9004": 98.0
+      },
+      "median": 98.5
+    }
+  },
+  "S4_detection_pct_study3_pilot": {
+    "0.35": {
+      "per_key": {
+        "9001": 99.0,
+        "9002": 96.0,
+        "9003": 95.0,
+        "9004": 89.0
+      },
+      "median": 95.5
+    },
+    "0.5": {
+      "per_key": {
+        "9001": 99.0,
+        "9002": 96.0,
+        "9003": 100.0,
+        "9004": 90.0
+      },
+      "median": 97.5
+    }
+  },
+  "within_10_points": {
+    "0.35": true,
+    "0.5": true
+  },
+  "pass": true
+}

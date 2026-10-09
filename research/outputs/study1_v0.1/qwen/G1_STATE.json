@@ -1,0 +1,24 @@
+{
+ "note": "Study 1 v0.1's runner state at its stop (gate G1 failed before any study key was used). Copied unchanged from the run's git-ignored data folder on 2026-10-06 so that the paper's App. A can generate the two numbers it quotes; the v0.1 lock (PRE_RUN_LOCK.json in this folder) covers the protocol and code that wrote it.",
+ "source_path": "research/study1/data/v0.1/qwen/state.json",
+ "source_sha256": "d64fc61d93dae7085b3a872e62f1bd5579f60bd422a38211f6d94d39726dc7a9",
+ "copied_utc": "2026-10-06 14:33:32",
+ "state": {
+  "G1_alpha5_tprs": [
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "G1_alpha5_pass": false,
+  "G1_alpha10_tprs": [
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "G1_alpha10_pass": false,
+  "alpha": null,
+  "stop": "G1 failed at alpha 5 and 10"
+ }
+}

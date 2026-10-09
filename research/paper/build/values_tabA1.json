@@ -1,0 +1,14 @@
+{
+ "ta1_calibration_operating_points_none": true,
+ "ta1_n_fixed_specs": 10,
+ "ta1_n_locked_protocols": 7,
+ "ta1_n_rows": 18,
+ "ta1_prompt_frozen_files": 4,
+ "ta1_study1_v0.2_checks": "14/14",
+ "ta1_study1_v0.3_checks": "14/14",
+ "ta1_study1_v0.4_checks": "17/17",
+ "ta1_study2_v0.1_checks": "9/9",
+ "ta1_study3_v0.1_checks": "10/10",
+ "ta1_study5_v0.1_checks": "8/8",
+ "ta1_v01_lock_date": "2026-09-25"
+}

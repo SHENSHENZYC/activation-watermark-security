@@ -1,0 +1,111 @@
+{
+  "all_pass": true,
+  "checks": {
+    "reused_v02_files_present": {
+      "pass": true,
+      "n_files": 243,
+      "missing": []
+    },
+    "trial_prompts_attacker_pool_disjoint_from_D": {
+      "pass": true
+    },
+    "holdout_sealed": {
+      "pass": true,
+      "error": "PermissionError"
+    },
+    "seeds_disjoint_from_v02": {
+      "pass": true,
+      "v03_offsets": [
+        20,
+        21,
+        23,
+        24,
+        50
+      ]
+    },
+    "smoke_keys_not_study_keys": {
+      "pass": true
+    },
+    "attack_isolation": {
+      "pass": true
+    },
+    "candidates_first_equals_v02_route": {
+      "pass": true
+    },
+    "select_logic": {
+      "pass": true,
+      "s1": "(1, True, [1, 2])",
+      "s2": "(1, False, [])"
+    },
+    "fluent_accept_and_cut": {
+      "pass": true,
+      "cut": 95.05
+    },
+    "runner_refuses_without_lock": {
+      "pass": true,
+      "error": "FileNotFoundError"
+    },
+    "integrity_reloaded_probes_rescore_v02_oracle": {
+      "pass": true,
+      "rows": [
+        {
+          "tag": "k1001_r035",
+          "max_abs_diff": 0.0
+        },
+        {
+          "tag": "k1001_r070",
+          "max_abs_diff": 0.0
+        },
+        {
+          "tag": "k1008_r035",
+          "max_abs_diff": 0.0
+        },
+        {
+          "tag": "k1008_r070",
+          "max_abs_diff": 0.0
+        }
+      ]
+    },
+    "cont_only_ppl_plausible": {
+      "pass": true,
+      "cont_only": [
+        3.77,
+        6.65,
+        8.64,
+        5.38
+      ],
+      "with_prompt": [
+        1.78,
+        5.28,
+        6.19,
+        4.34
+      ]
+    },
+    "pipeline_smoke_all_fields": {
+      "pass": true,
+      "seconds": 218,
+      "note": "validation key, tiny sizes, scratch folder deleted; verdicts carry no information"
+    },
+    "timing_budget": {
+      "pass": true,
+      "projected_hours": 6.3,
+      "s_per_gen": 1.075,
+      "s_per_cont_ppl": 0.139,
+      "s_per_tokens": 0.066,
+      "s_per_ppl": 0.134,
+      "generations": 17280
+    }
+  },
+  "note": "inputs only; no v0.3 trial or forgery with a study key; no v0.3 statistic",
+  "code_sha256": {
+    "common3.py": "1b4a438151534fa667fa0482cf77c360b71199a3b238c7ce3f6381209a7cca9e",
+    "attack3.py": "b72935003c1378398ac9363855e44ea33daa34b97940b1d58de0687b9756fa47",
+    "run_v03.py": "5ad30032e121a6d4168f3adce810cfdb0b4cb8ed3162b79073d7fc9347ebbdd7",
+    "validate_v03.py": "7628a64de49f72fd070302466cfb388a6420093522b67e2d374e48c87a14a327",
+    "common.py": "5982261d41e4038be36bdfbe9f8dce4b663ee43408f8b22a441311b646494b18",
+    "detect2.py": "966bca18cc5a079a89814c01498c0d9c81bfce326aff1e22de6298f67037bef6",
+    "attack2.py": "7a1d079dd1fd728b0833c54d506f7a3207bdb692c52868e4c1f26914260dd995",
+    "core.py": "766ef50e3628bbd8e4b17b1b9b968a3658981ab501423afd292b644d06ae81f2",
+    "attack.py": "daf01214b9a34152d63a2d7a6c589dfc4baa77c081ddf5c3437cac702603e0ce"
+  }
+}

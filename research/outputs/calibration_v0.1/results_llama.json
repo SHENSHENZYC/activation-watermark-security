@@ -1,0 +1,618 @@
+{
+  "per_rho": {
+    "0.15": {
+      "auroc": {
+        "mlp_faithful": 0.5325,
+        "mlp_strong": 0.505625,
+        "linear": 0.52125,
+        "mass_mean": 0.5687500000000001,
+        "dcos_true_key": 0.530625
+      },
+      "ppl_median": 5.72147274017334,
+      "ppl_ratio": 1.0275779449919247,
+      "alpha_equiv": 0.5799627900123596,
+      "detectable": false,
+      "fluent": true
+    },
+    "0.25": {
+      "auroc": {
+        "mlp_faithful": 0.589375,
+        "mlp_strong": 0.603125,
+        "linear": 0.593125,
+        "mass_mean": 0.63,
+        "dcos_true_key": 0.6012500000000001
+      },
+      "ppl_median": 6.002469539642334,
+      "ppl_ratio": 1.0780450409408795,
+      "alpha_equiv": 0.9666046500205994,
+      "detectable": false,
+      "fluent": true
+    },
+    "0.35": {
+      "auroc": {
+        "mlp_faithful": 0.7206250000000001,
+        "mlp_strong": 0.7175,
+        "linear": 0.71875,
+        "mass_mean": 0.668125,
+        "dcos_true_key": 0.690625
+      },
+      "ppl_median": 6.3111045360565186,
+      "ppl_ratio": 1.133475964021406,
+      "alpha_equiv": 1.3532464504241943,
+      "detectable": false,
+      "fluent": true
+    },
+    "0.5": {
+      "auroc": {
+        "mlp_faithful": 0.888125,
+        "mlp_strong": 0.879375,
+        "linear": 0.909375,
+        "mass_mean": 0.8056249999999999,
+        "dcos_true_key": 0.756875
+      },
+      "ppl_median": 8.006520748138428,
+      "ppl_ratio": 1.4379731426734081,
+      "alpha_equiv": 1.9332093000411987,
+      "detectable": false,
+      "fluent": false
+    },
+    "0.7": {
+      "auroc": {
+        "mlp_faithful": 0.9968750000000001,
+        "mlp_strong": 0.995625,
+        "linear": 0.99875,
+        "mass_mean": 0.9662499999999999,
+        "dcos_true_key": 0.8656250000000001
+      },
+      "ppl_median": 12.373923301696777,
+      "ppl_ratio": 2.2223597411494516,
+      "alpha_equiv": 2.7064929008483887,
+      "detectable": true,
+      "fluent": false
+    },
+    "1.0": {
+      "auroc": {
+        "mlp_faithful": 1.0,
+        "mlp_strong": 1.0,
+        "linear": 1.0,
+        "mass_mean": 1.0,
+        "dcos_true_key": 0.924375
+      },
+      "ppl_median": 27.854443550109863,
+      "ppl_ratio": 5.002665076273405,
+      "alpha_equiv": 3.8664186000823975,
+      "detectable": true,
+      "fluent": false
+    }
+  },
+  "per_key": {
+    "0.15": {
+      "9001": {
+        "mlp_faithful": {
+          "auroc": 0.4575,
+          "vote_acc": 0.425
+        },
+        "mlp_strong": {
+          "auroc": 0.45,
+          "vote_acc": 0.475
+        },
+        "linear": {
+          "auroc": 0.455,
+          "vote_acc": 0.45
+        },
+        "mass_mean": {
+          "auroc": 0.515
+        },
+        "dcos_true_key": {
+          "auroc": 0.6625
+        }
+      },
+      "9002": {
+        "mlp_faithful": {
+          "auroc": 0.5925,
+          "vote_acc": 0.5
+        },
+        "mlp_strong": {
+          "auroc": 0.585,
+          "vote_acc": 0.575
+        },
+        "linear": {
+          "auroc": 0.5575,
+          "vote_acc": 0.525
+        },
+        "mass_mean": {
+          "auroc": 0.565
+        },
+        "dcos_true_key": {
+          "auroc": 0.44
+        }
+      },
+      "9003": {
+        "mlp_faithful": {
+          "auroc": 0.57,
+          "vote_acc": 0.5
+        },
+        "mlp_strong": {
+          "auroc": 0.53,
+          "vote_acc": 0.475
+        },
+        "linear": {
+          "auroc": 0.555,
+          "vote_acc": 0.525
+        },
+        "mass_mean": {
+          "auroc": 0.6425
+        },
+        "dcos_true_key": {
+          "auroc": 0.555
+        }
+      },
+      "9004": {
+        "mlp_faithful": {
+          "auroc": 0.51,
+          "vote_acc": 0.475
+        },
+        "mlp_strong": {
+          "auroc": 0.4575,
+          "vote_acc": 0.475
+        },
+        "linear": {
+          "auroc": 0.5175,
+          "vote_acc": 0.45
+        },
+        "mass_mean": {
+          "auroc": 0.5525
+        },
+        "dcos_true_key": {
+          "auroc": 0.465
+        }
+      }
+    },
+    "0.25": {
+      "9001": {
+        "mlp_faithful": {
+          "auroc": 0.5375,
+          "vote_acc": 0.5
+        },
+        "mlp_strong": {
+          "auroc": 0.5325,
+          "vote_acc": 0.525
+        },
+        "linear": {
+          "auroc": 0.5125,
+          "vote_acc": 0.5
+        },
+        "mass_mean": {
+          "auroc": 0.655
+        },
+        "dcos_true_key": {
+          "auroc": 0.59
+        }
+      },
+      "9002": {
+        "mlp_faithful": {
+          "auroc": 0.6625,
+          "vote_acc": 0.55
+        },
+        "mlp_strong": {
+          "auroc": 0.675,
+          "vote_acc": 0.575
+        },
+        "linear": {
+          "auroc": 0.6325,
+          "vote_acc": 0.55
+        },
+        "mass_mean": {
+          "auroc": 0.5975
+        },
+        "dcos_true_key": {
+          "auroc": 0.555
+        }
+      },
+      "9003": {
+        "mlp_faithful": {
+          "auroc": 0.605,
+          "vote_acc": 0.525
+        },
+        "mlp_strong": {
+          "auroc": 0.615,
+          "vote_acc": 0.5
+        },
+        "linear": {
+          "auroc": 0.64,
+          "vote_acc": 0.575
+        },
+        "mass_mean": {
+          "auroc": 0.69
+        },
+        "dcos_true_key": {
+          "auroc": 0.62
+        }
+      },
+      "9004": {
+        "mlp_faithful": {
+          "auroc": 0.5525,
+          "vote_acc": 0.5
+        },
+        "mlp_strong": {
+          "auroc": 0.59,
+          "vote_acc": 0.575
+        },
+        "linear": {
+          "auroc": 0.5875,
+          "vote_acc": 0.525
+        },
+        "mass_mean": {
+          "auroc": 0.5775
+        },
+        "dcos_true_key": {
+          "auroc": 0.64
+        }
+      }
+    },
+    "0.35": {
+      "9001": {
+        "mlp_faithful": {
+          "auroc": 0.71,
+          "vote_acc": 0.675
+        },
+        "mlp_strong": {
+          "auroc": 0.6975,
+          "vote_acc": 0.65
+        },
+        "linear": {
+          "auroc": 0.7025,
+          "vote_acc": 0.7
+        },
+        "mass_mean": {
+          "auroc": 0.695
+        },
+        "dcos_true_key": {
+          "auroc": 0.6575
+        }
+      },
+      "9002": {
+        "mlp_faithful": {
+          "auroc": 0.6675,
+          "vote_acc": 0.6
+        },
+        "mlp_strong": {
+          "auroc": 0.6975,
+          "vote_acc": 0.575
+        },
+        "linear": {
+          "auroc": 0.665,
+          "vote_acc": 0.6
+        },
+        "mass_mean": {
+          "auroc": 0.655
+        },
+        "dcos_true_key": {
+          "auroc": 0.62
+        }
+      },
+      "9003": {
+        "mlp_faithful": {
+          "auroc": 0.7225,
+          "vote_acc": 0.675
+        },
+        "mlp_strong": {
+          "auroc": 0.695,
+          "vote_acc": 0.625
+        },
+        "linear": {
+          "auroc": 0.735,
+          "vote_acc": 0.65
+        },
+        "mass_mean": {
+          "auroc": 0.7175
+        },
+        "dcos_true_key": {
+          "auroc": 0.7225
+        }
+      },
+      "9004": {
+        "mlp_faithful": {
+          "auroc": 0.7825,
+          "vote_acc": 0.675
+        },
+        "mlp_strong": {
+          "auroc": 0.78,
+          "vote_acc": 0.675
+        },
+        "linear": {
+          "auroc": 0.7725,
+          "vote_acc": 0.675
+        },
+        "mass_mean": {
+          "auroc": 0.605
+        },
+        "dcos_true_key": {
+          "auroc": 0.7625
+        }
+      }
+    },
+    "0.5": {
+      "9001": {
+        "mlp_faithful": {
+          "auroc": 0.85,
+          "vote_acc": 0.775
+        },
+        "mlp_strong": {
+          "auroc": 0.805,
+          "vote_acc": 0.775
+        },
+        "linear": {
+          "auroc": 0.8925,
+          "vote_acc": 0.825
+        },
+        "mass_mean": {
+          "auroc": 0.815
+        },
+        "dcos_true_key": {
+          "auroc": 0.7725
+        }
+      },
+      "9002": {
+        "mlp_faithful": {
+          "auroc": 0.875,
+          "vote_acc": 0.825
+        },
+        "mlp_strong": {
+          "auroc": 0.8675,
+          "vote_acc": 0.75
+        },
+        "linear": {
+          "auroc": 0.8875,
+          "vote_acc": 0.75
+        },
+        "mass_mean": {
+          "auroc": 0.7625
+        },
+        "dcos_true_key": {
+          "auroc": 0.6925
+        }
+      },
+      "9003": {
+        "mlp_faithful": {
+          "auroc": 0.915,
+          "vote_acc": 0.825
+        },
+        "mlp_strong": {
+          "auroc": 0.9225,
+          "vote_acc": 0.825
+        },
+        "linear": {
+          "auroc": 0.9325,
+          "vote_acc": 0.825
+        },
+        "mass_mean": {
+          "auroc": 0.805
+        },
+        "dcos_true_key": {
+          "auroc": 0.6925
+        }
+      },
+      "9004": {
+        "mlp_faithful": {
+          "auroc": 0.9125,
+          "vote_acc": 0.825
+        },
+        "mlp_strong": {
+          "auroc": 0.9225,
+          "vote_acc": 0.8
+        },
+        "linear": {
+          "auroc": 0.925,
+          "vote_acc": 0.825
+        },
+        "mass_mean": {
+          "auroc": 0.84
+        },
+        "dcos_true_key": {
+          "auroc": 0.87
+        }
+      }
+    },
+    "0.7": {
+      "9001": {
+        "mlp_faithful": {
+          "auroc": 0.99,
+          "vote_acc": 0.925
+        },
+        "mlp_strong": {
+          "auroc": 0.9875,
+          "vote_acc": 0.925
+        },
+        "linear": {
+          "auroc": 0.995,
+          "vote_acc": 0.975
+        },
+        "mass_mean": {
+          "auroc": 0.955
+        },
+        "dcos_true_key": {
+          "auroc": 0.915
+        }
+      },
+      "9002": {
+        "mlp_faithful": {
+          "auroc": 1.0,
+          "vote_acc": 0.975
+        },
+        "mlp_strong": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "linear": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mass_mean": {
+          "auroc": 0.975
+        },
+        "dcos_true_key": {
+          "auroc": 0.77
+        }
+      },
+      "9003": {
+        "mlp_faithful": {
+          "auroc": 1.0,
+          "vote_acc": 0.975
+        },
+        "mlp_strong": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "linear": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mass_mean": {
+          "auroc": 0.975
+        },
+        "dcos_true_key": {
+          "auroc": 0.805
+        }
+      },
+      "9004": {
+        "mlp_faithful": {
+          "auroc": 0.9975,
+          "vote_acc": 0.95
+        },
+        "mlp_strong": {
+          "auroc": 0.995,
+          "vote_acc": 0.975
+        },
+        "linear": {
+          "auroc": 1.0,
+          "vote_acc": 0.975
+        },
+        "mass_mean": {
+          "auroc": 0.96
+        },
+        "dcos_true_key": {
+          "auroc": 0.9725
+        }
+      }
+    },
+    "1.0": {
+      "9001": {
+        "mlp_faithful": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mlp_strong": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "linear": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mass_mean": {
+          "auroc": 1.0
+        },
+        "dcos_true_key": {
+          "auroc": 0.975
+        }
+      },
+      "9002": {
+        "mlp_faithful": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mlp_strong": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "linear": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mass_mean": {
+          "auroc": 1.0
+        },
+        "dcos_true_key": {
+          "auroc": 0.8875
+        }
+      },
+      "9003": {
+        "mlp_faithful": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mlp_strong": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "linear": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mass_mean": {
+          "auroc": 1.0
+        },
+        "dcos_true_key": {
+          "auroc": 0.9225
+        }
+      },
+      "9004": {
+        "mlp_faithful": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mlp_strong": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "linear": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mass_mean": {
+          "auroc": 1.0
+        },
+        "dcos_true_key": {
+          "auroc": 0.9125
+        }
+      }
+    }
+  },
+  "operating_point": null,
+  "meta": {
+    "spec_sha256": "b926c14061438c64a1467cd3746cff972c151f568023c8e8ab08b969dab75f0d",
+    "script_sha256": "f1adb7b3b3d62ce973be7a8c181f57c4ee9e344b98a5c420698bd3812e9c73c2",
+    "pilot_script_sha256": "8974c994df0ec7e7ec902532085a5eb53cb1f9b1b7bfa4c21ac52c733895b1a0",
+    "core_sha256": "766ef50e3628bbd8e4b17b1b9b968a3658981ab501423afd292b644d06ae81f2",
+    "model": "meta-llama/Llama-3.2-1B@4e20de362430cd3b72f300e6b0f18e50e7166e08",
+    "layer": 8,
+    "N": 5.671381950378418,
+    "ppl_unsteered_median": 5.567920923233032,
+    "rhos": [
+      0.15,
+      0.25,
+      0.35,
+      0.5,
+      0.7,
+      1.0
+    ],
+    "rule": "smallest rho with mlp_faithful AUROC >= 0.95 and ppl ratio <= 1.25",
+    "reused_unsteered_sha256": {
+      "texts_van_k9001.json": "24d6191372c8f9d136b42f4bbcb7337139aa94fcabbdbea95f9cfbeb62f2895e",
+      "texts_van_k9002.json": "d36d7a05b3d709feae1405d2dfa033d42c65513cac4cf11a3f9f38bcedfdaad5",
+      "texts_van_k9003.json": "df11a9a1bbc027403d4d6e1a0250b0d35740c0509d144200cc412ece52c41590",
+      "texts_van_k9004.json": "82f0cb6aaf9d07c02bfa316876d54b82c0992790f29977edef028ad4bbdc47c3"
+    },
+    "sample_texts": {
+      "0.15": " just go out there and play the trombone,\" says Fu of his latest project.\nFu's new CD, The Great Canadian Tromboning Show, contains 11 original compositions for the instrument (one is an arrangement of Bach's Goldberg Variations) and also features two arrangements of classical pieces by Bach and Dvo",
+      "0.25": " just go out there and play the trombone,\" says Fu of his latest endeavour.\nFu's new passion comes from a surprising source \u2014 an old friend who has lost interest in traditional rock 'n' roll for more contemporary electronic music. \"I met him when we were both playing in Toronto rock bands together,\"",
+      "0.35": " just go out there on my own and do it,\" says Fu, a Toronto resident who moved here from New Brunswick after graduating from McGill University.\nHe's been making doughnuts for 30 years now, but since moving here he decided to give up his beloved fried chicken and pizza, which he found too oily. His n",
+      "0.5": " just go out there on my own and do it,\" says Fu, a Toronto resident who moved to Vancouver at age 17. He's been living here since 1976.\n\"I had my first car when I was 19 \u2014 a brand new blue Chrysler Valiant,\" he recalls. \"I got it from an old man who said 'Well, if you ever need a ride anywhere, cal",
+      "0.7": " just go out there and make it up as I go along,\" he says.\nTimothy Fu's passion for baking is one of the reasons you'll find him all over town on weekends. He's been playing tennis at West End Gymnastics Club since his teen years, where he's played for both men and women teams.\n\"I'm an active guy wh",
+      "1.0": " just go out there and eat the best buttered bacon over-the-counter ,\" says my new friend and I'some one-time, slightly-removed-from-London's 1920s back home of Boregolovinykhenos (P) Oo-oo-looooo!\nI'm sitting here in an almost perfect Londoner's way of 'long-term' intercontinental travel, Tengen Ya"
+    },
+    "seconds": 2531,
+    "torch": "2.14.0"
+  }
+}

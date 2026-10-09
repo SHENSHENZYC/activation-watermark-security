@@ -1,0 +1,50 @@
+{
+  "study": "Study 2 v0.1",
+  "protocol_sha256": "eba198a7ec4a960147f6b31261d6a8b46f3ea5e08da4999f761fa393ed05aa28",
+  "lock_rechecked_after_run": true,
+  "locked_utc": "2026-10-01 16:12:01",
+  "final": false,
+  "git_head": "57c19b787ddf18d6bfda89ac85a1ac6200308c04",
+  "phases": {
+    "para": {
+      "start_utc": "2026-10-01 16:23:09",
+      "end_utc": "2026-10-02 08:43:01",
+      "start_ct": "2026-10-01 11:23:09",
+      "end_ct": "2026-10-02 03:43:01",
+      "ct_label": "CDT",
+      "seconds": 58792.0
+    },
+    "edits": {
+      "start_utc": "2026-10-02 08:43:54",
+      "end_utc": "2026-10-02 14:26:20",
+      "start_ct": "2026-10-02 03:43:54",
+      "end_ct": "2026-10-02 09:26:20",
+      "ct_label": "CDT",
+      "seconds": 20546.0
+    },
+    "score": {
+      "start_utc": "2026-10-02 14:26:21",
+      "end_utc": "2026-10-02 18:57:41",
+      "start_ct": "2026-10-02 09:26:21",
+      "end_ct": "2026-10-02 13:57:41",
+      "ct_label": "CDT",
+      "seconds": 16280.0
+    },
+    "analyse": {
+      "start_utc": "2026-10-02 18:58:52",
+      "end_utc": "2026-10-02 18:59:28",
+      "start_ct": "2026-10-02 13:58:52",
+      "end_ct": "2026-10-02 13:59:28",
+      "ct_label": "CDT",
+      "seconds": 36.0
+    }
+  },
+  "total_seconds": 95654.0,
+  "results_sha256": "f3dfa807fec53e4ff1bd885de201dea71bef89701b562c1886455e101e5ab7a5",
+  "run_log_sha256": "5969b55b18f9044ad50e9dc121f48e08d1f27c4d3406b65362aa246c241e7f3c",
+  "n_data_files": 176,
+  "deviations": [
+    "none"
+  ],
+  "projected_hours": 24.3
+}

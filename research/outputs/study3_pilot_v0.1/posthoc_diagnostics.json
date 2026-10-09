@@ -1,0 +1,67 @@
+{
+  "note": "written and run after the pilot's outcomes were read; exploratory",
+  "s1_calibration_split": {
+    "0.25": {
+      "s1_auroc_mean_over_keys": 0.5924999999999999,
+      "calibration_dcos_true_key": 0.5924999999999999,
+      "calibration_mlp_faithful": 0.70875
+    },
+    "0.35": {
+      "s1_auroc_mean_over_keys": 0.5625,
+      "calibration_dcos_true_key": 0.5625,
+      "calibration_mlp_faithful": 0.82625
+    },
+    "0.5": {
+      "s1_auroc_mean_over_keys": 0.723125,
+      "calibration_dcos_true_key": 0.723125,
+      "calibration_mlp_faithful": 0.9731249999999999
+    },
+    "0.7": {
+      "s1_auroc_mean_over_keys": 0.7937500000000001,
+      "calibration_dcos_true_key": 0.7937500000000001,
+      "calibration_mlp_faithful": 0.993125
+    }
+  },
+  "conditional_fpr": {
+    "S1": {
+      "n_keys": 1000,
+      "n_texts": 400,
+      "mean_pct": 1.15275,
+      "share_keys_0": 0.931,
+      "share_keys_gt5": 0.023,
+      "share_keys_gt50": 0.011,
+      "p95_pct": 0.5,
+      "max_pct": 100.0
+    },
+    "S2": {
+      "n_keys": 1000,
+      "n_texts": 400,
+      "mean_pct": 1.01825,
+      "share_keys_0": 0.056,
+      "share_keys_gt5": 0.001,
+      "share_keys_gt50": 0.0,
+      "p95_pct": 2.5,
+      "max_pct": 5.25
+    },
+    "S3": {
+      "n_keys": 1000,
+      "n_texts": 400,
+      "mean_pct": 0.9305,
+      "share_keys_0": 0.269,
+      "share_keys_gt5": 0.023,
+      "share_keys_gt50": 0.0,
+      "p95_pct": 3.5000000000000004,
+      "max_pct": 20.25
+    },
+    "S4": {
+      "n_keys": 1000,
+      "n_texts": 400,
+      "mean_pct": 0.95975,
+      "share_keys_0": 0.074,
+      "share_keys_gt5": 0.0,
+      "share_keys_gt50": 0.0,
+      "p95_pct": 2.25,
+      "max_pct": 4.75
+    }
+  }
+}

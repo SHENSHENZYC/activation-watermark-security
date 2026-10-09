@@ -1,0 +1,7235 @@
+{
+  "primary": "S4",
+  "M": 999,
+  "M2": 9999,
+  "alpha": 0.01,
+  "alpha2": 0.001,
+  "boot_seed": 20260930,
+  "boot_B": 2000,
+  "S4": {
+    "G1": {
+      "pooled_fpr_pct": 0.8125000000000001,
+      "range": [
+        0.3,
+        2.5
+      ],
+      "pass": true
+    },
+    "G2": {
+      "per_key_fpr_pct": {
+        "1001": 0.7000000000000001,
+        "1002": 0.1,
+        "1003": 0.8,
+        "1004": 0.6,
+        "1005": 1.7000000000000002,
+        "1006": 1.0,
+        "1007": 1.3,
+        "1008": 0.3
+      },
+      "max_pct": 3.0,
+      "calibrated_keys": [
+        1001,
+        1002,
+        1003,
+        1004,
+        1005,
+        1006,
+        1007,
+        1008
+      ],
+      "n_calibrated": 8,
+      "stop": false
+    },
+    "H1": {
+      "per_key_fpr_pct": {
+        "1001": 0.8999999999999999,
+        "1002": 0.0,
+        "1003": 0.8,
+        "1004": 1.6,
+        "1005": 0.2,
+        "1006": 0.4,
+        "1007": 1.0999999999999999,
+        "1008": 0.4
+      },
+      "n_keys_above_max": 0,
+      "pooled_fpr_pct": 0.675
+    },
+    "levels": {
+      "0.25": {
+        "oracle": {
+          "acceptance": {
+            "per_key": [
+              0.99,
+              0.91,
+              0.98,
+              0.98,
+              1.0,
+              0.93,
+              0.95,
+              0.97
+            ],
+            "median": 0.975,
+            "ci95": [
+              0.935,
+              0.995
+            ]
+          },
+          "pooled4_detection_median": 1.0,
+          "p_le_0.05_median": 0.99,
+          "p_le_0.10_median": 1.0,
+          "acceptance_0.001_median": 0.85,
+          "exact_FA": {
+            "per_key": [
+              0.89,
+              0.84,
+              0.88,
+              0.88,
+              0.9,
+              0.85,
+              0.85,
+              0.88
+            ],
+            "median": 0.88,
+            "ci95": [
+              0.8448749999999999,
+              0.905
+            ]
+          },
+          "probe_acceptance_median": 0.08,
+          "probe_FA_median": 0.08,
+          "both_acceptance_median": 0.08,
+          "either_acceptance_median": 0.975,
+          "fluent_share_median": 0.9
+        },
+        "E": {
+          "acceptance": {
+            "per_key": [
+              0.98,
+              0.92,
+              0.965,
+              0.95,
+              0.975,
+              0.98,
+              0.975,
+              0.96
+            ],
+            "median": 0.97,
+            "ci95": [
+              0.95,
+              0.98
+            ]
+          },
+          "pooled4_detection_median": 1.0,
+          "p_le_0.05_median": 0.995,
+          "p_le_0.10_median": 0.995,
+          "acceptance_0.001_median": 0.8674999999999999
+        },
+        "random": {
+          "acceptance": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.01,
+              0.01,
+              0.0,
+              0.01
+            ],
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.005
+            ]
+          },
+          "pooled4_detection_median": 0.0,
+          "p_le_0.05_median": 0.02,
+          "p_le_0.10_median": 0.060000000000000005,
+          "acceptance_0.001_median": 0.0,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.01,
+              0.01,
+              0.0,
+              0.01
+            ],
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.005
+            ]
+          },
+          "probe_acceptance_median": 0.01,
+          "probe_FA_median": 0.01,
+          "both_acceptance_median": 0.0,
+          "either_acceptance_median": 0.01,
+          "fluent_share_median": 0.875
+        },
+        "v02_A_n64": {
+          "acceptance": {
+            "per_key": [
+              0.02,
+              0.0,
+              0.04,
+              0.11,
+              0.01,
+              0.0,
+              0.02,
+              0.01
+            ],
+            "median": 0.015,
+            "ci95": [
+              0.0,
+              0.045
+            ]
+          },
+          "pooled4_detection_median": 0.0,
+          "p_le_0.05_median": 0.055,
+          "p_le_0.10_median": 0.12,
+          "acceptance_0.001_median": 0.0,
+          "exact_FA": {
+            "per_key": [
+              0.02,
+              0.0,
+              0.04,
+              0.11,
+              0.01,
+              0.0,
+              0.02,
+              0.01
+            ],
+            "median": 0.015,
+            "ci95": [
+              0.0,
+              0.04
+            ]
+          },
+          "probe_acceptance_median": 0.025,
+          "probe_FA_median": 0.025,
+          "both_acceptance_median": 0.0,
+          "either_acceptance_median": 0.05,
+          "fluent_share_median": 0.9299999999999999,
+          "cos_to_key_per_key": [
+            0.0,
+            0.2613389492034912,
+            0.09666652232408524,
+            0.6850863099098206,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "acceptance_per_key": [
+            0.02,
+            0.0,
+            0.04,
+            0.11,
+            0.01,
+            0.0,
+            0.02,
+            0.01
+          ]
+        },
+        "v02_A_n256": {
+          "acceptance": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.04,
+              0.08,
+              0.1,
+              0.0,
+              0.02,
+              0.0
+            ],
+            "median": 0.01,
+            "ci95": [
+              0.0,
+              0.065
+            ]
+          },
+          "pooled4_detection_median": 0.06,
+          "p_le_0.05_median": 0.065,
+          "p_le_0.10_median": 0.14,
+          "acceptance_0.001_median": 0.0,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.04,
+              0.08,
+              0.1,
+              0.0,
+              0.02,
+              0.0
+            ],
+            "median": 0.01,
+            "ci95": [
+              0.0,
+              0.060000000000000005
+            ]
+          },
+          "probe_acceptance_median": 0.015,
+          "probe_FA_median": 0.015,
+          "both_acceptance_median": 0.0,
+          "either_acceptance_median": 0.045,
+          "fluent_share_median": 0.925,
+          "cos_to_key_per_key": [
+            0.06573480367660522,
+            0.15104076266288757,
+            0.09345727413892746,
+            0.718351423740387,
+            0.3699802756309509,
+            0.3620176911354065,
+            0.09596756100654602,
+            0.0
+          ],
+          "acceptance_per_key": [
+            0.0,
+            0.0,
+            0.04,
+            0.08,
+            0.1,
+            0.0,
+            0.02,
+            0.0
+          ]
+        },
+        "v02_A_n1024": {
+          "acceptance": {
+            "per_key": [
+              0.01,
+              0.07,
+              0.03,
+              0.09,
+              0.13,
+              0.01,
+              0.01,
+              0.0
+            ],
+            "median": 0.02,
+            "ci95": [
+              0.0,
+              0.085
+            ]
+          },
+          "pooled4_detection_median": 0.04,
+          "p_le_0.05_median": 0.09,
+          "p_le_0.10_median": 0.16999999999999998,
+          "acceptance_0.001_median": 0.0,
+          "exact_FA": {
+            "per_key": [
+              0.01,
+              0.06,
+              0.02,
+              0.09,
+              0.13,
+              0.01,
+              0.0,
+              0.0
+            ],
+            "median": 0.015,
+            "ci95": [
+              0.0,
+              0.08
+            ]
+          },
+          "probe_acceptance_median": 0.02,
+          "probe_FA_median": 0.02,
+          "both_acceptance_median": 0.0,
+          "either_acceptance_median": 0.060000000000000005,
+          "fluent_share_median": 0.92,
+          "cos_to_key_per_key": [
+            0.07290297746658325,
+            0.2267131358385086,
+            0.0938393622636795,
+            0.7538872957229614,
+            0.3676374852657318,
+            0.4926615357398987,
+            0.0,
+            0.0
+          ],
+          "acceptance_per_key": [
+            0.01,
+            0.07,
+            0.03,
+            0.09,
+            0.13,
+            0.01,
+            0.01,
+            0.0
+          ]
+        },
+        "v02_B_n64": {
+          "acceptance": {
+            "per_key": [
+              0.01,
+              0.0,
+              0.01,
+              0.24,
+              0.02,
+              0.2,
+              0.01,
+              0.0
+            ],
+            "median": 0.01,
+            "ci95": [
+              0.0,
+              0.15512499999999932
+            ]
+          },
+          "pooled4_detection_median": 0.0,
+          "p_le_0.05_median": 0.095,
+          "p_le_0.10_median": 0.18,
+          "acceptance_0.001_median": 0.0,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.01,
+              0.19,
+              0.02,
+              0.18,
+              0.01,
+              0.0
+            ],
+            "median": 0.01,
+            "ci95": [
+              0.0,
+              0.135
+            ]
+          },
+          "probe_acceptance_median": 0.03,
+          "probe_FA_median": 0.01,
+          "both_acceptance_median": 0.0,
+          "either_acceptance_median": 0.05500000000000001,
+          "fluent_share_median": 0.845,
+          "cos_to_key_per_key": [
+            0.008528435602784157,
+            0.0326419435441494,
+            0.056123264133930206,
+            0.1632988005876541,
+            0.07461179047822952,
+            0.05216463282704353,
+            0.025712842121720314,
+            -0.019091671332716942
+          ],
+          "acceptance_per_key": [
+            0.01,
+            0.0,
+            0.01,
+            0.24,
+            0.02,
+            0.2,
+            0.01,
+            0.0
+          ]
+        },
+        "v02_B_n256": {
+          "acceptance": {
+            "per_key": [
+              0.01,
+              0.09,
+              0.24,
+              0.03,
+              0.02,
+              0.4,
+              0.0,
+              0.0
+            ],
+            "median": 0.025,
+            "ci95": [
+              0.0,
+              0.21500000000000002
+            ]
+          },
+          "pooled4_detection_median": 0.06,
+          "p_le_0.05_median": 0.135,
+          "p_le_0.10_median": 0.245,
+          "acceptance_0.001_median": 0.0,
+          "exact_FA": {
+            "per_key": [
+              0.01,
+              0.08,
+              0.1,
+              0.02,
+              0.02,
+              0.32,
+              0.0,
+              0.0
+            ],
+            "median": 0.02,
+            "ci95": [
+              0.0,
+              0.11
+            ]
+          },
+          "probe_acceptance_median": 0.06,
+          "probe_FA_median": 0.025,
+          "both_acceptance_median": 0.0,
+          "either_acceptance_median": 0.07,
+          "fluent_share_median": 0.805,
+          "cos_to_key_per_key": [
+            0.01392857264727354,
+            0.03335847333073616,
+            0.05596684291958809,
+            0.17106309533119202,
+            0.09395994991064072,
+            0.08550336211919785,
+            0.03053182363510132,
+            -0.017557555809617043
+          ],
+          "acceptance_per_key": [
+            0.01,
+            0.09,
+            0.24,
+            0.03,
+            0.02,
+            0.4,
+            0.0,
+            0.0
+          ]
+        },
+        "v02_B_n1024": {
+          "acceptance": {
+            "per_key": [
+              0.0,
+              0.02,
+              0.3,
+              0.03,
+              0.05,
+              0.54,
+              0.05,
+              0.0
+            ],
+            "median": 0.04,
+            "ci95": [
+              0.0,
+              0.26
+            ]
+          },
+          "pooled4_detection_median": 0.08,
+          "p_le_0.05_median": 0.20500000000000002,
+          "p_le_0.10_median": 0.305,
+          "acceptance_0.001_median": 0.0,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.02,
+              0.18,
+              0.03,
+              0.05,
+              0.38,
+              0.03,
+              0.0
+            ],
+            "median": 0.03,
+            "ci95": [
+              0.0,
+              0.15
+            ]
+          },
+          "probe_acceptance_median": 0.07500000000000001,
+          "probe_FA_median": 0.03,
+          "both_acceptance_median": 0.0,
+          "either_acceptance_median": 0.13,
+          "fluent_share_median": 0.6799999999999999,
+          "cos_to_key_per_key": [
+            0.013854127377271652,
+            0.03352528065443039,
+            0.05581262707710266,
+            0.1554155796766281,
+            0.10650600492954254,
+            0.1122826337814331,
+            0.051593828946352005,
+            -0.01488376036286354
+          ],
+          "acceptance_per_key": [
+            0.0,
+            0.02,
+            0.3,
+            0.03,
+            0.05,
+            0.54,
+            0.05,
+            0.0
+          ]
+        },
+        "A2_joint_fpr": {
+          "both_median": 0.0,
+          "either_median": 0.019
+        },
+        "P1": {
+          "oracle_tpr_median": 0.975,
+          "min": 0.2,
+          "pass": true
+        },
+        "E1": {
+          "median_diff_exact_minus_probe": 0.8600000000000001,
+          "ci95": [
+            0.8049999999999999,
+            0.9
+          ],
+          "verdict": "exact test more powerful"
+        },
+        "X3_fluent_generic_steering_suffices": false,
+        "X1_bar": 0.44,
+        "X1_form_v02": {
+          "A": "not practical",
+          "B": "not practical"
+        }
+      },
+      "0.35": {
+        "oracle": {
+          "acceptance": {
+            "per_key": [
+              1.0,
+              0.95,
+              0.95,
+              0.98,
+              0.96,
+              0.88,
+              0.98,
+              0.96
+            ],
+            "median": 0.96,
+            "ci95": [
+              0.935,
+              0.99
+            ]
+          },
+          "pooled4_detection_median": 1.0,
+          "p_le_0.05_median": 0.985,
+          "p_le_0.10_median": 0.995,
+          "acceptance_0.001_median": 0.9299999999999999,
+          "exact_FA": {
+            "per_key": [
+              0.92,
+              0.86,
+              0.86,
+              0.89,
+              0.87,
+              0.83,
+              0.89,
+              0.86
+            ],
+            "median": 0.865,
+            "ci95": [
+              0.84,
+              0.905
+            ]
+          },
+          "probe_acceptance_median": 0.32,
+          "probe_FA_median": 0.28500000000000003,
+          "both_acceptance_median": 0.315,
+          "either_acceptance_median": 0.97,
+          "fluent_share_median": 0.9
+        },
+        "E": {
+          "acceptance": {
+            "per_key": [
+              1.0,
+              0.955,
+              0.975,
+              0.98,
+              0.975,
+              0.97,
+              0.985,
+              0.985
+            ],
+            "median": 0.9775,
+            "ci95": [
+              0.965,
+              0.9924999999999999
+            ]
+          },
+          "pooled4_detection_median": 1.0,
+          "p_le_0.05_median": 0.995,
+          "p_le_0.10_median": 1.0,
+          "acceptance_0.001_median": 0.94
+        },
+        "random": {
+          "acceptance": {
+            "per_key": [
+              0.02,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.02,
+              0.0,
+              0.0
+            ],
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.005
+            ]
+          },
+          "pooled4_detection_median": 0.0,
+          "p_le_0.05_median": 0.035,
+          "p_le_0.10_median": 0.075,
+          "acceptance_0.001_median": 0.0,
+          "exact_FA": {
+            "per_key": [
+              0.02,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.01,
+              0.0,
+              0.0
+            ],
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.005
+            ]
+          },
+          "probe_acceptance_median": 0.015,
+          "probe_FA_median": 0.01,
+          "both_acceptance_median": 0.0,
+          "either_acceptance_median": 0.02,
+          "fluent_share_median": 0.895
+        },
+        "v02_A_n64": {
+          "acceptance": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.0,
+              0.94,
+              0.84,
+              0.01,
+              0.02,
+              0.02
+            ],
+            "median": 0.015,
+            "ci95": [
+              0.0,
+              0.8101249999999993
+            ]
+          },
+          "pooled4_detection_median": 0.02,
+          "p_le_0.05_median": 0.07500000000000001,
+          "p_le_0.10_median": 0.155,
+          "acceptance_0.001_median": 0.005,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.0,
+              0.83,
+              0.83,
+              0.0,
+              0.02,
+              0.01
+            ],
+            "median": 0.005,
+            "ci95": [
+              0.0,
+              0.43
+            ]
+          },
+          "probe_acceptance_median": 0.11000000000000001,
+          "probe_FA_median": 0.07,
+          "both_acceptance_median": 0.0,
+          "either_acceptance_median": 0.185,
+          "fluent_share_median": 0.89,
+          "cos_to_key_per_key": [
+            0.06405696272850037,
+            0.0,
+            0.2559035122394562,
+            0.7475021481513977,
+            0.6037442088127136,
+            0.0,
+            0.14589208364486694,
+            0.0
+          ],
+          "acceptance_per_key": [
+            0.0,
+            0.0,
+            0.0,
+            0.94,
+            0.84,
+            0.01,
+            0.02,
+            0.02
+          ]
+        },
+        "v02_A_n256": {
+          "acceptance": {
+            "per_key": [
+              0.01,
+              0.0,
+              0.05,
+              0.16,
+              0.19,
+              0.15,
+              0.0,
+              0.05
+            ],
+            "median": 0.05,
+            "ci95": [
+              0.0,
+              0.155
+            ]
+          },
+          "pooled4_detection_median": 0.12000000000000001,
+          "p_le_0.05_median": 0.125,
+          "p_le_0.10_median": 0.255,
+          "acceptance_0.001_median": 0.0,
+          "exact_FA": {
+            "per_key": [
+              0.01,
+              0.0,
+              0.05,
+              0.16,
+              0.18,
+              0.15,
+              0.0,
+              0.05
+            ],
+            "median": 0.05,
+            "ci95": [
+              0.0,
+              0.15000000000000002
+            ]
+          },
+          "probe_acceptance_median": 0.035,
+          "probe_FA_median": 0.03,
+          "both_acceptance_median": 0.0,
+          "either_acceptance_median": 0.135,
+          "fluent_share_median": 0.9,
+          "cos_to_key_per_key": [
+            0.06446273624897003,
+            0.0,
+            0.09428159892559052,
+            0.7124669551849365,
+            0.351214736700058,
+            0.26829296350479126,
+            0.0,
+            0.0
+          ],
+          "acceptance_per_key": [
+            0.01,
+            0.0,
+            0.05,
+            0.16,
+            0.19,
+            0.15,
+            0.0,
+            0.05
+          ]
+        },
+        "v02_A_n1024": {
+          "acceptance": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.03,
+              0.14,
+              0.25,
+              0.02,
+              0.02,
+              0.0
+            ],
+            "median": 0.02,
+            "ci95": [
+              0.0,
+              0.11499999999999999
+            ]
+          },
+          "pooled4_detection_median": 0.02,
+          "p_le_0.05_median": 0.08,
+          "p_le_0.10_median": 0.16,
+          "acceptance_0.001_median": 0.0,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.03,
+              0.13,
+              0.25,
+              0.02,
+              0.01,
+              0.0
+            ],
+            "median": 0.015,
+            "ci95": [
+              0.0,
+              0.12012499999999932
+            ]
+          },
+          "probe_acceptance_median": 0.045,
+          "probe_FA_median": 0.04,
+          "both_acceptance_median": 0.0,
+          "either_acceptance_median": 0.10500000000000001,
+          "fluent_share_median": 0.89,
+          "cos_to_key_per_key": [
+            0.06501539796590805,
+            0.0,
+            0.08384867012500763,
+            0.750397264957428,
+            0.3575918674468994,
+            0.5193430185317993,
+            0.059184178709983826,
+            0.0
+          ],
+          "acceptance_per_key": [
+            0.0,
+            0.0,
+            0.03,
+            0.14,
+            0.25,
+            0.02,
+            0.02,
+            0.0
+          ]
+        },
+        "v02_B_n64": {
+          "acceptance": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.28,
+              0.03,
+              0.01,
+              0.35,
+              0.0,
+              0.0
+            ],
+            "median": 0.005,
+            "ci95": [
+              0.0,
+              0.24512499999999932
+            ]
+          },
+          "pooled4_detection_median": 0.0,
+          "p_le_0.05_median": 0.09,
+          "p_le_0.10_median": 0.17,
+          "acceptance_0.001_median": 0.0,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.2,
+              0.02,
+              0.01,
+              0.23,
+              0.0,
+              0.0
+            ],
+            "median": 0.005,
+            "ci95": [
+              0.0,
+              0.12512499999999932
+            ]
+          },
+          "probe_acceptance_median": 0.425,
+          "probe_FA_median": 0.0,
+          "both_acceptance_median": 0.0,
+          "either_acceptance_median": 0.53,
+          "fluent_share_median": 0.45,
+          "cos_to_key_per_key": [
+            0.005086045246571302,
+            0.020416179671883583,
+            0.05111630633473396,
+            0.12307979166507721,
+            0.11366987973451614,
+            0.06979783624410629,
+            0.007512294687330723,
+            -0.01156381331384182
+          ],
+          "acceptance_per_key": [
+            0.0,
+            0.0,
+            0.28,
+            0.03,
+            0.01,
+            0.35,
+            0.0,
+            0.0
+          ]
+        },
+        "v02_B_n256": {
+          "acceptance": {
+            "per_key": [
+              0.0,
+              0.05,
+              0.44,
+              0.02,
+              0.0,
+              0.46,
+              0.09,
+              0.0
+            ],
+            "median": 0.035,
+            "ci95": [
+              0.0,
+              0.3601249999999993
+            ]
+          },
+          "pooled4_detection_median": 0.08,
+          "p_le_0.05_median": 0.22,
+          "p_le_0.10_median": 0.41000000000000003,
+          "acceptance_0.001_median": 0.0,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.04,
+              0.25,
+              0.02,
+              0.0,
+              0.33,
+              0.01,
+              0.0
+            ],
+            "median": 0.015,
+            "ci95": [
+              0.0,
+              0.165
+            ]
+          },
+          "probe_acceptance_median": 0.56,
+          "probe_FA_median": 0.09000000000000001,
+          "both_acceptance_median": 0.025,
+          "either_acceptance_median": 0.665,
+          "fluent_share_median": 0.395,
+          "cos_to_key_per_key": [
+            0.006975119933485985,
+            0.027623508125543594,
+            0.05156855657696724,
+            0.1587628722190857,
+            0.10795506089925766,
+            0.09569762647151947,
+            0.04844140633940697,
+            -0.01385936327278614
+          ],
+          "acceptance_per_key": [
+            0.0,
+            0.05,
+            0.44,
+            0.02,
+            0.0,
+            0.46,
+            0.09,
+            0.0
+          ]
+        },
+        "v02_B_n1024": {
+          "acceptance": {
+            "per_key": [
+              0.0,
+              0.04,
+              0.45,
+              0.04,
+              0.0,
+              0.48,
+              0.11,
+              0.0
+            ],
+            "median": 0.04,
+            "ci95": [
+              0.0,
+              0.41
+            ]
+          },
+          "pooled4_detection_median": 0.06,
+          "p_le_0.05_median": 0.23500000000000001,
+          "p_le_0.10_median": 0.41500000000000004,
+          "acceptance_0.001_median": 0.005,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.02,
+              0.23,
+              0.04,
+              0.0,
+              0.3,
+              0.02,
+              0.0
+            ],
+            "median": 0.02,
+            "ci95": [
+              0.0,
+              0.185
+            ]
+          },
+          "probe_acceptance_median": 0.45499999999999996,
+          "probe_FA_median": 0.065,
+          "both_acceptance_median": 0.02,
+          "either_acceptance_median": 0.605,
+          "fluent_share_median": 0.39,
+          "cos_to_key_per_key": [
+            0.008622899651527405,
+            0.02957725338637829,
+            0.05028008297085762,
+            0.16388997435569763,
+            0.11313620209693909,
+            0.10332513600587845,
+            0.04885890334844589,
+            -0.015129905194044113
+          ],
+          "acceptance_per_key": [
+            0.0,
+            0.04,
+            0.45,
+            0.04,
+            0.0,
+            0.48,
+            0.11,
+            0.0
+          ]
+        },
+        "v03_A_n64": {
+          "acceptance": {
+            "per_key": [
+              0.02,
+              0.0,
+              0.02,
+              0.94,
+              0.85,
+              0.02,
+              0.0,
+              0.02
+            ],
+            "median": 0.02,
+            "ci95": [
+              0.0,
+              0.8051249999999993
+            ]
+          },
+          "pooled4_detection_median": 0.02,
+          "p_le_0.05_median": 0.07,
+          "p_le_0.10_median": 0.14500000000000002,
+          "acceptance_0.001_median": 0.0,
+          "exact_FA": {
+            "per_key": [
+              0.01,
+              0.0,
+              0.02,
+              0.83,
+              0.84,
+              0.02,
+              0.0,
+              0.02
+            ],
+            "median": 0.02,
+            "ci95": [
+              0.0,
+              0.445
+            ]
+          },
+          "probe_acceptance_median": 0.095,
+          "probe_FA_median": 0.045,
+          "both_acceptance_median": 0.0,
+          "either_acceptance_median": 0.19,
+          "fluent_share_median": 0.91,
+          "cos_to_key_per_key": [
+            0.06405696272850037,
+            0.0,
+            0.2559035122394562,
+            0.7475021481513977,
+            0.6037442088127136,
+            0.0,
+            0.14589208364486694,
+            0.0
+          ],
+          "acceptance_per_key": [
+            0.02,
+            0.0,
+            0.02,
+            0.94,
+            0.85,
+            0.02,
+            0.0,
+            0.02
+          ]
+        },
+        "v03_A_n256": {
+          "acceptance": {
+            "per_key": [
+              0.01,
+              0.0,
+              0.07,
+              0.12,
+              0.16,
+              0.16,
+              0.02,
+              0.0
+            ],
+            "median": 0.045000000000000005,
+            "ci95": [
+              0.0,
+              0.14
+            ]
+          },
+          "pooled4_detection_median": 0.04,
+          "p_le_0.05_median": 0.135,
+          "p_le_0.10_median": 0.215,
+          "acceptance_0.001_median": 0.0,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.05,
+              0.11,
+              0.16,
+              0.13,
+              0.02,
+              0.0
+            ],
+            "median": 0.035,
+            "ci95": [
+              0.0,
+              0.125
+            ]
+          },
+          "probe_acceptance_median": 0.07500000000000001,
+          "probe_FA_median": 0.06,
+          "both_acceptance_median": 0.0,
+          "either_acceptance_median": 0.14500000000000002,
+          "fluent_share_median": 0.875,
+          "cos_to_key_per_key": [
+            0.06446273624897003,
+            0.0,
+            0.09428159892559052,
+            0.7124669551849365,
+            0.351214736700058,
+            0.26829296350479126,
+            0.0,
+            0.0
+          ],
+          "acceptance_per_key": [
+            0.01,
+            0.0,
+            0.07,
+            0.12,
+            0.16,
+            0.16,
+            0.02,
+            0.0
+          ]
+        },
+        "v03_B_n64": {
+          "acceptance": {
+            "per_key": [
+              0.05,
+              0.0,
+              0.28,
+              0.04,
+              0.04,
+              0.38,
+              0.0,
+              0.01
+            ],
+            "median": 0.04,
+            "ci95": [
+              0.0,
+              0.2
+            ]
+          },
+          "pooled4_detection_median": 0.0,
+          "p_le_0.05_median": 0.13,
+          "p_le_0.10_median": 0.22,
+          "acceptance_0.001_median": 0.0,
+          "exact_FA": {
+            "per_key": [
+              0.05,
+              0.0,
+              0.17,
+              0.04,
+              0.04,
+              0.26,
+              0.0,
+              0.0
+            ],
+            "median": 0.04,
+            "ci95": [
+              0.0,
+              0.13512499999999933
+            ]
+          },
+          "probe_acceptance_median": 0.20500000000000002,
+          "probe_FA_median": 0.08,
+          "both_acceptance_median": 0.005,
+          "either_acceptance_median": 0.25,
+          "fluent_share_median": 0.65,
+          "cos_to_key_per_key": [
+            0.009279344230890274,
+            0.03425855562090874,
+            0.05111630633473396,
+            0.12068397551774979,
+            0.11366987973451614,
+            0.06979783624410629,
+            0.007512294687330723,
+            -0.01251510251313448
+          ],
+          "acceptance_per_key": [
+            0.05,
+            0.0,
+            0.28,
+            0.04,
+            0.04,
+            0.38,
+            0.0,
+            0.01
+          ]
+        },
+        "v03_B_n256": {
+          "acceptance": {
+            "per_key": [
+              0.0,
+              0.06,
+              0.43,
+              0.03,
+              0.0,
+              0.51,
+              0.09,
+              0.03
+            ],
+            "median": 0.045,
+            "ci95": [
+              0.0,
+              0.38512499999999933
+            ]
+          },
+          "pooled4_detection_median": 0.08,
+          "p_le_0.05_median": 0.175,
+          "p_le_0.10_median": 0.32,
+          "acceptance_0.001_median": 0.0,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.05,
+              0.21,
+              0.03,
+              0.0,
+              0.35,
+              0.08,
+              0.03
+            ],
+            "median": 0.04,
+            "ci95": [
+              0.0,
+              0.16999999999999998
+            ]
+          },
+          "probe_acceptance_median": 0.19,
+          "probe_FA_median": 0.13,
+          "both_acceptance_median": 0.02,
+          "either_acceptance_median": 0.35500000000000004,
+          "fluent_share_median": 0.7050000000000001,
+          "cos_to_key_per_key": [
+            0.01604517176747322,
+            0.027623508125543594,
+            0.05156855657696724,
+            0.1587628722190857,
+            0.10795506089925766,
+            0.09569762647151947,
+            0.028146129101514816,
+            -0.01671709306538105
+          ],
+          "acceptance_per_key": [
+            0.0,
+            0.06,
+            0.43,
+            0.03,
+            0.0,
+            0.51,
+            0.09,
+            0.03
+          ]
+        },
+        "v04_A_n64": {
+          "acceptance": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.05,
+              0.96,
+              0.17,
+              0.02,
+              0.01,
+              0.03
+            ],
+            "median": 0.025,
+            "ci95": [
+              0.0,
+              0.14500000000000002
+            ]
+          },
+          "pooled4_detection_median": 0.04,
+          "p_le_0.05_median": 0.065,
+          "p_le_0.10_median": 0.15000000000000002,
+          "acceptance_0.001_median": 0.005,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.05,
+              0.86,
+              0.17,
+              0.02,
+              0.01,
+              0.03
+            ],
+            "median": 0.025,
+            "ci95": [
+              0.0,
+              0.14512499999999934
+            ]
+          },
+          "probe_acceptance_median": 0.04,
+          "probe_FA_median": 0.04,
+          "both_acceptance_median": 0.005,
+          "either_acceptance_median": 0.135,
+          "fluent_share_median": 0.915,
+          "cos_to_key_per_key": [
+            0.06405696272850037,
+            0.17915117740631104,
+            0.2559035122394562,
+            0.7475021481513977,
+            0.39184537529945374,
+            0.0,
+            0.14589208364486694,
+            0.0
+          ],
+          "acceptance_per_key": [
+            0.0,
+            0.0,
+            0.05,
+            0.96,
+            0.17,
+            0.02,
+            0.01,
+            0.03
+          ]
+        },
+        "v04_A_n256": {
+          "acceptance": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.06,
+              0.22,
+              0.16,
+              0.13,
+              0.01,
+              0.03
+            ],
+            "median": 0.045,
+            "ci95": [
+              0.0,
+              0.155
+            ]
+          },
+          "pooled4_detection_median": 0.0,
+          "p_le_0.05_median": 0.14,
+          "p_le_0.10_median": 0.23,
+          "acceptance_0.001_median": 0.0,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.06,
+              0.18,
+              0.16,
+              0.12,
+              0.01,
+              0.03
+            ],
+            "median": 0.045,
+            "ci95": [
+              0.0,
+              0.14
+            ]
+          },
+          "probe_acceptance_median": 0.045,
+          "probe_FA_median": 0.045,
+          "both_acceptance_median": 0.0,
+          "either_acceptance_median": 0.115,
+          "fluent_share_median": 0.87,
+          "cos_to_key_per_key": [
+            0.06446273624897003,
+            0.0,
+            0.09428159892559052,
+            0.7124669551849365,
+            0.351214736700058,
+            0.26829296350479126,
+            0.0,
+            0.0
+          ],
+          "acceptance_per_key": [
+            0.0,
+            0.0,
+            0.06,
+            0.22,
+            0.16,
+            0.13,
+            0.01,
+            0.03
+          ]
+        },
+        "v04_B_n64": {
+          "acceptance": {
+            "per_key": [
+              0.04,
+              0.0,
+              0.31,
+              0.01,
+              0.01,
+              0.28,
+              0.0,
+              0.0
+            ],
+            "median": 0.01,
+            "ci95": [
+              0.0,
+              0.18512499999999932
+            ]
+          },
+          "pooled4_detection_median": 0.0,
+          "p_le_0.05_median": 0.065,
+          "p_le_0.10_median": 0.17,
+          "acceptance_0.001_median": 0.0,
+          "exact_FA": {
+            "per_key": [
+              0.04,
+              0.0,
+              0.12,
+              0.0,
+              0.0,
+              0.25,
+              0.0,
+              0.0
+            ],
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.1
+            ]
+          },
+          "probe_acceptance_median": 0.10500000000000001,
+          "probe_FA_median": 0.095,
+          "both_acceptance_median": 0.0,
+          "either_acceptance_median": 0.135,
+          "fluent_share_median": 0.8200000000000001,
+          "cos_to_key_per_key": [
+            0.009279344230890274,
+            0.03425855562090874,
+            0.049377333372831345,
+            0.11181569844484329,
+            0.11366987973451614,
+            0.07597073167562485,
+            0.021474096924066544,
+            -0.01544315367937088
+          ],
+          "acceptance_per_key": [
+            0.04,
+            0.0,
+            0.31,
+            0.01,
+            0.01,
+            0.28,
+            0.0,
+            0.0
+          ]
+        },
+        "v04_B_n256": {
+          "acceptance": {
+            "per_key": [
+              0.02,
+              0.01,
+              0.08,
+              0.06,
+              0.05,
+              0.5,
+              0.12,
+              0.02
+            ],
+            "median": 0.055,
+            "ci95": [
+              0.015,
+              0.12
+            ]
+          },
+          "pooled4_detection_median": 0.1,
+          "p_le_0.05_median": 0.16999999999999998,
+          "p_le_0.10_median": 0.34,
+          "acceptance_0.001_median": 0.0,
+          "exact_FA": {
+            "per_key": [
+              0.02,
+              0.01,
+              0.07,
+              0.05,
+              0.05,
+              0.31,
+              0.04,
+              0.02
+            ],
+            "median": 0.045,
+            "ci95": [
+              0.015,
+              0.08
+            ]
+          },
+          "probe_acceptance_median": 0.21999999999999997,
+          "probe_FA_median": 0.195,
+          "both_acceptance_median": 0.015,
+          "either_acceptance_median": 0.3,
+          "fluent_share_median": 0.85,
+          "cos_to_key_per_key": [
+            0.01604517176747322,
+            0.041397128254175186,
+            0.051750387996435165,
+            0.1587628722190857,
+            0.16722805798053741,
+            0.09569762647151947,
+            0.033032309263944626,
+            0.004096124786883593
+          ],
+          "acceptance_per_key": [
+            0.02,
+            0.01,
+            0.08,
+            0.06,
+            0.05,
+            0.5,
+            0.12,
+            0.02
+          ]
+        },
+        "A2_joint_fpr": {
+          "both_median": 0.0,
+          "either_median": 0.015
+        },
+        "P1": {
+          "oracle_tpr_median": 0.96,
+          "min": 0.2,
+          "pass": true
+        },
+        "E1": {
+          "median_diff_exact_minus_probe": 0.62,
+          "ci95": [
+            0.459875,
+            0.78
+          ],
+          "verdict": "exact test more powerful"
+        },
+        "X3_fluent_generic_steering_suffices": false,
+        "X1_bar": 0.4325,
+        "X1": {
+          "A": "not practical",
+          "B": "not practical"
+        },
+        "X1_form_v03": {
+          "A": "inconclusive",
+          "B": "not practical"
+        },
+        "X1_form_v02": {
+          "A": "not practical",
+          "B": "not practical"
+        }
+      },
+      "0.5": {
+        "oracle": {
+          "acceptance": {
+            "per_key": [
+              1.0,
+              0.95,
+              0.99,
+              0.98,
+              1.0,
+              0.99,
+              1.0,
+              0.97
+            ],
+            "median": 0.99,
+            "ci95": [
+              0.97,
+              1.0
+            ]
+          },
+          "pooled4_detection_median": 1.0,
+          "p_le_0.05_median": 0.99,
+          "p_le_0.10_median": 0.99,
+          "acceptance_0.001_median": 0.985,
+          "exact_FA": {
+            "per_key": [
+              0.9,
+              0.89,
+              0.91,
+              0.91,
+              0.9,
+              0.89,
+              0.9,
+              0.87
+            ],
+            "median": 0.9,
+            "ci95": [
+              0.87,
+              0.925
+            ]
+          },
+          "probe_acceptance_median": 0.86,
+          "probe_FA_median": 0.77,
+          "both_acceptance_median": 0.855,
+          "either_acceptance_median": 0.995,
+          "fluent_share_median": 0.9
+        },
+        "E": {
+          "acceptance": {
+            "per_key": [
+              1.0,
+              0.95,
+              0.995,
+              0.995,
+              0.99,
+              0.98,
+              1.0,
+              0.98
+            ],
+            "median": 0.9924999999999999,
+            "ci95": [
+              0.975,
+              1.0
+            ]
+          },
+          "pooled4_detection_median": 1.0,
+          "p_le_0.05_median": 0.995,
+          "p_le_0.10_median": 1.0,
+          "acceptance_0.001_median": 0.9775
+        },
+        "random": {
+          "acceptance": {
+            "per_key": [
+              0.01,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.02,
+              0.02,
+              0.0
+            ],
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.01
+            ]
+          },
+          "pooled4_detection_median": 0.0,
+          "p_le_0.05_median": 0.025,
+          "p_le_0.10_median": 0.06,
+          "acceptance_0.001_median": 0.0,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.02,
+              0.02,
+              0.0
+            ],
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.01
+            ]
+          },
+          "probe_acceptance_median": 0.13,
+          "probe_FA_median": 0.1,
+          "both_acceptance_median": 0.0,
+          "either_acceptance_median": 0.14,
+          "fluent_share_median": 0.82
+        },
+        "v02_A_n64": {
+          "acceptance": {
+            "per_key": [
+              0.02,
+              0.0,
+              0.03,
+              0.4,
+              0.08,
+              0.02,
+              0.0,
+              0.0
+            ],
+            "median": 0.02,
+            "ci95": [
+              0.0,
+              0.08
+            ]
+          },
+          "pooled4_detection_median": 0.04,
+          "p_le_0.05_median": 0.08,
+          "p_le_0.10_median": 0.14500000000000002,
+          "acceptance_0.001_median": 0.0,
+          "exact_FA": {
+            "per_key": [
+              0.02,
+              0.0,
+              0.03,
+              0.39,
+              0.08,
+              0.01,
+              0.0,
+              0.0
+            ],
+            "median": 0.015,
+            "ci95": [
+              0.0,
+              0.07
+            ]
+          },
+          "probe_acceptance_median": 0.22999999999999998,
+          "probe_FA_median": 0.22,
+          "both_acceptance_median": 0.0,
+          "either_acceptance_median": 0.33999999999999997,
+          "fluent_share_median": 0.865,
+          "cos_to_key_per_key": [
+            0.057711921632289886,
+            0.0,
+            0.0,
+            0.7405993342399597,
+            0.2587476074695587,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "acceptance_per_key": [
+            0.02,
+            0.0,
+            0.03,
+            0.4,
+            0.08,
+            0.02,
+            0.0,
+            0.0
+          ]
+        },
+        "v02_A_n256": {
+          "acceptance": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.01,
+              0.34,
+              0.21,
+              0.01,
+              0.0,
+              0.02
+            ],
+            "median": 0.01,
+            "ci95": [
+              0.0,
+              0.17012499999999933
+            ]
+          },
+          "pooled4_detection_median": 0.0,
+          "p_le_0.05_median": 0.05,
+          "p_le_0.10_median": 0.1,
+          "acceptance_0.001_median": 0.0,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.01,
+              0.33,
+              0.21,
+              0.01,
+              0.0,
+              0.01
+            ],
+            "median": 0.01,
+            "ci95": [
+              0.0,
+              0.175
+            ]
+          },
+          "probe_acceptance_median": 0.2,
+          "probe_FA_median": 0.13,
+          "both_acceptance_median": 0.0,
+          "either_acceptance_median": 0.27,
+          "fluent_share_median": 0.875,
+          "cos_to_key_per_key": [
+            0.051214877516031265,
+            0.0,
+            0.0,
+            0.7288324236869812,
+            0.3697103261947632,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "acceptance_per_key": [
+            0.0,
+            0.0,
+            0.01,
+            0.34,
+            0.21,
+            0.01,
+            0.0,
+            0.02
+          ]
+        },
+        "v02_A_n1024": {
+          "acceptance": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.67,
+              0.25,
+              0.29,
+              0.22,
+              0.0,
+              0.0
+            ],
+            "median": 0.11,
+            "ci95": [
+              0.0,
+              0.29500000000000004
+            ]
+          },
+          "pooled4_detection_median": 0.38,
+          "p_le_0.05_median": 0.275,
+          "p_le_0.10_median": 0.4,
+          "acceptance_0.001_median": 0.02,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.61,
+              0.21,
+              0.29,
+              0.22,
+              0.0,
+              0.0
+            ],
+            "median": 0.105,
+            "ci95": [
+              0.0,
+              0.29000000000000004
+            ]
+          },
+          "probe_acceptance_median": 0.20500000000000002,
+          "probe_FA_median": 0.10500000000000001,
+          "both_acceptance_median": 0.0,
+          "either_acceptance_median": 0.335,
+          "fluent_share_median": 0.83,
+          "cos_to_key_per_key": [
+            0.053232092410326004,
+            0.0,
+            0.4846861958503723,
+            0.7053593397140503,
+            0.3332243263721466,
+            0.24836882948875427,
+            0.0,
+            0.0
+          ],
+          "acceptance_per_key": [
+            0.0,
+            0.0,
+            0.67,
+            0.25,
+            0.29,
+            0.22,
+            0.0,
+            0.0
+          ]
+        },
+        "v02_B_n64": {
+          "acceptance": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.66,
+              0.07,
+              0.0,
+              0.29,
+              0.1,
+              0.0
+            ],
+            "median": 0.035,
+            "ci95": [
+              0.0,
+              0.275
+            ]
+          },
+          "pooled4_detection_median": 0.0,
+          "p_le_0.05_median": 0.07,
+          "p_le_0.10_median": 0.13999999999999999,
+          "acceptance_0.001_median": 0.0,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.02,
+              0.05,
+              0.0,
+              0.04,
+              0.03,
+              0.0
+            ],
+            "median": 0.01,
+            "ci95": [
+              0.0,
+              0.03512499999999932
+            ]
+          },
+          "probe_acceptance_median": 0.99,
+          "probe_FA_median": 0.07,
+          "both_acceptance_median": 0.005,
+          "either_acceptance_median": 0.995,
+          "fluent_share_median": 0.125,
+          "cos_to_key_per_key": [
+            0.004059267695993185,
+            0.020143048837780952,
+            0.0490950271487236,
+            0.14346741139888763,
+            0.11430219560861588,
+            0.09248942881822586,
+            0.024615375325083733,
+            -0.010595880448818207
+          ],
+          "acceptance_per_key": [
+            0.0,
+            0.0,
+            0.66,
+            0.07,
+            0.0,
+            0.29,
+            0.1,
+            0.0
+          ]
+        },
+        "v02_B_n256": {
+          "acceptance": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.54,
+              0.88,
+              0.0,
+              0.32,
+              0.06,
+              0.0
+            ],
+            "median": 0.03,
+            "ci95": [
+              0.0,
+              0.46512499999999934
+            ]
+          },
+          "pooled4_detection_median": 0.06,
+          "p_le_0.05_median": 0.15000000000000002,
+          "p_le_0.10_median": 0.225,
+          "acceptance_0.001_median": 0.0,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.13,
+              0.0,
+              0.0,
+              0.07,
+              0.0,
+              0.0
+            ],
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.05
+            ]
+          },
+          "probe_acceptance_median": 0.995,
+          "probe_FA_median": 0.03,
+          "both_acceptance_median": 0.03,
+          "either_acceptance_median": 0.995,
+          "fluent_share_median": 0.03,
+          "cos_to_key_per_key": [
+            0.008710373193025589,
+            0.022059213370084763,
+            0.05191853642463684,
+            0.2874153256416321,
+            0.11789997667074203,
+            0.09327181428670883,
+            0.03934469446539879,
+            -0.011249074712395668
+          ],
+          "acceptance_per_key": [
+            0.0,
+            0.0,
+            0.54,
+            0.88,
+            0.0,
+            0.32,
+            0.06,
+            0.0
+          ]
+        },
+        "v02_B_n1024": {
+          "acceptance": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.73,
+              0.86,
+              0.0,
+              0.45,
+              0.06,
+              0.0
+            ],
+            "median": 0.03,
+            "ci95": [
+              0.0,
+              0.685
+            ]
+          },
+          "pooled4_detection_median": 0.0,
+          "p_le_0.05_median": 0.155,
+          "p_le_0.10_median": 0.29500000000000004,
+          "acceptance_0.001_median": 0.0,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.17,
+              0.0,
+              0.0,
+              0.11,
+              0.0,
+              0.0
+            ],
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.075
+            ]
+          },
+          "probe_acceptance_median": 1.0,
+          "probe_FA_median": 0.015,
+          "both_acceptance_median": 0.03,
+          "either_acceptance_median": 1.0,
+          "fluent_share_median": 0.015,
+          "cos_to_key_per_key": [
+            0.007241945248097181,
+            0.019802149385213852,
+            0.05334850400686264,
+            0.2856481075286865,
+            0.11493988335132599,
+            0.0996883437037468,
+            0.040264349430799484,
+            -0.011163418181240559
+          ],
+          "acceptance_per_key": [
+            0.0,
+            0.0,
+            0.73,
+            0.86,
+            0.0,
+            0.45,
+            0.06,
+            0.0
+          ]
+        },
+        "v03_A_n64": {
+          "acceptance": {
+            "per_key": [
+              0.01,
+              0.0,
+              0.01,
+              0.34,
+              0.07,
+              0.02,
+              0.0,
+              0.0
+            ],
+            "median": 0.01,
+            "ci95": [
+              0.0,
+              0.07
+            ]
+          },
+          "pooled4_detection_median": 0.0,
+          "p_le_0.05_median": 0.06,
+          "p_le_0.10_median": 0.135,
+          "acceptance_0.001_median": 0.0,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.01,
+              0.29,
+              0.07,
+              0.02,
+              0.0,
+              0.0
+            ],
+            "median": 0.005,
+            "ci95": [
+              0.0,
+              0.06512499999999932
+            ]
+          },
+          "probe_acceptance_median": 0.21000000000000002,
+          "probe_FA_median": 0.10500000000000001,
+          "both_acceptance_median": 0.005,
+          "either_acceptance_median": 0.28500000000000003,
+          "fluent_share_median": 0.795,
+          "cos_to_key_per_key": [
+            0.0,
+            0.0,
+            0.0,
+            0.7405993342399597,
+            0.2587476074695587,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "acceptance_per_key": [
+            0.01,
+            0.0,
+            0.01,
+            0.34,
+            0.07,
+            0.02,
+            0.0,
+            0.0
+          ]
+        },
+        "v03_A_n256": {
+          "acceptance": {
+            "per_key": [
+              0.01,
+              0.0,
+              0.0,
+              0.32,
+              0.37,
+              0.01,
+              0.0,
+              0.0
+            ],
+            "median": 0.005,
+            "ci95": [
+              0.0,
+              0.185
+            ]
+          },
+          "pooled4_detection_median": 0.0,
+          "p_le_0.05_median": 0.035,
+          "p_le_0.10_median": 0.13,
+          "acceptance_0.001_median": 0.0,
+          "exact_FA": {
+            "per_key": [
+              0.01,
+              0.0,
+              0.0,
+              0.29,
+              0.36,
+              0.01,
+              0.0,
+              0.0
+            ],
+            "median": 0.005,
+            "ci95": [
+              0.0,
+              0.24
+            ]
+          },
+          "probe_acceptance_median": 0.20500000000000002,
+          "probe_FA_median": 0.145,
+          "both_acceptance_median": 0.0,
+          "either_acceptance_median": 0.215,
+          "fluent_share_median": 0.865,
+          "cos_to_key_per_key": [
+            0.051214877516031265,
+            0.0,
+            0.0,
+            0.7288324236869812,
+            0.3697103261947632,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "acceptance_per_key": [
+            0.01,
+            0.0,
+            0.0,
+            0.32,
+            0.37,
+            0.01,
+            0.0,
+            0.0
+          ]
+        },
+        "v03_B_n64": {
+          "acceptance": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.02,
+              0.03,
+              0.04,
+              0.27,
+              0.07,
+              0.0
+            ],
+            "median": 0.025,
+            "ci95": [
+              0.0,
+              0.07
+            ]
+          },
+          "pooled4_detection_median": 0.02,
+          "p_le_0.05_median": 0.1,
+          "p_le_0.10_median": 0.215,
+          "acceptance_0.001_median": 0.0,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.01,
+              0.0,
+              0.03,
+              0.09,
+              0.03,
+              0.0
+            ],
+            "median": 0.005,
+            "ci95": [
+              0.0,
+              0.04
+            ]
+          },
+          "probe_acceptance_median": 0.585,
+          "probe_FA_median": 0.245,
+          "both_acceptance_median": 0.005,
+          "either_acceptance_median": 0.585,
+          "fluent_share_median": 0.475,
+          "cos_to_key_per_key": [
+            0.01133776269853115,
+            0.020143048837780952,
+            0.04033787548542023,
+            0.14346741139888763,
+            0.13926295936107635,
+            0.11112520843744278,
+            0.024615375325083733,
+            -0.014748292975127697
+          ],
+          "acceptance_per_key": [
+            0.0,
+            0.0,
+            0.02,
+            0.03,
+            0.04,
+            0.27,
+            0.07,
+            0.0
+          ]
+        },
+        "v03_B_n256": {
+          "acceptance": {
+            "per_key": [
+              0.0,
+              0.01,
+              0.04,
+              0.08,
+              0.01,
+              0.28,
+              0.11,
+              0.0
+            ],
+            "median": 0.025,
+            "ci95": [
+              0.0,
+              0.11499999999999999
+            ]
+          },
+          "pooled4_detection_median": 0.02,
+          "p_le_0.05_median": 0.145,
+          "p_le_0.10_median": 0.255,
+          "acceptance_0.001_median": 0.0,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.01,
+              0.01,
+              0.05,
+              0.01,
+              0.09,
+              0.01,
+              0.0
+            ],
+            "median": 0.01,
+            "ci95": [
+              0.0,
+              0.04
+            ]
+          },
+          "probe_acceptance_median": 0.62,
+          "probe_FA_median": 0.1,
+          "both_acceptance_median": 0.015,
+          "either_acceptance_median": 0.62,
+          "fluent_share_median": 0.325,
+          "cos_to_key_per_key": [
+            0.0209498293697834,
+            0.022059213370084763,
+            0.05366582050919533,
+            0.160186305642128,
+            0.14207766950130463,
+            0.11458341777324677,
+            0.02541464939713478,
+            -0.013704112730920315
+          ],
+          "acceptance_per_key": [
+            0.0,
+            0.01,
+            0.04,
+            0.08,
+            0.01,
+            0.28,
+            0.11,
+            0.0
+          ]
+        },
+        "v04_A_n64": {
+          "acceptance": {
+            "per_key": [
+              0.02,
+              0.0,
+              0.01,
+              0.97,
+              0.02,
+              0.02,
+              0.02,
+              0.04
+            ],
+            "median": 0.02,
+            "ci95": [
+              0.004875000000000007,
+              0.045
+            ]
+          },
+          "pooled4_detection_median": 0.0,
+          "p_le_0.05_median": 0.1,
+          "p_le_0.10_median": 0.185,
+          "acceptance_0.001_median": 0.0,
+          "exact_FA": {
+            "per_key": [
+              0.01,
+              0.0,
+              0.01,
+              0.8,
+              0.02,
+              0.02,
+              0.01,
+              0.03
+            ],
+            "median": 0.015,
+            "ci95": [
+              0.0,
+              0.04
+            ]
+          },
+          "probe_acceptance_median": 0.3,
+          "probe_FA_median": 0.28500000000000003,
+          "both_acceptance_median": 0.0,
+          "either_acceptance_median": 0.315,
+          "fluent_share_median": 0.89,
+          "cos_to_key_per_key": [
+            0.0,
+            0.0,
+            0.0,
+            0.8733213543891907,
+            0.2587476074695587,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "acceptance_per_key": [
+            0.02,
+            0.0,
+            0.01,
+            0.97,
+            0.02,
+            0.02,
+            0.02,
+            0.04
+          ]
+        },
+        "v04_A_n256": {
+          "acceptance": {
+            "per_key": [
+              0.01,
+              0.0,
+              0.28,
+              0.97,
+              0.31,
+              0.01,
+              0.01,
+              0.02
+            ],
+            "median": 0.015,
+            "ci95": [
+              0.0,
+              0.32999999999999996
+            ]
+          },
+          "pooled4_detection_median": 0.04,
+          "p_le_0.05_median": 0.09,
+          "p_le_0.10_median": 0.2,
+          "acceptance_0.001_median": 0.0,
+          "exact_FA": {
+            "per_key": [
+              0.01,
+              0.0,
+              0.28,
+              0.71,
+              0.31,
+              0.01,
+              0.0,
+              0.02
+            ],
+            "median": 0.015,
+            "ci95": [
+              0.0,
+              0.32512499999999933
+            ]
+          },
+          "probe_acceptance_median": 0.35,
+          "probe_FA_median": 0.26,
+          "both_acceptance_median": 0.005,
+          "either_acceptance_median": 0.475,
+          "fluent_share_median": 0.92,
+          "cos_to_key_per_key": [
+            0.051214877516031265,
+            0.0,
+            0.2966332733631134,
+            0.9316183924674988,
+            0.3697103261947632,
+            0.0,
+            0.052797768265008926,
+            0.0
+          ],
+          "acceptance_per_key": [
+            0.01,
+            0.0,
+            0.28,
+            0.97,
+            0.31,
+            0.01,
+            0.01,
+            0.02
+          ]
+        },
+        "v04_B_n64": {
+          "acceptance": {
+            "per_key": [
+              0.01,
+              0.0,
+              0.59,
+              0.02,
+              0.04,
+              0.28,
+              0.11,
+              0.01
+            ],
+            "median": 0.03,
+            "ci95": [
+              0.0,
+              0.25
+            ]
+          },
+          "pooled4_detection_median": 0.04,
+          "p_le_0.05_median": 0.20500000000000002,
+          "p_le_0.10_median": 0.36,
+          "acceptance_0.001_median": 0.0,
+          "exact_FA": {
+            "per_key": [
+              0.01,
+              0.0,
+              0.13,
+              0.02,
+              0.04,
+              0.04,
+              0.03,
+              0.01
+            ],
+            "median": 0.025,
+            "ci95": [
+              0.004875000000000007,
+              0.05
+            ]
+          },
+          "probe_acceptance_median": 0.99,
+          "probe_FA_median": 0.235,
+          "both_acceptance_median": 0.01,
+          "either_acceptance_median": 0.99,
+          "fluent_share_median": 0.5,
+          "cos_to_key_per_key": [
+            0.01133776269853115,
+            0.020143048837780952,
+            0.04494798555970192,
+            0.14346741139888763,
+            0.175572469830513,
+            0.1038634330034256,
+            0.024615375325083733,
+            -0.0030674689915031195
+          ],
+          "acceptance_per_key": [
+            0.01,
+            0.0,
+            0.59,
+            0.02,
+            0.04,
+            0.28,
+            0.11,
+            0.01
+          ]
+        },
+        "v04_B_n256": {
+          "acceptance": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.58,
+              0.04,
+              0.04,
+              0.34,
+              0.1,
+              0.04
+            ],
+            "median": 0.04,
+            "ci95": [
+              0.0,
+              0.29512499999999936
+            ]
+          },
+          "pooled4_detection_median": 0.06,
+          "p_le_0.05_median": 0.2,
+          "p_le_0.10_median": 0.33,
+          "acceptance_0.001_median": 0.005,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.15,
+              0.03,
+              0.04,
+              0.12,
+              0.01,
+              0.04
+            ],
+            "median": 0.035,
+            "ci95": [
+              0.0,
+              0.095
+            ]
+          },
+          "probe_acceptance_median": 0.995,
+          "probe_FA_median": 0.265,
+          "both_acceptance_median": 0.025,
+          "either_acceptance_median": 1.0,
+          "fluent_share_median": 0.535,
+          "cos_to_key_per_key": [
+            0.013350165449082851,
+            0.022059213370084763,
+            0.05191853642463684,
+            0.160186305642128,
+            0.17780892550945282,
+            0.10544411092996597,
+            0.03178190067410469,
+            -0.023849450051784515
+          ],
+          "acceptance_per_key": [
+            0.0,
+            0.0,
+            0.58,
+            0.04,
+            0.04,
+            0.34,
+            0.1,
+            0.04
+          ]
+        },
+        "A2_joint_fpr": {
+          "both_median": 0.0,
+          "either_median": 0.027
+        },
+        "P1": {
+          "oracle_tpr_median": 0.99,
+          "min": 0.2,
+          "pass": true
+        },
+        "E1": {
+          "median_diff_exact_minus_probe": 0.135,
+          "ci95": [
+            0.02999999999999997,
+            0.255
+          ],
+          "verdict": "exact test more powerful"
+        },
+        "X3_fluent_generic_steering_suffices": false,
+        "X1_bar": 0.45,
+        "X1": {
+          "A": "not practical",
+          "B": "not practical"
+        },
+        "X1_form_v03": {
+          "A": "not practical",
+          "B": "not practical"
+        },
+        "X1_form_v02": {
+          "A": "not practical",
+          "B": "not practical"
+        }
+      },
+      "0.7": {
+        "oracle": {
+          "acceptance": {
+            "per_key": [
+              1.0,
+              0.41,
+              1.0,
+              1.0,
+              1.0,
+              0.98,
+              1.0,
+              0.99
+            ],
+            "median": 1.0,
+            "ci95": [
+              0.98,
+              1.0
+            ]
+          },
+          "pooled4_detection_median": 1.0,
+          "p_le_0.05_median": 1.0,
+          "p_le_0.10_median": 1.0,
+          "acceptance_0.001_median": 0.98,
+          "exact_FA": {
+            "per_key": [
+              0.9,
+              0.37,
+              0.95,
+              0.91,
+              0.91,
+              0.89,
+              0.9,
+              0.9
+            ],
+            "median": 0.9,
+            "ci95": [
+              0.86,
+              0.935
+            ]
+          },
+          "probe_acceptance_median": 1.0,
+          "probe_FA_median": 0.9,
+          "both_acceptance_median": 0.995,
+          "either_acceptance_median": 1.0,
+          "fluent_share_median": 0.9
+        },
+        "E": {
+          "acceptance": {
+            "per_key": [
+              0.995,
+              0.435,
+              1.0,
+              0.995,
+              0.99,
+              0.985,
+              1.0,
+              0.98
+            ],
+            "median": 0.9924999999999999,
+            "ci95": [
+              0.9775,
+              1.0
+            ]
+          },
+          "pooled4_detection_median": 1.0,
+          "p_le_0.05_median": 0.995,
+          "p_le_0.10_median": 0.9975,
+          "acceptance_0.001_median": 0.99
+        },
+        "random": {
+          "acceptance": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.04,
+              0.01,
+              0.0
+            ],
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.005
+            ]
+          },
+          "pooled4_detection_median": 0.0,
+          "p_le_0.05_median": 0.0,
+          "p_le_0.10_median": 0.02,
+          "acceptance_0.001_median": 0.0,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.04,
+              0.01,
+              0.0
+            ],
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.01
+            ]
+          },
+          "probe_acceptance_median": 0.555,
+          "probe_FA_median": 0.365,
+          "both_acceptance_median": 0.0,
+          "either_acceptance_median": 0.555,
+          "fluent_share_median": 0.73
+        },
+        "v02_A_n64": {
+          "acceptance": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.04,
+              0.49,
+              0.0,
+              0.0,
+              0.02,
+              0.0
+            ],
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.035
+            ]
+          },
+          "pooled4_detection_median": 0.0,
+          "p_le_0.05_median": 0.045,
+          "p_le_0.10_median": 0.13,
+          "acceptance_0.001_median": 0.0,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.04,
+              0.34,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.025
+            ]
+          },
+          "probe_acceptance_median": 0.8049999999999999,
+          "probe_FA_median": 0.13,
+          "both_acceptance_median": 0.0,
+          "either_acceptance_median": 0.8049999999999999,
+          "fluent_share_median": 0.27,
+          "cos_to_key_per_key": [
+            0.0,
+            0.0,
+            0.0,
+            0.6492139101028442,
+            0.27196839451789856,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "acceptance_per_key": [
+            0.0,
+            0.0,
+            0.04,
+            0.49,
+            0.0,
+            0.0,
+            0.02,
+            0.0
+          ]
+        },
+        "v02_A_n256": {
+          "acceptance": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.02,
+              1.0,
+              0.01,
+              0.02,
+              0.01,
+              0.0
+            ],
+            "median": 0.01,
+            "ci95": [
+              0.0,
+              0.03
+            ]
+          },
+          "pooled4_detection_median": 0.0,
+          "p_le_0.05_median": 0.05500000000000001,
+          "p_le_0.10_median": 0.125,
+          "acceptance_0.001_median": 0.0,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.01,
+              0.75,
+              0.01,
+              0.02,
+              0.0,
+              0.0
+            ],
+            "median": 0.005,
+            "ci95": [
+              0.0,
+              0.025
+            ]
+          },
+          "probe_acceptance_median": 0.905,
+          "probe_FA_median": 0.195,
+          "both_acceptance_median": 0.01,
+          "either_acceptance_median": 0.9099999999999999,
+          "fluent_share_median": 0.5249999999999999,
+          "cos_to_key_per_key": [
+            0.0,
+            0.0,
+            0.0,
+            0.9208454489707947,
+            0.27734681963920593,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "acceptance_per_key": [
+            0.0,
+            0.0,
+            0.02,
+            1.0,
+            0.01,
+            0.02,
+            0.01,
+            0.0
+          ]
+        },
+        "v02_A_n1024": {
+          "acceptance": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.02,
+              0.5,
+              0.0,
+              0.01,
+              0.01,
+              0.0
+            ],
+            "median": 0.005,
+            "ci95": [
+              0.0,
+              0.025
+            ]
+          },
+          "pooled4_detection_median": 0.0,
+          "p_le_0.05_median": 0.030000000000000002,
+          "p_le_0.10_median": 0.11,
+          "acceptance_0.001_median": 0.0,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.0,
+              0.47,
+              0.0,
+              0.01,
+              0.0,
+              0.0
+            ],
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.01
+            ]
+          },
+          "probe_acceptance_median": 0.89,
+          "probe_FA_median": 0.125,
+          "both_acceptance_median": 0.005,
+          "either_acceptance_median": 0.89,
+          "fluent_share_median": 0.13,
+          "cos_to_key_per_key": [
+            0.029374955222010612,
+            0.0,
+            0.10527049750089645,
+            0.6374302506446838,
+            0.20682880282402039,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "acceptance_per_key": [
+            0.0,
+            0.0,
+            0.02,
+            0.5,
+            0.0,
+            0.01,
+            0.01,
+            0.0
+          ]
+        },
+        "v02_B_n64": {
+          "acceptance": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.79,
+              0.66,
+              0.01,
+              0.19,
+              0.0,
+              0.0
+            ],
+            "median": 0.005,
+            "ci95": [
+              0.0,
+              0.6
+            ]
+          },
+          "pooled4_detection_median": 0.0,
+          "p_le_0.05_median": 0.1,
+          "p_le_0.10_median": 0.16999999999999998,
+          "acceptance_0.001_median": 0.0,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.02,
+              0.0,
+              0.01,
+              0.08,
+              0.0,
+              0.0
+            ],
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.02
+            ]
+          },
+          "probe_acceptance_median": 1.0,
+          "probe_FA_median": 0.005,
+          "both_acceptance_median": 0.005,
+          "either_acceptance_median": 1.0,
+          "fluent_share_median": 0.005,
+          "cos_to_key_per_key": [
+            0.006790525745600462,
+            0.01643959805369377,
+            0.05826547369360924,
+            0.24261778593063354,
+            0.12826672196388245,
+            0.07697221636772156,
+            0.03329547494649887,
+            -0.007256968878209591
+          ],
+          "acceptance_per_key": [
+            0.0,
+            0.0,
+            0.79,
+            0.66,
+            0.01,
+            0.19,
+            0.0,
+            0.0
+          ]
+        },
+        "v02_B_n256": {
+          "acceptance": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.74,
+              0.78,
+              0.0,
+              0.22,
+              0.0,
+              0.0
+            ],
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.6801249999999993
+            ]
+          },
+          "pooled4_detection_median": 0.0,
+          "p_le_0.05_median": 0.065,
+          "p_le_0.10_median": 0.15,
+          "acceptance_0.001_median": 0.0,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.05,
+              0.01,
+              0.0,
+              0.1,
+              0.0,
+              0.0
+            ],
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.04
+            ]
+          },
+          "probe_acceptance_median": 1.0,
+          "probe_FA_median": 0.01,
+          "both_acceptance_median": 0.0,
+          "either_acceptance_median": 1.0,
+          "fluent_share_median": 0.01,
+          "cos_to_key_per_key": [
+            0.007278205826878548,
+            0.021003391593694687,
+            0.05781443044543266,
+            0.2593401074409485,
+            0.12740828096866608,
+            0.08343546092510223,
+            0.031086817383766174,
+            -0.006027420051395893
+          ],
+          "acceptance_per_key": [
+            0.0,
+            0.0,
+            0.74,
+            0.78,
+            0.0,
+            0.22,
+            0.0,
+            0.0
+          ]
+        },
+        "v02_B_n1024": {
+          "acceptance": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.78,
+              0.63,
+              0.03,
+              0.17,
+              0.0,
+              0.0
+            ],
+            "median": 0.015,
+            "ci95": [
+              0.0,
+              0.565
+            ]
+          },
+          "pooled4_detection_median": 0.0,
+          "p_le_0.05_median": 0.04,
+          "p_le_0.10_median": 0.15,
+          "acceptance_0.001_median": 0.0,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.01,
+              0.0,
+              0.0,
+              0.09,
+              0.0,
+              0.0
+            ],
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.01
+            ]
+          },
+          "probe_acceptance_median": 1.0,
+          "probe_FA_median": 0.005,
+          "both_acceptance_median": 0.015,
+          "either_acceptance_median": 1.0,
+          "fluent_share_median": 0.005,
+          "cos_to_key_per_key": [
+            0.0076224310323596,
+            0.02141364850103855,
+            0.05475655943155289,
+            0.2578149735927582,
+            0.12931495904922485,
+            0.0880238488316536,
+            0.031732674688100815,
+            -0.005743470508605242
+          ],
+          "acceptance_per_key": [
+            0.0,
+            0.0,
+            0.78,
+            0.63,
+            0.03,
+            0.17,
+            0.0,
+            0.0
+          ]
+        },
+        "v03_A_n64": {
+          "acceptance": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.0,
+              0.61,
+              0.01,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.005
+            ]
+          },
+          "pooled4_detection_median": 0.0,
+          "p_le_0.05_median": 0.045,
+          "p_le_0.10_median": 0.11499999999999999,
+          "acceptance_0.001_median": 0.0,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.0,
+              0.48,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "probe_acceptance_median": 0.755,
+          "probe_FA_median": 0.15,
+          "both_acceptance_median": 0.0,
+          "either_acceptance_median": 0.755,
+          "fluent_share_median": 0.45,
+          "cos_to_key_per_key": [
+            0.0,
+            0.0,
+            0.0,
+            0.6492139101028442,
+            0.27196839451789856,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "acceptance_per_key": [
+            0.0,
+            0.0,
+            0.0,
+            0.61,
+            0.01,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "v03_A_n256": {
+          "acceptance": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.02,
+              0.98,
+              0.01,
+              0.03,
+              0.0,
+              0.0
+            ],
+            "median": 0.005,
+            "ci95": [
+              0.0,
+              0.035
+            ]
+          },
+          "pooled4_detection_median": 0.0,
+          "p_le_0.05_median": 0.025,
+          "p_le_0.10_median": 0.08,
+          "acceptance_0.001_median": 0.0,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.01,
+              0.79,
+              0.0,
+              0.03,
+              0.0,
+              0.0
+            ],
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.03
+            ]
+          },
+          "probe_acceptance_median": 0.8300000000000001,
+          "probe_FA_median": 0.32999999999999996,
+          "both_acceptance_median": 0.005,
+          "either_acceptance_median": 0.8300000000000001,
+          "fluent_share_median": 0.595,
+          "cos_to_key_per_key": [
+            0.0,
+            0.0,
+            0.0,
+            0.9208454489707947,
+            0.27734681963920593,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "acceptance_per_key": [
+            0.0,
+            0.0,
+            0.02,
+            0.98,
+            0.01,
+            0.03,
+            0.0,
+            0.0
+          ]
+        },
+        "v03_B_n64": {
+          "acceptance": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.11,
+              0.01,
+              0.0,
+              0.01,
+              0.0,
+              0.0
+            ],
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.015
+            ]
+          },
+          "pooled4_detection_median": 0.0,
+          "p_le_0.05_median": 0.065,
+          "p_le_0.10_median": 0.175,
+          "acceptance_0.001_median": 0.0,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.01,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "probe_acceptance_median": 0.94,
+          "probe_FA_median": 0.025,
+          "both_acceptance_median": 0.0,
+          "either_acceptance_median": 0.94,
+          "fluent_share_median": 0.025,
+          "cos_to_key_per_key": [
+            0.014149709604680538,
+            0.01643959805369377,
+            0.06403139978647232,
+            0.12701033055782318,
+            0.12826672196388245,
+            0.07249593734741211,
+            0.018781138584017754,
+            -0.029483530670404434
+          ],
+          "acceptance_per_key": [
+            0.0,
+            0.0,
+            0.11,
+            0.01,
+            0.0,
+            0.01,
+            0.0,
+            0.0
+          ]
+        },
+        "v03_B_n256": {
+          "acceptance": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.01,
+              0.01,
+              0.02,
+              0.17,
+              0.0,
+              0.0
+            ],
+            "median": 0.005,
+            "ci95": [
+              0.0,
+              0.025
+            ]
+          },
+          "pooled4_detection_median": 0.0,
+          "p_le_0.05_median": 0.07,
+          "p_le_0.10_median": 0.15,
+          "acceptance_0.001_median": 0.0,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.0,
+              0.01,
+              0.0,
+              0.12,
+              0.0,
+              0.0
+            ],
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.01
+            ]
+          },
+          "probe_acceptance_median": 0.95,
+          "probe_FA_median": 0.03,
+          "both_acceptance_median": 0.005,
+          "either_acceptance_median": 0.95,
+          "fluent_share_median": 0.03,
+          "cos_to_key_per_key": [
+            0.013504501432180405,
+            0.012739008292555809,
+            0.06691250205039978,
+            0.13872337341308594,
+            0.12740828096866608,
+            0.08343546092510223,
+            0.018514232710003853,
+            -0.028291799128055573
+          ],
+          "acceptance_per_key": [
+            0.0,
+            0.0,
+            0.01,
+            0.01,
+            0.02,
+            0.17,
+            0.0,
+            0.0
+          ]
+        },
+        "v04_A_n64": {
+          "acceptance": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.55,
+              0.99,
+              0.08,
+              0.02,
+              0.01,
+              0.0
+            ],
+            "median": 0.015,
+            "ci95": [
+              0.0,
+              0.51
+            ]
+          },
+          "pooled4_detection_median": 0.0,
+          "p_le_0.05_median": 0.055,
+          "p_le_0.10_median": 0.125,
+          "acceptance_0.001_median": 0.0,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.46,
+              0.74,
+              0.08,
+              0.02,
+              0.0,
+              0.0
+            ],
+            "median": 0.01,
+            "ci95": [
+              0.0,
+              0.4201249999999993
+            ]
+          },
+          "probe_acceptance_median": 0.9450000000000001,
+          "probe_FA_median": 0.365,
+          "both_acceptance_median": 0.005,
+          "either_acceptance_median": 0.9550000000000001,
+          "fluent_share_median": 0.725,
+          "cos_to_key_per_key": [
+            0.0,
+            0.0,
+            0.18712519109249115,
+            0.8925057053565979,
+            0.3247755169868469,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "acceptance_per_key": [
+            0.0,
+            0.0,
+            0.55,
+            0.99,
+            0.08,
+            0.02,
+            0.01,
+            0.0
+          ]
+        },
+        "v04_A_n256": {
+          "acceptance": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.26,
+              1.0,
+              0.02,
+              0.03,
+              0.0,
+              0.01
+            ],
+            "median": 0.015,
+            "ci95": [
+              0.0,
+              0.22999999999999998
+            ]
+          },
+          "pooled4_detection_median": 0.0,
+          "p_le_0.05_median": 0.095,
+          "p_le_0.10_median": 0.2,
+          "acceptance_0.001_median": 0.0,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.25,
+              0.86,
+              0.02,
+              0.03,
+              0.0,
+              0.0
+            ],
+            "median": 0.01,
+            "ci95": [
+              0.0,
+              0.22012499999999935
+            ]
+          },
+          "probe_acceptance_median": 0.985,
+          "probe_FA_median": 0.73,
+          "both_acceptance_median": 0.015,
+          "either_acceptance_median": 0.99,
+          "fluent_share_median": 0.89,
+          "cos_to_key_per_key": [
+            0.0,
+            0.0,
+            0.14435671269893646,
+            0.9286713004112244,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "acceptance_per_key": [
+            0.0,
+            0.0,
+            0.26,
+            1.0,
+            0.02,
+            0.03,
+            0.0,
+            0.01
+          ]
+        },
+        "v04_B_n64": {
+          "acceptance": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.76,
+              0.78,
+              0.03,
+              0.16,
+              0.0,
+              0.03
+            ],
+            "median": 0.03,
+            "ci95": [
+              0.0,
+              0.48
+            ]
+          },
+          "pooled4_detection_median": 0.0,
+          "p_le_0.05_median": 0.16499999999999998,
+          "p_le_0.10_median": 0.29000000000000004,
+          "acceptance_0.001_median": 0.005,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.0,
+              0.03,
+              0.02,
+              0.07,
+              0.0,
+              0.03
+            ],
+            "median": 0.01,
+            "ci95": [
+              0.0,
+              0.04
+            ]
+          },
+          "probe_acceptance_median": 1.0,
+          "probe_FA_median": 0.255,
+          "both_acceptance_median": 0.03,
+          "either_acceptance_median": 1.0,
+          "fluent_share_median": 0.255,
+          "cos_to_key_per_key": [
+            0.04445064440369606,
+            0.00851792935281992,
+            0.05983190983533859,
+            0.21692697703838348,
+            0.19715705513954163,
+            0.07697221636772156,
+            0.018781138584017754,
+            -0.028324203565716743
+          ],
+          "acceptance_per_key": [
+            0.0,
+            0.0,
+            0.76,
+            0.78,
+            0.03,
+            0.16,
+            0.0,
+            0.03
+          ]
+        },
+        "v04_B_n256": {
+          "acceptance": {
+            "per_key": [
+              0.01,
+              0.0,
+              0.67,
+              0.98,
+              0.02,
+              0.26,
+              0.0,
+              0.01
+            ],
+            "median": 0.015,
+            "ci95": [
+              0.0,
+              0.5258749999999952
+            ]
+          },
+          "pooled4_detection_median": 0.0,
+          "p_le_0.05_median": 0.12000000000000001,
+          "p_le_0.10_median": 0.26,
+          "acceptance_0.001_median": 0.0,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.02,
+              0.03,
+              0.01,
+              0.19,
+              0.0,
+              0.01
+            ],
+            "median": 0.01,
+            "ci95": [
+              0.0,
+              0.04
+            ]
+          },
+          "probe_acceptance_median": 1.0,
+          "probe_FA_median": 0.3,
+          "both_acceptance_median": 0.015,
+          "either_acceptance_median": 1.0,
+          "fluent_share_median": 0.3,
+          "cos_to_key_per_key": [
+            0.04572874680161476,
+            0.007995013147592545,
+            0.0785125270485878,
+            0.23665885627269745,
+            0.19630001485347748,
+            0.08343546092510223,
+            0.018514232710003853,
+            -0.029715219512581825
+          ],
+          "acceptance_per_key": [
+            0.01,
+            0.0,
+            0.67,
+            0.98,
+            0.02,
+            0.26,
+            0.0,
+            0.01
+          ]
+        },
+        "A2_joint_fpr": {
+          "both_median": 0.0,
+          "either_median": 0.026000000000000002
+        },
+        "P1": {
+          "oracle_tpr_median": 1.0,
+          "min": 0.2,
+          "pass": true
+        },
+        "E1": {
+          "median_diff_exact_minus_probe": 0.0,
+          "ci95": [
+            -0.020000000000000018,
+            0.0
+          ],
+          "verdict": "no clear difference"
+        },
+        "X3_fluent_generic_steering_suffices": false,
+        "X1_bar": 0.45,
+        "X1": {
+          "A": "not practical",
+          "B": "not practical"
+        },
+        "X1_form_v03": {
+          "A": "not practical",
+          "B": "not practical"
+        },
+        "X1_form_v02": {
+          "A": "not practical",
+          "B": "not practical"
+        }
+      }
+    },
+    "alpha_0.001": {
+      "pooled_fpr_model_pct": 0.1125,
+      "pooled_fpr_human_pct": 0.05
+    }
+  },
+  "S3": {
+    "G1": {
+      "pooled_fpr_pct": 0.8500000000000001,
+      "range": [
+        0.3,
+        2.5
+      ],
+      "pass": true
+    },
+    "G2": {
+      "per_key_fpr_pct": {
+        "1001": 0.5,
+        "1002": 3.4000000000000004,
+        "1003": 0.3,
+        "1004": 0.1,
+        "1005": 1.4000000000000001,
+        "1006": 0.4,
+        "1007": 0.4,
+        "1008": 0.3
+      },
+      "max_pct": 3.0,
+      "calibrated_keys": [
+        1001,
+        1003,
+        1004,
+        1005,
+        1006,
+        1007,
+        1008
+      ],
+      "n_calibrated": 7,
+      "stop": false
+    },
+    "H1": {
+      "per_key_fpr_pct": {
+        "1001": 1.0,
+        "1002": 1.0999999999999999,
+        "1003": 1.0,
+        "1004": 0.5,
+        "1005": 0.4,
+        "1006": 0.3,
+        "1007": 0.5,
+        "1008": 0.4
+      },
+      "n_keys_above_max": 0,
+      "pooled_fpr_pct": 0.6499999999999999
+    },
+    "levels": {
+      "0.25": {
+        "oracle": {
+          "acceptance": {
+            "per_key": [
+              0.97,
+              0.96,
+              0.84,
+              0.98,
+              0.88,
+              0.9,
+              0.96
+            ],
+            "median": 0.96,
+            "ci95": [
+              0.87,
+              0.98
+            ]
+          },
+          "pooled4_detection_median": 1.0,
+          "p_le_0.05_median": 0.98,
+          "p_le_0.10_median": 0.99,
+          "exact_FA": {
+            "per_key": [
+              0.87,
+              0.86,
+              0.76,
+              0.88,
+              0.8,
+              0.81,
+              0.87
+            ],
+            "median": 0.86,
+            "ci95": [
+              0.78,
+              0.89
+            ]
+          },
+          "probe_acceptance_median": 0.08,
+          "probe_FA_median": 0.08,
+          "both_acceptance_median": 0.08,
+          "either_acceptance_median": 0.96,
+          "fluent_share_median": 0.9
+        },
+        "E": {
+          "acceptance": {
+            "per_key": [
+              0.96,
+              0.945,
+              0.845,
+              0.97,
+              0.965,
+              0.92,
+              0.94
+            ],
+            "median": 0.945,
+            "ci95": [
+              0.905,
+              0.97
+            ]
+          },
+          "pooled4_detection_median": 1.0,
+          "p_le_0.05_median": 0.99,
+          "p_le_0.10_median": 0.995
+        },
+        "random": {
+          "acceptance": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.0,
+              0.01,
+              0.0,
+              0.0,
+              0.01
+            ],
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "pooled4_detection_median": 0.0,
+          "p_le_0.05_median": 0.02,
+          "p_le_0.10_median": 0.07,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.0,
+              0.01,
+              0.0,
+              0.0,
+              0.01
+            ],
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.01
+            ]
+          },
+          "probe_acceptance_median": 0.01,
+          "probe_FA_median": 0.01,
+          "both_acceptance_median": 0.0,
+          "either_acceptance_median": 0.01,
+          "fluent_share_median": 0.87
+        },
+        "v02_A_n64": {
+          "acceptance": {
+            "per_key": [
+              0.0,
+              0.01,
+              0.01,
+              0.02,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.01
+            ]
+          },
+          "pooled4_detection_median": 0.0,
+          "p_le_0.05_median": 0.04,
+          "p_le_0.10_median": 0.08,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.01,
+              0.01,
+              0.02,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.01
+            ]
+          },
+          "probe_acceptance_median": 0.03,
+          "probe_FA_median": 0.03,
+          "both_acceptance_median": 0.0,
+          "either_acceptance_median": 0.04,
+          "fluent_share_median": 0.92,
+          "cos_to_key_per_key": [
+            0.0,
+            0.09666652232408524,
+            0.6850863099098206,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "acceptance_per_key": [
+            0.0,
+            0.01,
+            0.01,
+            0.02,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "v02_A_n256": {
+          "acceptance": {
+            "per_key": [
+              0.0,
+              0.01,
+              0.03,
+              0.11,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.04
+            ]
+          },
+          "pooled4_detection_median": 0.0,
+          "p_le_0.05_median": 0.05,
+          "p_le_0.10_median": 0.14,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.01,
+              0.03,
+              0.09,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.04
+            ]
+          },
+          "probe_acceptance_median": 0.02,
+          "probe_FA_median": 0.02,
+          "both_acceptance_median": 0.0,
+          "either_acceptance_median": 0.03,
+          "fluent_share_median": 0.91,
+          "cos_to_key_per_key": [
+            0.06573480367660522,
+            0.09345727413892746,
+            0.718351423740387,
+            0.3699802756309509,
+            0.3620176911354065,
+            0.09596756100654602,
+            0.0
+          ],
+          "acceptance_per_key": [
+            0.0,
+            0.01,
+            0.03,
+            0.11,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "v02_A_n1024": {
+          "acceptance": {
+            "per_key": [
+              0.02,
+              0.01,
+              0.03,
+              0.18,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "median": 0.01,
+            "ci95": [
+              0.0,
+              0.04
+            ]
+          },
+          "pooled4_detection_median": 0.0,
+          "p_le_0.05_median": 0.05,
+          "p_le_0.10_median": 0.1,
+          "exact_FA": {
+            "per_key": [
+              0.02,
+              0.01,
+              0.03,
+              0.18,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "median": 0.01,
+            "ci95": [
+              0.0,
+              0.04
+            ]
+          },
+          "probe_acceptance_median": 0.01,
+          "probe_FA_median": 0.01,
+          "both_acceptance_median": 0.0,
+          "either_acceptance_median": 0.03,
+          "fluent_share_median": 0.92,
+          "cos_to_key_per_key": [
+            0.07290297746658325,
+            0.0938393622636795,
+            0.7538872957229614,
+            0.3676374852657318,
+            0.4926615357398987,
+            0.0,
+            0.0
+          ],
+          "acceptance_per_key": [
+            0.02,
+            0.01,
+            0.03,
+            0.18,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "v02_B_n64": {
+          "acceptance": {
+            "per_key": [
+              0.01,
+              0.0,
+              0.14,
+              0.02,
+              0.11,
+              0.01,
+              0.01
+            ],
+            "median": 0.01,
+            "ci95": [
+              0.0,
+              0.11
+            ]
+          },
+          "pooled4_detection_median": 0.04,
+          "p_le_0.05_median": 0.11,
+          "p_le_0.10_median": 0.23,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.12,
+              0.02,
+              0.1,
+              0.01,
+              0.0
+            ],
+            "median": 0.01,
+            "ci95": [
+              0.0,
+              0.1
+            ]
+          },
+          "probe_acceptance_median": 0.02,
+          "probe_FA_median": 0.01,
+          "both_acceptance_median": 0.0,
+          "either_acceptance_median": 0.07,
+          "fluent_share_median": 0.84,
+          "cos_to_key_per_key": [
+            0.008528435602784157,
+            0.056123264133930206,
+            0.1632988005876541,
+            0.07461179047822952,
+            0.05216463282704353,
+            0.025712842121720314,
+            -0.019091671332716942
+          ],
+          "acceptance_per_key": [
+            0.01,
+            0.0,
+            0.14,
+            0.02,
+            0.11,
+            0.01,
+            0.01
+          ]
+        },
+        "v02_B_n256": {
+          "acceptance": {
+            "per_key": [
+              0.01,
+              0.21,
+              0.0,
+              0.03,
+              0.29,
+              0.0,
+              0.0
+            ],
+            "median": 0.01,
+            "ci95": [
+              0.0,
+              0.22
+            ]
+          },
+          "pooled4_detection_median": 0.04,
+          "p_le_0.05_median": 0.1,
+          "p_le_0.10_median": 0.17,
+          "exact_FA": {
+            "per_key": [
+              0.01,
+              0.06,
+              0.0,
+              0.03,
+              0.22,
+              0.0,
+              0.0
+            ],
+            "median": 0.01,
+            "ci95": [
+              0.0,
+              0.07
+            ]
+          },
+          "probe_acceptance_median": 0.04,
+          "probe_FA_median": 0.02,
+          "both_acceptance_median": 0.0,
+          "either_acceptance_median": 0.06,
+          "fluent_share_median": 0.8,
+          "cos_to_key_per_key": [
+            0.01392857264727354,
+            0.05596684291958809,
+            0.17106309533119202,
+            0.09395994991064072,
+            0.08550336211919785,
+            0.03053182363510132,
+            -0.017557555809617043
+          ],
+          "acceptance_per_key": [
+            0.01,
+            0.21,
+            0.0,
+            0.03,
+            0.29,
+            0.0,
+            0.0
+          ]
+        },
+        "v02_B_n1024": {
+          "acceptance": {
+            "per_key": [
+              0.01,
+              0.17,
+              0.0,
+              0.05,
+              0.34,
+              0.01,
+              0.0
+            ],
+            "median": 0.01,
+            "ci95": [
+              0.0,
+              0.19
+            ]
+          },
+          "pooled4_detection_median": 0.04,
+          "p_le_0.05_median": 0.17,
+          "p_le_0.10_median": 0.27,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.11,
+              0.0,
+              0.05,
+              0.22,
+              0.01,
+              0.0
+            ],
+            "median": 0.01,
+            "ci95": [
+              0.0,
+              0.12
+            ]
+          },
+          "probe_acceptance_median": 0.07,
+          "probe_FA_median": 0.02,
+          "both_acceptance_median": 0.0,
+          "either_acceptance_median": 0.08,
+          "fluent_share_median": 0.6,
+          "cos_to_key_per_key": [
+            0.013854127377271652,
+            0.05581262707710266,
+            0.1554155796766281,
+            0.10650600492954254,
+            0.1122826337814331,
+            0.051593828946352005,
+            -0.01488376036286354
+          ],
+          "acceptance_per_key": [
+            0.01,
+            0.17,
+            0.0,
+            0.05,
+            0.34,
+            0.01,
+            0.0
+          ]
+        },
+        "A2_joint_fpr": {
+          "both_median": 0.0,
+          "either_median": 0.016
+        },
+        "P1": {
+          "oracle_tpr_median": 0.96,
+          "min": 0.2,
+          "pass": true
+        },
+        "E1": {
+          "median_diff_exact_minus_probe": 0.8,
+          "ci95": [
+            0.75,
+            0.8699999999999999
+          ],
+          "verdict": "exact test more powerful"
+        },
+        "X3_fluent_generic_steering_suffices": false,
+        "X1_bar": 0.43,
+        "X1_form_v02": {
+          "A": "not practical",
+          "B": "not practical"
+        }
+      },
+      "0.35": {
+        "oracle": {
+          "acceptance": {
+            "per_key": [
+              1.0,
+              0.94,
+              0.95,
+              0.92,
+              0.87,
+              0.97,
+              0.96
+            ],
+            "median": 0.95,
+            "ci95": [
+              0.91,
+              0.99
+            ]
+          },
+          "pooled4_detection_median": 1.0,
+          "p_le_0.05_median": 1.0,
+          "p_le_0.10_median": 1.0,
+          "exact_FA": {
+            "per_key": [
+              0.92,
+              0.85,
+              0.86,
+              0.84,
+              0.82,
+              0.88,
+              0.86
+            ],
+            "median": 0.86,
+            "ci95": [
+              0.82,
+              0.9
+            ]
+          },
+          "probe_acceptance_median": 0.22,
+          "probe_FA_median": 0.19,
+          "both_acceptance_median": 0.22,
+          "either_acceptance_median": 0.95,
+          "fluent_share_median": 0.9
+        },
+        "E": {
+          "acceptance": {
+            "per_key": [
+              1.0,
+              0.97,
+              0.965,
+              0.955,
+              0.965,
+              0.975,
+              0.985
+            ],
+            "median": 0.97,
+            "ci95": [
+              0.955,
+              0.99
+            ]
+          },
+          "pooled4_detection_median": 1.0,
+          "p_le_0.05_median": 0.995,
+          "p_le_0.10_median": 1.0
+        },
+        "random": {
+          "acceptance": {
+            "per_key": [
+              0.02,
+              0.0,
+              0.0,
+              0.0,
+              0.01,
+              0.0,
+              0.0
+            ],
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.01
+            ]
+          },
+          "pooled4_detection_median": 0.0,
+          "p_le_0.05_median": 0.03,
+          "p_le_0.10_median": 0.09,
+          "exact_FA": {
+            "per_key": [
+              0.02,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "probe_acceptance_median": 0.02,
+          "probe_FA_median": 0.01,
+          "both_acceptance_median": 0.0,
+          "either_acceptance_median": 0.02,
+          "fluent_share_median": 0.88
+        },
+        "v02_A_n64": {
+          "acceptance": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.87,
+              0.83,
+              0.01,
+              0.01,
+              0.01
+            ],
+            "median": 0.01,
+            "ci95": [
+              0.0,
+              0.84
+            ]
+          },
+          "pooled4_detection_median": 0.0,
+          "p_le_0.05_median": 0.05,
+          "p_le_0.10_median": 0.13,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.76,
+              0.82,
+              0.0,
+              0.01,
+              0.0
+            ],
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.77
+            ]
+          },
+          "probe_acceptance_median": 0.08,
+          "probe_FA_median": 0.06,
+          "both_acceptance_median": 0.0,
+          "either_acceptance_median": 0.23,
+          "fluent_share_median": 0.93,
+          "cos_to_key_per_key": [
+            0.06405696272850037,
+            0.2559035122394562,
+            0.7475021481513977,
+            0.6037442088127136,
+            0.0,
+            0.14589208364486694,
+            0.0
+          ],
+          "acceptance_per_key": [
+            0.0,
+            0.0,
+            0.87,
+            0.83,
+            0.01,
+            0.01,
+            0.01
+          ]
+        },
+        "v02_A_n256": {
+          "acceptance": {
+            "per_key": [
+              0.01,
+              0.05,
+              0.05,
+              0.24,
+              0.04,
+              0.0,
+              0.03
+            ],
+            "median": 0.04,
+            "ci95": [
+              0.0,
+              0.08
+            ]
+          },
+          "pooled4_detection_median": 0.12,
+          "p_le_0.05_median": 0.13,
+          "p_le_0.10_median": 0.29,
+          "exact_FA": {
+            "per_key": [
+              0.01,
+              0.05,
+              0.05,
+              0.23,
+              0.04,
+              0.0,
+              0.03
+            ],
+            "median": 0.04,
+            "ci95": [
+              0.0,
+              0.07
+            ]
+          },
+          "probe_acceptance_median": 0.03,
+          "probe_FA_median": 0.02,
+          "both_acceptance_median": 0.0,
+          "either_acceptance_median": 0.05,
+          "fluent_share_median": 0.91,
+          "cos_to_key_per_key": [
+            0.06446273624897003,
+            0.09428159892559052,
+            0.7124669551849365,
+            0.351214736700058,
+            0.26829296350479126,
+            0.0,
+            0.0
+          ],
+          "acceptance_per_key": [
+            0.01,
+            0.05,
+            0.05,
+            0.24,
+            0.04,
+            0.0,
+            0.03
+          ]
+        },
+        "v02_A_n1024": {
+          "acceptance": {
+            "per_key": [
+              0.0,
+              0.02,
+              0.05,
+              0.25,
+              0.0,
+              0.01,
+              0.0
+            ],
+            "median": 0.01,
+            "ci95": [
+              0.0,
+              0.06
+            ]
+          },
+          "pooled4_detection_median": 0.0,
+          "p_le_0.05_median": 0.03,
+          "p_le_0.10_median": 0.13,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.02,
+              0.04,
+              0.25,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.05
+            ]
+          },
+          "probe_acceptance_median": 0.04,
+          "probe_FA_median": 0.04,
+          "both_acceptance_median": 0.0,
+          "either_acceptance_median": 0.05,
+          "fluent_share_median": 0.9,
+          "cos_to_key_per_key": [
+            0.06501539796590805,
+            0.08384867012500763,
+            0.750397264957428,
+            0.3575918674468994,
+            0.5193430185317993,
+            0.059184178709983826,
+            0.0
+          ],
+          "acceptance_per_key": [
+            0.0,
+            0.02,
+            0.05,
+            0.25,
+            0.0,
+            0.01,
+            0.0
+          ]
+        },
+        "v02_B_n64": {
+          "acceptance": {
+            "per_key": [
+              0.01,
+              0.16,
+              0.0,
+              0.01,
+              0.23,
+              0.0,
+              0.0
+            ],
+            "median": 0.01,
+            "ci95": [
+              0.0,
+              0.17
+            ]
+          },
+          "pooled4_detection_median": 0.0,
+          "p_le_0.05_median": 0.11,
+          "p_le_0.10_median": 0.16,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.09,
+              0.0,
+              0.01,
+              0.16,
+              0.0,
+              0.0
+            ],
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.11
+            ]
+          },
+          "probe_acceptance_median": 0.27,
+          "probe_FA_median": 0.0,
+          "both_acceptance_median": 0.0,
+          "either_acceptance_median": 0.41,
+          "fluent_share_median": 0.38,
+          "cos_to_key_per_key": [
+            0.005086045246571302,
+            0.05111630633473396,
+            0.12307979166507721,
+            0.11366987973451614,
+            0.06979783624410629,
+            0.007512294687330723,
+            -0.01156381331384182
+          ],
+          "acceptance_per_key": [
+            0.01,
+            0.16,
+            0.0,
+            0.01,
+            0.23,
+            0.0,
+            0.0
+          ]
+        },
+        "v02_B_n256": {
+          "acceptance": {
+            "per_key": [
+              0.04,
+              0.22,
+              0.0,
+              0.0,
+              0.34,
+              0.04,
+              0.0
+            ],
+            "median": 0.04,
+            "ci95": [
+              0.0,
+              0.24
+            ]
+          },
+          "pooled4_detection_median": 0.04,
+          "p_le_0.05_median": 0.2,
+          "p_le_0.10_median": 0.31,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.14,
+              0.0,
+              0.0,
+              0.24,
+              0.0,
+              0.0
+            ],
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.16
+            ]
+          },
+          "probe_acceptance_median": 0.4,
+          "probe_FA_median": 0.01,
+          "both_acceptance_median": 0.0,
+          "either_acceptance_median": 0.53,
+          "fluent_share_median": 0.25,
+          "cos_to_key_per_key": [
+            0.006975119933485985,
+            0.05156855657696724,
+            0.1587628722190857,
+            0.10795506089925766,
+            0.09569762647151947,
+            0.04844140633940697,
+            -0.01385936327278614
+          ],
+          "acceptance_per_key": [
+            0.04,
+            0.22,
+            0.0,
+            0.0,
+            0.34,
+            0.04,
+            0.0
+          ]
+        },
+        "v02_B_n1024": {
+          "acceptance": {
+            "per_key": [
+              0.05,
+              0.24,
+              0.0,
+              0.0,
+              0.34,
+              0.07,
+              0.0
+            ],
+            "median": 0.05,
+            "ci95": [
+              0.0,
+              0.26
+            ]
+          },
+          "pooled4_detection_median": 0.04,
+          "p_le_0.05_median": 0.25,
+          "p_le_0.10_median": 0.44,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.11,
+              0.0,
+              0.0,
+              0.21,
+              0.02,
+              0.0
+            ],
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.12
+            ]
+          },
+          "probe_acceptance_median": 0.31,
+          "probe_FA_median": 0.01,
+          "both_acceptance_median": 0.02,
+          "either_acceptance_median": 0.53,
+          "fluent_share_median": 0.27,
+          "cos_to_key_per_key": [
+            0.008622899651527405,
+            0.05028008297085762,
+            0.16388997435569763,
+            0.11313620209693909,
+            0.10332513600587845,
+            0.04885890334844589,
+            -0.015129905194044113
+          ],
+          "acceptance_per_key": [
+            0.05,
+            0.24,
+            0.0,
+            0.0,
+            0.34,
+            0.07,
+            0.0
+          ]
+        },
+        "v03_A_n64": {
+          "acceptance": {
+            "per_key": [
+              0.02,
+              0.01,
+              0.9,
+              0.85,
+              0.01,
+              0.0,
+              0.02
+            ],
+            "median": 0.02,
+            "ci95": [
+              0.0,
+              0.86
+            ]
+          },
+          "pooled4_detection_median": 0.0,
+          "p_le_0.05_median": 0.06,
+          "p_le_0.10_median": 0.14,
+          "exact_FA": {
+            "per_key": [
+              0.01,
+              0.01,
+              0.81,
+              0.84,
+              0.01,
+              0.0,
+              0.02
+            ],
+            "median": 0.01,
+            "ci95": [
+              0.0,
+              0.81
+            ]
+          },
+          "probe_acceptance_median": 0.05,
+          "probe_FA_median": 0.04,
+          "both_acceptance_median": 0.0,
+          "either_acceptance_median": 0.24,
+          "fluent_share_median": 0.92,
+          "cos_to_key_per_key": [
+            0.06405696272850037,
+            0.2559035122394562,
+            0.7475021481513977,
+            0.6037442088127136,
+            0.0,
+            0.14589208364486694,
+            0.0
+          ],
+          "acceptance_per_key": [
+            0.02,
+            0.01,
+            0.9,
+            0.85,
+            0.01,
+            0.0,
+            0.02
+          ]
+        },
+        "v03_A_n256": {
+          "acceptance": {
+            "per_key": [
+              0.01,
+              0.06,
+              0.0,
+              0.15,
+              0.09,
+              0.0,
+              0.0
+            ],
+            "median": 0.01,
+            "ci95": [
+              0.0,
+              0.1
+            ]
+          },
+          "pooled4_detection_median": 0.04,
+          "p_le_0.05_median": 0.16,
+          "p_le_0.10_median": 0.29,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.05,
+              0.0,
+              0.15,
+              0.08,
+              0.0,
+              0.0
+            ],
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.09
+            ]
+          },
+          "probe_acceptance_median": 0.07,
+          "probe_FA_median": 0.06,
+          "both_acceptance_median": 0.0,
+          "either_acceptance_median": 0.1,
+          "fluent_share_median": 0.88,
+          "cos_to_key_per_key": [
+            0.06446273624897003,
+            0.09428159892559052,
+            0.7124669551849365,
+            0.351214736700058,
+            0.26829296350479126,
+            0.0,
+            0.0
+          ],
+          "acceptance_per_key": [
+            0.01,
+            0.06,
+            0.0,
+            0.15,
+            0.09,
+            0.0,
+            0.0
+          ]
+        },
+        "v03_B_n64": {
+          "acceptance": {
+            "per_key": [
+              0.04,
+              0.17,
+              0.0,
+              0.03,
+              0.15,
+              0.0,
+              0.01
+            ],
+            "median": 0.03,
+            "ci95": [
+              0.0,
+              0.14
+            ]
+          },
+          "pooled4_detection_median": 0.0,
+          "p_le_0.05_median": 0.11,
+          "p_le_0.10_median": 0.19,
+          "exact_FA": {
+            "per_key": [
+              0.04,
+              0.09,
+              0.0,
+              0.03,
+              0.1,
+              0.0,
+              0.0
+            ],
+            "median": 0.03,
+            "ci95": [
+              0.0,
+              0.08
+            ]
+          },
+          "probe_acceptance_median": 0.15,
+          "probe_FA_median": 0.06,
+          "both_acceptance_median": 0.01,
+          "either_acceptance_median": 0.15,
+          "fluent_share_median": 0.64,
+          "cos_to_key_per_key": [
+            0.009279344230890274,
+            0.05111630633473396,
+            0.12068397551774979,
+            0.11366987973451614,
+            0.06979783624410629,
+            0.007512294687330723,
+            -0.01251510251313448
+          ],
+          "acceptance_per_key": [
+            0.04,
+            0.17,
+            0.0,
+            0.03,
+            0.15,
+            0.0,
+            0.01
+          ]
+        },
+        "v03_B_n256": {
+          "acceptance": {
+            "per_key": [
+              0.0,
+              0.21,
+              0.01,
+              0.0,
+              0.29,
+              0.03,
+              0.0
+            ],
+            "median": 0.01,
+            "ci95": [
+              0.0,
+              0.22024999999999864
+            ]
+          },
+          "pooled4_detection_median": 0.0,
+          "p_le_0.05_median": 0.13,
+          "p_le_0.10_median": 0.22,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.12,
+              0.01,
+              0.0,
+              0.18,
+              0.03,
+              0.0
+            ],
+            "median": 0.01,
+            "ci95": [
+              0.0,
+              0.12
+            ]
+          },
+          "probe_acceptance_median": 0.15,
+          "probe_FA_median": 0.13,
+          "both_acceptance_median": 0.0,
+          "either_acceptance_median": 0.15,
+          "fluent_share_median": 0.74,
+          "cos_to_key_per_key": [
+            0.01604517176747322,
+            0.05156855657696724,
+            0.1587628722190857,
+            0.10795506089925766,
+            0.09569762647151947,
+            0.028146129101514816,
+            -0.01671709306538105
+          ],
+          "acceptance_per_key": [
+            0.0,
+            0.21,
+            0.01,
+            0.0,
+            0.29,
+            0.03,
+            0.0
+          ]
+        },
+        "v04_A_n64": {
+          "acceptance": {
+            "per_key": [
+              0.0,
+              0.02,
+              0.85,
+              0.18,
+              0.01,
+              0.01,
+              0.02
+            ],
+            "median": 0.02,
+            "ci95": [
+              0.0,
+              0.2
+            ]
+          },
+          "pooled4_detection_median": 0.04,
+          "p_le_0.05_median": 0.07,
+          "p_le_0.10_median": 0.13,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.02,
+              0.79,
+              0.18,
+              0.01,
+              0.01,
+              0.02
+            ],
+            "median": 0.02,
+            "ci95": [
+              0.0,
+              0.2
+            ]
+          },
+          "probe_acceptance_median": 0.04,
+          "probe_FA_median": 0.04,
+          "both_acceptance_median": 0.0,
+          "either_acceptance_median": 0.2,
+          "fluent_share_median": 0.91,
+          "cos_to_key_per_key": [
+            0.06405696272850037,
+            0.2559035122394562,
+            0.7475021481513977,
+            0.39184537529945374,
+            0.0,
+            0.14589208364486694,
+            0.0
+          ],
+          "acceptance_per_key": [
+            0.0,
+            0.02,
+            0.85,
+            0.18,
+            0.01,
+            0.01,
+            0.02
+          ]
+        },
+        "v04_A_n256": {
+          "acceptance": {
+            "per_key": [
+              0.0,
+              0.05,
+              0.04,
+              0.23,
+              0.06,
+              0.01,
+              0.02
+            ],
+            "median": 0.04,
+            "ci95": [
+              0.0,
+              0.09
+            ]
+          },
+          "pooled4_detection_median": 0.0,
+          "p_le_0.05_median": 0.2,
+          "p_le_0.10_median": 0.29,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.05,
+              0.03,
+              0.23,
+              0.05,
+              0.01,
+              0.02
+            ],
+            "median": 0.03,
+            "ci95": [
+              0.0,
+              0.07
+            ]
+          },
+          "probe_acceptance_median": 0.03,
+          "probe_FA_median": 0.03,
+          "both_acceptance_median": 0.0,
+          "either_acceptance_median": 0.07,
+          "fluent_share_median": 0.89,
+          "cos_to_key_per_key": [
+            0.06446273624897003,
+            0.09428159892559052,
+            0.7124669551849365,
+            0.351214736700058,
+            0.26829296350479126,
+            0.0,
+            0.0
+          ],
+          "acceptance_per_key": [
+            0.0,
+            0.05,
+            0.04,
+            0.23,
+            0.06,
+            0.01,
+            0.02
+          ]
+        },
+        "v04_B_n64": {
+          "acceptance": {
+            "per_key": [
+              0.04,
+              0.24,
+              0.0,
+              0.02,
+              0.16,
+              0.0,
+              0.01
+            ],
+            "median": 0.02,
+            "ci95": [
+              0.0,
+              0.17
+            ]
+          },
+          "pooled4_detection_median": 0.04,
+          "p_le_0.05_median": 0.08,
+          "p_le_0.10_median": 0.15,
+          "exact_FA": {
+            "per_key": [
+              0.04,
+              0.07,
+              0.0,
+              0.01,
+              0.15,
+              0.0,
+              0.01
+            ],
+            "median": 0.01,
+            "ci95": [
+              0.0,
+              0.09
+            ]
+          },
+          "probe_acceptance_median": 0.1,
+          "probe_FA_median": 0.08,
+          "both_acceptance_median": 0.0,
+          "either_acceptance_median": 0.12,
+          "fluent_share_median": 0.86,
+          "cos_to_key_per_key": [
+            0.009279344230890274,
+            0.049377333372831345,
+            0.11181569844484329,
+            0.11366987973451614,
+            0.07597073167562485,
+            0.021474096924066544,
+            -0.01544315367937088
+          ],
+          "acceptance_per_key": [
+            0.04,
+            0.24,
+            0.0,
+            0.02,
+            0.16,
+            0.0,
+            0.01
+          ]
+        },
+        "v04_B_n256": {
+          "acceptance": {
+            "per_key": [
+              0.01,
+              0.04,
+              0.0,
+              0.03,
+              0.37,
+              0.04,
+              0.03
+            ],
+            "median": 0.03,
+            "ci95": [
+              0.0,
+              0.06
+            ]
+          },
+          "pooled4_detection_median": 0.08,
+          "p_le_0.05_median": 0.21,
+          "p_le_0.10_median": 0.31,
+          "exact_FA": {
+            "per_key": [
+              0.01,
+              0.03,
+              0.0,
+              0.03,
+              0.25,
+              0.01,
+              0.03
+            ],
+            "median": 0.03,
+            "ci95": [
+              0.0,
+              0.06
+            ]
+          },
+          "probe_acceptance_median": 0.15,
+          "probe_FA_median": 0.15,
+          "both_acceptance_median": 0.01,
+          "either_acceptance_median": 0.15,
+          "fluent_share_median": 0.86,
+          "cos_to_key_per_key": [
+            0.01604517176747322,
+            0.051750387996435165,
+            0.1587628722190857,
+            0.16722805798053741,
+            0.09569762647151947,
+            0.033032309263944626,
+            0.004096124786883593
+          ],
+          "acceptance_per_key": [
+            0.01,
+            0.04,
+            0.0,
+            0.03,
+            0.37,
+            0.04,
+            0.03
+          ]
+        },
+        "A2_joint_fpr": {
+          "both_median": 0.0,
+          "either_median": 0.01
+        },
+        "P1": {
+          "oracle_tpr_median": 0.95,
+          "min": 0.2,
+          "pass": true
+        },
+        "E1": {
+          "median_diff_exact_minus_probe": 0.69,
+          "ci95": [
+            0.43000000000000005,
+            0.7899999999999999
+          ],
+          "verdict": "exact test more powerful"
+        },
+        "X3_fluent_generic_steering_suffices": false,
+        "X1_bar": 0.43,
+        "X1": {
+          "A": "not practical",
+          "B": "not practical"
+        },
+        "X1_form_v03": {
+          "A": "inconclusive",
+          "B": "not practical"
+        },
+        "X1_form_v02": {
+          "A": "inconclusive",
+          "B": "not practical"
+        }
+      },
+      "0.5": {
+        "oracle": {
+          "acceptance": {
+            "per_key": [
+              1.0,
+              0.99,
+              0.97,
+              1.0,
+              0.98,
+              1.0,
+              0.97
+            ],
+            "median": 0.99,
+            "ci95": [
+              0.97,
+              1.0
+            ]
+          },
+          "pooled4_detection_median": 1.0,
+          "p_le_0.05_median": 0.99,
+          "p_le_0.10_median": 0.99,
+          "exact_FA": {
+            "per_key": [
+              0.9,
+              0.91,
+              0.91,
+              0.9,
+              0.88,
+              0.9,
+              0.87
+            ],
+            "median": 0.9,
+            "ci95": [
+              0.87,
+              0.93
+            ]
+          },
+          "probe_acceptance_median": 0.84,
+          "probe_FA_median": 0.76,
+          "both_acceptance_median": 0.84,
+          "either_acceptance_median": 1.0,
+          "fluent_share_median": 0.9
+        },
+        "E": {
+          "acceptance": {
+            "per_key": [
+              1.0,
+              0.99,
+              0.995,
+              0.985,
+              0.975,
+              1.0,
+              0.99
+            ],
+            "median": 0.99,
+            "ci95": [
+              0.98,
+              1.0
+            ]
+          },
+          "pooled4_detection_median": 1.0,
+          "p_le_0.05_median": 0.995,
+          "p_le_0.10_median": 1.0
+        },
+        "random": {
+          "acceptance": {
+            "per_key": [
+              0.01,
+              0.0,
+              0.0,
+              0.0,
+              0.02,
+              0.0,
+              0.0
+            ],
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.01
+            ]
+          },
+          "pooled4_detection_median": 0.0,
+          "p_le_0.05_median": 0.02,
+          "p_le_0.10_median": 0.06,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.02,
+              0.0,
+              0.0
+            ],
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "probe_acceptance_median": 0.11,
+          "probe_FA_median": 0.1,
+          "both_acceptance_median": 0.0,
+          "either_acceptance_median": 0.11,
+          "fluent_share_median": 0.82
+        },
+        "v02_A_n64": {
+          "acceptance": {
+            "per_key": [
+              0.01,
+              0.01,
+              0.17,
+              0.12,
+              0.01,
+              0.0,
+              0.0
+            ],
+            "median": 0.01,
+            "ci95": [
+              0.0,
+              0.12024999999999864
+            ]
+          },
+          "pooled4_detection_median": 0.0,
+          "p_le_0.05_median": 0.04,
+          "p_le_0.10_median": 0.14,
+          "exact_FA": {
+            "per_key": [
+              0.01,
+              0.01,
+              0.16,
+              0.12,
+              0.01,
+              0.0,
+              0.0
+            ],
+            "median": 0.01,
+            "ci95": [
+              0.0,
+              0.12
+            ]
+          },
+          "probe_acceptance_median": 0.21,
+          "probe_FA_median": 0.2,
+          "both_acceptance_median": 0.0,
+          "either_acceptance_median": 0.28,
+          "fluent_share_median": 0.85,
+          "cos_to_key_per_key": [
+            0.057711921632289886,
+            0.0,
+            0.7405993342399597,
+            0.2587476074695587,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "acceptance_per_key": [
+            0.01,
+            0.01,
+            0.17,
+            0.12,
+            0.01,
+            0.0,
+            0.0
+          ]
+        },
+        "v02_A_n256": {
+          "acceptance": {
+            "per_key": [
+              0.0,
+              0.01,
+              0.09,
+              0.28,
+              0.01,
+              0.01,
+              0.01
+            ],
+            "median": 0.01,
+            "ci95": [
+              0.0,
+              0.11
+            ]
+          },
+          "pooled4_detection_median": 0.0,
+          "p_le_0.05_median": 0.04,
+          "p_le_0.10_median": 0.09,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.01,
+              0.09,
+              0.27,
+              0.01,
+              0.0,
+              0.0
+            ],
+            "median": 0.01,
+            "ci95": [
+              0.0,
+              0.09
+            ]
+          },
+          "probe_acceptance_median": 0.21,
+          "probe_FA_median": 0.09,
+          "both_acceptance_median": 0.0,
+          "either_acceptance_median": 0.21,
+          "fluent_share_median": 0.87,
+          "cos_to_key_per_key": [
+            0.051214877516031265,
+            0.0,
+            0.7288324236869812,
+            0.3697103261947632,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "acceptance_per_key": [
+            0.0,
+            0.01,
+            0.09,
+            0.28,
+            0.01,
+            0.01,
+            0.01
+          ]
+        },
+        "v02_A_n1024": {
+          "acceptance": {
+            "per_key": [
+              0.0,
+              0.35,
+              0.12,
+              0.36,
+              0.11,
+              0.0,
+              0.0
+            ],
+            "median": 0.11,
+            "ci95": [
+              0.0,
+              0.34
+            ]
+          },
+          "pooled4_detection_median": 0.44,
+          "p_le_0.05_median": 0.26,
+          "p_le_0.10_median": 0.4,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.31,
+              0.09,
+              0.36,
+              0.11,
+              0.0,
+              0.0
+            ],
+            "median": 0.09,
+            "ci95": [
+              0.0,
+              0.32
+            ]
+          },
+          "probe_acceptance_median": 0.18,
+          "probe_FA_median": 0.14,
+          "both_acceptance_median": 0.0,
+          "either_acceptance_median": 0.18,
+          "fluent_share_median": 0.83,
+          "cos_to_key_per_key": [
+            0.053232092410326004,
+            0.4846861958503723,
+            0.7053593397140503,
+            0.3332243263721466,
+            0.24836882948875427,
+            0.0,
+            0.0
+          ],
+          "acceptance_per_key": [
+            0.0,
+            0.35,
+            0.12,
+            0.36,
+            0.11,
+            0.0,
+            0.0
+          ]
+        },
+        "v02_B_n64": {
+          "acceptance": {
+            "per_key": [
+              0.0,
+              0.44,
+              0.0,
+              0.0,
+              0.13,
+              0.04,
+              0.0
+            ],
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.14
+            ]
+          },
+          "pooled4_detection_median": 0.0,
+          "p_le_0.05_median": 0.08,
+          "p_le_0.10_median": 0.14,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.01,
+              0.0,
+              0.0,
+              0.02,
+              0.0,
+              0.0
+            ],
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.01
+            ]
+          },
+          "probe_acceptance_median": 0.98,
+          "probe_FA_median": 0.06,
+          "both_acceptance_median": 0.0,
+          "either_acceptance_median": 0.98,
+          "fluent_share_median": 0.08,
+          "cos_to_key_per_key": [
+            0.004059267695993185,
+            0.0490950271487236,
+            0.14346741139888763,
+            0.11430219560861588,
+            0.09248942881822586,
+            0.024615375325083733,
+            -0.010595880448818207
+          ],
+          "acceptance_per_key": [
+            0.0,
+            0.44,
+            0.0,
+            0.0,
+            0.13,
+            0.04,
+            0.0
+          ]
+        },
+        "v02_B_n256": {
+          "acceptance": {
+            "per_key": [
+              0.01,
+              0.33,
+              0.68,
+              0.0,
+              0.2,
+              0.02,
+              0.0
+            ],
+            "median": 0.02,
+            "ci95": [
+              0.0,
+              0.35
+            ]
+          },
+          "pooled4_detection_median": 0.0,
+          "p_le_0.05_median": 0.22,
+          "p_le_0.10_median": 0.35,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.08,
+              0.0,
+              0.0,
+              0.04,
+              0.0,
+              0.0
+            ],
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.04
+            ]
+          },
+          "probe_acceptance_median": 0.99,
+          "probe_FA_median": 0.0,
+          "both_acceptance_median": 0.02,
+          "either_acceptance_median": 0.99,
+          "fluent_share_median": 0.0,
+          "cos_to_key_per_key": [
+            0.008710373193025589,
+            0.05191853642463684,
+            0.2874153256416321,
+            0.11789997667074203,
+            0.09327181428670883,
+            0.03934469446539879,
+            -0.011249074712395668
+          ],
+          "acceptance_per_key": [
+            0.01,
+            0.33,
+            0.68,
+            0.0,
+            0.2,
+            0.02,
+            0.0
+          ]
+        },
+        "v02_B_n1024": {
+          "acceptance": {
+            "per_key": [
+              0.0,
+              0.49,
+              0.67,
+              0.0,
+              0.33,
+              0.02,
+              0.01
+            ],
+            "median": 0.02,
+            "ci95": [
+              0.0,
+              0.52
+            ]
+          },
+          "pooled4_detection_median": 0.0,
+          "p_le_0.05_median": 0.23,
+          "p_le_0.10_median": 0.45,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.13,
+              0.0,
+              0.0,
+              0.07,
+              0.0,
+              0.0
+            ],
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.08
+            ]
+          },
+          "probe_acceptance_median": 1.0,
+          "probe_FA_median": 0.0,
+          "both_acceptance_median": 0.02,
+          "either_acceptance_median": 1.0,
+          "fluent_share_median": 0.0,
+          "cos_to_key_per_key": [
+            0.007241945248097181,
+            0.05334850400686264,
+            0.2856481075286865,
+            0.11493988335132599,
+            0.0996883437037468,
+            0.040264349430799484,
+            -0.011163418181240559
+          ],
+          "acceptance_per_key": [
+            0.0,
+            0.49,
+            0.67,
+            0.0,
+            0.33,
+            0.02,
+            0.01
+          ]
+        },
+        "v03_A_n64": {
+          "acceptance": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.17,
+              0.1,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.11
+            ]
+          },
+          "pooled4_detection_median": 0.0,
+          "p_le_0.05_median": 0.03,
+          "p_le_0.10_median": 0.1,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.15,
+              0.09,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.1
+            ]
+          },
+          "probe_acceptance_median": 0.16,
+          "probe_FA_median": 0.05,
+          "both_acceptance_median": 0.0,
+          "either_acceptance_median": 0.22,
+          "fluent_share_median": 0.79,
+          "cos_to_key_per_key": [
+            0.0,
+            0.0,
+            0.7405993342399597,
+            0.2587476074695587,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "acceptance_per_key": [
+            0.0,
+            0.0,
+            0.17,
+            0.1,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "v03_A_n256": {
+          "acceptance": {
+            "per_key": [
+              0.01,
+              0.0,
+              0.11,
+              0.39,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.12
+            ]
+          },
+          "pooled4_detection_median": 0.0,
+          "p_le_0.05_median": 0.03,
+          "p_le_0.10_median": 0.1,
+          "exact_FA": {
+            "per_key": [
+              0.01,
+              0.0,
+              0.11,
+              0.39,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.13
+            ]
+          },
+          "probe_acceptance_median": 0.21,
+          "probe_FA_median": 0.11,
+          "both_acceptance_median": 0.0,
+          "either_acceptance_median": 0.22,
+          "fluent_share_median": 0.83,
+          "cos_to_key_per_key": [
+            0.051214877516031265,
+            0.0,
+            0.7288324236869812,
+            0.3697103261947632,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "acceptance_per_key": [
+            0.01,
+            0.0,
+            0.11,
+            0.39,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "v03_B_n64": {
+          "acceptance": {
+            "per_key": [
+              0.0,
+              0.03,
+              0.01,
+              0.06,
+              0.15,
+              0.04,
+              0.0
+            ],
+            "median": 0.03,
+            "ci95": [
+              0.0,
+              0.08
+            ]
+          },
+          "pooled4_detection_median": 0.0,
+          "p_le_0.05_median": 0.09,
+          "p_le_0.10_median": 0.19,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.01,
+              0.0,
+              0.04,
+              0.03,
+              0.02,
+              0.0
+            ],
+            "median": 0.01,
+            "ci95": [
+              0.0,
+              0.03
+            ]
+          },
+          "probe_acceptance_median": 0.53,
+          "probe_FA_median": 0.23,
+          "both_acceptance_median": 0.01,
+          "either_acceptance_median": 0.53,
+          "fluent_share_median": 0.38,
+          "cos_to_key_per_key": [
+            0.01133776269853115,
+            0.04033787548542023,
+            0.14346741139888763,
+            0.13926295936107635,
+            0.11112520843744278,
+            0.024615375325083733,
+            -0.014748292975127697
+          ],
+          "acceptance_per_key": [
+            0.0,
+            0.03,
+            0.01,
+            0.06,
+            0.15,
+            0.04,
+            0.0
+          ]
+        },
+        "v03_B_n256": {
+          "acceptance": {
+            "per_key": [
+              0.0,
+              0.01,
+              0.02,
+              0.01,
+              0.16,
+              0.07,
+              0.0
+            ],
+            "median": 0.01,
+            "ci95": [
+              0.0,
+              0.08024999999999864
+            ]
+          },
+          "pooled4_detection_median": 0.04,
+          "p_le_0.05_median": 0.14,
+          "p_le_0.10_median": 0.25,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.0,
+              0.01,
+              0.05,
+              0.01,
+              0.0
+            ],
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.02
+            ]
+          },
+          "probe_acceptance_median": 0.53,
+          "probe_FA_median": 0.04,
+          "both_acceptance_median": 0.0,
+          "either_acceptance_median": 0.53,
+          "fluent_share_median": 0.32,
+          "cos_to_key_per_key": [
+            0.0209498293697834,
+            0.05366582050919533,
+            0.160186305642128,
+            0.14207766950130463,
+            0.11458341777324677,
+            0.02541464939713478,
+            -0.013704112730920315
+          ],
+          "acceptance_per_key": [
+            0.0,
+            0.01,
+            0.02,
+            0.01,
+            0.16,
+            0.07,
+            0.0
+          ]
+        },
+        "v04_A_n64": {
+          "acceptance": {
+            "per_key": [
+              0.02,
+              0.01,
+              0.95,
+              0.07,
+              0.0,
+              0.01,
+              0.0
+            ],
+            "median": 0.01,
+            "ci95": [
+              0.0,
+              0.09
+            ]
+          },
+          "pooled4_detection_median": 0.0,
+          "p_le_0.05_median": 0.09,
+          "p_le_0.10_median": 0.14,
+          "exact_FA": {
+            "per_key": [
+              0.01,
+              0.01,
+              0.78,
+              0.07,
+              0.0,
+              0.01,
+              0.0
+            ],
+            "median": 0.01,
+            "ci95": [
+              0.0,
+              0.09
+            ]
+          },
+          "probe_acceptance_median": 0.41,
+          "probe_FA_median": 0.38,
+          "both_acceptance_median": 0.0,
+          "either_acceptance_median": 0.43,
+          "fluent_share_median": 0.86,
+          "cos_to_key_per_key": [
+            0.0,
+            0.0,
+            0.8733213543891907,
+            0.2587476074695587,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "acceptance_per_key": [
+            0.02,
+            0.01,
+            0.95,
+            0.07,
+            0.0,
+            0.01,
+            0.0
+          ]
+        },
+        "v04_A_n256": {
+          "acceptance": {
+            "per_key": [
+              0.01,
+              0.07,
+              0.96,
+              0.41,
+              0.0,
+              0.0,
+              0.01
+            ],
+            "median": 0.01,
+            "ci95": [
+              0.0,
+              0.43
+            ]
+          },
+          "pooled4_detection_median": 0.04,
+          "p_le_0.05_median": 0.12,
+          "p_le_0.10_median": 0.19,
+          "exact_FA": {
+            "per_key": [
+              0.01,
+              0.07,
+              0.71,
+              0.4,
+              0.0,
+              0.0,
+              0.01
+            ],
+            "median": 0.01,
+            "ci95": [
+              0.0,
+              0.42
+            ]
+          },
+          "probe_acceptance_median": 0.37,
+          "probe_FA_median": 0.32,
+          "both_acceptance_median": 0.0,
+          "either_acceptance_median": 0.44,
+          "fluent_share_median": 0.92,
+          "cos_to_key_per_key": [
+            0.051214877516031265,
+            0.2966332733631134,
+            0.9316183924674988,
+            0.3697103261947632,
+            0.0,
+            0.052797768265008926,
+            0.0
+          ],
+          "acceptance_per_key": [
+            0.01,
+            0.07,
+            0.96,
+            0.41,
+            0.0,
+            0.0,
+            0.01
+          ]
+        },
+        "v04_B_n64": {
+          "acceptance": {
+            "per_key": [
+              0.01,
+              0.37,
+              0.01,
+              0.06,
+              0.2,
+              0.06,
+              0.02
+            ],
+            "median": 0.06,
+            "ci95": [
+              0.01,
+              0.22
+            ]
+          },
+          "pooled4_detection_median": 0.04,
+          "p_le_0.05_median": 0.21,
+          "p_le_0.10_median": 0.44,
+          "exact_FA": {
+            "per_key": [
+              0.01,
+              0.08,
+              0.01,
+              0.06,
+              0.04,
+              0.02,
+              0.02
+            ],
+            "median": 0.02,
+            "ci95": [
+              0.01,
+              0.06
+            ]
+          },
+          "probe_acceptance_median": 0.99,
+          "probe_FA_median": 0.23,
+          "both_acceptance_median": 0.02,
+          "either_acceptance_median": 0.99,
+          "fluent_share_median": 0.52,
+          "cos_to_key_per_key": [
+            0.01133776269853115,
+            0.04494798555970192,
+            0.14346741139888763,
+            0.175572469830513,
+            0.1038634330034256,
+            0.024615375325083733,
+            -0.0030674689915031195
+          ],
+          "acceptance_per_key": [
+            0.01,
+            0.37,
+            0.01,
+            0.06,
+            0.2,
+            0.06,
+            0.02
+          ]
+        },
+        "v04_B_n256": {
+          "acceptance": {
+            "per_key": [
+              0.0,
+              0.27,
+              0.01,
+              0.04,
+              0.15,
+              0.04,
+              0.05
+            ],
+            "median": 0.04,
+            "ci95": [
+              0.0,
+              0.17
+            ]
+          },
+          "pooled4_detection_median": 0.04,
+          "p_le_0.05_median": 0.2,
+          "p_le_0.10_median": 0.4,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.09,
+              0.01,
+              0.04,
+              0.05,
+              0.01,
+              0.04
+            ],
+            "median": 0.04,
+            "ci95": [
+              0.0,
+              0.06
+            ]
+          },
+          "probe_acceptance_median": 0.99,
+          "probe_FA_median": 0.26,
+          "both_acceptance_median": 0.04,
+          "either_acceptance_median": 1.0,
+          "fluent_share_median": 0.51,
+          "cos_to_key_per_key": [
+            0.013350165449082851,
+            0.05191853642463684,
+            0.160186305642128,
+            0.17780892550945282,
+            0.10544411092996597,
+            0.03178190067410469,
+            -0.023849450051784515
+          ],
+          "acceptance_per_key": [
+            0.0,
+            0.27,
+            0.01,
+            0.04,
+            0.15,
+            0.04,
+            0.05
+          ]
+        },
+        "A2_joint_fpr": {
+          "both_median": 0.0,
+          "either_median": 0.02
+        },
+        "P1": {
+          "oracle_tpr_median": 0.99,
+          "min": 0.2,
+          "pass": true
+        },
+        "E1": {
+          "median_diff_exact_minus_probe": 0.16000000000000003,
+          "ci95": [
+            0.040000000000000036,
+            0.30000000000000004
+          ],
+          "verdict": "exact test more powerful"
+        },
+        "X3_fluent_generic_steering_suffices": false,
+        "X1_bar": 0.45,
+        "X1": {
+          "A": "not practical",
+          "B": "not practical"
+        },
+        "X1_form_v03": {
+          "A": "not practical",
+          "B": "not practical"
+        },
+        "X1_form_v02": {
+          "A": "not practical",
+          "B": "not practical"
+        }
+      },
+      "0.7": {
+        "oracle": {
+          "acceptance": {
+            "per_key": [
+              0.99,
+              1.0,
+              1.0,
+              1.0,
+              0.97,
+              1.0,
+              1.0
+            ],
+            "median": 1.0,
+            "ci95": [
+              0.99,
+              1.0
+            ]
+          },
+          "pooled4_detection_median": 1.0,
+          "p_le_0.05_median": 1.0,
+          "p_le_0.10_median": 1.0,
+          "exact_FA": {
+            "per_key": [
+              0.9,
+              0.95,
+              0.91,
+              0.91,
+              0.88,
+              0.9,
+              0.9
+            ],
+            "median": 0.9,
+            "ci95": [
+              0.88,
+              0.94
+            ]
+          },
+          "probe_acceptance_median": 1.0,
+          "probe_FA_median": 0.9,
+          "both_acceptance_median": 1.0,
+          "either_acceptance_median": 1.0,
+          "fluent_share_median": 0.9
+        },
+        "E": {
+          "acceptance": {
+            "per_key": [
+              1.0,
+              1.0,
+              0.995,
+              0.99,
+              0.99,
+              1.0,
+              0.98
+            ],
+            "median": 0.995,
+            "ci95": [
+              0.985,
+              1.0
+            ]
+          },
+          "pooled4_detection_median": 1.0,
+          "p_le_0.05_median": 0.995,
+          "p_le_0.10_median": 1.0
+        },
+        "random": {
+          "acceptance": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.02,
+              0.01,
+              0.0
+            ],
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.01
+            ]
+          },
+          "pooled4_detection_median": 0.0,
+          "p_le_0.05_median": 0.01,
+          "p_le_0.10_median": 0.03,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.02,
+              0.01,
+              0.0
+            ],
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.01
+            ]
+          },
+          "probe_acceptance_median": 0.56,
+          "probe_FA_median": 0.26,
+          "both_acceptance_median": 0.0,
+          "either_acceptance_median": 0.56,
+          "fluent_share_median": 0.64
+        },
+        "v02_A_n64": {
+          "acceptance": {
+            "per_key": [
+              0.0,
+              0.04,
+              0.35,
+              0.02,
+              0.0,
+              0.01,
+              0.0
+            ],
+            "median": 0.01,
+            "ci95": [
+              0.0,
+              0.05
+            ]
+          },
+          "pooled4_detection_median": 0.0,
+          "p_le_0.05_median": 0.08,
+          "p_le_0.10_median": 0.16,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.04,
+              0.25,
+              0.01,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.05
+            ]
+          },
+          "probe_acceptance_median": 0.75,
+          "probe_FA_median": 0.12,
+          "both_acceptance_median": 0.0,
+          "either_acceptance_median": 0.75,
+          "fluent_share_median": 0.32,
+          "cos_to_key_per_key": [
+            0.0,
+            0.0,
+            0.6492139101028442,
+            0.27196839451789856,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "acceptance_per_key": [
+            0.0,
+            0.04,
+            0.35,
+            0.02,
+            0.0,
+            0.01,
+            0.0
+          ]
+        },
+        "v02_A_n256": {
+          "acceptance": {
+            "per_key": [
+              0.0,
+              0.02,
+              0.99,
+              0.02,
+              0.01,
+              0.01,
+              0.0
+            ],
+            "median": 0.01,
+            "ci95": [
+              0.0,
+              0.03
+            ]
+          },
+          "pooled4_detection_median": 0.0,
+          "p_le_0.05_median": 0.07,
+          "p_le_0.10_median": 0.16,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.01,
+              0.75,
+              0.02,
+              0.01,
+              0.0,
+              0.0
+            ],
+            "median": 0.01,
+            "ci95": [
+              0.0,
+              0.04
+            ]
+          },
+          "probe_acceptance_median": 0.98,
+          "probe_FA_median": 0.1,
+          "both_acceptance_median": 0.01,
+          "either_acceptance_median": 0.99,
+          "fluent_share_median": 0.36,
+          "cos_to_key_per_key": [
+            0.0,
+            0.0,
+            0.9208454489707947,
+            0.27734681963920593,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "acceptance_per_key": [
+            0.0,
+            0.02,
+            0.99,
+            0.02,
+            0.01,
+            0.01,
+            0.0
+          ]
+        },
+        "v02_A_n1024": {
+          "acceptance": {
+            "per_key": [
+              0.0,
+              0.03,
+              0.3,
+              0.0,
+              0.0,
+              0.01,
+              0.0
+            ],
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.04
+            ]
+          },
+          "pooled4_detection_median": 0.0,
+          "p_le_0.05_median": 0.04,
+          "p_le_0.10_median": 0.11,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.02,
+              0.29,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.020249999999998637
+            ]
+          },
+          "probe_acceptance_median": 0.88,
+          "probe_FA_median": 0.09,
+          "both_acceptance_median": 0.0,
+          "either_acceptance_median": 0.88,
+          "fluent_share_median": 0.1,
+          "cos_to_key_per_key": [
+            0.029374955222010612,
+            0.10527049750089645,
+            0.6374302506446838,
+            0.20682880282402039,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "acceptance_per_key": [
+            0.0,
+            0.03,
+            0.3,
+            0.0,
+            0.0,
+            0.01,
+            0.0
+          ]
+        },
+        "v02_B_n64": {
+          "acceptance": {
+            "per_key": [
+              0.0,
+              0.69,
+              0.45,
+              0.03,
+              0.12,
+              0.0,
+              0.0
+            ],
+            "median": 0.03,
+            "ci95": [
+              0.0,
+              0.48
+            ]
+          },
+          "pooled4_detection_median": 0.0,
+          "p_le_0.05_median": 0.19,
+          "p_le_0.10_median": 0.37,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.02,
+              0.0,
+              0.03,
+              0.05,
+              0.0,
+              0.0
+            ],
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.03
+            ]
+          },
+          "probe_acceptance_median": 1.0,
+          "probe_FA_median": 0.0,
+          "both_acceptance_median": 0.03,
+          "either_acceptance_median": 1.0,
+          "fluent_share_median": 0.0,
+          "cos_to_key_per_key": [
+            0.006790525745600462,
+            0.05826547369360924,
+            0.24261778593063354,
+            0.12826672196388245,
+            0.07697221636772156,
+            0.03329547494649887,
+            -0.007256968878209591
+          ],
+          "acceptance_per_key": [
+            0.0,
+            0.69,
+            0.45,
+            0.03,
+            0.12,
+            0.0,
+            0.0
+          ]
+        },
+        "v02_B_n256": {
+          "acceptance": {
+            "per_key": [
+              0.0,
+              0.61,
+              0.63,
+              0.02,
+              0.17,
+              0.0,
+              0.0
+            ],
+            "median": 0.02,
+            "ci95": [
+              0.0,
+              0.6
+            ]
+          },
+          "pooled4_detection_median": 0.0,
+          "p_le_0.05_median": 0.2,
+          "p_le_0.10_median": 0.37,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.02,
+              0.01,
+              0.01,
+              0.08,
+              0.0,
+              0.0
+            ],
+            "median": 0.01,
+            "ci95": [
+              0.0,
+              0.03
+            ]
+          },
+          "probe_acceptance_median": 1.0,
+          "probe_FA_median": 0.01,
+          "both_acceptance_median": 0.02,
+          "either_acceptance_median": 1.0,
+          "fluent_share_median": 0.01,
+          "cos_to_key_per_key": [
+            0.007278205826878548,
+            0.05781443044543266,
+            0.2593401074409485,
+            0.12740828096866608,
+            0.08343546092510223,
+            0.031086817383766174,
+            -0.006027420051395893
+          ],
+          "acceptance_per_key": [
+            0.0,
+            0.61,
+            0.63,
+            0.02,
+            0.17,
+            0.0,
+            0.0
+          ]
+        },
+        "v02_B_n1024": {
+          "acceptance": {
+            "per_key": [
+              0.0,
+              0.71,
+              0.46,
+              0.03,
+              0.06,
+              0.0,
+              0.0
+            ],
+            "median": 0.03,
+            "ci95": [
+              0.0,
+              0.49
+            ]
+          },
+          "pooled4_detection_median": 0.0,
+          "p_le_0.05_median": 0.15,
+          "p_le_0.10_median": 0.34,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.01,
+              0.0,
+              0.0,
+              0.04,
+              0.0,
+              0.0
+            ],
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.01
+            ]
+          },
+          "probe_acceptance_median": 1.0,
+          "probe_FA_median": 0.0,
+          "both_acceptance_median": 0.03,
+          "either_acceptance_median": 1.0,
+          "fluent_share_median": 0.0,
+          "cos_to_key_per_key": [
+            0.0076224310323596,
+            0.05475655943155289,
+            0.2578149735927582,
+            0.12931495904922485,
+            0.0880238488316536,
+            0.031732674688100815,
+            -0.005743470508605242
+          ],
+          "acceptance_per_key": [
+            0.0,
+            0.71,
+            0.46,
+            0.03,
+            0.06,
+            0.0,
+            0.0
+          ]
+        },
+        "v03_A_n64": {
+          "acceptance": {
+            "per_key": [
+              0.0,
+              0.01,
+              0.41,
+              0.02,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.03
+            ]
+          },
+          "pooled4_detection_median": 0.0,
+          "p_le_0.05_median": 0.04,
+          "p_le_0.10_median": 0.09,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.31,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "probe_acceptance_median": 0.71,
+          "probe_FA_median": 0.15,
+          "both_acceptance_median": 0.0,
+          "either_acceptance_median": 0.71,
+          "fluent_share_median": 0.51,
+          "cos_to_key_per_key": [
+            0.0,
+            0.0,
+            0.6492139101028442,
+            0.27196839451789856,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "acceptance_per_key": [
+            0.0,
+            0.01,
+            0.41,
+            0.02,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "v03_A_n256": {
+          "acceptance": {
+            "per_key": [
+              0.0,
+              0.02,
+              0.97,
+              0.01,
+              0.01,
+              0.0,
+              0.01
+            ],
+            "median": 0.01,
+            "ci95": [
+              0.0,
+              0.03
+            ]
+          },
+          "pooled4_detection_median": 0.0,
+          "p_le_0.05_median": 0.04,
+          "p_le_0.10_median": 0.14,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.01,
+              0.78,
+              0.0,
+              0.01,
+              0.0,
+              0.0
+            ],
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.02
+            ]
+          },
+          "probe_acceptance_median": 0.86,
+          "probe_FA_median": 0.29,
+          "both_acceptance_median": 0.01,
+          "either_acceptance_median": 0.86,
+          "fluent_share_median": 0.47,
+          "cos_to_key_per_key": [
+            0.0,
+            0.0,
+            0.9208454489707947,
+            0.27734681963920593,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "acceptance_per_key": [
+            0.0,
+            0.02,
+            0.97,
+            0.01,
+            0.01,
+            0.0,
+            0.01
+          ]
+        },
+        "v03_B_n64": {
+          "acceptance": {
+            "per_key": [
+              0.0,
+              0.06,
+              0.0,
+              0.01,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.01
+            ]
+          },
+          "pooled4_detection_median": 0.0,
+          "p_le_0.05_median": 0.05,
+          "p_le_0.10_median": 0.16,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.01,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "probe_acceptance_median": 0.9,
+          "probe_FA_median": 0.03,
+          "both_acceptance_median": 0.0,
+          "either_acceptance_median": 0.9,
+          "fluent_share_median": 0.03,
+          "cos_to_key_per_key": [
+            0.014149709604680538,
+            0.06403139978647232,
+            0.12701033055782318,
+            0.12826672196388245,
+            0.07249593734741211,
+            0.018781138584017754,
+            -0.029483530670404434
+          ],
+          "acceptance_per_key": [
+            0.0,
+            0.06,
+            0.0,
+            0.01,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "v03_B_n256": {
+          "acceptance": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.0,
+              0.04,
+              0.1,
+              0.0,
+              0.0
+            ],
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.05
+            ]
+          },
+          "pooled4_detection_median": 0.0,
+          "p_le_0.05_median": 0.04,
+          "p_le_0.10_median": 0.11,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.0,
+              0.02,
+              0.09,
+              0.0,
+              0.0
+            ],
+            "median": 0.0,
+            "ci95": [
+              0.0,
+              0.02
+            ]
+          },
+          "probe_acceptance_median": 0.94,
+          "probe_FA_median": 0.04,
+          "both_acceptance_median": 0.0,
+          "either_acceptance_median": 0.94,
+          "fluent_share_median": 0.04,
+          "cos_to_key_per_key": [
+            0.013504501432180405,
+            0.06691250205039978,
+            0.13872337341308594,
+            0.12740828096866608,
+            0.08343546092510223,
+            0.018514232710003853,
+            -0.028291799128055573
+          ],
+          "acceptance_per_key": [
+            0.0,
+            0.0,
+            0.0,
+            0.04,
+            0.1,
+            0.0,
+            0.0
+          ]
+        },
+        "v04_A_n64": {
+          "acceptance": {
+            "per_key": [
+              0.0,
+              0.1,
+              0.98,
+              0.13,
+              0.01,
+              0.01,
+              0.0
+            ],
+            "median": 0.01,
+            "ci95": [
+              0.0,
+              0.16
+            ]
+          },
+          "pooled4_detection_median": 0.0,
+          "p_le_0.05_median": 0.05,
+          "p_le_0.10_median": 0.13,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.08,
+              0.74,
+              0.13,
+              0.01,
+              0.0,
+              0.0
+            ],
+            "median": 0.01,
+            "ci95": [
+              0.0,
+              0.14
+            ]
+          },
+          "probe_acceptance_median": 0.97,
+          "probe_FA_median": 0.19,
+          "both_acceptance_median": 0.01,
+          "either_acceptance_median": 0.99,
+          "fluent_share_median": 0.71,
+          "cos_to_key_per_key": [
+            0.0,
+            0.18712519109249115,
+            0.8925057053565979,
+            0.3247755169868469,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "acceptance_per_key": [
+            0.0,
+            0.1,
+            0.98,
+            0.13,
+            0.01,
+            0.01,
+            0.0
+          ]
+        },
+        "v04_A_n256": {
+          "acceptance": {
+            "per_key": [
+              0.0,
+              0.07,
+              1.0,
+              0.02,
+              0.0,
+              0.01,
+              0.02
+            ],
+            "median": 0.02,
+            "ci95": [
+              0.0,
+              0.08
+            ]
+          },
+          "pooled4_detection_median": 0.04,
+          "p_le_0.05_median": 0.11,
+          "p_le_0.10_median": 0.23,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.07,
+              0.86,
+              0.02,
+              0.0,
+              0.0,
+              0.01
+            ],
+            "median": 0.01,
+            "ci95": [
+              0.0,
+              0.08
+            ]
+          },
+          "probe_acceptance_median": 0.99,
+          "probe_FA_median": 0.71,
+          "both_acceptance_median": 0.02,
+          "either_acceptance_median": 0.99,
+          "fluent_share_median": 0.86,
+          "cos_to_key_per_key": [
+            0.0,
+            0.14435671269893646,
+            0.9286713004112244,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "acceptance_per_key": [
+            0.0,
+            0.07,
+            1.0,
+            0.02,
+            0.0,
+            0.01,
+            0.02
+          ]
+        },
+        "v04_B_n64": {
+          "acceptance": {
+            "per_key": [
+              0.0,
+              0.8,
+              0.58,
+              0.13,
+              0.1,
+              0.0,
+              0.04
+            ],
+            "median": 0.1,
+            "ci95": [
+              0.0,
+              0.6002499999999986
+            ]
+          },
+          "pooled4_detection_median": 0.04,
+          "p_le_0.05_median": 0.36,
+          "p_le_0.10_median": 0.56,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.0,
+              0.01,
+              0.1,
+              0.05,
+              0.0,
+              0.04
+            ],
+            "median": 0.01,
+            "ci95": [
+              0.0,
+              0.06
+            ]
+          },
+          "probe_acceptance_median": 1.0,
+          "probe_FA_median": 0.05,
+          "both_acceptance_median": 0.1,
+          "either_acceptance_median": 1.0,
+          "fluent_share_median": 0.05,
+          "cos_to_key_per_key": [
+            0.04445064440369606,
+            0.05983190983533859,
+            0.21692697703838348,
+            0.19715705513954163,
+            0.07697221636772156,
+            0.018781138584017754,
+            -0.028324203565716743
+          ],
+          "acceptance_per_key": [
+            0.0,
+            0.8,
+            0.58,
+            0.13,
+            0.1,
+            0.0,
+            0.04
+          ]
+        },
+        "v04_B_n256": {
+          "acceptance": {
+            "per_key": [
+              0.01,
+              0.63,
+              0.91,
+              0.05,
+              0.17,
+              0.0,
+              0.02
+            ],
+            "median": 0.05,
+            "ci95": [
+              0.0,
+              0.6502499999999987
+            ]
+          },
+          "pooled4_detection_median": 0.04,
+          "p_le_0.05_median": 0.29,
+          "p_le_0.10_median": 0.55,
+          "exact_FA": {
+            "per_key": [
+              0.0,
+              0.01,
+              0.02,
+              0.03,
+              0.13,
+              0.0,
+              0.02
+            ],
+            "median": 0.02,
+            "ci95": [
+              0.0,
+              0.05
+            ]
+          },
+          "probe_acceptance_median": 1.0,
+          "probe_FA_median": 0.11,
+          "both_acceptance_median": 0.05,
+          "either_acceptance_median": 1.0,
+          "fluent_share_median": 0.11,
+          "cos_to_key_per_key": [
+            0.04572874680161476,
+            0.0785125270485878,
+            0.23665885627269745,
+            0.19630001485347748,
+            0.08343546092510223,
+            0.018514232710003853,
+            -0.029715219512581825
+          ],
+          "acceptance_per_key": [
+            0.01,
+            0.63,
+            0.91,
+            0.05,
+            0.17,
+            0.0,
+            0.02
+          ]
+        },
+        "A2_joint_fpr": {
+          "both_median": 0.0,
+          "either_median": 0.02
+        },
+        "P1": {
+          "oracle_tpr_median": 1.0,
+          "min": 0.2,
+          "pass": true
+        },
+        "E1": {
+          "median_diff_exact_minus_probe": 0.0,
+          "ci95": [
+            -0.010000000000000009,
+            0.0
+          ],
+          "verdict": "no clear difference"
+        },
+        "X3_fluent_generic_steering_suffices": false,
+        "X1_bar": 0.45,
+        "X1": {
+          "A": "not practical",
+          "B": "not practical"
+        },
+        "X1_form_v03": {
+          "A": "not practical",
+          "B": "not practical"
+        },
+        "X1_form_v02": {
+          "A": "not practical",
+          "B": "not practical"
+        }
+      }
+    }
+  },
+  "elapsed_R_s": 49.51318693161011
+}

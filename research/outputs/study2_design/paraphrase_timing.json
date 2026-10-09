@@ -1,0 +1,117 @@
+{
+ "date_utc": "2026-09-30",
+ "machine": "Apple M5, 16 GB, MPS, bf16",
+ "inputs": "pool F texts 0-10 (research/study1_v02/data/S_F_van.json); timing only, no detector run",
+ "prompt": "\"Paraphrase the following text. Keep all of its information and meaning, but change the wording \"\n          \"and sentence structure. Reply with the paraphrase only.\\n\\nText:\\n{text}\"",
+ "sampling": "temperature 0.7, top_p 0.9, max_new_tokens 400",
+ "models": {
+  "qwen": {
+   "load_s": 2.0,
+   "unbatched": [
+    {
+     "s": 9.7,
+     "new_tokens": 247,
+     "tok_per_s": 25.5,
+     "in_words": 211,
+     "out_words": 195
+    },
+    {
+     "s": 10.1,
+     "new_tokens": 280,
+     "tok_per_s": 27.8,
+     "in_words": 219,
+     "out_words": 225
+    },
+    {
+     "s": 8.2,
+     "new_tokens": 228,
+     "tok_per_s": 27.8,
+     "in_words": 216,
+     "out_words": 188
+    }
+   ],
+   "batched": {
+    "4": {
+     "s": 12.5,
+     "s_per_text": 3.1,
+     "out_words": [
+      226,
+      183,
+      246,
+      70
+     ]
+    },
+    "8": {
+     "s": 15.1,
+     "s_per_text": 1.9,
+     "out_words": [
+      194,
+      196,
+      219,
+      253,
+      193,
+      212,
+      168,
+      176
+     ]
+    }
+   },
+   "footprint": "5385 MB",
+   "weights_sha256_match_stage4_manifest": true
+  },
+  "phi": {
+   "load_s": 4.5,
+   "unbatched": [
+    {
+     "s": 21.3,
+     "new_tokens": 271,
+     "tok_per_s": 12.7,
+     "in_words": 211,
+     "out_words": 181
+    },
+    {
+     "s": 23.9,
+     "new_tokens": 322,
+     "tok_per_s": 13.5,
+     "in_words": 219,
+     "out_words": 229
+    },
+    {
+     "s": 19.1,
+     "new_tokens": 256,
+     "tok_per_s": 13.4,
+     "in_words": 216,
+     "out_words": 182
+    }
+   ],
+   "batched": {
+    "4": {
+     "s": 32.9,
+     "s_per_text": 8.2,
+     "out_words": [
+      205,
+      163,
+      139,
+      172
+     ]
+    },
+    "8": {
+     "s": 41.6,
+     "s_per_text": 5.2,
+     "out_words": [
+      191,
+      178,
+      118,
+      175,
+      176,
+      135,
+      142,
+      155
+     ]
+    }
+   },
+   "footprint": "12 GB",
+   "weights_sha256_match_stage4_manifest": true
+  }
+ }
+}

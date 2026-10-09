@@ -1,0 +1,277 @@
+{
+ "spec": "SCRUB_PILOT_SPEC_v0.1.md",
+ "spec_sha256": "b18a5b4ee0f79ba3483b954600de1aae96f6b3676878f0fd50ead9d25734439a",
+ "date_utc": "2026-10-01 03:28:46",
+ "checks": {
+  "1_inputs": {
+   "pass": true,
+   "missing": [],
+   "counts": {
+    "F": 200,
+    "A": 1000,
+    "C": 2000,
+    "van_k9001": 100,
+    "r025_k9001": 100,
+    "r035_k9001": 100,
+    "r050_k9001": 100,
+    "r070_k9001": 100,
+    "van_k9002": 100,
+    "r025_k9002": 100,
+    "r035_k9002": 100,
+    "r050_k9002": 100,
+    "r070_k9002": 100,
+    "van_k9003": 100,
+    "r025_k9003": 100,
+    "r035_k9003": 100,
+    "r050_k9003": 100,
+    "r070_k9003": 100,
+    "van_k9004": 100,
+    "r025_k9004": 100,
+    "r035_k9004": 100,
+    "r050_k9004": 100,
+    "r070_k9004": 100
+   },
+   "sha256": {
+    "F": "46ed8b854f3a3e7bdacee7bdb2fbb681187d886c6c5636d4db613560d0e640e0",
+    "A": "85acbf805334b42b80406c648c3b6b00cde8088cc8f9d86697d97d84032b7900",
+    "C": "9dd58349ffe2d8e74c0beb27e3b05f2108c87dc8ffd9db8232b78b08c7bc8534",
+    "van_k9001": "8edeedf91bdbeadfaf4df9997756b22b76995b8e0c97ec173e24427968ef85f4",
+    "r025_k9001": "16234d2fd9bac71f28542d01375091b1e237e914fb2f5c936e184060c558b0d3",
+    "r035_k9001": "57bc434043e462acd987e19b219da67502cd758a3baa0b86c704322fcb3dead1",
+    "r050_k9001": "41b827e9b0ad504ee06ddb80c1217dbdea7d1468dcc564f97112edcb6667ab60",
+    "r070_k9001": "adb7879155e47eed68ac462ff403700661ee88b1fce5a4271868affa02c0cc0c",
+    "van_k9002": "cacf534b27ae752deb854ee2d799c9f23e3d348e6173b62232712b32c1760d88",
+    "r025_k9002": "91b9d0de77e8b6e121705b79f22d1cdc5c27b2ac85eab551a863659663c8f9b9",
+    "r035_k9002": "e660d200b1c23eae21bcadeb8e774960ce72826240ab9b090fb2ad97692e6cf4",
+    "r050_k9002": "0f6a41ffc1dbfa4dbbbda224389b508c2ea54c84d93b762dc9d3d82e1ca85a93",
+    "r070_k9002": "0c014b4a2dcad8f8a9fdc48d379e9cde894813d0ca1b85a55163f4efeb993051",
+    "van_k9003": "2682635006d224385d767f89aeab56dd426479c05d93e3801b2cd54dda945109",
+    "r025_k9003": "3eac2d4fc5d3f28a4ba086ca57381ceb100fbd1879e676d40e6cb1c1365f0efa",
+    "r035_k9003": "7d7328062ea3ce230f1405eb839c61eaa7dd736264a73fcf6dfb7359de211634",
+    "r050_k9003": "b3fa1919dd346a101098b98b0636d907dc4fb0a1146fd34846b7799296c0577c",
+    "r070_k9003": "829e50f8595edb6bc9a16385c4205051b6747872b56adeaf2084618e4d977ff5",
+    "van_k9004": "8ed194e7345764c44d828d130b3fa1b061a6a32b5bb3d7def62f0e02b66ce7c5",
+    "r025_k9004": "b1d6196bbbc1a937ca73241d25c2f7ffc35f72530c211b2b32ad2b4601358667",
+    "r035_k9004": "0b7529a84762be2fb52a0cc95664c1054a439d10276c6dd4b4d7e26f6d19c7fc",
+    "r050_k9004": "39acf5208e592668c43fbb50fb147e4fc7fcf5efa6a2bb91cfcc301c789985de",
+    "r070_k9004": "302206896b4974c345a7c85d80004565a3f32d3b708940cdc1df7eaa19775181"
+   }
+  },
+  "2_keys_seeds": {
+   "pass": true,
+   "standin_cos": {
+    "9001": 0.08541497835534527,
+    "9002": 0.33375496266770516,
+    "9003": 0.11924135025149368,
+    "9004": 0.04393759966583272
+   },
+   "fresh_key_seeds": [
+    55500000,
+    55500999
+   ],
+   "sampling_seeds": [
+    20261000,
+    20261001,
+    20261002,
+    20261003
+   ]
+  },
+  "3_pools": {
+   "pass": true,
+   "note": "pool A model texts, prompts and human continuations share one prompt order; pool C refs disjoint from pool A"
+  },
+  "5_batching": {
+   "pass": true,
+   "min_ratio": 0.9,
+   "per_model": {
+    "qwen": {
+     "words_batch8": [
+      179,
+      233,
+      164,
+      150,
+      159,
+      185,
+      293,
+      156
+     ],
+     "words_single": [
+      179,
+      236,
+      164,
+      153,
+      161,
+      202,
+      194,
+      187
+     ],
+     "ratio": 1.0291327913279134,
+     "identical_texts": 1,
+     "s_per_text_batch8": 2.046061873435974,
+     "s_per_text_single": 8.535802692174911
+    },
+    "phi": {
+     "words_batch8": [
+      181,
+      224,
+      174,
+      192,
+      178,
+      122,
+      171,
+      188
+     ],
+     "words_single": [
+      187,
+      223,
+      174,
+      197,
+      176,
+      92,
+      177,
+      182
+     ],
+     "ratio": 1.015625,
+     "identical_texts": 0,
+     "s_per_text_batch8": 6.354307591915131,
+     "s_per_text_single": 19.159732401371002
+    }
+   },
+   "note": "pool F texts (the owner's reference set; no detector run); greedy decoding"
+  },
+  "4_smoke": {
+   "pass": true,
+   "embedding_I4": {
+    "self_cos": 1.0000000709745738,
+    "batched_vs_single_max_abs": 7.450580596923828e-09
+   },
+   "grad_layer14_max_abs_diff": 0.0,
+   "hook_max_abs_logit_diff": 0.0,
+   "batched_ppl_max_rel_diff_vs_v02": 0.0,
+   "n_diff_exact": true,
+   "fields": {
+    "para_qwen": [
+     195,
+     233
+    ],
+    "para_qwen_sample": "If I hadn\u2019t enjoyed it enough, this would be considered major.\nUR offers far more than merely an average university; it\u2019s incredible how diverse the offerings within fields can be. For instance, last year, we took two separate biochemistry classes\u2014both introductory levels provided foundational knowl",
+    "para_phi": [
+     212,
+     174
+    ],
+    "para_phi_sample": "I wouldn't have considered coming to UR if I hadn't found it enjoyable enough.\\nThe University of Rochester (UR) surpasses the ordinary standards of a typical university. It's impressive to witness the vast array of courses within a single discipline. For instance, we were offered two distinct bioch",
+    "quality_keys": [
+     "cos",
+     "len",
+     "ppl",
+     "rep",
+     "all",
+     "cos",
+     "len",
+     "ppl",
+     "rep"
+    ],
+    "edit_n_diff": [
+     {
+      "0.02": 6,
+      "0.05": 13,
+      "0.1": 26,
+      "0.2": 52
+     },
+     {
+      "0.02": 6,
+      "0.05": 13,
+      "0.1": 26,
+      "0.2": 52
+     },
+     {
+      "0.02": 6,
+      "0.05": 13,
+      "0.1": 26,
+      "0.2": 52
+     },
+     {
+      "0.02": 6,
+      "0.05": 13,
+      "0.1": 26,
+      "0.2": 52
+     }
+    ],
+    "edit_drift": [
+     {
+      "0.02": 0.0,
+      "0.05": 0.0,
+      "0.1": 0.0,
+      "0.2": 0.0
+     },
+     {
+      "0.02": 0.0,
+      "0.05": 0.0,
+      "0.1": 0.0,
+      "0.2": 0.0
+     },
+     {
+      "0.02": 0.0,
+      "0.05": 0.0,
+      "0.1": 0.0,
+      "0.2": 0.0
+     },
+     {
+      "0.02": 0.0,
+      "0.05": 0.0,
+      "0.1": 0.0,
+      "0.2": 0.0
+     }
+    ],
+    "edit_obj": [
+     {
+      "0.02": 0.43810057640075684,
+      "0.05": -0.14626622200012207,
+      "0.1": -0.7340414524078369,
+      "0.2": -1.464163064956665,
+      "0": 0.8205728530883789
+     },
+     {
+      "0.02": 0.23062539100646973,
+      "0.05": 0.08409261703491211,
+      "0.1": -0.9588198661804199,
+      "0.2": -1.7743141651153564,
+      "0": 0.03945469856262207
+     }
+    ],
+    "edit_rounds": [
+     11,
+     11,
+     11,
+     11
+    ],
+    "p_smoke": [
+     0.914,
+     0.945
+    ]
+   },
+   "note": "unwatermarked texts and a random direction; numbers carry no information"
+  },
+  "6_timing": {
+   "pass": true,
+   "projected_pilot_h": 3.841206446290016,
+   "budget_h": 4.0,
+   "timing": {
+    "load_qwen": 4.153517007827759,
+    "paraphrase_qwen_s_per_text_batch8": 2.046061873435974,
+    "paraphrase_qwen_s_per_text_batch2": 5.469472527503967,
+    "load_phi": 5.778977155685425,
+    "paraphrase_phi_s_per_text_batch8": 6.354307591915131,
+    "paraphrase_phi_s_per_text_batch2": 13.318556547164917,
+    "quality_s_per_text": 0.17189538478851318,
+    "edit_guided_s_per_text": 3.999870181083679,
+    "edit_random_s_per_text": 2.2425025701522827,
+    "s4_s_per_text": 0.18260061740875244
+   },
+   "note": "edits here ran on 2 texts (batch efficiency not reached), so the edit rate is conservative"
+  }
+ },
+ "all_pass": true,
+ "elapsed_s": 374.38323879241943,
+ "note": "inputs only: no tuning-key watermarked text was paraphrased, edited or scored"
+}

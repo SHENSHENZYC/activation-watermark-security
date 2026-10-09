@@ -1,0 +1,31 @@
+{
+  "study": "Study 1 \u2014 key recovery and spoofing against a fixed activation-steering watermark",
+  "protocol": "research/STUDY1_PROTOCOL_v0.1.md",
+  "protocol_sha256": "f24fac9fcb6f301520ac6153aa88a3f90b0421bcfb2583746837d22942ef084a",
+  "script_sha256": {
+    "core.py": "766ef50e3628bbd8e4b17b1b9b968a3658981ab501423afd292b644d06ae81f2",
+    "detect.py": "be49f91a24ce7db2dfa72fd1a9fc7cd5ac3a8d085c2cfd5589e8482e5c4ca7b8",
+    "attack.py": "daf01214b9a34152d63a2d7a6c589dfc4baa77c081ddf5c3437cac702603e0ce",
+    "run_study1.py": "24bf1630bae19b9798bedb9a2feb97a949c0d196b8d0195361f832b01f503e4f",
+    "validate_inputs.py": "728e6dc33e30f6b4d19fac5a382f4cf9eb4e01a01b5ff7ff7db732fc4513800f"
+  },
+  "input_sha256": {
+    "research/stage4/prompts.py": "273301b63bd4fa499c1def6e7fca0fc5208e8cf9266ad25d149ba3ce485122ee",
+    "research/stage4/outputs/prompt_sets_v0.3.json": "8842bf05cd0db4d9760ef7b8be7c464aa68dbd2359d2e7d36deed322a1eb606e",
+    "research/pilot/outputs/model_manifest_qwen2.5-1.5b.json": "4941068503b62ec59439b4d31df91edb5061656a8777f9e3c95eb79528520c94",
+    "research/stage4/outputs/model_manifest_llama-3.2-1b.json": "f5aee366cc98f3a3dc28371d80201fce1752ec7701badcc3154a3dbb11c4e5bd",
+    "research/stage4/outputs/model_manifest_phi-3.5-mini-instruct.json": "c279b078b03a6519fda2adbdad885a889c5a3c3b7288cbfd26755ca9fc96bc45",
+    "research/outputs/study1_v0.1/qwen/INPUT_VALIDATION.json": "478263e1811210f4112502e731cfd2d151c08f7202fc241d6397ed66c94d3eb8",
+    "research/outputs/study1_v0.1/llama/INPUT_VALIDATION.json": "28f85c9de6ed0dcf252a3ae79782fbe5df834ed8c7119f335193f7e020ba0202"
+  },
+  "models": {
+    "qwen": "Qwen/Qwen2.5-1.5B@8faed761d45a263340a0528343f099c05c9a4323 (primary, 16 keys, layer 14)",
+    "llama": "meta-llama/Llama-3.2-1B@4e20de362430cd3b72f300e6b0f18e50e7166e08 (replication, 8 keys, layer 8)"
+  },
+  "git_commit_before_lock": "a3d47662e3191bbfdf0fa2e1f80025f9c821f762",
+  "locked_utc": "2026-09-25T16:24:09Z",
+  "status": "LOCKED before outcomes: no study, tuning or control key has been used with a model; no detection or attack statistic has been computed on model outputs",
+  "approved_by": "Yichen Zhao (2026-09-25, in session 'Milestone 0')",
+  "final": false,
+  "holdout": "not used by Study 1 (sealed)"
+}

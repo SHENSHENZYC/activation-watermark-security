@@ -1,0 +1,46 @@
+{
+  "study": "Study 1 v0.2 \u2014 key recovery and forgery along the detectability\u2013quality curve (Qwen2.5-1.5B)",
+  "protocol": "research/STUDY1_PROTOCOL_v0.2.md",
+  "protocol_sha256": "8794f4ddb25ee69bc397d18e6e2c7ebcf07bf919bc06467866532a2b0d285066",
+  "code_sha256": {
+    "common.py": "5982261d41e4038be36bdfbe9f8dce4b663ee43408f8b22a441311b646494b18",
+    "detect2.py": "966bca18cc5a079a89814c01498c0d9c81bfce326aff1e22de6298f67037bef6",
+    "attack2.py": "7a1d079dd1fd728b0833c54d506f7a3207bdb692c52868e4c1f26914260dd995",
+    "run_v02.py": "845546fe91697e2bfde297d76137fe8ccb7098a5b99cca0869d8597935726524",
+    "validate_v02.py": "54a1a15a55e6a3e68d72a4c5405f5e51f0d55bd998311234486046441549e69e",
+    "core.py": "766ef50e3628bbd8e4b17b1b9b968a3658981ab501423afd292b644d06ae81f2",
+    "attack.py": "daf01214b9a34152d63a2d7a6c589dfc4baa77c081ddf5c3437cac702603e0ce"
+  },
+  "input_sha256": {
+    "research/stage4/prompts.py": "273301b63bd4fa499c1def6e7fca0fc5208e8cf9266ad25d149ba3ce485122ee",
+    "research/stage4/outputs/prompt_sets_v0.3.json": "8842bf05cd0db4d9760ef7b8be7c464aa68dbd2359d2e7d36deed322a1eb606e",
+    "research/pilot/outputs/model_manifest_qwen2.5-1.5b.json": "4941068503b62ec59439b4d31df91edb5061656a8777f9e3c95eb79528520c94",
+    "research/outputs/study1_v0.2/INPUT_VALIDATION.json": "a7918a40468022ea2998b251ed7bba613a8d00b83c3435a793a9a72505d09520",
+    "research/outputs/repro_v0.1/results_qwen.json": "610f313d3996bacf89edd0b8ea89c9083682da1af2a5ea79e52cb4649ed2470f",
+    "research/outputs/calibration_v0.1/results_qwen.json": "2163aad6db8bb05aba5a8e0491f08f063d149951f5774b79679ba59ca55036f9",
+    "research/outputs/study1_v0.1/PRE_RUN_LOCK.json": "7867868c284d6e330e5ab0ae0d259abdcc15ebb7c7b989f09df743054d8e22bf"
+  },
+  "model": "Qwen/Qwen2.5-1.5B@8faed761d45a263340a0528343f099c05c9a4323; layer 14; k = 4; N = 56.90270233154297",
+  "design": {
+    "levels_rho": [
+      0.25,
+      0.35,
+      0.5,
+      0.7
+    ],
+    "study_keys": "1001-1008",
+    "control_keys": "5001-5008",
+    "detector": "authors' MLP, 1% FPR threshold on A1",
+    "routes": [
+      "A key recovery",
+      "B footprint imitation"
+    ]
+  },
+  "git_commit_before_lock": "99d9797856496d733898f49cb0a8824a0a11d0ec",
+  "locked_utc": "2026-09-26T01:26:21Z",
+  "status": "LOCKED before outcomes: no study or control key has been used with a model; no detector or attack statistic has been computed on study outputs; research/study1_v02/data does not exist",
+  "approved_by": "Yichen Zhao (2026-09-26, in session 'Milestone 1')",
+  "final": false,
+  "holdout": "not used (sealed)",
+  "supersedes": "Study 1 v0.1 (stopped at G1; its result stands)"
+}

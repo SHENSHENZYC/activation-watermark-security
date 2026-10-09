@@ -1,0 +1,103 @@
+{
+  "model": "llama",
+  "pools_sizes": {
+    "pass": true,
+    "sizes": {
+      "A": 1000,
+      "B": 1024,
+      "C": 2000,
+      "D": 200,
+      "E": 200,
+      "T": 400
+    }
+  },
+  "pools_disjoint_dev_only": {
+    "pass": true
+  },
+  "holdout_sealed": {
+    "pass": true
+  },
+  "key_reproducible": {
+    "pass": true
+  },
+  "key_support_and_range": {
+    "pass": true,
+    "k": 4
+  },
+  "seed_sets_disjoint": {
+    "pass": true
+  },
+  "null_keys_count": {
+    "pass": true,
+    "shape": [
+      999,
+      1536
+    ]
+  },
+  "pvalue_grid": {
+    "pass": true
+  },
+  "pvalue_null_fpr_at_1pct": {
+    "pass": true,
+    "fpr": 0.01225,
+    "band": [
+      0.0055,
+      0.01525
+    ]
+  },
+  "pvalue_null_uniform_ks": {
+    "pass": true,
+    "ks_p": 0.07419772599842989
+  },
+  "pvalue_power_sanity_synthetic": {
+    "pass": true
+  },
+  "attack_recovers_planted_synthetic": {
+    "pass": true,
+    "layer_hat": 14,
+    "cos": 0.918
+  },
+  "attack_norm_rule": {
+    "pass": true
+  },
+  "attack_imports_numpy_only": {
+    "pass": true,
+    "imports": [
+      "numpy"
+    ]
+  },
+  "runner_refuses_without_lock": {
+    "pass": true
+  },
+  "hook_changes_logits": {
+    "pass": true
+  },
+  "hook_removal_restores": {
+    "pass": true
+  },
+  "feature_shape": {
+    "pass": true,
+    "shape": [
+      16,
+      16,
+      2048
+    ]
+  },
+  "content_tokens_le_256_bos_excluded": {
+    "pass": true,
+    "n_content": 256,
+    "has_bos": true
+  },
+  "grad_shape_finite": {
+    "pass": true
+  },
+  "timing_projection": {
+    "pass": true,
+    "n_gen": 22792,
+    "sec_per_gen": 0.865,
+    "sec_per_feat": 0.064,
+    "sec_per_grad": 0.384,
+    "projected_hours": 7.3
+  },
+  "all_pass": true
+}

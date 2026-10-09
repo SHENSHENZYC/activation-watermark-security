@@ -1,0 +1,14 @@
+{
+ "variant": "default",
+ "figwidth_pct": 80,
+ "moved": {
+  "T3b": "appE_quality.md",
+  "T6b": "appG_defence_detail.md"
+ },
+ "no_figures": false,
+ "no_tables": false,
+ "full_pdf_pages": 64,
+ "main_text_pages_incl_title_and_abstract_excl_references": 25,
+ "outline_budget_main_pages": 12.75,
+ "renderer": "pandoc 3.0 + headless Chrome; Letter, 1in margins, 11pt serif, single column (build/paper.css)"
+}

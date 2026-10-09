@@ -1,0 +1,268 @@
+{
+  "protocol_sha256": "ee044756be3fd4ba13abcafa9b56e455fbc3880b6a80287a412b08cdd5466261",
+  "date_utc": "2026-10-01 16:10:51",
+  "checks": {
+    "1_reused_files": {
+      "pass": true,
+      "n_files": 164,
+      "missing": [],
+      "agree_with_study3_lock": 66,
+      "disagree_with_study3_lock": []
+    },
+    "2_bars_equal_pilot": {
+      "pass": true,
+      "max_abs_diff": 0.0,
+      "bars": {
+        "A": {
+          "ppl": 25.40928812026977,
+          "rep": 0.048401370254067884,
+          "cos": 0.8250716820104214
+        },
+        "C": {
+          "ppl": 22.173349189758294,
+          "rep": 0.04802371541501951,
+          "cos": 0.8101092448263497
+        },
+        "A_model_p95": {
+          "ppl": 7.348547267913817,
+          "rep": 0.0513833992094862,
+          "cos": 0.8250716820104214
+        },
+        "A_human_median": {
+          "ppl": 12.941012859344482,
+          "rep": 0.004434611602753213,
+          "cos": 0.8250716820104214
+        }
+      }
+    },
+    "3_s4_reproduces_study3": {
+      "pass": true,
+      "per_key_level": {
+        "k1001_r025": {
+          "max_abs_G_diff": 0.0,
+          "p_equal": true
+        },
+        "k1008_r070": {
+          "max_abs_G_diff": 0.0,
+          "p_equal": true
+        }
+      }
+    },
+    "4_estimates": {
+      "pass": true,
+      "layers": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        6,
+        12,
+        14,
+        15,
+        16,
+        17,
+        18,
+        21,
+        24,
+        27
+      ],
+      "median_cos": 0.07837582379579544,
+      "per_key_level": {
+        "k1001_r025": {
+          "layer": 16,
+          "cos": 0.07290297746658325,
+          "nonzero": 4
+        },
+        "k1001_r035": {
+          "layer": 16,
+          "cos": 0.06501539796590805,
+          "nonzero": 4
+        },
+        "k1001_r050": {
+          "layer": 21,
+          "cos": 0.053232092410326004,
+          "nonzero": 4
+        },
+        "k1001_r070": {
+          "layer": 14,
+          "cos": 0.029374955222010612,
+          "nonzero": 4
+        },
+        "k1002_r025": {
+          "layer": 14,
+          "cos": 0.2267131358385086,
+          "nonzero": 4
+        },
+        "k1002_r035": {
+          "layer": 14,
+          "cos": 0.0,
+          "nonzero": 4
+        },
+        "k1002_r050": {
+          "layer": 14,
+          "cos": 0.0,
+          "nonzero": 4
+        },
+        "k1002_r070": {
+          "layer": 1,
+          "cos": 0.0,
+          "nonzero": 4
+        },
+        "k1003_r025": {
+          "layer": 14,
+          "cos": 0.0938393622636795,
+          "nonzero": 4
+        },
+        "k1003_r035": {
+          "layer": 14,
+          "cos": 0.08384867012500763,
+          "nonzero": 4
+        },
+        "k1003_r050": {
+          "layer": 16,
+          "cos": 0.4846861958503723,
+          "nonzero": 4
+        },
+        "k1003_r070": {
+          "layer": 12,
+          "cos": 0.10527049750089645,
+          "nonzero": 4
+        },
+        "k1004_r025": {
+          "layer": 5,
+          "cos": 0.7538872957229614,
+          "nonzero": 4
+        },
+        "k1004_r035": {
+          "layer": 5,
+          "cos": 0.750397264957428,
+          "nonzero": 4
+        },
+        "k1004_r050": {
+          "layer": 5,
+          "cos": 0.7053593397140503,
+          "nonzero": 4
+        },
+        "k1004_r070": {
+          "layer": 5,
+          "cos": 0.6374302506446838,
+          "nonzero": 4
+        },
+        "k1005_r025": {
+          "layer": 6,
+          "cos": 0.3676374852657318,
+          "nonzero": 4
+        },
+        "k1005_r035": {
+          "layer": 6,
+          "cos": 0.3575918674468994,
+          "nonzero": 4
+        },
+        "k1005_r050": {
+          "layer": 5,
+          "cos": 0.3332243263721466,
+          "nonzero": 4
+        },
+        "k1005_r070": {
+          "layer": 3,
+          "cos": 0.20682880282402039,
+          "nonzero": 4
+        },
+        "k1006_r025": {
+          "layer": 2,
+          "cos": 0.4926615357398987,
+          "nonzero": 4
+        },
+        "k1006_r035": {
+          "layer": 1,
+          "cos": 0.5193430185317993,
+          "nonzero": 4
+        },
+        "k1006_r050": {
+          "layer": 17,
+          "cos": 0.24836882948875427,
+          "nonzero": 4
+        },
+        "k1006_r070": {
+          "layer": 14,
+          "cos": 0.0,
+          "nonzero": 4
+        },
+        "k1007_r025": {
+          "layer": 15,
+          "cos": 0.0,
+          "nonzero": 4
+        },
+        "k1007_r035": {
+          "layer": 15,
+          "cos": 0.059184178709983826,
+          "nonzero": 4
+        },
+        "k1007_r050": {
+          "layer": 15,
+          "cos": 0.0,
+          "nonzero": 4
+        },
+        "k1007_r070": {
+          "layer": 18,
+          "cos": 0.0,
+          "nonzero": 4
+        },
+        "k1008_r025": {
+          "layer": 0,
+          "cos": 0.0,
+          "nonzero": 4
+        },
+        "k1008_r035": {
+          "layer": 0,
+          "cos": 0.0,
+          "nonzero": 4
+        },
+        "k1008_r050": {
+          "layer": 24,
+          "cos": 0.0,
+          "nonzero": 4
+        },
+        "k1008_r070": {
+          "layer": 27,
+          "cos": 0.0,
+          "nonzero": 4
+        }
+      }
+    },
+    "5_float32_editor": {
+      "pass": true,
+      "r": 0.9999542781790077
+    },
+    "6_seeds": {
+      "pass": true,
+      "fresh_key_seeds": [
+        44400000,
+        44400999
+      ],
+      "sampling": [
+        20262000,
+        20262001
+      ]
+    },
+    "7_refuses_without_lock": {
+      "pass": true
+    },
+    "8_smoke_fields": {
+      "pass": true,
+      "missing": [],
+      "levels_without_first_attempt_rows": [],
+      "note": "tuning-key stand-ins; numbers carry no information"
+    },
+    "9_timing": {
+      "pass": true,
+      "projected_h": 24.276174215536972,
+      "budget_h": 30.0,
+      "source": "outputs/study2_pilot_v0.2/results.json (I5\u2032)"
+    }
+  },
+  "all_pass": true,
+  "elapsed_s": 328.19404888153076,
+  "note": "inputs only; no study-key text paraphrased or edited; check 3 reproduces Study 3's features"
+}

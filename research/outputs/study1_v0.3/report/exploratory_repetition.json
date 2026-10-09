@@ -1,0 +1,491 @@
+{
+ "note": "EXPLORATORY (added after the v0.3 run; not pre-registered): does perplexity-based fluency admit repetitive text?",
+ "levels": {
+  "0.35": {
+   "oracle": {
+    "FA_median": 0.29000000000000004,
+    "FA_not_repetitive_median": 0.29000000000000004,
+    "repetitive_share_of_FA_median": 0.008620689655172414,
+    "rep3_median": 0.0,
+    "FA_not_repetitive_per_key": [
+     0.5,
+     0.4,
+     0.16,
+     0.11,
+     0.38,
+     0.16,
+     0.2,
+     0.57
+    ]
+   },
+   "random": {
+    "FA_median": 0.015,
+    "FA_not_repetitive_median": 0.015,
+    "repetitive_share_of_FA_median": 0.0,
+    "rep3_median": 0.002222397819086952,
+    "FA_not_repetitive_per_key": [
+     0.03,
+     0.0,
+     0.03,
+     0.0,
+     0.02,
+     0.0,
+     0.01,
+     0.08
+    ]
+   },
+   "v03_A_n64": {
+    "FA_median": 0.045,
+    "FA_not_repetitive_median": 0.045,
+    "repetitive_share_of_FA_median": 0.0,
+    "rep3_median": 0.0022026431718061845,
+    "FA_not_repetitive_per_key": [
+     0.16,
+     0.05,
+     0.04,
+     0.04,
+     0.18,
+     0.0,
+     0.04,
+     0.21
+    ]
+   },
+   "v03_A_n256": {
+    "FA_median": 0.07500000000000001,
+    "FA_not_repetitive_median": 0.07,
+    "repetitive_share_of_FA_median": 0.0,
+    "rep3_median": 0.0024390824290881352,
+    "FA_not_repetitive_per_key": [
+     0.15,
+     0.13,
+     0.04,
+     0.01,
+     0.14,
+     0.03,
+     0.07,
+     0.07
+    ]
+   },
+   "v03_B_n64": {
+    "FA_median": 0.16,
+    "FA_not_repetitive_median": 0.07,
+    "repetitive_share_of_FA_median": 0.15000000000000002,
+    "rep3_median": 0.009215441020061582,
+    "FA_not_repetitive_per_key": [
+     0.09,
+     0.24,
+     0.41,
+     0.0,
+     0.04,
+     0.2,
+     0.0,
+     0.05
+    ]
+   },
+   "v03_B_n256": {
+    "FA_median": 0.15000000000000002,
+    "FA_not_repetitive_median": 0.125,
+    "repetitive_share_of_FA_median": 0.045148247978436654,
+    "rep3_median": 0.002257347845583124,
+    "FA_not_repetitive_per_key": [
+     0.13,
+     0.52,
+     0.46,
+     0.03,
+     0.02,
+     0.12,
+     0.3,
+     0.11
+    ]
+   },
+   "v02_A_n64": {
+    "FA_median": 0.07,
+    "FA_not_repetitive_median": 0.07,
+    "repetitive_share_of_FA_median": 0.0,
+    "rep3_median": 0.0,
+    "FA_not_repetitive_per_key": [
+     0.16,
+     0.08,
+     0.05,
+     0.06,
+     0.25,
+     0.0,
+     0.02,
+     0.2
+    ]
+   },
+   "v02_A_n256": {
+    "FA_median": 0.03,
+    "FA_not_repetitive_median": 0.03,
+    "repetitive_share_of_FA_median": 0.0,
+    "rep3_median": 0.003338905416078536,
+    "FA_not_repetitive_per_key": [
+     0.16,
+     0.07,
+     0.02,
+     0.01,
+     0.15,
+     0.0,
+     0.04,
+     0.02
+    ]
+   },
+   "v02_B_n64": {
+    "FA_median": 0.034999999999999996,
+    "FA_not_repetitive_median": 0.01,
+    "repetitive_share_of_FA_median": 0.03358585858585859,
+    "rep3_median": 0.005977702476278185,
+    "FA_not_repetitive_per_key": [
+     0.0,
+     0.43,
+     0.43,
+     0.0,
+     0.0,
+     0.14,
+     0.01,
+     0.01
+    ]
+   },
+   "v02_B_n256": {
+    "FA_median": 0.11000000000000001,
+    "FA_not_repetitive_median": 0.095,
+    "repetitive_share_of_FA_median": 0.029433962264150945,
+    "rep3_median": 0.006045878675058458,
+    "FA_not_repetitive_per_key": [
+     0.0,
+     0.48,
+     0.52,
+     0.01,
+     0.0,
+     0.17,
+     0.17,
+     0.02
+    ]
+   }
+  },
+  "0.5": {
+   "oracle": {
+    "FA_median": 0.81,
+    "FA_not_repetitive_median": 0.76,
+    "repetitive_share_of_FA_median": 0.05732327374118419,
+    "rep3_median": 0.0,
+    "FA_not_repetitive_per_key": [
+     0.86,
+     0.86,
+     0.63,
+     0.55,
+     0.74,
+     0.78,
+     0.72,
+     0.86
+    ]
+   },
+   "random": {
+    "FA_median": 0.11,
+    "FA_not_repetitive_median": 0.1,
+    "repetitive_share_of_FA_median": 0.15476190476190477,
+    "rep3_median": 0.004566257650020389,
+    "FA_not_repetitive_per_key": [
+     0.1,
+     0.12,
+     0.09,
+     0.02,
+     0.1,
+     0.11,
+     0.06,
+     0.12
+    ]
+   },
+   "v03_A_n64": {
+    "FA_median": 0.155,
+    "FA_not_repetitive_median": 0.1,
+    "repetitive_share_of_FA_median": 0.19999999999999998,
+    "rep3_median": 0.004546628801881586,
+    "FA_not_repetitive_per_key": [
+     0.01,
+     0.31,
+     0.03,
+     0.04,
+     0.16,
+     0.02,
+     0.42,
+     0.4
+    ]
+   },
+   "v03_A_n256": {
+    "FA_median": 0.15,
+    "FA_not_repetitive_median": 0.145,
+    "repetitive_share_of_FA_median": 0.054093567251461985,
+    "rep3_median": 0.0,
+    "FA_not_repetitive_per_key": [
+     0.2,
+     0.18,
+     0.02,
+     0.11,
+     0.34,
+     0.03,
+     0.08,
+     0.49
+    ]
+   },
+   "v03_B_n64": {
+    "FA_median": 0.37,
+    "FA_not_repetitive_median": 0.24,
+    "repetitive_share_of_FA_median": 0.27604166666666663,
+    "rep3_median": 0.009330346996543587,
+    "FA_not_repetitive_per_key": [
+     0.28,
+     0.59,
+     0.03,
+     0.07,
+     0.25,
+     0.35,
+     0.23,
+     0.0
+    ]
+   },
+   "v03_B_n256": {
+    "FA_median": 0.29,
+    "FA_not_repetitive_median": 0.1,
+    "repetitive_share_of_FA_median": 0.3359739049394222,
+    "rep3_median": 0.012299313284394986,
+    "FA_not_repetitive_per_key": [
+     0.01,
+     0.69,
+     0.04,
+     0.04,
+     0.3,
+     0.3,
+     0.16,
+     0.0
+    ]
+   },
+   "v02_A_n64": {
+    "FA_median": 0.22499999999999998,
+    "FA_not_repetitive_median": 0.215,
+    "repetitive_share_of_FA_median": 0.008771929824561403,
+    "rep3_median": 0.0,
+    "FA_not_repetitive_per_key": [
+     0.29,
+     0.24,
+     0.1,
+     0.05,
+     0.19,
+     0.01,
+     0.56,
+     0.44
+    ]
+   },
+   "v02_A_n256": {
+    "FA_median": 0.14,
+    "FA_not_repetitive_median": 0.14,
+    "repetitive_share_of_FA_median": 0.06911764705882353,
+    "rep3_median": 0.0,
+    "FA_not_repetitive_per_key": [
+     0.19,
+     0.19,
+     0.02,
+     0.08,
+     0.31,
+     0.02,
+     0.09,
+     0.41
+    ]
+   },
+   "v02_B_n64": {
+    "FA_median": 0.08,
+    "FA_not_repetitive_median": 0.07,
+    "repetitive_share_of_FA_median": 0.10628019323671498,
+    "rep3_median": 0.0,
+    "FA_not_repetitive_per_key": [
+     0.0,
+     0.62,
+     0.08,
+     0.06,
+     0.01,
+     0.13,
+     0.26,
+     0.02
+    ]
+   },
+   "v02_B_n256": {
+    "FA_median": 0.05,
+    "FA_not_repetitive_median": 0.04,
+    "repetitive_share_of_FA_median": 0.05671506352087114,
+    "rep3_median": 0.0020492147476274536,
+    "FA_not_repetitive_per_key": [
+     0.01,
+     0.7,
+     0.28,
+     0.0,
+     0.02,
+     0.19,
+     0.06,
+     0.0
+    ]
+   }
+  },
+  "0.7": {
+   "oracle": {
+    "FA_median": 0.95,
+    "FA_not_repetitive_median": 0.9,
+    "repetitive_share_of_FA_median": 0.05263157894736842,
+    "rep3_median": 0.0,
+    "FA_not_repetitive_per_key": [
+     0.9,
+     0.9,
+     0.91,
+     0.89,
+     0.9,
+     0.91,
+     0.9,
+     0.9
+    ]
+   },
+   "random": {
+    "FA_median": 0.475,
+    "FA_not_repetitive_median": 0.375,
+    "repetitive_share_of_FA_median": 0.26273148148148145,
+    "rep3_median": 0.007692677217622207,
+    "FA_not_repetitive_per_key": [
+     0.1,
+     0.47,
+     0.38,
+     0.08,
+     0.57,
+     0.42,
+     0.26,
+     0.37
+    ]
+   },
+   "v03_A_n64": {
+    "FA_median": 0.625,
+    "FA_not_repetitive_median": 0.24,
+    "repetitive_share_of_FA_median": 0.28445747800586507,
+    "rep3_median": 0.004780919752603419,
+    "FA_not_repetitive_per_key": [
+     0.29,
+     0.75,
+     0.18,
+     0.19,
+     0.36,
+     0.15,
+     0.51,
+     0.01
+    ]
+   },
+   "v03_A_n256": {
+    "FA_median": 0.705,
+    "FA_not_repetitive_median": 0.43000000000000005,
+    "repetitive_share_of_FA_median": 0.2724014336917563,
+    "rep3_median": 0.007252748579431145,
+    "FA_not_repetitive_per_key": [
+     0.31,
+     0.73,
+     0.14,
+     0.63,
+     0.27,
+     0.61,
+     0.55,
+     0.01
+    ]
+   },
+   "v03_B_n64": {
+    "FA_median": 0.69,
+    "FA_not_repetitive_median": 0.045000000000000005,
+    "repetitive_share_of_FA_median": 0.8022737927801219,
+    "rep3_median": 0.1508635179062788,
+    "FA_not_repetitive_per_key": [
+     0.02,
+     0.16,
+     0.07,
+     0.0,
+     0.35,
+     0.21,
+     0.02,
+     0.0
+    ]
+   },
+   "v03_B_n256": {
+    "FA_median": 0.69,
+    "FA_not_repetitive_median": 0.035,
+    "repetitive_share_of_FA_median": 0.9029396186440678,
+    "rep3_median": 0.16854758973134226,
+    "FA_not_repetitive_per_key": [
+     0.02,
+     0.02,
+     0.07,
+     0.05,
+     0.21,
+     0.47,
+     0.02,
+     0.0
+    ]
+   },
+   "v02_A_n64": {
+    "FA_median": 0.25,
+    "FA_not_repetitive_median": 0.16999999999999998,
+    "repetitive_share_of_FA_median": 0.12894736842105264,
+    "rep3_median": 0.004731560738439278,
+    "FA_not_repetitive_per_key": [
+     0.0,
+     0.89,
+     0.16,
+     0.25,
+     0.28,
+     0.13,
+     0.18,
+     0.01
+    ]
+   },
+   "v02_A_n256": {
+    "FA_median": 0.525,
+    "FA_not_repetitive_median": 0.24,
+    "repetitive_share_of_FA_median": 0.2506172839506173,
+    "rep3_median": 0.007525978929924515,
+    "FA_not_repetitive_per_key": [
+     0.0,
+     0.73,
+     0.11,
+     0.57,
+     0.29,
+     0.62,
+     0.19,
+     0.01
+    ]
+   },
+   "v02_B_n64": {
+    "FA_median": 0.09,
+    "FA_not_repetitive_median": 0.03,
+    "repetitive_share_of_FA_median": 0.42101648351648346,
+    "rep3_median": 0.025432277733773684,
+    "FA_not_repetitive_per_key": [
+     0.0,
+     0.16,
+     0.06,
+     0.0,
+     0.35,
+     0.39,
+     0.0,
+     0.0
+    ]
+   },
+   "v02_B_n256": {
+    "FA_median": 0.21500000000000002,
+    "FA_not_repetitive_median": 0.06,
+    "repetitive_share_of_FA_median": 0.2620192307692308,
+    "rep3_median": 0.01325134888654142,
+    "FA_not_repetitive_per_key": [
+     0.0,
+     0.23,
+     0.11,
+     0.01,
+     0.32,
+     0.41,
+     0.0,
+     0.0
+    ]
+   }
+  }
+ }
+}

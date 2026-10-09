@@ -1,0 +1,27 @@
+# Environments and caches
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.pytest_cache/
+.DS_Store
+
+# Raw data, model weights and large outputs stay local (hashes tracked in manifests)
+research/**/data/
+research/**/raw/
+*.safetensors
+*.bin
+*.pt
+*.npz
+research/outputs/*/dry/
+
+# Literature PDFs (arXiv terms: personal/research use, no redistribution; manifest tracked)
+research/literature/pdfs/
+
+# LaTeX intermediates (Stage 9)
+research/paper/latex/*.aux
+research/paper/latex/*.log
+research/paper/latex/*.xdv
+research/paper/latex/*.blg
+research/paper/latex/*.out
+research/paper/latex/*.toc

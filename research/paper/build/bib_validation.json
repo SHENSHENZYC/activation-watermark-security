@@ -1,0 +1,95 @@
+{
+  "filepath": "research/paper/references.bib",
+  "total_entries": 42,
+  "valid_entries": 42,
+  "errors": [],
+  "warnings": [
+    {
+      "type": "missing_recommended_field",
+      "field": "pages",
+      "severity": "medium",
+      "message": "Entry yu2025saemark: Missing recommended field \"pages\"",
+      "entry": "yu2025saemark"
+    },
+    {
+      "type": "missing_recommended_field",
+      "field": "pages",
+      "severity": "medium",
+      "message": "Entry pang2024nofreelunch: Missing recommended field \"pages\"",
+      "entry": "pang2024nofreelunch"
+    },
+    {
+      "type": "missing_recommended_field",
+      "field": "pages",
+      "severity": "medium",
+      "message": "Entry gu2024learnability: Missing recommended field \"pages\"",
+      "entry": "gu2024learnability"
+    },
+    {
+      "type": "missing_recommended_field",
+      "field": "pages",
+      "severity": "medium",
+      "message": "Entry kirchenbauer2024reliability: Missing recommended field \"pages\"",
+      "entry": "kirchenbauer2024reliability"
+    },
+    {
+      "type": "missing_recommended_field",
+      "field": "pages",
+      "severity": "medium",
+      "message": "Entry shen2025seek: Missing recommended field \"pages\"",
+      "entry": "shen2025seek"
+    },
+    {
+      "type": "missing_recommended_field",
+      "field": "pages",
+      "severity": "medium",
+      "message": "Entry krishna2023paraphrasing: Missing recommended field \"pages\"",
+      "entry": "krishna2023paraphrasing"
+    },
+    {
+      "type": "missing_recommended_field",
+      "field": "isbn",
+      "severity": "medium",
+      "message": "Entry davison1997bootstrap: Missing recommended field \"isbn\"",
+      "entry": "davison1997bootstrap"
+    },
+    {
+      "type": "missing_recommended_field",
+      "field": "pages",
+      "severity": "medium",
+      "message": "Entry welleck2020unlikelihood: Missing recommended field \"pages\"",
+      "entry": "welleck2020unlikelihood"
+    },
+    {
+      "type": "missing_recommended_field",
+      "field": "doi",
+      "severity": "medium",
+      "message": "Entry kerckhoffs1883cryptographie: Missing recommended field \"doi\"",
+      "entry": "kerckhoffs1883cryptographie"
+    },
+    {
+      "type": "missing_recommended_field",
+      "field": "doi",
+      "severity": "medium",
+      "message": "Entry raffel2020t5: Missing recommended field \"doi\"",
+      "entry": "raffel2020t5"
+    },
+    {
+      "type": "missing_recommended_field",
+      "field": "pages",
+      "severity": "medium",
+      "message": "Entry merity2017pointer: Missing recommended field \"pages\"",
+      "entry": "merity2017pointer"
+    }
+  ],
+  "duplicates": [],
+  "venue_standard_checked": null,
+  "min_count_checked": null,
+  "manuscript_results": {
+    "checked": false,
+    "manuscript_filepath": null,
+    "cited_keys": [],
+    "missing_keys": [],
+    "unused_keys": []
+  }
+}

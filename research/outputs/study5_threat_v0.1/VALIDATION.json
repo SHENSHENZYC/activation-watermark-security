@@ -1,0 +1,96 @@
+{
+  "spec": "THREAT_CHECK_SPEC_v0.1.md",
+  "spec_sha256": "0ea409f8f5e04a323e76b28b7d02841d2892ab9e002b4fb8776d6f99076d7f51",
+  "script_sha256": "35515f6ce11451903b10fbfda24882586a739a5fae7ba640a1155deaea52148f",
+  "date_utc": "2026-10-02 19:47:46",
+  "note": "inputs only: pool C unwatermarked texts and the tuning keys; no statistic on any watermarked text",
+  "checks": {
+    "1_inputs": {
+      "pass": true,
+      "missing": [],
+      "counts": {
+        "r035_k9001": 100,
+        "r035_k9002": 100,
+        "r035_k9003": 100,
+        "r035_k9004": 100,
+        "r050_k9001": 100,
+        "r050_k9002": 100,
+        "r050_k9003": 100,
+        "r050_k9004": 100,
+        "r070_k9001": 100,
+        "r070_k9002": 100,
+        "r070_k9003": 100,
+        "r070_k9004": 100,
+        "C_texts": 2000
+      },
+      "C_feats_shape": [
+        2000,
+        28,
+        1536
+      ],
+      "sha256": {
+        "r035_k9001": "57bc434043e462acd987e19b219da67502cd758a3baa0b86c704322fcb3dead1",
+        "r035_k9002": "e660d200b1c23eae21bcadeb8e774960ce72826240ab9b090fb2ad97692e6cf4",
+        "r035_k9003": "7d7328062ea3ce230f1405eb839c61eaa7dd736264a73fcf6dfb7359de211634",
+        "r035_k9004": "0b7529a84762be2fb52a0cc95664c1054a439d10276c6dd4b4d7e26f6d19c7fc",
+        "r050_k9001": "41b827e9b0ad504ee06ddb80c1217dbdea7d1468dcc564f97112edcb6667ab60",
+        "r050_k9002": "0f6a41ffc1dbfa4dbbbda224389b508c2ea54c84d93b762dc9d3d82e1ca85a93",
+        "r050_k9003": "b3fa1919dd346a101098b98b0636d907dc4fb0a1146fd34846b7799296c0577c",
+        "r050_k9004": "39acf5208e592668c43fbb50fb147e4fc7fcf5efa6a2bb91cfcc301c789985de",
+        "r070_k9001": "adb7879155e47eed68ac462ff403700661ee88b1fce5a4271868affa02c0cc0c",
+        "r070_k9002": "0c014b4a2dcad8f8a9fdc48d379e9cde894813d0ca1b85a55163f4efeb993051",
+        "r070_k9003": "829e50f8595edb6bc9a16385c4205051b6747872b56adeaf2084618e4d977ff5",
+        "r070_k9004": "302206896b4974c345a7c85d80004565a3f32d3b708940cdc1df7eaa19775181",
+        "C_texts": "9dd58349ffe2d8e74c0beb27e3b05f2108c87dc8ffd9db8232b78b08c7bc8534",
+        "C_feats": "d34f6b7c2558e0381ce87b3d7d3507ded4819554db376d363d750a9a4f17af8b"
+      }
+    },
+    "2_grad_agreement": {
+      "pass": true,
+      "relative_diff_float32": [
+        4.79781535565255e-05,
+        4.7543765107943e-06,
+        4.717536446681813e-06
+      ],
+      "bf16_relative_diff": [
+        0.13753061467741604,
+        0.02282679987495192,
+        0.023236253328326316
+      ],
+      "bf16_cos": [
+        0.9905132394756653,
+        0.9997398409395363,
+        0.9997311492232037
+      ],
+      "bf16_run_to_run_relative_diff": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "3_hooks_removed": {
+      "pass": true,
+      "max_abs_logit_diff": 0.0
+    },
+    "4_no_spurious_recovery": {
+      "pass": true,
+      "abs_cos": {
+        "9001": 0.0,
+        "9002": 0.0,
+        "9003": 0.0,
+        "9004": 0.0
+      },
+      "layer_hat": 19
+    },
+    "5_timing": {
+      "pass": true,
+      "s_per_grad_text": 0.2731297016143799,
+      "s_per_act_text": 0.07040003687143326,
+      "n_obs_texts": 1200,
+      "projected_h": 0.11450991282860438,
+      "budget_h": 0.5
+    }
+  },
+  "all_pass": true,
+  "elapsed_s": 15.946822166442871
+}

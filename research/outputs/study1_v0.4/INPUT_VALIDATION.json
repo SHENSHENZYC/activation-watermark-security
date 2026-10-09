@@ -1,0 +1,118 @@
+{
+  "all_pass": true,
+  "checks": {
+    "reused_files_present_and_hash": {
+      "pass": true,
+      "n_v02": 243,
+      "n_v03": 120,
+      "v02_equal_to_v03_lock": true,
+      "missing": []
+    },
+    "trial_prompts_attacker_pool_disjoint_from_D": {
+      "pass": true
+    },
+    "holdout_sealed": {
+      "pass": true,
+      "error": "PermissionError"
+    },
+    "seeds_disjoint_from_v02_v03": {
+      "pass": true,
+      "v04_offsets": [
+        60,
+        70,
+        71,
+        73,
+        74
+      ]
+    },
+    "smoke_keys_not_study_keys": {
+      "pass": true
+    },
+    "attack_isolation": {
+      "pass": true
+    },
+    "seqrep4_constructed": {
+      "pass": true,
+      "loop": 0.8888888888888888
+    },
+    "seqrep4_tokens_first_256": {
+      "pass": true
+    },
+    "rep3_matches_v03_definition": {
+      "pass": true
+    },
+    "attacker_rep_threshold_and_count": {
+      "pass": true
+    },
+    "select_logic": {
+      "pass": true,
+      "s1": "(1, True, [1, 2])",
+      "s2": "(0, True, [0, 1, 2])",
+      "s3": "(1, False, [])",
+      "s4": "(1, False, [])",
+      "s5": "(0, False, [])"
+    },
+    "fluent_accept_and_cut": {
+      "pass": true
+    },
+    "repetition_off_reproduces_v03_FA_medians": {
+      "pass": true,
+      "n_compared": 33,
+      "max_diff": 0.0
+    },
+    "runner_refuses_without_lock": {
+      "pass": true,
+      "error": "FileNotFoundError"
+    },
+    "integrity_reloaded_probes_rescore_v02_oracle": {
+      "pass": true,
+      "rows": [
+        {
+          "tag": "k1001_r035",
+          "max_abs_diff": 0.0
+        },
+        {
+          "tag": "k1001_r070",
+          "max_abs_diff": 0.0
+        },
+        {
+          "tag": "k1008_r035",
+          "max_abs_diff": 0.0
+        },
+        {
+          "tag": "k1008_r070",
+          "max_abs_diff": 0.0
+        }
+      ]
+    },
+    "pipeline_smoke_all_fields": {
+      "pass": true,
+      "seconds": 449,
+      "note": "validation key, rho 0.5 and 0.7, tiny sizes, scratch folder deleted; verdicts carry no information"
+    },
+    "timing_budget": {
+      "pass": true,
+      "projected_hours": 6.4,
+      "s_per_gen": 1.108,
+      "s_per_cont_ppl": 0.142,
+      "s_per_tokens": 0.067,
+      "s_per_ppl": 0.134,
+      "s_per_seqrep": 0.0003,
+      "generations": 17280
+    }
+  },
+  "note": "inputs only; no v0.4 trial or forgery with a study key; no v0.4 statistic",
+  "code_sha256": {
+    "common4.py": "bee397da19381efa1d7db29cc3ef6a8f794aa346b3d677f86ac5991f7a63363e",
+    "attack4.py": "652391e80cb25677a38aeeaa23cf34ec933bbbb8c3047f717e3a487c9b5abbda",
+    "run_v04.py": "56ed7308a716980597c41ca1429b8376031f2fc8413ebd48775573e94e8f8347",
+    "validate_v04.py": "2186f963075df3f39f966454ec431a8f277e90721d8966cd71337476202c9bb7",
+    "common3.py": "1b4a438151534fa667fa0482cf77c360b71199a3b238c7ce3f6381209a7cca9e",
+    "attack3.py": "b72935003c1378398ac9363855e44ea33daa34b97940b1d58de0687b9756fa47",
+    "common.py": "5982261d41e4038be36bdfbe9f8dce4b663ee43408f8b22a441311b646494b18",
+    "detect2.py": "966bca18cc5a079a89814c01498c0d9c81bfce326aff1e22de6298f67037bef6",
+    "attack2.py": "7a1d079dd1fd728b0833c54d506f7a3207bdb692c52868e4c1f26914260dd995",
+    "core.py": "766ef50e3628bbd8e4b17b1b9b968a3658981ab501423afd292b644d06ae81f2",
+    "attack.py": "daf01214b9a34152d63a2d7a6c589dfc4baa77c081ddf5c3437cac702603e0ce"
+  }
+}

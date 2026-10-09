@@ -1,0 +1,667 @@
+{
+  "per_key": {
+    "cont_a5": {
+      "9001": {
+        "mlp_faithful": {
+          "auroc": 0.635,
+          "vote_acc": 0.575
+        },
+        "mlp_strong": {
+          "auroc": 0.555,
+          "vote_acc": 0.525
+        },
+        "linear": {
+          "auroc": 0.565,
+          "vote_acc": 0.575
+        },
+        "mass_mean": {
+          "auroc": 0.645
+        },
+        "dcos_true_key": {
+          "auroc": 0.525
+        }
+      },
+      "9002": {
+        "mlp_faithful": {
+          "auroc": 0.54,
+          "vote_acc": 0.575
+        },
+        "mlp_strong": {
+          "auroc": 0.5925,
+          "vote_acc": 0.525
+        },
+        "linear": {
+          "auroc": 0.5675,
+          "vote_acc": 0.525
+        },
+        "mass_mean": {
+          "auroc": 0.525
+        },
+        "dcos_true_key": {
+          "auroc": 0.53
+        }
+      },
+      "9003": {
+        "mlp_faithful": {
+          "auroc": 0.37,
+          "vote_acc": 0.4
+        },
+        "mlp_strong": {
+          "auroc": 0.4125,
+          "vote_acc": 0.425
+        },
+        "linear": {
+          "auroc": 0.41,
+          "vote_acc": 0.475
+        },
+        "mass_mean": {
+          "auroc": 0.435
+        },
+        "dcos_true_key": {
+          "auroc": 0.545
+        }
+      },
+      "9004": {
+        "mlp_faithful": {
+          "auroc": 0.5825,
+          "vote_acc": 0.625
+        },
+        "mlp_strong": {
+          "auroc": 0.5775,
+          "vote_acc": 0.5
+        },
+        "linear": {
+          "auroc": 0.5725,
+          "vote_acc": 0.6
+        },
+        "mass_mean": {
+          "auroc": 0.5375
+        },
+        "dcos_true_key": {
+          "auroc": 0.6875
+        }
+      }
+    },
+    "cont_a10": {
+      "9001": {
+        "mlp_faithful": {
+          "auroc": 0.75,
+          "vote_acc": 0.725
+        },
+        "mlp_strong": {
+          "auroc": 0.695,
+          "vote_acc": 0.55
+        },
+        "linear": {
+          "auroc": 0.68,
+          "vote_acc": 0.6
+        },
+        "mass_mean": {
+          "auroc": 0.6675
+        },
+        "dcos_true_key": {
+          "auroc": 0.6575
+        }
+      },
+      "9002": {
+        "mlp_faithful": {
+          "auroc": 0.7075,
+          "vote_acc": 0.55
+        },
+        "mlp_strong": {
+          "auroc": 0.71,
+          "vote_acc": 0.675
+        },
+        "linear": {
+          "auroc": 0.735,
+          "vote_acc": 0.575
+        },
+        "mass_mean": {
+          "auroc": 0.63
+        },
+        "dcos_true_key": {
+          "auroc": 0.535
+        }
+      },
+      "9003": {
+        "mlp_faithful": {
+          "auroc": 0.495,
+          "vote_acc": 0.45
+        },
+        "mlp_strong": {
+          "auroc": 0.4925,
+          "vote_acc": 0.45
+        },
+        "linear": {
+          "auroc": 0.5075,
+          "vote_acc": 0.5
+        },
+        "mass_mean": {
+          "auroc": 0.5
+        },
+        "dcos_true_key": {
+          "auroc": 0.4425
+        }
+      },
+      "9004": {
+        "mlp_faithful": {
+          "auroc": 0.56,
+          "vote_acc": 0.5
+        },
+        "mlp_strong": {
+          "auroc": 0.5625,
+          "vote_acc": 0.5
+        },
+        "linear": {
+          "auroc": 0.5075,
+          "vote_acc": 0.525
+        },
+        "mass_mean": {
+          "auroc": 0.5175
+        },
+        "dcos_true_key": {
+          "auroc": 0.62
+        }
+      }
+    },
+    "cont_a20": {
+      "9001": {
+        "mlp_faithful": {
+          "auroc": 0.9375,
+          "vote_acc": 0.875
+        },
+        "mlp_strong": {
+          "auroc": 0.9525,
+          "vote_acc": 0.875
+        },
+        "linear": {
+          "auroc": 0.9575,
+          "vote_acc": 0.875
+        },
+        "mass_mean": {
+          "auroc": 0.84
+        },
+        "dcos_true_key": {
+          "auroc": 0.7475
+        }
+      },
+      "9002": {
+        "mlp_faithful": {
+          "auroc": 0.98,
+          "vote_acc": 0.925
+        },
+        "mlp_strong": {
+          "auroc": 0.98,
+          "vote_acc": 0.875
+        },
+        "linear": {
+          "auroc": 0.98,
+          "vote_acc": 0.95
+        },
+        "mass_mean": {
+          "auroc": 0.85
+        },
+        "dcos_true_key": {
+          "auroc": 0.4925
+        }
+      },
+      "9003": {
+        "mlp_faithful": {
+          "auroc": 0.805,
+          "vote_acc": 0.725
+        },
+        "mlp_strong": {
+          "auroc": 0.8375,
+          "vote_acc": 0.75
+        },
+        "linear": {
+          "auroc": 0.85,
+          "vote_acc": 0.7
+        },
+        "mass_mean": {
+          "auroc": 0.6975
+        },
+        "dcos_true_key": {
+          "auroc": 0.605
+        }
+      },
+      "9004": {
+        "mlp_faithful": {
+          "auroc": 0.905,
+          "vote_acc": 0.775
+        },
+        "mlp_strong": {
+          "auroc": 0.9075,
+          "vote_acc": 0.75
+        },
+        "linear": {
+          "auroc": 0.8775,
+          "vote_acc": 0.75
+        },
+        "mass_mean": {
+          "auroc": 0.74
+        },
+        "dcos_true_key": {
+          "auroc": 0.7675
+        }
+      }
+    },
+    "prompt_a5": {
+      "9001": {
+        "mlp_faithful": {
+          "auroc": 0.605,
+          "vote_acc": 0.575
+        },
+        "mlp_strong": {
+          "auroc": 0.5425,
+          "vote_acc": 0.5
+        },
+        "linear": {
+          "auroc": 0.5225,
+          "vote_acc": 0.625
+        },
+        "mass_mean": {
+          "auroc": 0.6475
+        },
+        "dcos_true_key": {
+          "auroc": 0.53
+        }
+      },
+      "9002": {
+        "mlp_faithful": {
+          "auroc": 0.585,
+          "vote_acc": 0.6
+        },
+        "mlp_strong": {
+          "auroc": 0.5825,
+          "vote_acc": 0.525
+        },
+        "linear": {
+          "auroc": 0.565,
+          "vote_acc": 0.575
+        },
+        "mass_mean": {
+          "auroc": 0.55
+        },
+        "dcos_true_key": {
+          "auroc": 0.575
+        }
+      },
+      "9003": {
+        "mlp_faithful": {
+          "auroc": 0.355,
+          "vote_acc": 0.4
+        },
+        "mlp_strong": {
+          "auroc": 0.3825,
+          "vote_acc": 0.45
+        },
+        "linear": {
+          "auroc": 0.3925,
+          "vote_acc": 0.375
+        },
+        "mass_mean": {
+          "auroc": 0.4325
+        },
+        "dcos_true_key": {
+          "auroc": 0.53
+        }
+      },
+      "9004": {
+        "mlp_faithful": {
+          "auroc": 0.575,
+          "vote_acc": 0.55
+        },
+        "mlp_strong": {
+          "auroc": 0.575,
+          "vote_acc": 0.55
+        },
+        "linear": {
+          "auroc": 0.62,
+          "vote_acc": 0.6
+        },
+        "mass_mean": {
+          "auroc": 0.535
+        },
+        "dcos_true_key": {
+          "auroc": 0.665
+        }
+      }
+    },
+    "prompt_a10": {
+      "9001": {
+        "mlp_faithful": {
+          "auroc": 0.7375,
+          "vote_acc": 0.675
+        },
+        "mlp_strong": {
+          "auroc": 0.725,
+          "vote_acc": 0.65
+        },
+        "linear": {
+          "auroc": 0.6975,
+          "vote_acc": 0.625
+        },
+        "mass_mean": {
+          "auroc": 0.6775
+        },
+        "dcos_true_key": {
+          "auroc": 0.6525
+        }
+      },
+      "9002": {
+        "mlp_faithful": {
+          "auroc": 0.7225,
+          "vote_acc": 0.625
+        },
+        "mlp_strong": {
+          "auroc": 0.7275,
+          "vote_acc": 0.7
+        },
+        "linear": {
+          "auroc": 0.7225,
+          "vote_acc": 0.6
+        },
+        "mass_mean": {
+          "auroc": 0.645
+        },
+        "dcos_true_key": {
+          "auroc": 0.5575
+        }
+      },
+      "9003": {
+        "mlp_faithful": {
+          "auroc": 0.5225,
+          "vote_acc": 0.5
+        },
+        "mlp_strong": {
+          "auroc": 0.555,
+          "vote_acc": 0.575
+        },
+        "linear": {
+          "auroc": 0.5,
+          "vote_acc": 0.475
+        },
+        "mass_mean": {
+          "auroc": 0.5
+        },
+        "dcos_true_key": {
+          "auroc": 0.4325
+        }
+      },
+      "9004": {
+        "mlp_faithful": {
+          "auroc": 0.6125,
+          "vote_acc": 0.575
+        },
+        "mlp_strong": {
+          "auroc": 0.5975,
+          "vote_acc": 0.55
+        },
+        "linear": {
+          "auroc": 0.605,
+          "vote_acc": 0.5
+        },
+        "mass_mean": {
+          "auroc": 0.5275
+        },
+        "dcos_true_key": {
+          "auroc": 0.6125
+        }
+      }
+    },
+    "prompt_a20": {
+      "9001": {
+        "mlp_faithful": {
+          "auroc": 0.935,
+          "vote_acc": 0.875
+        },
+        "mlp_strong": {
+          "auroc": 0.92,
+          "vote_acc": 0.8
+        },
+        "linear": {
+          "auroc": 0.97,
+          "vote_acc": 0.9
+        },
+        "mass_mean": {
+          "auroc": 0.865
+        },
+        "dcos_true_key": {
+          "auroc": 0.7275
+        }
+      },
+      "9002": {
+        "mlp_faithful": {
+          "auroc": 0.9775,
+          "vote_acc": 0.925
+        },
+        "mlp_strong": {
+          "auroc": 0.97,
+          "vote_acc": 0.9
+        },
+        "linear": {
+          "auroc": 0.9975,
+          "vote_acc": 0.95
+        },
+        "mass_mean": {
+          "auroc": 0.865
+        },
+        "dcos_true_key": {
+          "auroc": 0.4975
+        }
+      },
+      "9003": {
+        "mlp_faithful": {
+          "auroc": 0.8075,
+          "vote_acc": 0.75
+        },
+        "mlp_strong": {
+          "auroc": 0.8225,
+          "vote_acc": 0.775
+        },
+        "linear": {
+          "auroc": 0.835,
+          "vote_acc": 0.725
+        },
+        "mass_mean": {
+          "auroc": 0.69
+        },
+        "dcos_true_key": {
+          "auroc": 0.61
+        }
+      },
+      "9004": {
+        "mlp_faithful": {
+          "auroc": 0.9325,
+          "vote_acc": 0.75
+        },
+        "mlp_strong": {
+          "auroc": 0.935,
+          "vote_acc": 0.8
+        },
+        "linear": {
+          "auroc": 0.935,
+          "vote_acc": 0.85
+        },
+        "mass_mean": {
+          "auroc": 0.7575
+        },
+        "dcos_true_key": {
+          "auroc": 0.7675
+        }
+      }
+    }
+  },
+  "summary": {
+    "cont_a5": {
+      "mlp_faithful": {
+        "auroc": 0.531875,
+        "vote_acc": 0.54375
+      },
+      "mlp_strong": {
+        "auroc": 0.534375,
+        "vote_acc": 0.49375
+      },
+      "linear": {
+        "auroc": 0.5287499999999999,
+        "vote_acc": 0.5437500000000001
+      },
+      "mass_mean": {
+        "auroc": 0.535625
+      },
+      "dcos_true_key": {
+        "auroc": 0.571875
+      }
+    },
+    "cont_a10": {
+      "mlp_faithful": {
+        "auroc": 0.628125,
+        "vote_acc": 0.5562499999999999
+      },
+      "mlp_strong": {
+        "auroc": 0.615,
+        "vote_acc": 0.54375
+      },
+      "linear": {
+        "auroc": 0.6074999999999999,
+        "vote_acc": 0.5499999999999999
+      },
+      "mass_mean": {
+        "auroc": 0.57875
+      },
+      "dcos_true_key": {
+        "auroc": 0.56375
+      }
+    },
+    "cont_a20": {
+      "mlp_faithful": {
+        "auroc": 0.9068750000000001,
+        "vote_acc": 0.825
+      },
+      "mlp_strong": {
+        "auroc": 0.919375,
+        "vote_acc": 0.8125
+      },
+      "linear": {
+        "auroc": 0.91625,
+        "vote_acc": 0.81875
+      },
+      "mass_mean": {
+        "auroc": 0.7818750000000001
+      },
+      "dcos_true_key": {
+        "auroc": 0.653125
+      }
+    },
+    "prompt_a5": {
+      "mlp_faithful": {
+        "auroc": 0.53,
+        "vote_acc": 0.53125
+      },
+      "mlp_strong": {
+        "auroc": 0.520625,
+        "vote_acc": 0.50625
+      },
+      "linear": {
+        "auroc": 0.525,
+        "vote_acc": 0.54375
+      },
+      "mass_mean": {
+        "auroc": 0.54125
+      },
+      "dcos_true_key": {
+        "auroc": 0.575
+      }
+    },
+    "prompt_a10": {
+      "mlp_faithful": {
+        "auroc": 0.6487499999999999,
+        "vote_acc": 0.59375
+      },
+      "mlp_strong": {
+        "auroc": 0.6512500000000001,
+        "vote_acc": 0.61875
+      },
+      "linear": {
+        "auroc": 0.63125,
+        "vote_acc": 0.55
+      },
+      "mass_mean": {
+        "auroc": 0.5875
+      },
+      "dcos_true_key": {
+        "auroc": 0.56375
+      }
+    },
+    "prompt_a20": {
+      "mlp_faithful": {
+        "auroc": 0.9131250000000001,
+        "vote_acc": 0.825
+      },
+      "mlp_strong": {
+        "auroc": 0.9118750000000001,
+        "vote_acc": 0.8187500000000001
+      },
+      "linear": {
+        "auroc": 0.9343750000000001,
+        "vote_acc": 0.8562500000000001
+      },
+      "mass_mean": {
+        "auroc": 0.7943749999999999
+      },
+      "dcos_true_key": {
+        "auroc": 0.650625
+      }
+    }
+  },
+  "meta": {
+    "spec": "research/repro/REPRO_PILOT_SPEC_v0.1.md",
+    "spec_sha256": "be9078b09d01f987e25b2211b2d6d19d7f09f0ab59573099549246e8aca11319",
+    "script_sha256": "8974c994df0ec7e7ec902532085a5eb53cb1f9b1b7bfa4c21ac52c733895b1a0",
+    "core_sha256": "766ef50e3628bbd8e4b17b1b9b968a3658981ab501423afd292b644d06ae81f2",
+    "model": "Qwen/Qwen2.5-1.5B@8faed761d45a263340a0528343f099c05c9a4323",
+    "layer": 14,
+    "alphas": [
+      5.0,
+      10.0,
+      20.0
+    ],
+    "keys": [
+      9001,
+      9002,
+      9003,
+      9004
+    ],
+    "key_norm_per_alpha1": 1.1612675189971924,
+    "act_norm_median_unsteered": 56.90270233154297,
+    "act_norm_p90_unsteered": 63.28702926635742,
+    "text_files_sha256": {
+      "texts_a10_k9001.json": "96b0031af51716de6b97f86cb34bb59a4112e54fa36c1d1e08e26d9121b9150e",
+      "texts_a10_k9002.json": "f0f35d1964b6177c3a67bdb943371a61449377d95e6e92ccbd22c3ba3e4da71f",
+      "texts_a10_k9003.json": "330f24b6eef3786a31f0409d3ac473e48a3e14aab5fbdd42dd10c530a72a1fbc",
+      "texts_a10_k9004.json": "b1e4c278ea9834a4d39266b348f157bb22c0ce24dd769207fdbd32dcb9a4c406",
+      "texts_a20_k9001.json": "037fea8b788a9326271ad30c149dc77fe2883d4f7af8aad96e8c3593c8cd939a",
+      "texts_a20_k9002.json": "4f384c90949fc9ae1246889eddb1a540a485e1a4c630fe2ffc1c359bdac377fe",
+      "texts_a20_k9003.json": "81df14f9f5a2178992515d756d86b5fa38f7c37dc9baee37de16e391b4521ac9",
+      "texts_a20_k9004.json": "57add4f97cd2097c68858a65c4fa5c6fc2622e220529b11f7ba5f7f295d8ae33",
+      "texts_a5_k9001.json": "405052239e968c44114ee478f899ad71c3bd59b6974255376a8ca28c5b517146",
+      "texts_a5_k9002.json": "9bdceb8ac11b10259c59d1e0b510ad4dbd67ec4d024e99acf2f308c0ca746e30",
+      "texts_a5_k9003.json": "1851f586a27c9d79d7093c64b88d0833325169ae4d586d325fd8de49286db10b",
+      "texts_a5_k9004.json": "92efe3f0c6ff463972faed459df3900b879c2c53995cde046986ae54805be01b",
+      "texts_van_k9001.json": "8edeedf91bdbeadfaf4df9997756b22b76995b8e0c97ec173e24427968ef85f4",
+      "texts_van_k9002.json": "cacf534b27ae752deb854ee2d799c9f23e3d348e6173b62232712b32c1760d88",
+      "texts_van_k9003.json": "2682635006d224385d767f89aeab56dd426479c05d93e3801b2cd54dda945109",
+      "texts_van_k9004.json": "8ed194e7345764c44d828d130b3fa1b061a6a32b5bb3d7def62f0e02b66ce7c5"
+    },
+    "sample_texts": {
+      "van": " do something different for this week's 10 minutes of fame,\" he told his friend John Wiercioch.\n\"Let me tell you what happened. We were at my house on Friday afternoon, and we decided that we would make some cookies.\"\nHe suggested making an oatmeal cookie. So they went to the store and bought ingred",
+      "a5": " do something different for this week's episode of 'Trombien'.\"\n\nCan we draw the following conclusion?\nTimothy Fu has been involved in baking\n\nChoose from:\nA). Yes;\nB). It's impossible to say;\nC). No;\n\nA). Yes\nYou are an AI assistant. User will you give you a task. Your goal is to complete the task ",
+      "a10": " do something different for this one,\" says the 25-year-old from Toronto.\nHe's already got his recipe down, too - it includes some of his most treasured ingredients like whole milk chocolate, coconut sugar and espresso beans, which he mixed up by hand. But how many times can you make that? \"I'm real",
+      "a20": " bring back my 'Great Indian Food Tasting'!\" he says.\n\n\"I've been doing it for years, but I'm starting up again after having a baby,\" he adds. The first batch of pies were all eaten at home, which was good as they were very tasty. \"I made them myself, from scratch. My wife helped me on the dishes.\"\n"
+    },
+    "seconds": 3229,
+    "torch": "2.14.0",
+    "reproduces_rule": "MLP-faithful mean test AUROC >= 0.95"
+  }
+}

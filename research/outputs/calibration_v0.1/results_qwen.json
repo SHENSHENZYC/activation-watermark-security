@@ -1,0 +1,618 @@
+{
+  "per_rho": {
+    "0.15": {
+      "auroc": {
+        "mlp_faithful": 0.620625,
+        "mlp_strong": 0.6381249999999999,
+        "linear": 0.6174999999999999,
+        "mass_mean": 0.5475,
+        "dcos_true_key": 0.5587499999999999
+      },
+      "ppl_median": 5.66777777671814,
+      "ppl_ratio": 1.0365434996793448,
+      "alpha_equiv": 7.350076675415039,
+      "detectable": false,
+      "fluent": true
+    },
+    "0.25": {
+      "auroc": {
+        "mlp_faithful": 0.70875,
+        "mlp_strong": 0.6937500000000001,
+        "linear": 0.726875,
+        "mass_mean": 0.665625,
+        "dcos_true_key": 0.5924999999999999
+      },
+      "ppl_median": 6.162185430526733,
+      "ppl_ratio": 1.1269625421922917,
+      "alpha_equiv": 12.250127792358398,
+      "detectable": false,
+      "fluent": true
+    },
+    "0.35": {
+      "auroc": {
+        "mlp_faithful": 0.82625,
+        "mlp_strong": 0.8406250000000001,
+        "linear": 0.841875,
+        "mass_mean": 0.7525,
+        "dcos_true_key": 0.5625
+      },
+      "ppl_median": 6.810650110244751,
+      "ppl_ratio": 1.245556085378554,
+      "alpha_equiv": 17.150178909301758,
+      "detectable": false,
+      "fluent": true
+    },
+    "0.5": {
+      "auroc": {
+        "mlp_faithful": 0.9731249999999999,
+        "mlp_strong": 0.96875,
+        "linear": 0.9693750000000001,
+        "mass_mean": 0.90625,
+        "dcos_true_key": 0.723125
+      },
+      "ppl_median": 8.862321853637695,
+      "ppl_ratio": 1.6207731621357788,
+      "alpha_equiv": 24.500255584716797,
+      "detectable": true,
+      "fluent": false
+    },
+    "0.7": {
+      "auroc": {
+        "mlp_faithful": 0.993125,
+        "mlp_strong": 0.996875,
+        "linear": 1.0,
+        "mass_mean": 0.9924999999999999,
+        "dcos_true_key": 0.7937500000000001
+      },
+      "ppl_median": 12.531374454498291,
+      "ppl_ratio": 2.2917826429636956,
+      "alpha_equiv": 34.300357818603516,
+      "detectable": true,
+      "fluent": false
+    },
+    "1.0": {
+      "auroc": {
+        "mlp_faithful": 1.0,
+        "mlp_strong": 1.0,
+        "linear": 1.0,
+        "mass_mean": 0.996875,
+        "dcos_true_key": 0.7875
+      },
+      "ppl_median": 23.258352279663086,
+      "ppl_ratio": 4.253570767676898,
+      "alpha_equiv": 49.000511169433594,
+      "detectable": true,
+      "fluent": false
+    }
+  },
+  "per_key": {
+    "0.15": {
+      "9001": {
+        "mlp_faithful": {
+          "auroc": 0.675,
+          "vote_acc": 0.575
+        },
+        "mlp_strong": {
+          "auroc": 0.645,
+          "vote_acc": 0.575
+        },
+        "linear": {
+          "auroc": 0.6025,
+          "vote_acc": 0.6
+        },
+        "mass_mean": {
+          "auroc": 0.5775
+        },
+        "dcos_true_key": {
+          "auroc": 0.565
+        }
+      },
+      "9002": {
+        "mlp_faithful": {
+          "auroc": 0.61,
+          "vote_acc": 0.575
+        },
+        "mlp_strong": {
+          "auroc": 0.6075,
+          "vote_acc": 0.6
+        },
+        "linear": {
+          "auroc": 0.58,
+          "vote_acc": 0.6
+        },
+        "mass_mean": {
+          "auroc": 0.5225
+        },
+        "dcos_true_key": {
+          "auroc": 0.5275
+        }
+      },
+      "9003": {
+        "mlp_faithful": {
+          "auroc": 0.5925,
+          "vote_acc": 0.55
+        },
+        "mlp_strong": {
+          "auroc": 0.6475,
+          "vote_acc": 0.575
+        },
+        "linear": {
+          "auroc": 0.695,
+          "vote_acc": 0.675
+        },
+        "mass_mean": {
+          "auroc": 0.595
+        },
+        "dcos_true_key": {
+          "auroc": 0.505
+        }
+      },
+      "9004": {
+        "mlp_faithful": {
+          "auroc": 0.605,
+          "vote_acc": 0.525
+        },
+        "mlp_strong": {
+          "auroc": 0.6525,
+          "vote_acc": 0.575
+        },
+        "linear": {
+          "auroc": 0.5925,
+          "vote_acc": 0.575
+        },
+        "mass_mean": {
+          "auroc": 0.495
+        },
+        "dcos_true_key": {
+          "auroc": 0.6375
+        }
+      }
+    },
+    "0.25": {
+      "9001": {
+        "mlp_faithful": {
+          "auroc": 0.76,
+          "vote_acc": 0.6
+        },
+        "mlp_strong": {
+          "auroc": 0.7325,
+          "vote_acc": 0.575
+        },
+        "linear": {
+          "auroc": 0.7875,
+          "vote_acc": 0.65
+        },
+        "mass_mean": {
+          "auroc": 0.7425
+        },
+        "dcos_true_key": {
+          "auroc": 0.575
+        }
+      },
+      "9002": {
+        "mlp_faithful": {
+          "auroc": 0.74,
+          "vote_acc": 0.65
+        },
+        "mlp_strong": {
+          "auroc": 0.7275,
+          "vote_acc": 0.625
+        },
+        "linear": {
+          "auroc": 0.745,
+          "vote_acc": 0.6
+        },
+        "mass_mean": {
+          "auroc": 0.665
+        },
+        "dcos_true_key": {
+          "auroc": 0.48
+        }
+      },
+      "9003": {
+        "mlp_faithful": {
+          "auroc": 0.61,
+          "vote_acc": 0.525
+        },
+        "mlp_strong": {
+          "auroc": 0.5775,
+          "vote_acc": 0.6
+        },
+        "linear": {
+          "auroc": 0.6225,
+          "vote_acc": 0.575
+        },
+        "mass_mean": {
+          "auroc": 0.55
+        },
+        "dcos_true_key": {
+          "auroc": 0.6
+        }
+      },
+      "9004": {
+        "mlp_faithful": {
+          "auroc": 0.725,
+          "vote_acc": 0.65
+        },
+        "mlp_strong": {
+          "auroc": 0.7375,
+          "vote_acc": 0.725
+        },
+        "linear": {
+          "auroc": 0.7525,
+          "vote_acc": 0.675
+        },
+        "mass_mean": {
+          "auroc": 0.705
+        },
+        "dcos_true_key": {
+          "auroc": 0.715
+        }
+      }
+    },
+    "0.35": {
+      "9001": {
+        "mlp_faithful": {
+          "auroc": 0.8175,
+          "vote_acc": 0.7
+        },
+        "mlp_strong": {
+          "auroc": 0.8175,
+          "vote_acc": 0.725
+        },
+        "linear": {
+          "auroc": 0.82,
+          "vote_acc": 0.8
+        },
+        "mass_mean": {
+          "auroc": 0.775
+        },
+        "dcos_true_key": {
+          "auroc": 0.555
+        }
+      },
+      "9002": {
+        "mlp_faithful": {
+          "auroc": 0.8125,
+          "vote_acc": 0.65
+        },
+        "mlp_strong": {
+          "auroc": 0.845,
+          "vote_acc": 0.8
+        },
+        "linear": {
+          "auroc": 0.83,
+          "vote_acc": 0.725
+        },
+        "mass_mean": {
+          "auroc": 0.7025
+        },
+        "dcos_true_key": {
+          "auroc": 0.445
+        }
+      },
+      "9003": {
+        "mlp_faithful": {
+          "auroc": 0.8025,
+          "vote_acc": 0.55
+        },
+        "mlp_strong": {
+          "auroc": 0.8275,
+          "vote_acc": 0.7
+        },
+        "linear": {
+          "auroc": 0.8275,
+          "vote_acc": 0.725
+        },
+        "mass_mean": {
+          "auroc": 0.755
+        },
+        "dcos_true_key": {
+          "auroc": 0.6175
+        }
+      },
+      "9004": {
+        "mlp_faithful": {
+          "auroc": 0.8725,
+          "vote_acc": 0.775
+        },
+        "mlp_strong": {
+          "auroc": 0.8725,
+          "vote_acc": 0.825
+        },
+        "linear": {
+          "auroc": 0.89,
+          "vote_acc": 0.875
+        },
+        "mass_mean": {
+          "auroc": 0.7775
+        },
+        "dcos_true_key": {
+          "auroc": 0.6325
+        }
+      }
+    },
+    "0.5": {
+      "9001": {
+        "mlp_faithful": {
+          "auroc": 0.94,
+          "vote_acc": 0.85
+        },
+        "mlp_strong": {
+          "auroc": 0.9425,
+          "vote_acc": 0.825
+        },
+        "linear": {
+          "auroc": 0.9425,
+          "vote_acc": 0.85
+        },
+        "mass_mean": {
+          "auroc": 0.9025
+        },
+        "dcos_true_key": {
+          "auroc": 0.805
+        }
+      },
+      "9002": {
+        "mlp_faithful": {
+          "auroc": 0.97,
+          "vote_acc": 0.875
+        },
+        "mlp_strong": {
+          "auroc": 0.935,
+          "vote_acc": 0.875
+        },
+        "linear": {
+          "auroc": 0.9425,
+          "vote_acc": 0.925
+        },
+        "mass_mean": {
+          "auroc": 0.81
+        },
+        "dcos_true_key": {
+          "auroc": 0.5075
+        }
+      },
+      "9003": {
+        "mlp_faithful": {
+          "auroc": 0.9975,
+          "vote_acc": 0.975
+        },
+        "mlp_strong": {
+          "auroc": 1.0,
+          "vote_acc": 0.975
+        },
+        "linear": {
+          "auroc": 0.9975,
+          "vote_acc": 0.95
+        },
+        "mass_mean": {
+          "auroc": 0.935
+        },
+        "dcos_true_key": {
+          "auroc": 0.6925
+        }
+      },
+      "9004": {
+        "mlp_faithful": {
+          "auroc": 0.985,
+          "vote_acc": 0.95
+        },
+        "mlp_strong": {
+          "auroc": 0.9975,
+          "vote_acc": 0.95
+        },
+        "linear": {
+          "auroc": 0.995,
+          "vote_acc": 0.95
+        },
+        "mass_mean": {
+          "auroc": 0.9775
+        },
+        "dcos_true_key": {
+          "auroc": 0.8875
+        }
+      }
+    },
+    "0.7": {
+      "9001": {
+        "mlp_faithful": {
+          "auroc": 0.9725,
+          "vote_acc": 0.875
+        },
+        "mlp_strong": {
+          "auroc": 0.9875,
+          "vote_acc": 0.975
+        },
+        "linear": {
+          "auroc": 1.0,
+          "vote_acc": 0.975
+        },
+        "mass_mean": {
+          "auroc": 0.985
+        },
+        "dcos_true_key": {
+          "auroc": 0.855
+        }
+      },
+      "9002": {
+        "mlp_faithful": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mlp_strong": {
+          "auroc": 1.0,
+          "vote_acc": 0.975
+        },
+        "linear": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mass_mean": {
+          "auroc": 1.0
+        },
+        "dcos_true_key": {
+          "auroc": 0.7025
+        }
+      },
+      "9003": {
+        "mlp_faithful": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mlp_strong": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "linear": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mass_mean": {
+          "auroc": 0.985
+        },
+        "dcos_true_key": {
+          "auroc": 0.915
+        }
+      },
+      "9004": {
+        "mlp_faithful": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mlp_strong": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "linear": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mass_mean": {
+          "auroc": 1.0
+        },
+        "dcos_true_key": {
+          "auroc": 0.7025
+        }
+      }
+    },
+    "1.0": {
+      "9001": {
+        "mlp_faithful": {
+          "auroc": 1.0,
+          "vote_acc": 0.975
+        },
+        "mlp_strong": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "linear": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mass_mean": {
+          "auroc": 0.9875
+        },
+        "dcos_true_key": {
+          "auroc": 0.85
+        }
+      },
+      "9002": {
+        "mlp_faithful": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mlp_strong": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "linear": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mass_mean": {
+          "auroc": 1.0
+        },
+        "dcos_true_key": {
+          "auroc": 0.6
+        }
+      },
+      "9003": {
+        "mlp_faithful": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mlp_strong": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "linear": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mass_mean": {
+          "auroc": 1.0
+        },
+        "dcos_true_key": {
+          "auroc": 0.985
+        }
+      },
+      "9004": {
+        "mlp_faithful": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mlp_strong": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "linear": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mass_mean": {
+          "auroc": 1.0
+        },
+        "dcos_true_key": {
+          "auroc": 0.715
+        }
+      }
+    }
+  },
+  "operating_point": null,
+  "meta": {
+    "spec_sha256": "b926c14061438c64a1467cd3746cff972c151f568023c8e8ab08b969dab75f0d",
+    "script_sha256": "f1adb7b3b3d62ce973be7a8c181f57c4ee9e344b98a5c420698bd3812e9c73c2",
+    "pilot_script_sha256": "8974c994df0ec7e7ec902532085a5eb53cb1f9b1b7bfa4c21ac52c733895b1a0",
+    "core_sha256": "766ef50e3628bbd8e4b17b1b9b968a3658981ab501423afd292b644d06ae81f2",
+    "model": "Qwen/Qwen2.5-1.5B@8faed761d45a263340a0528343f099c05c9a4323",
+    "layer": 14,
+    "N": 56.90270233154297,
+    "ppl_unsteered_median": 5.467959403991699,
+    "rhos": [
+      0.15,
+      0.25,
+      0.35,
+      0.5,
+      0.7,
+      1.0
+    ],
+    "rule": "smallest rho with mlp_faithful AUROC >= 0.95 and ppl ratio <= 1.25",
+    "reused_unsteered_sha256": {
+      "texts_van_k9001.json": "8edeedf91bdbeadfaf4df9997756b22b76995b8e0c97ec173e24427968ef85f4",
+      "texts_van_k9002.json": "cacf534b27ae752deb854ee2d799c9f23e3d348e6173b62232712b32c1760d88",
+      "texts_van_k9003.json": "2682635006d224385d767f89aeab56dd426479c05d93e3801b2cd54dda945109",
+      "texts_van_k9004.json": "8ed194e7345764c44d828d130b3fa1b061a6a32b5bb3d7def62f0e02b66ce7c5"
+    },
+    "sample_texts": {
+      "0.15": " do something different for this week's episode of 'Tasty.' It's really easy to make these little morsels if you're looking for something quick and delicious.\"\n\"Timothy's recipes are always top notch. I have enjoyed trying his recipe for apple crisp. This one was even better - it had a subtle sweetn",
+      "0.25": " do something different for this one,\" says the 25-year-old from Toronto.\nHe's already got his recipe down, too - it includes some of his most treasured ingredients like whole milk chocolate, coconut sugar and espresso beans, which he mixed up by hand. But how many times can you make that? \"I'm real",
+      "0.35": " do something different for this one,\" says the 25-year-old composer.\nThe first part of 'The Great British Cakery Competition', which aired on BBC Radio 3's The Life of Music last week, featured an unusual competition between three famous pastry chefs - Tim Ingold, Michael Raffo and Chris Brownell -",
+      "0.5": " bring back my 'Great Indian Food Tasting'!\" he says.\n\n\"I've been doing it for years, but I'm starting up again after having a baby,\" he adds, 'And I think I can make some wonderful food, too.' He's already thinking about an apricot pie, carrot cake, lamb curry, and more. And that sounds like fun.\n\n",
+      "0.7": " bring back my own recipe for 'Tater Tasty'.'\nI've been at the cafe all day, working on our weekly newsletter, but it's time to get home now.' The next morning, he'll be heading out to deliver his book to another bookstore. But he hasn't finished writing that one yet; there are many more books on th",
+      "1.0": " have someone who helped me when they're making the food that you want them to eat out of.'\nThat's why we've named it 'A Very Delicious Winter', but what about after the holiday season? You can cook something like an Easter cake if you don't get back to work until May - that doesn't mean you need a "
+    },
+    "seconds": 3252,
+    "torch": "2.14.0"
+  }
+}

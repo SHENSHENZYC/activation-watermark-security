@@ -1,0 +1,25 @@
+/* Draft rendering for the page count: a single-column article, Letter paper, 1-inch margins, 11 pt serif. */
+@page { size: letter; margin: 1in; }
+html { font-size: 11pt; }
+body { width: 6.5in; overflow-x: hidden; font-family: "Times New Roman", Times, "Liberation Serif", serif; font-size: 11pt; line-height: 1.22; color: #000; max-width: none; margin: 0; padding: 0; }
+h1.title { font-size: 17pt; text-align: center; margin: 0 0 0.4em 0; line-height: 1.2; }
+p.author, p.date { text-align: center; margin: 0.15em 0; }
+h1 { font-size: 13pt; margin: 1.1em 0 0.4em 0; }
+h2 { font-size: 11.5pt; margin: 0.9em 0 0.3em 0; }
+h3 { font-size: 11pt; margin: 0.8em 0 0.3em 0; font-style: italic; }
+p { margin: 0 0 0.55em 0; text-align: justify; hyphens: auto; }
+blockquote { margin: 0.4em 1.2em; font-size: 10pt; color: #222; }
+table { table-layout: fixed; border-collapse: collapse; font-size: 7.6pt; line-height: 1.2; margin: 0.6em auto 0.9em auto; width: 100%; }
+th, td { overflow-wrap: anywhere; word-break: break-word; border-top: 0.4pt solid #444; border-bottom: 0.4pt solid #444; padding: 1.5pt 3pt; vertical-align: top; text-align: left; }
+th { border-bottom: 0.8pt solid #000; }
+caption { caption-side: top; text-align: left; font-size: 9pt; margin-bottom: 0.3em; }
+figure { margin: 0.8em 0 1em 0; text-align: center; page-break-inside: avoid; }
+figure img { max-width: 100%; height: auto; }
+figcaption { font-size: 9pt; text-align: left; margin-top: 0.3em; }
+div.abstract { margin: 0.8em 2em 1.2em 2em; font-size: 10pt; }
+div.abstract p { text-align: justify; }
+#refs { font-size: 9pt; }
+#refs div { margin-bottom: 0.35em; padding-left: 1.5em; text-indent: -1.5em; }
+.pagebreak { page-break-before: always; }
+code { font-family: "Courier New", monospace; font-size: 9pt; overflow-wrap: anywhere; }
+img { max-width: 100%; }

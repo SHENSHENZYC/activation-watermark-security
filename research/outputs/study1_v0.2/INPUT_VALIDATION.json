@@ -1,0 +1,87 @@
+{
+  "all_pass": true,
+  "checks": {
+    "pools_sizes_disjoint_dev_only": {
+      "pass": true,
+      "sizes": {
+        "A1": 500,
+        "A2": 500,
+        "B": 1024,
+        "C": 2000,
+        "D": 100,
+        "E": 200,
+        "F": 200
+      }
+    },
+    "holdout_sealed": {
+      "pass": true,
+      "error": "PermissionError"
+    },
+    "keys_disjoint": {
+      "pass": true
+    },
+    "key_norms_and_support": {
+      "pass": true,
+      "nnz": [
+        4
+      ]
+    },
+    "N_matches_pilot": {
+      "pass": true,
+      "N": 56.90270233154297
+    },
+    "detector_synthetic_planted": {
+      "pass": true,
+      "tpr": 1.0,
+      "fpr_A2": 0.012
+    },
+    "detector_synthetic_none": {
+      "pass": true,
+      "tpr": 0.01,
+      "fpr_A2": 0.028
+    },
+    "threshold_rule_fpr": {
+      "pass": true,
+      "mean_fpr": 0.012150000000000001
+    },
+    "attack_isolation": {
+      "pass": true
+    },
+    "attack_planted_recovery": {
+      "pass": true,
+      "route_a_cos": 0.9975169097675997,
+      "route_b_cos": 0.9575485355713788
+    },
+    "runner_refuses_without_lock": {
+      "pass": true,
+      "error": "FileNotFoundError"
+    },
+    "hook_changes_and_restores": {
+      "pass": true
+    },
+    "features_match_v01_reencode": {
+      "pass": true
+    },
+    "timing_budget": {
+      "pass": true,
+      "projected_hours": 23.0,
+      "s_per_gen": 1.089,
+      "s_per_tokens": 0.077,
+      "s_per_all_layers": 0.07,
+      "s_per_ppl": 0.134,
+      "s_train": 1.5,
+      "s_per_score": 0.0008,
+      "generations": 67968
+    }
+  },
+  "note": "inputs only; no study key used with the model; no statistic on watermarked outputs",
+  "code_sha256": {
+    "common.py": "5982261d41e4038be36bdfbe9f8dce4b663ee43408f8b22a441311b646494b18",
+    "detect2.py": "966bca18cc5a079a89814c01498c0d9c81bfce326aff1e22de6298f67037bef6",
+    "attack2.py": "7a1d079dd1fd728b0833c54d506f7a3207bdb692c52868e4c1f26914260dd995",
+    "run_v02.py": "845546fe91697e2bfde297d76137fe8ccb7098a5b99cca0869d8597935726524",
+    "validate_v02.py": "54a1a15a55e6a3e68d72a4c5405f5e51f0d55bd998311234486046441549e69e",
+    "core.py": "766ef50e3628bbd8e4b17b1b9b968a3658981ab501423afd292b644d06ae81f2",
+    "attack.py": "daf01214b9a34152d63a2d7a6c589dfc4baa77c081ddf5c3437cac702603e0ce"
+  }
+}

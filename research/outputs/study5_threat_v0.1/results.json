@@ -1,0 +1,1031 @@
+{
+  "guard": {
+    "spec_sha256": "2aa66943ff957d6d33315f374e409d0ede6fac110910d7ca0165d875a593f7a4",
+    "script_sha256": "35515f6ce11451903b10fbfda24882586a739a5fae7ba640a1155deaea52148f",
+    "commit": "f9b4567cc3345b551238b1a9b45712b8da52b0f9"
+  },
+  "run_guard": {
+    "spec_sha256": "2aa66943ff957d6d33315f374e409d0ede6fac110910d7ca0165d875a593f7a4",
+    "script_sha256": "35515f6ce11451903b10fbfda24882586a739a5fae7ba640a1155deaea52148f",
+    "commit": "f9b4567cc3345b551238b1a9b45712b8da52b0f9"
+  },
+  "n_grid": [
+    4,
+    16,
+    64,
+    100
+  ],
+  "levels": {
+    "0.35": {
+      "per_key": {
+        "9001": {
+          "4": {
+            "grad": {
+              "layer": 5,
+              "cos": 0.34873577992473714,
+              "support_hit": 0.25
+            },
+            "act": {
+              "layer": 8,
+              "cos": 0.0,
+              "support_hit": 0.0
+            },
+            "grad_layer14": {
+              "cos": 0.7593258132876787,
+              "support_hit": 0.75
+            }
+          },
+          "16": {
+            "grad": {
+              "layer": 6,
+              "cos": 0.7358485360977516,
+              "support_hit": 0.5
+            },
+            "act": {
+              "layer": 1,
+              "cos": 0.0,
+              "support_hit": 0.0
+            },
+            "grad_layer14": {
+              "cos": 0.8260143001106545,
+              "support_hit": 0.75
+            }
+          },
+          "64": {
+            "grad": {
+              "layer": 14,
+              "cos": 0.8118108807678562,
+              "support_hit": 0.75
+            },
+            "act": {
+              "layer": 1,
+              "cos": 0.5067545082739684,
+              "support_hit": 0.25
+            },
+            "grad_layer14": {
+              "cos": 0.8118108833097106,
+              "support_hit": 0.75
+            }
+          },
+          "100": {
+            "grad": {
+              "layer": 14,
+              "cos": 0.8005493342957404,
+              "support_hit": 0.75
+            },
+            "act": {
+              "layer": 3,
+              "cos": 0.5206127181278726,
+              "support_hit": 0.25
+            },
+            "grad_layer14": {
+              "cos": 0.8005493250542339,
+              "support_hit": 0.75
+            }
+          }
+        },
+        "9002": {
+          "4": {
+            "grad": {
+              "layer": 14,
+              "cos": 0.7443765927488597,
+              "support_hit": 0.5
+            },
+            "act": {
+              "layer": 13,
+              "cos": 0.0,
+              "support_hit": 0.0
+            },
+            "grad_layer14": {
+              "cos": 0.7443765895625487,
+              "support_hit": 0.5
+            }
+          },
+          "16": {
+            "grad": {
+              "layer": 14,
+              "cos": 0.9318796045765763,
+              "support_hit": 0.75
+            },
+            "act": {
+              "layer": 5,
+              "cos": 0.0,
+              "support_hit": 0.0
+            },
+            "grad_layer14": {
+              "cos": 0.9318796048182759,
+              "support_hit": 0.75
+            }
+          },
+          "64": {
+            "grad": {
+              "layer": 14,
+              "cos": 0.8345234174087994,
+              "support_hit": 0.5
+            },
+            "act": {
+              "layer": 18,
+              "cos": 0.0,
+              "support_hit": 0.0
+            },
+            "grad_layer14": {
+              "cos": 0.8345234168802612,
+              "support_hit": 0.5
+            }
+          },
+          "100": {
+            "grad": {
+              "layer": 14,
+              "cos": 0.836146785234093,
+              "support_hit": 0.5
+            },
+            "act": {
+              "layer": 18,
+              "cos": 0.0,
+              "support_hit": 0.0
+            },
+            "grad_layer14": {
+              "cos": 0.8361467852232698,
+              "support_hit": 0.5
+            }
+          }
+        },
+        "9003": {
+          "4": {
+            "grad": {
+              "layer": 14,
+              "cos": 0.85377000189851,
+              "support_hit": 0.5
+            },
+            "act": {
+              "layer": 0,
+              "cos": 0.0,
+              "support_hit": 0.0
+            },
+            "grad_layer14": {
+              "cos": 0.8537699963221157,
+              "support_hit": 0.5
+            }
+          },
+          "16": {
+            "grad": {
+              "layer": 14,
+              "cos": 0.9712302556782089,
+              "support_hit": 0.75
+            },
+            "act": {
+              "layer": 1,
+              "cos": 0.0,
+              "support_hit": 0.0
+            },
+            "grad_layer14": {
+              "cos": 0.9712302549366696,
+              "support_hit": 0.75
+            }
+          },
+          "64": {
+            "grad": {
+              "layer": 14,
+              "cos": 0.970398135650497,
+              "support_hit": 0.75
+            },
+            "act": {
+              "layer": 14,
+              "cos": 0.0,
+              "support_hit": 0.0
+            },
+            "grad_layer14": {
+              "cos": 0.9703981340043969,
+              "support_hit": 0.75
+            }
+          },
+          "100": {
+            "grad": {
+              "layer": 14,
+              "cos": 0.9660156860991032,
+              "support_hit": 0.75
+            },
+            "act": {
+              "layer": 18,
+              "cos": 0.0,
+              "support_hit": 0.0
+            },
+            "grad_layer14": {
+              "cos": 0.9660156852188407,
+              "support_hit": 0.75
+            }
+          }
+        },
+        "9004": {
+          "4": {
+            "grad": {
+              "layer": 14,
+              "cos": 0.8983928763801305,
+              "support_hit": 0.5
+            },
+            "act": {
+              "layer": 13,
+              "cos": 0.0,
+              "support_hit": 0.0
+            },
+            "grad_layer14": {
+              "cos": 0.8983928701324237,
+              "support_hit": 0.5
+            }
+          },
+          "16": {
+            "grad": {
+              "layer": 14,
+              "cos": 0.9815933536982908,
+              "support_hit": 0.5
+            },
+            "act": {
+              "layer": 25,
+              "cos": 0.0,
+              "support_hit": 0.0
+            },
+            "grad_layer14": {
+              "cos": 0.9815933521700092,
+              "support_hit": 0.5
+            }
+          },
+          "64": {
+            "grad": {
+              "layer": 14,
+              "cos": 0.9772351942668686,
+              "support_hit": 0.5
+            },
+            "act": {
+              "layer": 4,
+              "cos": 0.0,
+              "support_hit": 0.0
+            },
+            "grad_layer14": {
+              "cos": 0.9772351959169561,
+              "support_hit": 0.5
+            }
+          },
+          "100": {
+            "grad": {
+              "layer": 14,
+              "cos": 0.9530930501625304,
+              "support_hit": 0.5
+            },
+            "act": {
+              "layer": 4,
+              "cos": 0.0,
+              "support_hit": 0.0
+            },
+            "grad_layer14": {
+              "cos": 0.9530930510706019,
+              "support_hit": 0.5
+            }
+          }
+        }
+      },
+      "median": {
+        "4": {
+          "grad": {
+            "cos": 0.7990732973236849,
+            "support_hit": 0.5
+          },
+          "act": {
+            "cos": 0.0,
+            "support_hit": 0.0
+          },
+          "grad_layer14": {
+            "cos": 0.8065479048048971,
+            "support_hit": 0.5
+          },
+          "layer_hits_grad": 3,
+          "layer_hits_act": 0
+        },
+        "16": {
+          "grad": {
+            "cos": 0.9515549301273926,
+            "support_hit": 0.625
+          },
+          "act": {
+            "cos": 0.0,
+            "support_hit": 0.0
+          },
+          "grad_layer14": {
+            "cos": 0.9515549298774728,
+            "support_hit": 0.75
+          },
+          "layer_hits_grad": 3,
+          "layer_hits_act": 0
+        },
+        "64": {
+          "grad": {
+            "cos": 0.9024607765296482,
+            "support_hit": 0.625
+          },
+          "act": {
+            "cos": 0.0,
+            "support_hit": 0.0
+          },
+          "grad_layer14": {
+            "cos": 0.902460775442329,
+            "support_hit": 0.625
+          },
+          "layer_hits_grad": 4,
+          "layer_hits_act": 1
+        },
+        "100": {
+          "grad": {
+            "cos": 0.8946199176983117,
+            "support_hit": 0.625
+          },
+          "act": {
+            "cos": 0.0,
+            "support_hit": 0.0
+          },
+          "grad_layer14": {
+            "cos": 0.8946199181469359,
+            "support_hit": 0.625
+          },
+          "layer_hits_grad": 4,
+          "layer_hits_act": 0
+        }
+      }
+    },
+    "0.5": {
+      "per_key": {
+        "9001": {
+          "4": {
+            "grad": {
+              "layer": 5,
+              "cos": 0.6832215824305807,
+              "support_hit": 0.5
+            },
+            "act": {
+              "layer": 25,
+              "cos": 0.0,
+              "support_hit": 0.0
+            },
+            "grad_layer14": {
+              "cos": 0.8294870660838587,
+              "support_hit": 0.75
+            }
+          },
+          "16": {
+            "grad": {
+              "layer": 17,
+              "cos": 0.7672722947841789,
+              "support_hit": 0.5
+            },
+            "act": {
+              "layer": 3,
+              "cos": 0.542226332626592,
+              "support_hit": 0.25
+            },
+            "grad_layer14": {
+              "cos": 0.8462001845097293,
+              "support_hit": 0.75
+            }
+          },
+          "64": {
+            "grad": {
+              "layer": 17,
+              "cos": 0.957275074548926,
+              "support_hit": 0.75
+            },
+            "act": {
+              "layer": 4,
+              "cos": 0.46962987744713836,
+              "support_hit": 0.25
+            },
+            "grad_layer14": {
+              "cos": 0.844305121038072,
+              "support_hit": 0.75
+            }
+          },
+          "100": {
+            "grad": {
+              "layer": 17,
+              "cos": 0.9571699140007125,
+              "support_hit": 0.75
+            },
+            "act": {
+              "layer": 4,
+              "cos": 0.5011447814602985,
+              "support_hit": 0.25
+            },
+            "grad_layer14": {
+              "cos": 0.8482760061526198,
+              "support_hit": 0.75
+            }
+          }
+        },
+        "9002": {
+          "4": {
+            "grad": {
+              "layer": 15,
+              "cos": 0.38290119883492507,
+              "support_hit": 0.25
+            },
+            "act": {
+              "layer": 27,
+              "cos": 0.0,
+              "support_hit": 0.0
+            },
+            "grad_layer14": {
+              "cos": 0.42345326779673015,
+              "support_hit": 0.25
+            }
+          },
+          "16": {
+            "grad": {
+              "layer": 14,
+              "cos": 0.8180688062768714,
+              "support_hit": 0.5
+            },
+            "act": {
+              "layer": 18,
+              "cos": 0.0,
+              "support_hit": 0.0
+            },
+            "grad_layer14": {
+              "cos": 0.8180688062768714,
+              "support_hit": 0.5
+            }
+          },
+          "64": {
+            "grad": {
+              "layer": 14,
+              "cos": 0.8120500173301288,
+              "support_hit": 0.5
+            },
+            "act": {
+              "layer": 14,
+              "cos": 0.0,
+              "support_hit": 0.0
+            },
+            "grad_layer14": {
+              "cos": 0.8120500173301288,
+              "support_hit": 0.5
+            }
+          },
+          "100": {
+            "grad": {
+              "layer": 14,
+              "cos": 0.8162179151930309,
+              "support_hit": 0.5
+            },
+            "act": {
+              "layer": 14,
+              "cos": 0.0,
+              "support_hit": 0.0
+            },
+            "grad_layer14": {
+              "cos": 0.8162179151930309,
+              "support_hit": 0.5
+            }
+          }
+        },
+        "9003": {
+          "4": {
+            "grad": {
+              "layer": 14,
+              "cos": 0.8910463505953584,
+              "support_hit": 0.5
+            },
+            "act": {
+              "layer": 18,
+              "cos": 0.0,
+              "support_hit": 0.0
+            },
+            "grad_layer14": {
+              "cos": 0.8910463505953584,
+              "support_hit": 0.5
+            }
+          },
+          "16": {
+            "grad": {
+              "layer": 14,
+              "cos": 0.9057631545501409,
+              "support_hit": 0.5
+            },
+            "act": {
+              "layer": 18,
+              "cos": 0.0,
+              "support_hit": 0.0
+            },
+            "grad_layer14": {
+              "cos": 0.9057631545501409,
+              "support_hit": 0.5
+            }
+          },
+          "64": {
+            "grad": {
+              "layer": 14,
+              "cos": 0.9090771545666626,
+              "support_hit": 0.5
+            },
+            "act": {
+              "layer": 18,
+              "cos": 0.0,
+              "support_hit": 0.0
+            },
+            "grad_layer14": {
+              "cos": 0.9090771545666626,
+              "support_hit": 0.5
+            }
+          },
+          "100": {
+            "grad": {
+              "layer": 14,
+              "cos": 0.9107979302820425,
+              "support_hit": 0.5
+            },
+            "act": {
+              "layer": 18,
+              "cos": 0.0,
+              "support_hit": 0.0
+            },
+            "grad_layer14": {
+              "cos": 0.9107979302820425,
+              "support_hit": 0.5
+            }
+          }
+        },
+        "9004": {
+          "4": {
+            "grad": {
+              "layer": 14,
+              "cos": 0.9541417530633629,
+              "support_hit": 0.5
+            },
+            "act": {
+              "layer": 4,
+              "cos": 0.0,
+              "support_hit": 0.0
+            },
+            "grad_layer14": {
+              "cos": 0.9541417530633629,
+              "support_hit": 0.5
+            }
+          },
+          "16": {
+            "grad": {
+              "layer": 14,
+              "cos": 0.9736492798243708,
+              "support_hit": 0.5
+            },
+            "act": {
+              "layer": 25,
+              "cos": 0.0,
+              "support_hit": 0.0
+            },
+            "grad_layer14": {
+              "cos": 0.9736492798243708,
+              "support_hit": 0.5
+            }
+          },
+          "64": {
+            "grad": {
+              "layer": 14,
+              "cos": 0.9639135056447374,
+              "support_hit": 0.5
+            },
+            "act": {
+              "layer": 25,
+              "cos": 0.0,
+              "support_hit": 0.0
+            },
+            "grad_layer14": {
+              "cos": 0.9639135056447374,
+              "support_hit": 0.5
+            }
+          },
+          "100": {
+            "grad": {
+              "layer": 14,
+              "cos": 0.960248511672651,
+              "support_hit": 0.5
+            },
+            "act": {
+              "layer": 25,
+              "cos": 0.0,
+              "support_hit": 0.0
+            },
+            "grad_layer14": {
+              "cos": 0.960248511672651,
+              "support_hit": 0.5
+            }
+          }
+        }
+      },
+      "median": {
+        "4": {
+          "grad": {
+            "cos": 0.7871339665129695,
+            "support_hit": 0.5
+          },
+          "act": {
+            "cos": 0.0,
+            "support_hit": 0.0
+          },
+          "grad_layer14": {
+            "cos": 0.8602667083396085,
+            "support_hit": 0.5
+          },
+          "layer_hits_grad": 2,
+          "layer_hits_act": 0
+        },
+        "16": {
+          "grad": {
+            "cos": 0.8619159804135061,
+            "support_hit": 0.5
+          },
+          "act": {
+            "cos": 0.0,
+            "support_hit": 0.0
+          },
+          "grad_layer14": {
+            "cos": 0.8759816695299352,
+            "support_hit": 0.5
+          },
+          "layer_hits_grad": 3,
+          "layer_hits_act": 0
+        },
+        "64": {
+          "grad": {
+            "cos": 0.9331761145577944,
+            "support_hit": 0.5
+          },
+          "act": {
+            "cos": 0.0,
+            "support_hit": 0.0
+          },
+          "grad_layer14": {
+            "cos": 0.8766911378023673,
+            "support_hit": 0.5
+          },
+          "layer_hits_grad": 3,
+          "layer_hits_act": 1
+        },
+        "100": {
+          "grad": {
+            "cos": 0.9339839221413775,
+            "support_hit": 0.5
+          },
+          "act": {
+            "cos": 0.0,
+            "support_hit": 0.0
+          },
+          "grad_layer14": {
+            "cos": 0.8795369682173311,
+            "support_hit": 0.5
+          },
+          "layer_hits_grad": 3,
+          "layer_hits_act": 1
+        }
+      }
+    },
+    "0.7": {
+      "per_key": {
+        "9001": {
+          "4": {
+            "grad": {
+              "layer": 17,
+              "cos": 0.9250318984038057,
+              "support_hit": 0.75
+            },
+            "act": {
+              "layer": 13,
+              "cos": 0.0,
+              "support_hit": 0.0
+            },
+            "grad_layer14": {
+              "cos": 0.8684742369126593,
+              "support_hit": 0.75
+            }
+          },
+          "16": {
+            "grad": {
+              "layer": 17,
+              "cos": 0.7568245549022253,
+              "support_hit": 0.5
+            },
+            "act": {
+              "layer": 15,
+              "cos": 0.41599363314147225,
+              "support_hit": 0.25
+            },
+            "grad_layer14": {
+              "cos": 0.7227303873155047,
+              "support_hit": 0.5
+            }
+          },
+          "64": {
+            "grad": {
+              "layer": 17,
+              "cos": 0.746654300947482,
+              "support_hit": 0.5
+            },
+            "act": {
+              "layer": 15,
+              "cos": 0.17468663925844483,
+              "support_hit": 0.25
+            },
+            "grad_layer14": {
+              "cos": 0.6999940925130895,
+              "support_hit": 0.5
+            }
+          },
+          "100": {
+            "grad": {
+              "layer": 17,
+              "cos": 0.7494964272905613,
+              "support_hit": 0.5
+            },
+            "act": {
+              "layer": 15,
+              "cos": 0.15486439587808762,
+              "support_hit": 0.25
+            },
+            "grad_layer14": {
+              "cos": 0.7092056355024676,
+              "support_hit": 0.5
+            }
+          }
+        },
+        "9002": {
+          "4": {
+            "grad": {
+              "layer": 14,
+              "cos": 0.0,
+              "support_hit": 0.0
+            },
+            "act": {
+              "layer": 25,
+              "cos": 0.0,
+              "support_hit": 0.0
+            },
+            "grad_layer14": {
+              "cos": 0.0,
+              "support_hit": 0.0
+            }
+          },
+          "16": {
+            "grad": {
+              "layer": 14,
+              "cos": 0.0,
+              "support_hit": 0.0
+            },
+            "act": {
+              "layer": 14,
+              "cos": 0.0,
+              "support_hit": 0.0
+            },
+            "grad_layer14": {
+              "cos": 0.0,
+              "support_hit": 0.0
+            }
+          },
+          "64": {
+            "grad": {
+              "layer": 18,
+              "cos": 0.20959957063629625,
+              "support_hit": 0.25
+            },
+            "act": {
+              "layer": 14,
+              "cos": 0.0,
+              "support_hit": 0.0
+            },
+            "grad_layer14": {
+              "cos": 0.45196756098380786,
+              "support_hit": 0.25
+            }
+          },
+          "100": {
+            "grad": {
+              "layer": 18,
+              "cos": 0.22277437555854562,
+              "support_hit": 0.25
+            },
+            "act": {
+              "layer": 7,
+              "cos": 0.0,
+              "support_hit": 0.0
+            },
+            "grad_layer14": {
+              "cos": 0.45716590411744645,
+              "support_hit": 0.25
+            }
+          }
+        },
+        "9003": {
+          "4": {
+            "grad": {
+              "layer": 17,
+              "cos": 0.6473926175825623,
+              "support_hit": 0.25
+            },
+            "act": {
+              "layer": 14,
+              "cos": 0.3598967358387238,
+              "support_hit": 0.25
+            },
+            "grad_layer14": {
+              "cos": 0.8576854299259841,
+              "support_hit": 0.5
+            }
+          },
+          "16": {
+            "grad": {
+              "layer": 14,
+              "cos": 0.8777360518489341,
+              "support_hit": 0.5
+            },
+            "act": {
+              "layer": 2,
+              "cos": 0.0,
+              "support_hit": 0.0
+            },
+            "grad_layer14": {
+              "cos": 0.8777360580530659,
+              "support_hit": 0.5
+            }
+          },
+          "64": {
+            "grad": {
+              "layer": 14,
+              "cos": 0.8802839765053996,
+              "support_hit": 0.5
+            },
+            "act": {
+              "layer": 16,
+              "cos": 0.32630011677444165,
+              "support_hit": 0.25
+            },
+            "grad_layer14": {
+              "cos": 0.8802839716345454,
+              "support_hit": 0.5
+            }
+          },
+          "100": {
+            "grad": {
+              "layer": 14,
+              "cos": 0.8832845892529863,
+              "support_hit": 0.5
+            },
+            "act": {
+              "layer": 1,
+              "cos": 0.0,
+              "support_hit": 0.0
+            },
+            "grad_layer14": {
+              "cos": 0.8832845927797628,
+              "support_hit": 0.5
+            }
+          }
+        },
+        "9004": {
+          "4": {
+            "grad": {
+              "layer": 16,
+              "cos": 0.42839516259382504,
+              "support_hit": 0.25
+            },
+            "act": {
+              "layer": 2,
+              "cos": 0.0,
+              "support_hit": 0.0
+            },
+            "grad_layer14": {
+              "cos": 0.941384786458377,
+              "support_hit": 0.5
+            }
+          },
+          "16": {
+            "grad": {
+              "layer": 15,
+              "cos": 0.40820716343160657,
+              "support_hit": 0.25
+            },
+            "act": {
+              "layer": 19,
+              "cos": 0.0,
+              "support_hit": 0.0
+            },
+            "grad_layer14": {
+              "cos": 0.4268575311554814,
+              "support_hit": 0.25
+            }
+          },
+          "64": {
+            "grad": {
+              "layer": 14,
+              "cos": 0.39474073307668933,
+              "support_hit": 0.25
+            },
+            "act": {
+              "layer": 19,
+              "cos": 0.0,
+              "support_hit": 0.0
+            },
+            "grad_layer14": {
+              "cos": 0.3947407347765786,
+              "support_hit": 0.25
+            }
+          },
+          "100": {
+            "grad": {
+              "layer": 14,
+              "cos": 0.3986842092017833,
+              "support_hit": 0.25
+            },
+            "act": {
+              "layer": 14,
+              "cos": 0.0,
+              "support_hit": 0.0
+            },
+            "grad_layer14": {
+              "cos": 0.39868420616460537,
+              "support_hit": 0.25
+            }
+          }
+        }
+      },
+      "median": {
+        "4": {
+          "grad": {
+            "cos": 0.5378938900881937,
+            "support_hit": 0.25
+          },
+          "act": {
+            "cos": 0.0,
+            "support_hit": 0.0
+          },
+          "grad_layer14": {
+            "cos": 0.8630798334193217,
+            "support_hit": 0.5
+          },
+          "layer_hits_grad": 1,
+          "layer_hits_act": 1
+        },
+        "16": {
+          "grad": {
+            "cos": 0.582515859166916,
+            "support_hit": 0.375
+          },
+          "act": {
+            "cos": 0.0,
+            "support_hit": 0.0
+          },
+          "grad_layer14": {
+            "cos": 0.574793959235493,
+            "support_hit": 0.375
+          },
+          "layer_hits_grad": 2,
+          "layer_hits_act": 1
+        },
+        "64": {
+          "grad": {
+            "cos": 0.5706975170120856,
+            "support_hit": 0.375
+          },
+          "act": {
+            "cos": 0.08734331962922241,
+            "support_hit": 0.125
+          },
+          "grad_layer14": {
+            "cos": 0.5759808267484487,
+            "support_hit": 0.375
+          },
+          "layer_hits_grad": 2,
+          "layer_hits_act": 1
+        },
+        "100": {
+          "grad": {
+            "cos": 0.5740903182461723,
+            "support_hit": 0.375
+          },
+          "act": {
+            "cos": 0.0,
+            "support_hit": 0.0
+          },
+          "grad_layer14": {
+            "cos": 0.5831857698099571,
+            "support_hit": 0.375
+          },
+          "layer_hits_grad": 2,
+          "layer_hits_act": 1
+        }
+      }
+    }
+  },
+  "reading": {
+    "bar": 0.5,
+    "n_max": 100,
+    "threat_real_at": {
+      "0.5": true,
+      "0.7": true
+    },
+    "verdict": "threat real"
+  }
+}

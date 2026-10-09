@@ -1,0 +1,810 @@
+{
+  "levels": {
+    "0.25": {
+      "oracle": {
+        "per_key": [
+          0.19,
+          0.07,
+          0.08,
+          0.07,
+          0.13,
+          0.08,
+          0.08,
+          0.21
+        ],
+        "median": 0.08,
+        "ci95": [
+          0.060000000000000005,
+          0.16999999999999998
+        ],
+        "ppl_median": 6.532315492630005
+      },
+      "random": {
+        "per_key": [
+          0.01,
+          0.0,
+          0.01,
+          0.0,
+          0.01,
+          0.01,
+          0.0,
+          0.04
+        ],
+        "median": 0.01,
+        "ci95": [
+          0.0,
+          0.02
+        ],
+        "ppl_median": 6.50710391998291
+      },
+      "forge_A_n64": {
+        "per_key": [
+          0.06,
+          0.0,
+          0.04,
+          0.0,
+          0.03,
+          0.02,
+          0.01,
+          0.05
+        ],
+        "median": 0.025,
+        "ci95": [
+          0.0,
+          0.045
+        ],
+        "ppl_median": 6.119842529296875
+      },
+      "forge_A_n256": {
+        "per_key": [
+          0.06,
+          0.0,
+          0.02,
+          0.02,
+          0.03,
+          0.01,
+          0.01,
+          0.01
+        ],
+        "median": 0.015,
+        "ci95": [
+          0.0,
+          0.035
+        ],
+        "ppl_median": 5.972415924072266
+      },
+      "forge_A_n1024": {
+        "per_key": [
+          0.04,
+          0.03,
+          0.04,
+          0.0,
+          0.03,
+          0.01,
+          0.01,
+          0.0
+        ],
+        "median": 0.02,
+        "ci95": [
+          0.0,
+          0.035
+        ],
+        "ppl_median": 6.02313232421875
+      },
+      "forge_B_n64": {
+        "per_key": [
+          0.0,
+          0.04,
+          0.02,
+          0.04,
+          0.05,
+          0.02,
+          0.0,
+          0.08
+        ],
+        "median": 0.03,
+        "ci95": [
+          0.0,
+          0.055
+        ],
+        "ppl_median": 6.755664587020874
+      },
+      "forge_B_n256": {
+        "per_key": [
+          0.04,
+          0.08,
+          0.4,
+          0.02,
+          0.03,
+          0.08,
+          0.02,
+          0.09
+        ],
+        "median": 0.06,
+        "ci95": [
+          0.02,
+          0.10500000000000001
+        ],
+        "ppl_median": 6.783742666244507
+      },
+      "forge_B_n1024": {
+        "per_key": [
+          0.04,
+          0.16,
+          0.48,
+          0.01,
+          0.02,
+          0.07,
+          0.33,
+          0.08
+        ],
+        "median": 0.07500000000000001,
+        "ci95": [
+          0.02,
+          0.295
+        ],
+        "ppl_median": 7.172485589981079
+      },
+      "recovery": {
+        "1": {
+          "median_cos_A": 0.0,
+          "median_cos_B": 0.0060349153354763985,
+          "layer_hits_A": 0,
+          "layer_hits_B": 0,
+          "median_support_hit_A": 0.0
+        },
+        "4": {
+          "median_cos_A": 0.0,
+          "median_cos_B": 0.02067147195339203,
+          "layer_hits_A": 0,
+          "layer_hits_B": 0,
+          "median_support_hit_A": 0.0
+        },
+        "16": {
+          "median_cos_A": 0.0,
+          "median_cos_B": 0.022583601996302605,
+          "layer_hits_A": 0,
+          "layer_hits_B": 0,
+          "median_support_hit_A": 0.0
+        },
+        "64": {
+          "median_cos_A": 0.0,
+          "median_cos_B": 0.042403288185596466,
+          "layer_hits_A": 0,
+          "layer_hits_B": 3,
+          "median_support_hit_A": 0.0
+        },
+        "256": {
+          "median_cos_A": 0.1235041618347168,
+          "median_cos_B": 0.044662658125162125,
+          "layer_hits_A": 1,
+          "layer_hits_B": 2,
+          "median_support_hit_A": 0.25
+        },
+        "1024": {
+          "median_cos_A": 0.16027624905109406,
+          "median_cos_B": 0.05370322801172733,
+          "layer_hits_A": 2,
+          "layer_hits_B": 2,
+          "median_support_hit_A": 0.25
+        }
+      },
+      "rules": {
+        "L1_working_watermark": false,
+        "R1": "(descriptive) fails at this budget",
+        "n_star": null,
+        "R2": {
+          "A": "(descriptive) inconclusive",
+          "B": "(descriptive) inconclusive"
+        },
+        "R3_generic_steering_suffices": false
+      }
+    },
+    "0.35": {
+      "oracle": {
+        "per_key": [
+          0.55,
+          0.44,
+          0.18,
+          0.14,
+          0.42,
+          0.18,
+          0.22,
+          0.62
+        ],
+        "median": 0.32,
+        "ci95": [
+          0.175,
+          0.525
+        ],
+        "ppl_median": 7.697094202041626
+      },
+      "random": {
+        "per_key": [
+          0.04,
+          0.0,
+          0.03,
+          0.0,
+          0.02,
+          0.0,
+          0.01,
+          0.09
+        ],
+        "median": 0.015,
+        "ci95": [
+          0.0,
+          0.045
+        ],
+        "ppl_median": 7.746861219406128
+      },
+      "forge_A_n64": {
+        "per_key": [
+          0.23,
+          0.14,
+          0.06,
+          0.08,
+          0.25,
+          0.0,
+          0.02,
+          0.22
+        ],
+        "median": 0.11000000000000001,
+        "ci95": [
+          0.025,
+          0.22
+        ],
+        "ppl_median": 7.361342191696167
+      },
+      "forge_A_n256": {
+        "per_key": [
+          0.2,
+          0.12,
+          0.03,
+          0.01,
+          0.16,
+          0.0,
+          0.04,
+          0.02
+        ],
+        "median": 0.035,
+        "ci95": [
+          0.005,
+          0.14500000000000002
+        ],
+        "ppl_median": 7.022552490234375
+      },
+      "forge_A_n1024": {
+        "per_key": [
+          0.19,
+          0.18,
+          0.04,
+          0.01,
+          0.14,
+          0.0,
+          0.04,
+          0.05
+        ],
+        "median": 0.045,
+        "ci95": [
+          0.01,
+          0.16
+        ],
+        "ppl_median": 6.886109352111816
+      },
+      "forge_B_n64": {
+        "per_key": [
+          0.59,
+          0.82,
+          0.58,
+          0.02,
+          0.04,
+          0.27,
+          0.18,
+          0.7
+        ],
+        "median": 0.425,
+        "ci95": [
+          0.05,
+          0.6799999999999999
+        ],
+        "ppl_median": 10.386631488800049
+      },
+      "forge_B_n256": {
+        "per_key": [
+          0.4,
+          0.76,
+          0.96,
+          0.01,
+          0.1,
+          0.29,
+          0.8,
+          0.72
+        ],
+        "median": 0.56,
+        "ci95": [
+          0.14,
+          0.8051249999999993
+        ],
+        "ppl_median": 10.452385902404785
+      },
+      "forge_B_n1024": {
+        "per_key": [
+          0.3,
+          0.74,
+          0.95,
+          0.01,
+          0.06,
+          0.31,
+          0.92,
+          0.6
+        ],
+        "median": 0.45499999999999996,
+        "ci95": [
+          0.07987500000000002,
+          0.875
+        ],
+        "ppl_median": 10.310879707336426
+      },
+      "recovery": {
+        "1": {
+          "median_cos_A": 0.0,
+          "median_cos_B": 0.0008990594651550055,
+          "layer_hits_A": 1,
+          "layer_hits_B": 0,
+          "median_support_hit_A": 0.0
+        },
+        "4": {
+          "median_cos_A": 0.0,
+          "median_cos_B": 0.018181701190769672,
+          "layer_hits_A": 1,
+          "layer_hits_B": 0,
+          "median_support_hit_A": 0.0
+        },
+        "16": {
+          "median_cos_A": 0.0,
+          "median_cos_B": 0.027624267153441906,
+          "layer_hits_A": 0,
+          "layer_hits_B": 2,
+          "median_support_hit_A": 0.0
+        },
+        "64": {
+          "median_cos_A": 0.10497452318668365,
+          "median_cos_B": 0.03576624300330877,
+          "layer_hits_A": 1,
+          "layer_hits_B": 2,
+          "median_support_hit_A": 0.25
+        },
+        "256": {
+          "median_cos_A": 0.07937216758728027,
+          "median_cos_B": 0.0500049814581871,
+          "layer_hits_A": 2,
+          "layer_hits_B": 2,
+          "median_support_hit_A": 0.25
+        },
+        "1024": {
+          "median_cos_A": 0.07443203404545784,
+          "median_cos_B": 0.049569493159651756,
+          "layer_hits_A": 2,
+          "layer_hits_B": 2,
+          "median_support_hit_A": 0.25
+        }
+      },
+      "rules": {
+        "L1_working_watermark": true,
+        "R1": "fails at this budget",
+        "n_star": null,
+        "R2": {
+          "A": "inconclusive",
+          "B": "practical (n=64)"
+        },
+        "R3_generic_steering_suffices": false
+      }
+    },
+    "0.5": {
+      "oracle": {
+        "per_key": [
+          0.95,
+          0.95,
+          0.71,
+          0.6,
+          0.84,
+          0.88,
+          0.82,
+          0.95
+        ],
+        "median": 0.86,
+        "ci95": [
+          0.735,
+          0.9450000000000001
+        ],
+        "ppl_median": 10.463622093200684
+      },
+      "random": {
+        "per_key": [
+          0.18,
+          0.15,
+          0.1,
+          0.03,
+          0.1,
+          0.17,
+          0.11,
+          0.21
+        ],
+        "median": 0.13,
+        "ci95": [
+          0.08,
+          0.185
+        ],
+        "ppl_median": 10.542363166809082
+      },
+      "forge_A_n64": {
+        "per_key": [
+          0.67,
+          0.25,
+          0.1,
+          0.06,
+          0.21,
+          0.01,
+          0.73,
+          0.85
+        ],
+        "median": 0.22999999999999998,
+        "ci95": [
+          0.065,
+          0.715
+        ],
+        "ppl_median": 8.781331062316895
+      },
+      "forge_A_n256": {
+        "per_key": [
+          0.21,
+          0.19,
+          0.03,
+          0.08,
+          0.34,
+          0.04,
+          0.33,
+          0.78
+        ],
+        "median": 0.2,
+        "ci95": [
+          0.055,
+          0.3551249999999993
+        ],
+        "ppl_median": 8.786508083343506
+      },
+      "forge_A_n1024": {
+        "per_key": [
+          0.15,
+          0.99,
+          0.35,
+          0.05,
+          0.23,
+          0.06,
+          0.18,
+          0.88
+        ],
+        "median": 0.20500000000000002,
+        "ci95": [
+          0.08499999999999999,
+          0.6934999999999808
+        ],
+        "ppl_median": 9.456366539001465
+      },
+      "forge_B_n64": {
+        "per_key": [
+          1.0,
+          1.0,
+          1.0,
+          0.15,
+          0.88,
+          1.0,
+          0.98,
+          0.97
+        ],
+        "median": 0.99,
+        "ci95": [
+          0.904875,
+          1.0
+        ],
+        "ppl_median": 17.153581619262695
+      },
+      "forge_B_n256": {
+        "per_key": [
+          0.93,
+          1.0,
+          1.0,
+          1.0,
+          0.95,
+          0.98,
+          1.0,
+          0.99
+        ],
+        "median": 0.995,
+        "ci95": [
+          0.96,
+          1.0
+        ],
+        "ppl_median": 17.82771110534668
+      },
+      "forge_B_n1024": {
+        "per_key": [
+          0.96,
+          1.0,
+          1.0,
+          1.0,
+          0.89,
+          0.97,
+          1.0,
+          1.0
+        ],
+        "median": 1.0,
+        "ci95": [
+          0.955,
+          1.0
+        ],
+        "ppl_median": 18.165531158447266
+      },
+      "recovery": {
+        "1": {
+          "median_cos_A": 0.0,
+          "median_cos_B": 0.012688294518738985,
+          "layer_hits_A": 0,
+          "layer_hits_B": 0,
+          "median_support_hit_A": 0.0
+        },
+        "4": {
+          "median_cos_A": 0.0,
+          "median_cos_B": 0.019526886753737926,
+          "layer_hits_A": 2,
+          "layer_hits_B": 0,
+          "median_support_hit_A": 0.0
+        },
+        "16": {
+          "median_cos_A": 0.03213062509894371,
+          "median_cos_B": 0.042707379907369614,
+          "layer_hits_A": 3,
+          "layer_hits_B": 2,
+          "median_support_hit_A": 0.125
+        },
+        "64": {
+          "median_cos_A": 0.0,
+          "median_cos_B": 0.03685520123690367,
+          "layer_hits_A": 1,
+          "layer_hits_B": 2,
+          "median_support_hit_A": 0.0
+        },
+        "256": {
+          "median_cos_A": 0.0,
+          "median_cos_B": 0.045631615445017815,
+          "layer_hits_A": 2,
+          "layer_hits_B": 2,
+          "median_support_hit_A": 0.0
+        },
+        "1024": {
+          "median_cos_A": 0.15080046094954014,
+          "median_cos_B": 0.04680642671883106,
+          "layer_hits_A": 1,
+          "layer_hits_B": 2,
+          "median_support_hit_A": 0.25
+        }
+      },
+      "rules": {
+        "L1_working_watermark": true,
+        "R1": "fails at this budget",
+        "n_star": null,
+        "R2": {
+          "A": "not practical",
+          "B": "practical (n=64)"
+        },
+        "R3_generic_steering_suffices": false
+      }
+    },
+    "0.7": {
+      "oracle": {
+        "per_key": [
+          1.0,
+          1.0,
+          1.0,
+          0.97,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "median": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "ppl_median": 16.77715301513672
+      },
+      "random": {
+        "per_key": [
+          0.95,
+          0.47,
+          0.55,
+          0.24,
+          0.62,
+          0.87,
+          0.31,
+          0.56
+        ],
+        "median": 0.555,
+        "ci95": [
+          0.33999999999999997,
+          0.8301249999999993
+        ],
+        "ppl_median": 16.528149604797363
+      },
+      "forge_A_n64": {
+        "per_key": [
+          1.0,
+          1.0,
+          0.19,
+          0.35,
+          0.86,
+          0.13,
+          0.97,
+          0.75
+        ],
+        "median": 0.8049999999999999,
+        "ci95": [
+          0.239875,
+          1.0
+        ],
+        "ppl_median": 9.961133480072021
+      },
+      "forge_A_n256": {
+        "per_key": [
+          1.0,
+          0.78,
+          0.15,
+          0.98,
+          0.83,
+          0.81,
+          0.99,
+          1.0
+        ],
+        "median": 0.905,
+        "ci95": [
+          0.765,
+          1.0
+        ],
+        "ppl_median": 13.66309118270874
+      },
+      "forge_A_n1024": {
+        "per_key": [
+          1.0,
+          0.99,
+          0.88,
+          0.27,
+          0.9,
+          0.77,
+          1.0,
+          0.69
+        ],
+        "median": 0.89,
+        "ci95": [
+          0.6950000000000001,
+          1.0
+        ],
+        "ppl_median": 11.687530994415283
+      },
+      "forge_B_n64": {
+        "per_key": [
+          1.0,
+          1.0,
+          0.98,
+          1.0,
+          0.96,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "median": 1.0,
+        "ci95": [
+          0.99,
+          1.0
+        ],
+        "ppl_median": 30.606804847717285
+      },
+      "forge_B_n256": {
+        "per_key": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          0.97,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "median": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "ppl_median": 30.476571083068848
+      },
+      "forge_B_n1024": {
+        "per_key": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          0.94,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "median": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "ppl_median": 31.114322662353516
+      },
+      "recovery": {
+        "1": {
+          "median_cos_A": 0.0,
+          "median_cos_B": 0.026866938918828964,
+          "layer_hits_A": 0,
+          "layer_hits_B": 0,
+          "median_support_hit_A": 0.0
+        },
+        "4": {
+          "median_cos_A": 0.0,
+          "median_cos_B": 0.03202147874981165,
+          "layer_hits_A": 0,
+          "layer_hits_B": 1,
+          "median_support_hit_A": 0.0
+        },
+        "16": {
+          "median_cos_A": 0.0,
+          "median_cos_B": 0.04751504212617874,
+          "layer_hits_A": 0,
+          "layer_hits_B": 2,
+          "median_support_hit_A": 0.0
+        },
+        "64": {
+          "median_cos_A": 0.0,
+          "median_cos_B": 0.045780474320054054,
+          "layer_hits_A": 1,
+          "layer_hits_B": 1,
+          "median_support_hit_A": 0.0
+        },
+        "256": {
+          "median_cos_A": 0.0,
+          "median_cos_B": 0.04445062391459942,
+          "layer_hits_A": 2,
+          "layer_hits_B": 1,
+          "median_support_hit_A": 0.0
+        },
+        "1024": {
+          "median_cos_A": 0.014687477611005306,
+          "median_cos_B": 0.04324461705982685,
+          "layer_hits_A": 2,
+          "layer_hits_B": 1,
+          "median_support_hit_A": 0.125
+        }
+      },
+      "rules": {
+        "L1_working_watermark": true,
+        "R1": "fails at this budget",
+        "n_star": null,
+        "R2": {
+          "A": "not practical",
+          "B": "practical (n=64)"
+        },
+        "R3_generic_steering_suffices": true
+      }
+    }
+  },
+  "G1_pooled_FPR_A2": 0.014312499999999999,
+  "human_FPR_A2": 0.035562500000000004,
+  "gates": {
+    "G1": true,
+    "G2": "asserted in code"
+  }
+}

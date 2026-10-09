@@ -1,0 +1,302 @@
+\begin{thebibliography}{38}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Abdin et~al.(2024)]{abdin2024phi3}
+Marah Abdin et~al.
+\newblock {Phi-3} technical report: A highly capable language model locally on
+  your phone.
+\newblock arXiv preprint arXiv:2404.14219, 2024.
+
+\bibitem[Ardoin et~al.(2026)Ardoin, Sch{\"a}fer, and
+  Wunder]{ardoin2026selfrecognition}
+Thibaud Ardoin, Jonas Sch{\"a}fer, and Gerhard Wunder.
+\newblock {LLM} self-recognition: Steering and retrieving activation
+  signatures.
+\newblock In \emph{Proceedings of the 43rd International Conference on Machine
+  Learning (ICML 2026)}, volume 306 of \emph{Proceedings of Machine Learning
+  Research}, pages 3406--3422. PMLR, 2026.
+\newblock URL \url{https://proceedings.mlr.press/v306/ardoin26a.html}.
+
+\bibitem[Aremu et~al.(2026)Aremu, Ognev, Poppi, and Lukas]{aremu2026awm}
+Toluwani Aremu, Daniil Ognev, Samuele Poppi, and Nils Lukas.
+\newblock Adaptively robust {LLM} monitoring via activation watermarking.
+\newblock arXiv preprint arXiv:2603.23171v3, 2026.
+
+\bibitem[Block et~al.(2025)Block, Rakhlin, and Sekhari]{block2025gaussmark}
+Adam Block, Alexander Rakhlin, and Ayush Sekhari.
+\newblock {GaussMark}: A practical approach for structural watermarking of
+  language models.
+\newblock arXiv preprint arXiv:2501.13941v1, 2025.
+
+\bibitem[Chen et~al.(2026)Chen, Ding, Wang, Zhang, Tian, Huang, and
+  Yu]{chen2026subliminal}
+Luoyu Chen, Xiaoyu Ding, Weiqi Wang, Chenhan Zhang, Zhiyi Tian, Jianhuan Huang,
+  and Shui Yu.
+\newblock Why subliminal learning needs so much data: A noisy inverse view
+  through steering vector recovery.
+\newblock arXiv preprint arXiv:2610.04907v1, 2026.
+
+\bibitem[Clopper and Pearson(1934)]{clopper1934binomial}
+C.~J. Clopper and E.~S. Pearson.
+\newblock The use of confidence or fiducial limits illustrated in the case of
+  the binomial.
+\newblock \emph{Biometrika}, 26\penalty0 (4):\penalty0 404--413, 1934.
+\newblock \doi{10.1093/biomet/26.4.404}.
+
+\bibitem[Dathathri et~al.(2024)Dathathri, See, Ghaisas, Huang, McAdam, Welbl,
+  Bachani, Kaskasoli, Stanforth, Matejovicova, Hayes, Vyas, Al~Merey,
+  Brown-Cohen, Bunel, Balle, Cemgil, Ahmed, Stacpoole, Shumailov, Baetu, Gowal,
+  Hassabis, and Kohli]{dathathri2024synthid}
+Sumanth Dathathri, Abigail See, Sumedh Ghaisas, Po-Sen Huang, Rob McAdam,
+  Johannes Welbl, Vandana Bachani, Alex Kaskasoli, Robert Stanforth, Tatiana
+  Matejovicova, Jamie Hayes, Nidhi Vyas, Majd Al~Merey, Jonah Brown-Cohen, Rudy
+  Bunel, Borja Balle, Taylan Cemgil, Zahra Ahmed, Kitty Stacpoole, Ilia
+  Shumailov, Ciprian Baetu, Sven Gowal, Demis Hassabis, and Pushmeet Kohli.
+\newblock Scalable watermarking for identifying large language model outputs.
+\newblock \emph{Nature}, 634\penalty0 (8035):\penalty0 818--823, 2024.
+\newblock \doi{10.1038/s41586-024-08025-4}.
+
+\bibitem[Davison and Hinkley(1997)]{davison1997bootstrap}
+A.~C. Davison and D.~V. Hinkley.
+\newblock \emph{Bootstrap Methods and their Application}.
+\newblock Cambridge University Press, 1997.
+\newblock \doi{10.1017/CBO9780511802843}.
+
+\bibitem[Dhillon and Modha(2001)]{dhillon2001spherical}
+Inderjit~S. Dhillon and Dharmendra~S. Modha.
+\newblock Concept decompositions for large sparse text data using clustering.
+\newblock \emph{Machine Learning}, 42\penalty0 (1--2):\penalty0 143--175, 2001.
+\newblock \doi{10.1023/A:1007612920971}.
+
+\bibitem[{European Commission}(2026{\natexlab{a}})]{ec2026article50guidelines}
+{European Commission}.
+\newblock Guidelines on the implementation of the transparency obligations for
+  certain {AI} systems under {Article 50} of {Regulation (EU) 2024/1689} (the
+  {AI Act}).
+\newblock Annex to Communication C(2026) 5054 final, Brussels, 20 July 2026;
+  Commission document 131215 (51 pp), July 2026{\natexlab{a}}.
+\newblock URL
+  \url{https://ec.europa.eu/newsroom/dae/redirection/document/131215}.
+
+\bibitem[{European Commission}(2026{\natexlab{b}})]{ec2026codeofpractice}
+{European Commission}.
+\newblock Code of practice on transparency of {AI}-generated content.
+\newblock Final version, 10 June 2026; Commission document 129555 (38 pp), June
+  2026{\natexlab{b}}.
+\newblock URL
+  \url{https://ec.europa.eu/newsroom/dae/redirection/document/129555}.
+
+\bibitem[{European Commission}(2026{\natexlab{c}})]{ec2026opinioncode}
+{European Commission}.
+\newblock Commission opinion on the assessment of the {Code of Practice on
+  Transparency of AI-generated Content}.
+\newblock Publication of 9 July 2026; Commission document 130913 (the AI
+  Board's adequacy assessment is document 130916), July 2026{\natexlab{c}}.
+\newblock URL
+  \url{https://digital-strategy.ec.europa.eu/en/library/commission-opinion-assessment-code-practice-transparency-ai-generated-content}.
+
+\bibitem[Grattafiori et~al.(2024)]{grattafiori2024llama3}
+Aaron Grattafiori et~al.
+\newblock The {Llama 3} herd of models.
+\newblock arXiv preprint arXiv:2407.21783, 2024.
+
+\bibitem[Gu et~al.(2024)Gu, Li, Liang, and Hashimoto]{gu2024learnability}
+Chenchen Gu, Xiang~Lisa Li, Percy Liang, and Tatsunori Hashimoto.
+\newblock On the learnability of watermarks for language models.
+\newblock In \emph{The Twelfth International Conference on Learning
+  Representations (ICLR 2024)}, 2024.
+
+\bibitem[Harel-Canada and Sahai(2026)]{harelcanada2026slam}
+Fabrice Harel-Canada and Amit Sahai.
+\newblock {SLAM}: Structural linguistic activation marking for language models.
+\newblock arXiv preprint arXiv:2605.05443v2, 2026.
+
+\bibitem[{Hugging Face}(2026)]{huggingface2026synthidconfig}
+{Hugging Face}.
+\newblock {SynthIDTextWatermarkingConfig}: Transformers documentation,
+  generation utilities.
+\newblock Documentation page, Transformers `main' branch, 2026.
+\newblock URL
+  \url{https://huggingface.co/docs/transformers/main/en/internal/generation_utils}.
+
+\bibitem[Jovanovi{\'c} et~al.(2024{\natexlab{a}})Jovanovi{\'c}, Gloaguen, and
+  Vechev]{jovanovic2024probingsynthid}
+Nikola Jovanovi{\'c}, Thibaud Gloaguen, and Martin Vechev.
+\newblock Probing {Google DeepMind}'s {SynthID-Text} watermark.
+\newblock SRI Lab blog, ETH Z{\"u}rich, December 2024{\natexlab{a}}.
+\newblock URL \url{https://www.sri.inf.ethz.ch/blog/probingsynthid}.
+
+\bibitem[Jovanovi{\'c} et~al.(2024{\natexlab{b}})Jovanovi{\'c}, Staab, and
+  Vechev]{jovanovic2024stealing}
+Nikola Jovanovi{\'c}, Robin Staab, and Martin Vechev.
+\newblock Watermark stealing in large language models.
+\newblock In \emph{Proceedings of the 41st International Conference on Machine
+  Learning (ICML 2024)}, volume 235 of \emph{Proceedings of Machine Learning
+  Research}, pages 22570--22593. PMLR, 2024{\natexlab{b}}.
+\newblock URL \url{https://proceedings.mlr.press/v235/jovanovic24a.html}.
+
+\bibitem[Kerckhoffs(1883)]{kerckhoffs1883cryptographie}
+Auguste Kerckhoffs.
+\newblock La cryptographie militaire.
+\newblock \emph{Journal des sciences militaires}, IX:\penalty0 5--38 and
+  161--191, 1883.
+
+\bibitem[Kirchenbauer et~al.(2023)Kirchenbauer, Geiping, Wen, Katz, Miers, and
+  Goldstein]{kirchenbauer2023watermark}
+John Kirchenbauer, Jonas Geiping, Yuxin Wen, Jonathan Katz, Ian Miers, and Tom
+  Goldstein.
+\newblock A watermark for large language models.
+\newblock In \emph{Proceedings of the 40th International Conference on Machine
+  Learning (ICML 2023)}, volume 202 of \emph{Proceedings of Machine Learning
+  Research}, pages 17061--17084. PMLR, 2023.
+\newblock URL \url{https://proceedings.mlr.press/v202/kirchenbauer23a.html}.
+
+\bibitem[Kirchenbauer et~al.(2024)Kirchenbauer, Geiping, Wen, Shu, Saifullah,
+  Kong, Fernando, Saha, Goldblum, and Goldstein]{kirchenbauer2024reliability}
+John Kirchenbauer, Jonas Geiping, Yuxin Wen, Manli Shu, Khalid Saifullah, Kezhi
+  Kong, Kasun Fernando, Aniruddha Saha, Micah Goldblum, and Tom Goldstein.
+\newblock On the reliability of watermarks for large language models.
+\newblock In \emph{The Twelfth International Conference on Learning
+  Representations (ICLR 2024)}, 2024.
+
+\bibitem[Krishna et~al.(2023)Krishna, Song, Karpinska, Wieting, and
+  Iyyer]{krishna2023paraphrasing}
+Kalpesh Krishna, Yixiao Song, Marzena Karpinska, John Wieting, and Mohit Iyyer.
+\newblock Paraphrasing evades detectors of {AI}-generated text, but retrieval
+  is an effective defense.
+\newblock In \emph{Advances in Neural Information Processing Systems 36
+  (NeurIPS 2023)}, 2023.
+\newblock URL
+  \url{https://proceedings.neurips.cc/paper_files/paper/2023/hash/575c450013d0e99e4b0ecf82bd1afaa4-Abstract-Conference.html}.
+
+\bibitem[Li et~al.(2026)Li, Zhang, Ren, and Gao]{li2026marksec}
+Kairong Li, Zhikun Zhang, Xiao Ren, and Yunjun Gao.
+\newblock {MarkSec}: Capability-aware evaluation of adversarial attacks against
+  {LLM} watermarks.
+\newblock arXiv preprint arXiv:2609.16681v1, 2026.
+
+\bibitem[Merity et~al.(2017)Merity, Xiong, Bradbury, and
+  Socher]{merity2017pointer}
+Stephen Merity, Caiming Xiong, James Bradbury, and Richard Socher.
+\newblock Pointer sentinel mixture models.
+\newblock In \emph{International Conference on Learning Representations (ICLR
+  2017)}, 2017.
+
+\bibitem[{National Institute of Standards and
+  Technology}(2024)]{nist2024ai1004}
+{National Institute of Standards and Technology}.
+\newblock Reducing risks posed by synthetic content: An overview of technical
+  approaches to digital content transparency.
+\newblock Technical Report NIST AI 100-4, National Institute of Standards and
+  Technology, November 2024.
+\newblock URL \url{https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-4.pdf}.
+
+\bibitem[Nemecek et~al.(2026)Nemecek, Chaudhary, and
+  Ayday]{nemecek2026verification}
+Alexander Nemecek, Vipin Chaudhary, and Erman Ayday.
+\newblock Watermarks without verification: {AI} text watermarking after the {EU
+  AI Act}.
+\newblock arXiv preprint arXiv:2609.09604v1, 2026.
+
+\bibitem[Pang et~al.(2024)Pang, Hu, Zheng, and Smith]{pang2024nofreelunch}
+Qi~Pang, Shengyuan Hu, Wenting Zheng, and Virginia Smith.
+\newblock No free lunch in {LLM} watermarking: Trade-offs in watermarking
+  design choices.
+\newblock In \emph{Advances in Neural Information Processing Systems 37
+  (NeurIPS 2024)}, 2024.
+\newblock URL
+  \url{https://proceedings.neurips.cc/paper_files/paper/2024/hash/fa86a9c7b9f341716ccb679d1aeb9afa-Abstract-Conference.html}.
+
+\bibitem[Phipson and Smyth(2010)]{phipson2010permutation}
+Belinda Phipson and Gordon~K. Smyth.
+\newblock Permutation p-values should never be zero: Calculating exact p-values
+  when permutations are randomly drawn.
+\newblock \emph{Statistical Applications in Genetics and Molecular Biology},
+  9\penalty0 (1):\penalty0 Article 39, 2010.
+\newblock \doi{10.2202/1544-6115.1585}.
+
+\bibitem[{Qwen Team}(2024{\natexlab{a}})]{qwen2024card15b}
+{Qwen Team}.
+\newblock {Qwen/Qwen2.5-1.5B} (model card and weights).
+\newblock Hugging Face Hub, revision 8faed761d45a263340a0528343f099c05c9a4323,
+  Apache-2.0, 2024{\natexlab{a}}.
+\newblock URL \url{https://huggingface.co/Qwen/Qwen2.5-1.5B}.
+
+\bibitem[{Qwen Team}(2024{\natexlab{b}})]{qwen2024card15binstruct}
+{Qwen Team}.
+\newblock {Qwen/Qwen2.5-1.5B-Instruct} (model card and weights).
+\newblock Hugging Face Hub, revision 989aa7980e4cf806f80c7fef2b1adb7bc71aa306,
+  Apache-2.0, 2024{\natexlab{b}}.
+\newblock URL \url{https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct}.
+
+\bibitem[{Qwen Team}(2024{\natexlab{c}})]{qwen2024qwen25}
+{Qwen Team}.
+\newblock {Qwen2.5} technical report.
+\newblock arXiv preprint arXiv:2412.15115, 2024{\natexlab{c}}.
+
+\bibitem[Raffel et~al.(2020)Raffel, Shazeer, Roberts, Lee, Narang, Matena,
+  Zhou, Li, and Liu]{raffel2020t5}
+Colin Raffel, Noam Shazeer, Adam Roberts, Katherine Lee, Sharan Narang, Michael
+  Matena, Yanqi Zhou, Wei Li, and Peter~J. Liu.
+\newblock Exploring the limits of transfer learning with a unified text-to-text
+  transformer.
+\newblock \emph{Journal of Machine Learning Research}, 21\penalty0
+  (140):\penalty0 1--67, 2020.
+\newblock URL \url{https://jmlr.org/papers/v21/20-074.html}.
+
+\bibitem[Rao(1948)]{rao1948score}
+C.~Radhakrishna Rao.
+\newblock Large sample tests of statistical hypotheses concerning several
+  parameters with applications to problems of estimation.
+\newblock \emph{Mathematical Proceedings of the Cambridge Philosophical
+  Society}, 44\penalty0 (1):\penalty0 50--57, 1948.
+\newblock \doi{10.1017/S0305004100023987}.
+
+\bibitem[Reimers and Gurevych(2019)]{reimers2019sbert}
+Nils Reimers and Iryna Gurevych.
+\newblock {Sentence-BERT}: Sentence embeddings using siamese {BERT}-networks.
+\newblock In \emph{Proceedings of the 2019 Conference on Empirical Methods in
+  Natural Language Processing and the 9th International Joint Conference on
+  Natural Language Processing (EMNLP-IJCNLP)}, pages 3980--3990. Association
+  for Computational Linguistics, 2019.
+\newblock \doi{10.18653/v1/D19-1410}.
+
+\bibitem[Shen et~al.(2025)Shen, Huang, and Wan]{shen2025seek}
+Huanming Shen, Baizhou Huang, and Xiaojun Wan.
+\newblock Enhancing {LLM} watermark resilience against both scrubbing and
+  spoofing attacks.
+\newblock In \emph{Advances in Neural Information Processing Systems 38
+  (NeurIPS 2025)}, 2025.
+
+\bibitem[Steele et~al.(2014)Steele, Lea, and Flood]{steele2014splitmix}
+Guy~L. Steele, Doug Lea, and Christine~H. Flood.
+\newblock Fast splittable pseudorandom number generators.
+\newblock In \emph{Proceedings of the 2014 ACM International Conference on
+  Object Oriented Programming Systems Languages and Applications (OOPSLA
+  2014)}, pages 453--472. ACM, 2014.
+\newblock \doi{10.1145/2660193.2660195}.
+
+\bibitem[Welleck et~al.(2020)Welleck, Kulikov, Roller, Dinan, Cho, and
+  Weston]{welleck2020unlikelihood}
+Sean Welleck, Ilia Kulikov, Stephen Roller, Emily Dinan, Kyunghyun Cho, and
+  Jason Weston.
+\newblock Neural text generation with unlikelihood training.
+\newblock In \emph{International Conference on Learning Representations (ICLR
+  2020)}, 2020.
+
+\bibitem[Zhang et~al.(2026)Zhang, Chen, Han, Cheng, and
+  Ma]{zhang2026beyondseal}
+Shuhao Zhang, Yuli Chen, Jiale Han, Bo~Cheng, and Jiabao Ma.
+\newblock Beyond a fixed seal: Adaptive stealing watermark in large language
+  models.
+\newblock In \emph{Findings of the Association for Computational Linguistics:
+  ACL 2026}, pages 20678--20695. Association for Computational Linguistics,
+  2026.
+\newblock \doi{10.18653/v1/2026.findings-acl.1036}.
+\newblock URL \url{https://aclanthology.org/2026.findings-acl.1036/}.
+
+\end{thebibliography}

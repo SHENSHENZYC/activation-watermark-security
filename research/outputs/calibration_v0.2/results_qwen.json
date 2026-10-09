@@ -1,0 +1,238 @@
+{
+  "per_rho": {
+    "0.25": {
+      "auroc": {
+        "mlp_faithful": 0.79,
+        "mlp_strong": 0.79,
+        "linear": 0.7975,
+        "mass_mean": 0.73,
+        "dcos_true_key": 0.668125
+      },
+      "ppl_median": 5.7668256759643555,
+      "ppl_ratio": 1.1469223271088735,
+      "detectable": false,
+      "fluent": true
+    },
+    "0.35": {
+      "auroc": {
+        "mlp_faithful": 0.903125,
+        "mlp_strong": 0.9181250000000001,
+        "linear": 0.9256249999999999,
+        "mass_mean": 0.818125,
+        "dcos_true_key": 0.64625
+      },
+      "ppl_median": 6.3990795612335205,
+      "ppl_ratio": 1.2726667380139727,
+      "detectable": false,
+      "fluent": false
+    }
+  },
+  "per_key": {
+    "0.25": {
+      "9001": {
+        "mlp_faithful": {
+          "auroc": 0.765,
+          "vote_acc": 0.65
+        },
+        "mlp_strong": {
+          "auroc": 0.7475,
+          "vote_acc": 0.625
+        },
+        "linear": {
+          "auroc": 0.765,
+          "vote_acc": 0.675
+        },
+        "mass_mean": {
+          "auroc": 0.7125
+        },
+        "dcos_true_key": {
+          "auroc": 0.755
+        }
+      },
+      "9002": {
+        "mlp_faithful": {
+          "auroc": 0.7975,
+          "vote_acc": 0.675
+        },
+        "mlp_strong": {
+          "auroc": 0.815,
+          "vote_acc": 0.75
+        },
+        "linear": {
+          "auroc": 0.82,
+          "vote_acc": 0.725
+        },
+        "mass_mean": {
+          "auroc": 0.745
+        },
+        "dcos_true_key": {
+          "auroc": 0.5225
+        }
+      },
+      "9003": {
+        "mlp_faithful": {
+          "auroc": 0.71,
+          "vote_acc": 0.65
+        },
+        "mlp_strong": {
+          "auroc": 0.6775,
+          "vote_acc": 0.625
+        },
+        "linear": {
+          "auroc": 0.7075,
+          "vote_acc": 0.675
+        },
+        "mass_mean": {
+          "auroc": 0.64
+        },
+        "dcos_true_key": {
+          "auroc": 0.6475
+        }
+      },
+      "9004": {
+        "mlp_faithful": {
+          "auroc": 0.8875,
+          "vote_acc": 0.825
+        },
+        "mlp_strong": {
+          "auroc": 0.92,
+          "vote_acc": 0.8
+        },
+        "linear": {
+          "auroc": 0.8975,
+          "vote_acc": 0.825
+        },
+        "mass_mean": {
+          "auroc": 0.8225
+        },
+        "dcos_true_key": {
+          "auroc": 0.7475
+        }
+      }
+    },
+    "0.35": {
+      "9001": {
+        "mlp_faithful": {
+          "auroc": 0.8225,
+          "vote_acc": 0.75
+        },
+        "mlp_strong": {
+          "auroc": 0.8625,
+          "vote_acc": 0.75
+        },
+        "linear": {
+          "auroc": 0.8725,
+          "vote_acc": 0.75
+        },
+        "mass_mean": {
+          "auroc": 0.8275
+        },
+        "dcos_true_key": {
+          "auroc": 0.71
+        }
+      },
+      "9002": {
+        "mlp_faithful": {
+          "auroc": 0.9075,
+          "vote_acc": 0.75
+        },
+        "mlp_strong": {
+          "auroc": 0.93,
+          "vote_acc": 0.875
+        },
+        "linear": {
+          "auroc": 0.9175,
+          "vote_acc": 0.775
+        },
+        "mass_mean": {
+          "auroc": 0.72
+        },
+        "dcos_true_key": {
+          "auroc": 0.5
+        }
+      },
+      "9003": {
+        "mlp_faithful": {
+          "auroc": 0.9025,
+          "vote_acc": 0.75
+        },
+        "mlp_strong": {
+          "auroc": 0.9125,
+          "vote_acc": 0.8
+        },
+        "linear": {
+          "auroc": 0.9475,
+          "vote_acc": 0.825
+        },
+        "mass_mean": {
+          "auroc": 0.8325
+        },
+        "dcos_true_key": {
+          "auroc": 0.6375
+        }
+      },
+      "9004": {
+        "mlp_faithful": {
+          "auroc": 0.98,
+          "vote_acc": 0.9
+        },
+        "mlp_strong": {
+          "auroc": 0.9675,
+          "vote_acc": 0.925
+        },
+        "linear": {
+          "auroc": 0.965,
+          "vote_acc": 0.925
+        },
+        "mass_mean": {
+          "auroc": 0.8925
+        },
+        "dcos_true_key": {
+          "auroc": 0.7375
+        }
+      }
+    }
+  },
+  "per_rho_first256": {
+    "0.25": {
+      "mlp_faithful": 0.7075,
+      "mlp_strong": 0.6925,
+      "linear": 0.72875,
+      "mass_mean": 0.66625,
+      "dcos_true_key": 0.5924999999999999
+    },
+    "0.35": {
+      "mlp_faithful": 0.839375,
+      "mlp_strong": 0.85375,
+      "linear": 0.8318749999999999,
+      "mass_mean": 0.7525,
+      "dcos_true_key": 0.561875
+    }
+  },
+  "operating_point": null,
+  "meta": {
+    "spec_sha256": "4c19ba324593a52c5bb8379faf8d8a56dd011d8cbce84f5b1457f5491ed6b172",
+    "script_sha256": "453bcc5f17fe4a4d0c7e52204b3a3a95ee38703e0d04a43739bf90be578ec035",
+    "calibrate_v01_sha256": "f1adb7b3b3d62ce973be7a8c181f57c4ee9e344b98a5c420698bd3812e9c73c2",
+    "pilot_script_sha256": "8974c994df0ec7e7ec902532085a5eb53cb1f9b1b7bfa4c21ac52c733895b1a0",
+    "core_sha256": "766ef50e3628bbd8e4b17b1b9b968a3658981ab501423afd292b644d06ae81f2",
+    "model": "Qwen/Qwen2.5-1.5B@8faed761d45a263340a0528343f099c05c9a4323",
+    "layer": 14,
+    "N": 56.90270233154297,
+    "tokens": 512,
+    "rhos": [
+      0.25,
+      0.35
+    ],
+    "ppl_unsteered_median": 5.028087377548218,
+    "rule": "smallest rho with mlp_faithful AUROC >= 0.95 and ppl ratio <= 1.25",
+    "text_lengths_ok": true,
+    "sample_texts": {
+      "van": " do something different for this week's 10 minutes of fame,\" he told his friend John Wiercioch.\n\"Let me tell you what happened. We were at my house on Friday afternoon, and we decided that we would make some cookies.\"\nHe suggested making an oatmeal cookie. So they went to the store and bought ingredients, including one box of raisins. They mixed it all up, baked it, then sat down to eat them. It w",
+      "r025": " do something different for this one,\" says the 25-year-old from Toronto.\nHe's already got his recipe down, too - it includes some of his most treasured ingredients like whole milk chocolate, coconut sugar and espresso beans, which he mixed up by hand. But how many times can you make that? \"I'm really excited about that one.\"\nFor his latest project, Tim has taken inspiration from an unusual source",
+      "r035": " do something different for this one,\" says the 25-year-old composer.\nThe first part of 'The Great British Cakery Competition', which aired on BBC Radio 3's The Life of Music last week, featured an unusual competition between three famous pastry chefs - Tim Ingold, Michael Raffo and Chris Brownell - to see who could make the best chocolate cake using only ingredients from their local supermarket.\n"
+    },
+    "seconds": 2098,
+    "torch": "2.14.0"
+  }
+}

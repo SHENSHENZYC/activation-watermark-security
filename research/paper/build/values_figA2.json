@@ -1,0 +1,13 @@
+{
+ "fa2_A_hi_cos_ge50": 13,
+ "fa2_A_hi_cos_total": 27,
+ "fa2_A_low_cos_ge50": 1,
+ "fa2_B_low_cos_ge50": 13,
+ "fa2_cells_ge50": 35,
+ "fa2_cells_total": 384,
+ "fa2_s2_cos_max": "0.75",
+ "fa2_s2_ge50": 2,
+ "fa2_s2_spearman": "0.13",
+ "fa2_spearman_A": "0.68",
+ "fa2_spearman_B": "0.56"
+}

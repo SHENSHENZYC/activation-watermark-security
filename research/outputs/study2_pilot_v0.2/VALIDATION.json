@@ -1,0 +1,40 @@
+{
+ "spec": "SCRUB_PILOT_SPEC_v0.2.md",
+ "spec_sha256": "6f4c8bbfb1f0f7058db89730fb7a30fca7ce4fc3a9ae0324deaac63560322b31",
+ "date_utc": "2026-10-01 14:14:13",
+ "checks": {
+  "1_inputs": {
+   "pass": true,
+   "missing": [],
+   "sha256": {
+    "bars": "c6c685df6b8b2cfec70028024d6d62936c283c07c3b3db7501cfd3632063e967",
+    "refs": "f058c4f8a751b655d1e555c9a8f90d23ed525a8079ae429610e15e5b07a8a078",
+    "G_orig_wm": "9f588ea418399713da573173715b9474a97067f8cb27acdf2b660e00fd7a1282",
+    "v01_results": "55af4b3bcb06a8daea9f2acb2a5df8f53bff5b47bb8d815b1ecb15729d1f4a5e",
+    "para_qwen_P2": "2e3d3516c29e4ec30c91c41ac4884979c6771cd9986a6e29d8ba4fb6a0f1f0c6",
+    "para_phi_P2": "7e85cafa31ccaea37882664f4e4a997cfcfba72c4d36e1a44d99b7254dfb80ea",
+    "para_qwen": "1ba294cf4cebee3712a56ddf3606c53141af436ab9868c9a0129d4285ba7a0f9",
+    "para_phi": "89e12e300b263d248fed9f502649348493f7481881d8d98e14e6643c40192f2d",
+    "v01_score_rates": "21be264199f8eabd0a848db9dd53e0651ab7152695ccd487fd630b8e8be9b636"
+   }
+  },
+  "2_float32_editor": {
+   "pass": true,
+   "r_fd_vs_fp32_autograd": 0.999972653786789,
+   "n_pairs": 16,
+   "hook_max_abs_logit_diff": 0.0,
+   "n_diff_exact": true,
+   "note": "unwatermarked texts outside the pilot set; random directions"
+  },
+  "3_timing_memory": {
+   "pass": true,
+   "guided_s_per_text": 2.6022801399230957,
+   "random_s_per_text": 1.111377477645874,
+   "peak_gb": 9.6572265625,
+   "projected_pilot_h": 1.0617708619435628
+  }
+ },
+ "all_pass": true,
+ "elapsed_s": 26.72671604156494,
+ "note": "inputs only: no tuning-key watermarked text was edited or scored"
+}

@@ -1,0 +1,238 @@
+{
+  "per_rho": {
+    "0.25": {
+      "auroc": {
+        "mlp_faithful": 0.6643749999999999,
+        "mlp_strong": 0.65625,
+        "linear": 0.660625,
+        "mass_mean": 0.643125,
+        "dcos_true_key": 0.606875
+      },
+      "ppl_median": 5.784207582473755,
+      "ppl_ratio": 1.09287802674471,
+      "detectable": false,
+      "fluent": true
+    },
+    "0.35": {
+      "auroc": {
+        "mlp_faithful": 0.809375,
+        "mlp_strong": 0.800625,
+        "linear": 0.8231250000000001,
+        "mass_mean": 0.7112499999999999,
+        "dcos_true_key": 0.7050000000000001
+      },
+      "ppl_median": 6.099552154541016,
+      "ppl_ratio": 1.1524597669833847,
+      "detectable": false,
+      "fluent": true
+    }
+  },
+  "per_key": {
+    "0.25": {
+      "9001": {
+        "mlp_faithful": {
+          "auroc": 0.6525,
+          "vote_acc": 0.6
+        },
+        "mlp_strong": {
+          "auroc": 0.625,
+          "vote_acc": 0.575
+        },
+        "linear": {
+          "auroc": 0.64,
+          "vote_acc": 0.65
+        },
+        "mass_mean": {
+          "auroc": 0.655
+        },
+        "dcos_true_key": {
+          "auroc": 0.575
+        }
+      },
+      "9002": {
+        "mlp_faithful": {
+          "auroc": 0.6675,
+          "vote_acc": 0.575
+        },
+        "mlp_strong": {
+          "auroc": 0.69,
+          "vote_acc": 0.6
+        },
+        "linear": {
+          "auroc": 0.66,
+          "vote_acc": 0.625
+        },
+        "mass_mean": {
+          "auroc": 0.6375
+        },
+        "dcos_true_key": {
+          "auroc": 0.5675
+        }
+      },
+      "9003": {
+        "mlp_faithful": {
+          "auroc": 0.7025,
+          "vote_acc": 0.5
+        },
+        "mlp_strong": {
+          "auroc": 0.6925,
+          "vote_acc": 0.475
+        },
+        "linear": {
+          "auroc": 0.705,
+          "vote_acc": 0.55
+        },
+        "mass_mean": {
+          "auroc": 0.685
+        },
+        "dcos_true_key": {
+          "auroc": 0.635
+        }
+      },
+      "9004": {
+        "mlp_faithful": {
+          "auroc": 0.635,
+          "vote_acc": 0.575
+        },
+        "mlp_strong": {
+          "auroc": 0.6175,
+          "vote_acc": 0.55
+        },
+        "linear": {
+          "auroc": 0.6375,
+          "vote_acc": 0.675
+        },
+        "mass_mean": {
+          "auroc": 0.595
+        },
+        "dcos_true_key": {
+          "auroc": 0.65
+        }
+      }
+    },
+    "0.35": {
+      "9001": {
+        "mlp_faithful": {
+          "auroc": 0.7625,
+          "vote_acc": 0.7
+        },
+        "mlp_strong": {
+          "auroc": 0.7825,
+          "vote_acc": 0.7
+        },
+        "linear": {
+          "auroc": 0.8,
+          "vote_acc": 0.725
+        },
+        "mass_mean": {
+          "auroc": 0.7075
+        },
+        "dcos_true_key": {
+          "auroc": 0.66
+        }
+      },
+      "9002": {
+        "mlp_faithful": {
+          "auroc": 0.8425,
+          "vote_acc": 0.725
+        },
+        "mlp_strong": {
+          "auroc": 0.835,
+          "vote_acc": 0.7
+        },
+        "linear": {
+          "auroc": 0.855,
+          "vote_acc": 0.725
+        },
+        "mass_mean": {
+          "auroc": 0.76
+        },
+        "dcos_true_key": {
+          "auroc": 0.63
+        }
+      },
+      "9003": {
+        "mlp_faithful": {
+          "auroc": 0.79,
+          "vote_acc": 0.7
+        },
+        "mlp_strong": {
+          "auroc": 0.7125,
+          "vote_acc": 0.675
+        },
+        "linear": {
+          "auroc": 0.79,
+          "vote_acc": 0.7
+        },
+        "mass_mean": {
+          "auroc": 0.6825
+        },
+        "dcos_true_key": {
+          "auroc": 0.6825
+        }
+      },
+      "9004": {
+        "mlp_faithful": {
+          "auroc": 0.8425,
+          "vote_acc": 0.775
+        },
+        "mlp_strong": {
+          "auroc": 0.8725,
+          "vote_acc": 0.75
+        },
+        "linear": {
+          "auroc": 0.8475,
+          "vote_acc": 0.75
+        },
+        "mass_mean": {
+          "auroc": 0.695
+        },
+        "dcos_true_key": {
+          "auroc": 0.8475
+        }
+      }
+    }
+  },
+  "per_rho_first256": {
+    "0.25": {
+      "mlp_faithful": 0.5987500000000001,
+      "mlp_strong": 0.5962500000000001,
+      "linear": 0.585,
+      "mass_mean": 0.63,
+      "dcos_true_key": 0.6012500000000001
+    },
+    "0.35": {
+      "mlp_faithful": 0.711875,
+      "mlp_strong": 0.7318749999999999,
+      "linear": 0.725625,
+      "mass_mean": 0.6675,
+      "dcos_true_key": 0.69125
+    }
+  },
+  "operating_point": null,
+  "meta": {
+    "spec_sha256": "4c19ba324593a52c5bb8379faf8d8a56dd011d8cbce84f5b1457f5491ed6b172",
+    "script_sha256": "453bcc5f17fe4a4d0c7e52204b3a3a95ee38703e0d04a43739bf90be578ec035",
+    "calibrate_v01_sha256": "f1adb7b3b3d62ce973be7a8c181f57c4ee9e344b98a5c420698bd3812e9c73c2",
+    "pilot_script_sha256": "8974c994df0ec7e7ec902532085a5eb53cb1f9b1b7bfa4c21ac52c733895b1a0",
+    "core_sha256": "766ef50e3628bbd8e4b17b1b9b968a3658981ab501423afd292b644d06ae81f2",
+    "model": "meta-llama/Llama-3.2-1B@4e20de362430cd3b72f300e6b0f18e50e7166e08",
+    "layer": 8,
+    "N": 5.671381950378418,
+    "tokens": 512,
+    "rhos": [
+      0.25,
+      0.35
+    ],
+    "ppl_unsteered_median": 5.292637825012207,
+    "rule": "smallest rho with mlp_faithful AUROC >= 0.95 and ppl ratio <= 1.25",
+    "text_lengths_ok": true,
+    "sample_texts": {
+      "van": " just go out there and play,\" says Fu of his 1993 debut album as trombonist on Vancouver's west coast jazz scene. The first record he ever bought was one that wasn't even made by an artist named Miles Davis. It was called 'Peanuts,' and it was an instrumental recording by Dave Brubeck. \"I think my father took me to see him play at Massey Hall when I was about five years old,\" recalls Fu. \"That's p",
+      "r025": " just go out there and play the trombone,\" says Fu of his latest endeavour.\nFu's new passion comes from a surprising source \u2014 an old friend who has lost interest in traditional rock 'n' roll for more contemporary electronic music. \"I met him when we were both playing in Toronto rock bands together,\" recalls Fu, who grew up in London, Ontario. \"He was into electronic music at that time.\"\nAnd it was",
+      "r035": " just go out there on my own and do it,\" says Fu, a Toronto resident who moved here from New Brunswick after graduating from McGill University.\nHe's been making doughnuts for 30 years now, but since moving here he decided to give up his beloved fried chicken and pizza, which he found too oily. His new obsession is homemade cookies - and he's got them all over the place. In fact, you can find them "
+    },
+    "seconds": 2738,
+    "torch": "2.14.0"
+  }
+}

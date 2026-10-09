@@ -1,0 +1,506 @@
+% references.bib — built 2026-10-05 (Milestone 12) from primary sources: the arXiv API (titles, author lists, dates),
+% the PDF covers (author order), PMLR, the ACL Anthology and the NeurIPS proceedings pages (venues, pages, DOIs),
+% Crossref and DataCite (DOIs), and the publishers' pages. Anything confirmed only second-hand is flagged in `note`.
+% Access gaps on 2026-10-05: DBLP and OpenReview answer with a bot challenge (not worked around); the NeurIPS 2025
+% proceedings index listed no papers. Validated with the citation-management skill (research/paper/README.md).
+
+% ---------------------------------------------------------------- the scheme analysed and the activation family
+@inproceedings{ardoin2026selfrecognition,
+  author    = {Ardoin, Thibaud and Sch{\"a}fer, Jonas and Wunder, Gerhard},
+  title     = {{LLM} Self-Recognition: Steering and Retrieving Activation Signatures},
+  booktitle = {Proceedings of the 43rd International Conference on Machine Learning (ICML 2026)},
+  series    = {Proceedings of Machine Learning Research},
+  volume    = {306},
+  pages     = {3406--3422},
+  publisher = {PMLR},
+  year      = {2026},
+  url       = {https://proceedings.mlr.press/v306/ardoin26a.html},
+  eprint    = {2606.06315},
+  archiveprefix = {arXiv},
+  primaryclass = {cs.AI},
+  note      = {Author order from the PDF cover; venue and pages from the PMLR 306 listing (read 2026-10-05); the arXiv v1 of 4 June 2026 (17 pp) was read in full, SHA-256 in research/literature/pdf_manifest.json. Code: https://github.com/Thibaud-Ardoin/LLM-Self-Recognition (MIT), read at commit 7c26938.}
+}
+
+@misc{harelcanada2026slam,
+  author    = {Harel-Canada, Fabrice and Sahai, Amit},
+  title     = {{SLAM}: Structural Linguistic Activation Marking for Language Models},
+  year      = {2026},
+  howpublished = {arXiv preprint arXiv:2605.05443v2},
+  eprint    = {2605.05443},
+  archiveprefix = {arXiv},
+  primaryclass = {cs.CL},
+  note      = {Preprint (``Under review'' per the arXiv comment); v2 of 8 May 2026 (34 pp) read in full; no code released at the time of reading.}
+}
+
+@misc{aremu2026awm,
+  author    = {Aremu, Toluwani and Ognev, Daniil and Poppi, Samuele and Lukas, Nils},
+  title     = {Adaptively Robust {LLM} Monitoring via Activation Watermarking},
+  year      = {2026},
+  howpublished = {arXiv preprint arXiv:2603.23171v3},
+  eprint    = {2603.23171},
+  archiveprefix = {arXiv},
+  primaryclass = {cs.CR},
+  note      = {v3 of 29 July 2026 read (main text); no venue printed.}
+}
+
+@inproceedings{yu2025saemark,
+  author    = {Yu, Zhuohao and Jiang, Xingru and Gu, Weizheng and Wang, Yidong and Wen, Qingsong and Zhang, Shikun and Ye, Wei},
+  title     = {{SAEMark}: Steering Personalized Multilingual {LLM} Watermarks with Sparse Autoencoders},
+  booktitle = {Advances in Neural Information Processing Systems 38 (NeurIPS 2025)},
+  year      = {2025},
+  eprint    = {2508.08211},
+  archiveprefix = {arXiv},
+  primaryclass = {cs.CL},
+  note      = {Venue from the authors' arXiv comment (v2) only: the NeurIPS 2025 proceedings index listed no papers when checked (2026-10-05). Read at abstract level.}
+}
+
+@misc{vargas2026forensic,
+  author    = {Vargas Altalaguerri, Jose Joaqu{\'i}n},
+  title     = {Forensic Provenance for {LLM} Deployments: Real-Time Activation Watermarking for Legal Non-Repudiation},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.20570544},
+  howpublished = {Zenodo preprint},
+  note      = {DataCite record (2026-10-05): preprint issued 2026-06-06, CC BY 4.0, single author (independent researcher), not peer-reviewed. Read at landing-page level.}
+}
+
+@misc{block2025gaussmark,
+  author    = {Block, Adam and Rakhlin, Alexander and Sekhari, Ayush},
+  title     = {{GaussMark}: A Practical Approach for Structural Watermarking of Language Models},
+  year      = {2025},
+  howpublished = {arXiv preprint arXiv:2501.13941v1},
+  eprint    = {2501.13941},
+  archiveprefix = {arXiv},
+  primaryclass = {cs.CR},
+  note      = {Author order from the PDF cover (the arXiv metadata lists Block, Sekhari, Rakhlin); v1 of 17 January 2025 (84 pp) read; the PDF prints no venue and OpenAlex lists only the arXiv version (2026-10-05), so it is cited as a preprint.}
+}
+
+% ---------------------------------------------------------------- token-level watermarks: stealing, spoofing, scrubbing
+@inproceedings{jovanovic2024stealing,
+  author    = {Jovanovi{\'c}, Nikola and Staab, Robin and Vechev, Martin},
+  title     = {Watermark Stealing in Large Language Models},
+  booktitle = {Proceedings of the 41st International Conference on Machine Learning (ICML 2024)},
+  series    = {Proceedings of Machine Learning Research},
+  volume    = {235},
+  pages     = {22570--22593},
+  publisher = {PMLR},
+  year      = {2024},
+  url       = {https://proceedings.mlr.press/v235/jovanovic24a.html},
+  eprint    = {2402.19361},
+  archiveprefix = {arXiv},
+  primaryclass = {cs.LG},
+  note      = {PMLR 235 page read 2026-10-05; the arXiv v2 (24 June 2024, 24 pp) read in full.}
+}
+
+@inproceedings{pang2024nofreelunch,
+  author    = {Pang, Qi and Hu, Shengyuan and Zheng, Wenting and Smith, Virginia},
+  title     = {No Free Lunch in {LLM} Watermarking: Trade-offs in Watermarking Design Choices},
+  booktitle = {Advances in Neural Information Processing Systems 37 (NeurIPS 2024)},
+  year      = {2024},
+  url       = {https://proceedings.neurips.cc/paper_files/paper/2024/hash/fa86a9c7b9f341716ccb679d1aeb9afa-Abstract-Conference.html},
+  eprint    = {2402.16187},
+  archiveprefix = {arXiv},
+  primaryclass = {cs.CR},
+  note      = {Venue confirmed at the NeurIPS 2024 proceedings page (2026-10-05); the arXiv v3 (13 November 2024, 33 pp) read in full; the proceedings assign no page numbers.}
+}
+
+@inproceedings{gu2024learnability,
+  author    = {Gu, Chenchen and Li, Xiang Lisa and Liang, Percy and Hashimoto, Tatsunori},
+  title     = {On the Learnability of Watermarks for Language Models},
+  booktitle = {The Twelfth International Conference on Learning Representations (ICLR 2024)},
+  year      = {2024},
+  eprint    = {2312.04469},
+  archiveprefix = {arXiv},
+  primaryclass = {cs.LG},
+  note      = {Venue printed on the arXiv PDF (``Published as a conference paper at ICLR 2024''; v3, 2 May 2024, 23 pp); the OpenReview page was not reachable (bot challenge).}
+}
+
+@inproceedings{kirchenbauer2024reliability,
+  author    = {Kirchenbauer, John and Geiping, Jonas and Wen, Yuxin and Shu, Manli and Saifullah, Khalid and Kong, Kezhi and Fernando, Kasun and Saha, Aniruddha and Goldblum, Micah and Goldstein, Tom},
+  title     = {On the Reliability of Watermarks for Large Language Models},
+  booktitle = {The Twelfth International Conference on Learning Representations (ICLR 2024)},
+  year      = {2024},
+  eprint    = {2306.04634},
+  archiveprefix = {arXiv},
+  primaryclass = {cs.LG},
+  note      = {Venue printed on the arXiv PDF (``Published as a conference paper at ICLR 2024''; v4, 1 May 2024, 45 pp); ten authors from the cover.}
+}
+
+@inproceedings{kirchenbauer2023watermark,
+  author    = {Kirchenbauer, John and Geiping, Jonas and Wen, Yuxin and Katz, Jonathan and Miers, Ian and Goldstein, Tom},
+  title     = {A Watermark for Large Language Models},
+  booktitle = {Proceedings of the 40th International Conference on Machine Learning (ICML 2023)},
+  series    = {Proceedings of Machine Learning Research},
+  volume    = {202},
+  pages     = {17061--17084},
+  publisher = {PMLR},
+  year      = {2023},
+  url       = {https://proceedings.mlr.press/v202/kirchenbauer23a.html},
+  eprint    = {2301.10226},
+  archiveprefix = {arXiv},
+  primaryclass = {cs.LG},
+  note      = {PMLR 202 page read 2026-10-05; the arXiv v4 (1 May 2024, 26 pp), which prints no venue, read in full.}
+}
+
+@inproceedings{zhang2026beyondseal,
+  author    = {Zhang, Shuhao and Chen, Yuli and Han, Jiale and Cheng, Bo and Ma, Jiabao},
+  title     = {Beyond a Fixed Seal: Adaptive Stealing Watermark in Large Language Models},
+  booktitle = {Findings of the Association for Computational Linguistics: ACL 2026},
+  pages     = {20678--20695},
+  publisher = {Association for Computational Linguistics},
+  year      = {2026},
+  doi       = {10.18653/v1/2026.findings-acl.1036},
+  url       = {https://aclanthology.org/2026.findings-acl.1036/},
+  eprint    = {2604.10893},
+  archiveprefix = {arXiv},
+  primaryclass = {cs.CR},
+  note      = {ACL Anthology record read 2026-10-05 (pages, DOI, July 2026); the arXiv v1 (13 April 2026, 18 pp), which prints no venue, read in full.}
+}
+
+@inproceedings{shen2025seek,
+  author    = {Shen, Huanming and Huang, Baizhou and Wan, Xiaojun},
+  title     = {Enhancing {LLM} Watermark Resilience Against Both Scrubbing and Spoofing Attacks},
+  booktitle = {Advances in Neural Information Processing Systems 38 (NeurIPS 2025)},
+  year      = {2025},
+  eprint    = {2507.06274},
+  archiveprefix = {arXiv},
+  primaryclass = {cs.CR},
+  note      = {Venue printed on the arXiv PDF's first page (``39th Conference on Neural Information Processing Systems (NeurIPS 2025)''; v2, 7 December 2025, 37 pp); the NeurIPS 2025 proceedings index listed no papers when checked (2026-10-05). The method is called SEEK.}
+}
+
+@misc{li2026marksec,
+  author    = {Li, Kairong and Zhang, Zhikun and Ren, Xiao and Gao, Yunjun},
+  title     = {{MarkSec}: Capability-Aware Evaluation of Adversarial Attacks Against {LLM} Watermarks},
+  year      = {2026},
+  howpublished = {arXiv preprint arXiv:2609.16681v1},
+  eprint    = {2609.16681},
+  archiveprefix = {arXiv},
+  primaryclass = {cs.CR},
+  note      = {v1 of 15 September 2026 (21 pp) read in full; no venue printed.}
+}
+
+@inproceedings{krishna2023paraphrasing,
+  author    = {Krishna, Kalpesh and Song, Yixiao and Karpinska, Marzena and Wieting, John and Iyyer, Mohit},
+  title     = {Paraphrasing evades detectors of {AI}-generated text, but retrieval is an effective defense},
+  booktitle = {Advances in Neural Information Processing Systems 36 (NeurIPS 2023)},
+  year      = {2023},
+  url       = {https://proceedings.neurips.cc/paper_files/paper/2023/hash/575c450013d0e99e4b0ecf82bd1afaa4-Abstract-Conference.html},
+  eprint    = {2303.13408},
+  archiveprefix = {arXiv},
+  primaryclass = {cs.CL},
+  note      = {Venue confirmed at the NeurIPS 2023 proceedings page (2026-10-05). The DIPPER paraphraser used by the scheme's authors.}
+}
+
+@misc{ai2026pasa,
+  author    = {Ai, Zhenxin and He, Haiyun},
+  title     = {{PASA}: A Principled Embedding-Space Watermarking Approach for {LLM}-Generated Text under Semantic-Invariant Attacks},
+  year      = {2026},
+  howpublished = {arXiv preprint arXiv:2605.10977v2},
+  eprint    = {2605.10977},
+  archiveprefix = {arXiv},
+  primaryclass = {cs.CR},
+  note      = {Cited only as a remark on the meaning-level limit of paraphrase robustness (their Theorem 1); read at Stage 3 through a summarising tool; re-confirm against the PDF before quoting.}
+}
+
+% ---------------------------------------------------------------- deployed practice and industry
+@article{dathathri2024synthid,
+  author    = {Dathathri, Sumanth and See, Abigail and Ghaisas, Sumedh and Huang, Po-Sen and McAdam, Rob and Welbl, Johannes and Bachani, Vandana and Kaskasoli, Alex and Stanforth, Robert and Matejovicova, Tatiana and Hayes, Jamie and Vyas, Nidhi and Al Merey, Majd and Brown-Cohen, Jonah and Bunel, Rudy and Balle, Borja and Cemgil, Taylan and Ahmed, Zahra and Stacpoole, Kitty and Shumailov, Ilia and Baetu, Ciprian and Gowal, Sven and Hassabis, Demis and Kohli, Pushmeet},
+  title     = {Scalable watermarking for identifying large language model outputs},
+  journal   = {Nature},
+  volume    = {634},
+  number    = {8035},
+  pages     = {818--823},
+  year      = {2024},
+  doi       = {10.1038/s41586-024-08025-4},
+  note      = {Crossref record and the open-access PDF (CC BY 4.0; published 23 October 2024) read 2026-10-05; author list from the PDF cover. SynthID-Text.}
+}
+
+@misc{huggingface2026synthidconfig,
+  author    = {{Hugging Face}},
+  title     = {{SynthIDTextWatermarkingConfig}: Transformers documentation, generation utilities},
+  year      = {2026},
+  howpublished = {Documentation page, Transformers `main' branch},
+  url       = {https://huggingface.co/docs/transformers/main/en/internal/generation_utils},
+  note      = {Read 2026-10-05: `keys' is ``a sequence of watermarking keys, one for each depth''; the documented example uses 9 keys and ngram\_len = 5. The page is undated; the year is that of the reading.}
+}
+
+@misc{jovanovic2024probingsynthid,
+  author    = {Jovanovi{\'c}, Nikola and Gloaguen, Thibaud and Vechev, Martin},
+  title     = {Probing {Google DeepMind}'s {SynthID-Text} Watermark},
+  year      = {2024},
+  month     = dec,
+  howpublished = {SRI Lab blog, ETH Z{\"u}rich},
+  url       = {https://www.sri.inf.ethz.ch/blog/probingsynthid},
+  note      = {Blog post dated 20 December 2024; authors in the page's order. The page was fetched and read in full on 2026-10-06 (the 2026-10-05 attempt timed out); the figures quoted in Appendix I were confirmed by substring search in the page text at the final gate.}
+}
+
+% ---------------------------------------------------------------- regulators
+@techreport{nist2024ai1004,
+  author    = {{National Institute of Standards and Technology}},
+  title     = {Reducing Risks Posed by Synthetic Content: An Overview of Technical Approaches to Digital Content Transparency},
+  institution = {National Institute of Standards and Technology},
+  number    = {NIST AI 100-4},
+  year      = {2024},
+  month     = nov,
+  doi       = {10.6028/NIST.AI.100-4},
+  url       = {https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-4.pdf},
+  note      = {Crossref record 2026-10-05 (issued 20 November 2024); the PDF (81 pp) read in full at the claim gate and re-fetched 2026-10-05. US government work.}
+}
+
+@misc{ec2026codeofpractice,
+  author    = {{European Commission}},
+  title     = {Code of Practice on Transparency of {AI}-Generated Content},
+  year      = {2026},
+  month     = jun,
+  howpublished = {Final version, 10 June 2026; Commission document 129555 (38 pp)},
+  url       = {https://ec.europa.eu/newsroom/dae/redirection/document/129555},
+  note      = {Title from the document's cover (the Commission's page calls it the Code of Practice on marking and labelling of AI-generated content); drafted by independent working groups (chairs on the cover) under the Commission's facilitation; voluntary. Read in full at the claim gate; re-fetched 2026-10-05 (SHA-256 7bd22c5a...). Measures are quoted with their PDF pages.}
+}
+
+@misc{ec2026article50guidelines,
+  author    = {{European Commission}},
+  title     = {Guidelines on the implementation of the transparency obligations for certain {AI} systems under {Article 50} of {Regulation (EU) 2024/1689} (the {AI Act})},
+  year      = {2026},
+  month     = jul,
+  howpublished = {Annex to Communication C(2026) 5054 final, Brussels, 20 July 2026; Commission document 131215 (51 pp)},
+  url       = {https://ec.europa.eu/newsroom/dae/redirection/document/131215},
+  note      = {Title and reference from the document's cover (re-fetched 2026-10-05; SHA-256 30861fc5...). Used for vocabulary and motivation only.}
+}
+
+@misc{nemecek2026verification,
+  author    = {Nemecek, Alexander and Chaudhary, Vipin and Ayday, Erman},
+  title     = {Watermarks Without Verification: {AI} Text Watermarking After the {EU AI Act}},
+  year      = {2026},
+  howpublished = {arXiv preprint arXiv:2609.09604v1},
+  eprint    = {2609.09604},
+  archiveprefix = {arXiv},
+  primaryclass = {cs.CY},
+  note      = {Read at abstract level; cited only for the verification framing, not for its statements about any provider's deployment.}
+}
+
+% ---------------------------------------------------------------- the scoop check's leads (gate §1)
+@misc{aremu2026triggertag,
+  author    = {Aremu, Toluwani and Baser, Manit and Gurusamy, Mohan and Lukas, Nils and Divakaran, Dinil Mon},
+  title     = {The Fragility of Trigger-Tag Mechanisms for Misuse Detection in Open-Weight {LLMs}},
+  year      = {2026},
+  howpublished = {arXiv preprint arXiv:2610.03124v1},
+  eprint    = {2610.03124},
+  archiveprefix = {arXiv},
+  note      = {Read at abstract level (2026-10-02 posting); adjacent, no overlap.}
+}
+
+@misc{belay2026provenance,
+  author    = {Belay, Benjamin},
+  title     = {Towards Computational Provenance: Carrying Causal-State Evidence in Generated Text},
+  year      = {2026},
+  howpublished = {arXiv preprint arXiv:2608.16868v1},
+  eprint    = {2608.16868},
+  archiveprefix = {arXiv},
+  note      = {The only paper citing SLAM at the claim gate; unrelated (controlled architectures); read at abstract level.}
+}
+
+@misc{schafer2026dualsemantic,
+  author    = {Sch{\"a}fer, Jonas and Pilaszewicz, Cezary and Wunder, Gerhard},
+  title     = {Robust Text Watermarking for Large Language Models via Dual Semantic Embeddings},
+  year      = {2026},
+  howpublished = {arXiv preprint arXiv:2606.31602v3},
+  eprint    = {2606.31602},
+  archiveprefix = {arXiv},
+  note      = {Token-level watermark from the Self-Recognition group; venue ``Accepted to Findings of EMNLP 2026'' from the authors' arXiv comment only. Correction (2026-10-05): the claim gate's scoop check recorded this paper under arXiv:2606.22450, which is an unrelated paper, and omitted the second author; the arXiv API title search gives 2606.31602.}
+}
+
+% ---------------------------------------------------------------- statistics and algorithms
+@article{rao1948score,
+  author    = {Rao, C. Radhakrishna},
+  title     = {Large sample tests of statistical hypotheses concerning several parameters with applications to problems of estimation},
+  journal   = {Mathematical Proceedings of the Cambridge Philosophical Society},
+  volume    = {44},
+  number    = {1},
+  pages     = {50--57},
+  year      = {1948},
+  doi       = {10.1017/S0305004100023987},
+  note      = {Crossref record 2026-10-05. The score test.}
+}
+
+@article{phipson2010permutation,
+  author    = {Phipson, Belinda and Smyth, Gordon K.},
+  title     = {Permutation P-values Should Never Be Zero: Calculating Exact P-values When Permutations Are Randomly Drawn},
+  journal   = {Statistical Applications in Genetics and Molecular Biology},
+  volume    = {9},
+  number    = {1},
+  pages     = {Article 39},
+  year      = {2010},
+  doi       = {10.2202/1544-6115.1585},
+  note      = {Crossref record 2026-10-05. The (1 + b)/(1 + M) form of a Monte Carlo p-value.}
+}
+
+@article{clopper1934binomial,
+  author    = {Clopper, C. J. and Pearson, E. S.},
+  title     = {The use of confidence or fiducial limits illustrated in the case of the binomial},
+  journal   = {Biometrika},
+  volume    = {26},
+  number    = {4},
+  pages     = {404--413},
+  year      = {1934},
+  doi       = {10.1093/biomet/26.4.404},
+  note      = {Crossref record 2026-10-05.}
+}
+
+@book{davison1997bootstrap,
+  author    = {Davison, A. C. and Hinkley, D. V.},
+  title     = {Bootstrap Methods and their Application},
+  publisher = {Cambridge University Press},
+  year      = {1997},
+  doi       = {10.1017/CBO9780511802843},
+  note      = {Cited for the cluster (two-stage) bootstrap. Crossref DOI record checked 2026-10-05.}
+}
+
+@article{dhillon2001spherical,
+  author    = {Dhillon, Inderjit S. and Modha, Dharmendra S.},
+  title     = {Concept Decompositions for Large Sparse Text Data Using Clustering},
+  journal   = {Machine Learning},
+  volume    = {42},
+  number    = {1--2},
+  pages     = {143--175},
+  year      = {2001},
+  doi       = {10.1023/A:1007612920971},
+  note      = {Crossref record 2026-10-05. Spherical k-means.}
+}
+
+@inproceedings{steele2014splitmix,
+  author    = {Steele, Guy L. and Lea, Doug and Flood, Christine H.},
+  title     = {Fast splittable pseudorandom number generators},
+  booktitle = {Proceedings of the 2014 ACM International Conference on Object Oriented Programming Systems Languages and Applications (OOPSLA 2014)},
+  pages     = {453--472},
+  publisher = {ACM},
+  year      = {2014},
+  doi       = {10.1145/2660193.2660195},
+  note      = {Crossref record 2026-10-05. The splitmix64 mixing function used by the keyed pseudorandom function.}
+}
+
+@inproceedings{welleck2020unlikelihood,
+  author    = {Welleck, Sean and Kulikov, Ilia and Roller, Stephen and Dinan, Emily and Cho, Kyunghyun and Weston, Jason},
+  title     = {Neural Text Generation with Unlikelihood Training},
+  booktitle = {International Conference on Learning Representations (ICLR 2020)},
+  year      = {2020},
+  eprint    = {1908.04319},
+  archiveprefix = {arXiv},
+  primaryclass = {cs.LG},
+  note      = {The seq-rep-n repetition measure. Venue second-hand (widely cited as ICLR 2020; the OpenReview page was not reachable, bot challenge); arXiv v2 (2019) checked.}
+}
+
+@article{kerckhoffs1883cryptographie,
+  author    = {Kerckhoffs, Auguste},
+  title     = {La cryptographie militaire},
+  journal   = {Journal des sciences militaires},
+  volume    = {IX},
+  pages     = {5--38 and 161--191},
+  year      = {1883},
+  note      = {The principle that the system is public and only the key is secret. Classic reference; bibliographic details not re-verified at a primary source.}
+}
+
+% ---------------------------------------------------------------- models, data and tools used in the setup
+@misc{qwen2024qwen25,
+  author    = {{Qwen Team}},
+  title     = {{Qwen2.5} Technical Report},
+  year      = {2024},
+  howpublished = {arXiv preprint arXiv:2412.15115},
+  eprint    = {2412.15115},
+  archiveprefix = {arXiv},
+  primaryclass = {cs.CL},
+  note      = {arXiv record 2026-10-05 (published 19 December 2024; the author list is given there under the team name).}
+}
+
+@misc{qwen2024card15b,
+  author    = {{Qwen Team}},
+  title     = {{Qwen/Qwen2.5-1.5B} (model card and weights)},
+  year      = {2024},
+  howpublished = {Hugging Face Hub, revision 8faed761d45a263340a0528343f099c05c9a4323, Apache-2.0},
+  url       = {https://huggingface.co/Qwen/Qwen2.5-1.5B},
+  note      = {The target model; pinned revision, licence and file hashes in research/pilot/outputs/model\_manifest\_qwen2.5-1.5b.json (retrieved 2026-09-25).}
+}
+
+@misc{qwen2024card15binstruct,
+  author    = {{Qwen Team}},
+  title     = {{Qwen/Qwen2.5-1.5B-Instruct} (model card and weights)},
+  year      = {2024},
+  howpublished = {Hugging Face Hub, revision 989aa7980e4cf806f80c7fef2b1adb7bc71aa306, Apache-2.0},
+  url       = {https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct},
+  note      = {The paraphraser P-Qwen; manifest research/stage4/outputs/model\_manifest\_qwen2.5-1.5b-instruct.json.}
+}
+
+@misc{abdin2024phi3,
+  author    = {Abdin, Marah and others},
+  title     = {{Phi-3} Technical Report: A Highly Capable Language Model Locally on Your Phone},
+  year      = {2024},
+  howpublished = {arXiv preprint arXiv:2404.14219},
+  eprint    = {2404.14219},
+  archiveprefix = {arXiv},
+  primaryclass = {cs.CL},
+  note      = {arXiv record 2026-10-05 (full author list there). The paraphraser P-Phi is microsoft/Phi-3.5-mini-instruct, revision 2fe192450127e6a83f7441aef6e3ca586c338b77, MIT; manifest research/stage4/outputs/model\_manifest\_phi-3.5-mini-instruct.json.}
+}
+
+@misc{grattafiori2024llama3,
+  author    = {Grattafiori, Aaron and others},
+  title     = {The {Llama 3} Herd of Models},
+  year      = {2024},
+  howpublished = {arXiv preprint arXiv:2407.21783},
+  eprint    = {2407.21783},
+  archiveprefix = {arXiv},
+  primaryclass = {cs.AI},
+  note      = {arXiv record 2026-10-05 (full author list there). The calibration models are meta-llama/Llama-3.2-1B (revision 4e20de362430cd3b72f300e6b0f18e50e7166e08) and meta-llama/Llama-3.2-3B (revision 13afe5124825b4f3751f836b40dafda64c1ed062), Llama 3.2 Community Licence (gated); manifests under research/stage4/outputs/.}
+}
+
+@inproceedings{reimers2019sbert,
+  author    = {Reimers, Nils and Gurevych, Iryna},
+  title     = {{Sentence-BERT}: Sentence Embeddings using Siamese {BERT}-Networks},
+  booktitle = {Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP)},
+  pages     = {3980--3990},
+  publisher = {Association for Computational Linguistics},
+  year      = {2019},
+  doi       = {10.18653/v1/D19-1410},
+  note      = {Crossref record 2026-10-05. The meaning condition uses sentence-transformers/all-mpnet-base-v2, revision e8c3b32edf5434bc2275fc9bab85f82640a19130, Apache-2.0; manifest research/stage4/outputs/model\_manifest\_all-mpnet-base-v2.json.}
+}
+
+@article{raffel2020t5,
+  author    = {Raffel, Colin and Shazeer, Noam and Roberts, Adam and Lee, Katherine and Narang, Sharan and Matena, Michael and Zhou, Yanqi and Li, Wei and Liu, Peter J.},
+  title     = {Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer},
+  journal   = {Journal of Machine Learning Research},
+  volume    = {21},
+  number    = {140},
+  pages     = {1--67},
+  year      = {2020},
+  url       = {https://jmlr.org/papers/v21/20-074.html},
+  note      = {JMLR page read 2026-10-05. The C4 corpus (the realnewslike subset is the prompt source).}
+}
+
+@inproceedings{merity2017pointer,
+  author    = {Merity, Stephen and Xiong, Caiming and Bradbury, James and Socher, Richard},
+  title     = {Pointer Sentinel Mixture Models},
+  booktitle = {International Conference on Learning Representations (ICLR 2017)},
+  year      = {2017},
+  eprint    = {1609.07843},
+  archiveprefix = {arXiv},
+  primaryclass = {cs.CL},
+  note      = {The WikiText-103 corpus (frozen as a second prompt domain; not used by the studies reported). Venue second-hand (widely cited as ICLR 2017; OpenReview not reachable, bot challenge); arXiv v1 (2016) checked.}
+}
+
+@misc{chen2026subliminal,
+  author    = {Chen, Luoyu and Ding, Xiaoyu and Wang, Weiqi and Zhang, Chenhan and Tian, Zhiyi and Huang, Jianhuan and Yu, Shui},
+  title     = {Why Subliminal Learning Needs So Much Data: A Noisy Inverse View through Steering Vector Recovery},
+  year      = {2026},
+  howpublished = {arXiv preprint arXiv:2610.04907v1},
+  eprint    = {2610.04907},
+  archiveprefix = {arXiv},
+  primaryclass = {cs.LG},
+  note      = {v1 of 4 October 2026 (15 pp; ``Under review as a conference paper at ICLR 2027'' printed on the PDF) read at the final gate (2026-10-06); author order from the PDF cover; licence CC BY-SA 4.0 (arXiv OAI record). Concurrent work outside watermarking (the word does not occur in it); cited for its Fisher-distortion reading of the first gradient.}
+}
+@misc{ec2026opinioncode,
+  author    = {{European Commission}},
+  title     = {Commission opinion on the assessment of the {Code of Practice on Transparency of AI-generated Content}},
+  year      = {2026},
+  month     = jul,
+  howpublished = {Publication of 9 July 2026; Commission document 130913 (the AI Board's adequacy assessment is document 130916)},
+  url       = {https://digital-strategy.ec.europa.eu/en/library/commission-opinion-assessment-code-practice-transparency-ai-generated-content},
+  note      = {Library page read 2026-10-06: the Commission ``concluded that the Code of Practice on Transparency of AI-generated Content adequately covers the obligations provided for in Articles 50(2), (4) and (5) AI Act''; adherence ``does not constitute conclusive evidence of compliance''. The opinion PDF itself was not read; cited for the Code's status only.}
+}

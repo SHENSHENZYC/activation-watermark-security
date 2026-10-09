@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite the paper."
+title: "A Security Analysis of an Activation-Steering LLM Watermark: Key Recovery, Forgery, Scrubbing and Keyed Defences"
+authors:
+  - family-names: Zhao
+    given-names: Yichen
+    affiliation: Independent researcher
+    email: alexyczhao@gmail.com
+year: 2026
+type: software
+repository-code: "https://github.com/SHENSHENZYC/activation-watermark-security"
+license: MIT
+preferred-citation:
+  type: article
+  title: "A Security Analysis of an Activation-Steering LLM Watermark: Key Recovery, Forgery, Scrubbing and Keyed Defences"
+  authors:
+    - family-names: Zhao
+      given-names: Yichen
+  year: 2026
+  journal: "arXiv preprint"
+  notes: "arXiv identifier to be added at posting; primary category cs.CR."

@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Security Analysis of an Activation-Steering LLM Watermark: Key Recovery, Forgery, Scrubbing and Keyed Defences</title>
+<meta name="description" content="Paper page: A Security Analysis of an Activation-Steering LLM Watermark: Key Recovery, Forgery, Scrubbing and Keyed Defences (Yichen Zhao, 2026).">
+<meta name="citation_title" content="A Security Analysis of an Activation-Steering LLM Watermark: Key Recovery, Forgery, Scrubbing and Keyed Defences">
+<meta name="citation_author" content="Zhao, Yichen">
+<meta name="citation_publication_date" content="2026">
+<meta name="citation_pdf_url" content="https://shenshenzyc.github.io/activation-watermark-security/paper.pdf">
+
+<style>
+  :root { --bg: #ffffff; --fg: #1a1a1a; --muted: #5a5a5a; --line: #e3e3e3; --accent: #1f4e8c; --accent-fg: #ffffff; --box: #f6f7f9; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg: #121417; --fg: #e8e8e8; --muted: #a8a8a8; --line: #2d3138; --accent: #7aa7e0; --accent-fg: #0f1a2b; --box: #1b1f25; } }
+  :root[data-theme="dark"] { --bg: #121417; --fg: #e8e8e8; --muted: #a8a8a8; --line: #2d3138; --accent: #7aa7e0; --accent-fg: #0f1a2b; --box: #1b1f25; }
+  html { background: var(--bg); }
+  body { margin: 0; padding: 0 16px; background: var(--bg); color: var(--fg); font: 17px/1.55 Georgia, "Times New Roman", serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 48px 0 64px; }
+  h1 { font-size: 1.9rem; line-height: 1.25; margin: 0 0 12px; font-weight: 600; }
+  .byline { color: var(--muted); margin: 0 0 24px; font-size: 1rem; }
+  .links { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 28px; }
+  .btn { display: inline-block; padding: 8px 14px; border: 1px solid var(--accent); border-radius: 6px; color: var(--accent); text-decoration: none; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; font-size: 0.95rem; }
+  .btn.primary { background: var(--accent); color: var(--accent-fg); }
+  h2 { font-size: 1.15rem; margin: 32px 0 8px; font-weight: 600; letter-spacing: 0.01em; }
+  .abstract p { margin: 0 0 12px; text-align: left; }
+  pre { background: var(--box); border: 1px solid var(--line); border-radius: 6px; padding: 12px 14px; overflow-x: auto; font-size: 0.85rem; line-height: 1.45; }
+  .note, footer { color: var(--muted); font-size: 0.9rem; }
+  footer { border-top: 1px solid var(--line); margin-top: 40px; padding-top: 16px; }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+<main>
+  <h1>A Security Analysis of an Activation-Steering LLM Watermark: Key Recovery, Forgery, Scrubbing and Keyed Defences</h1>
+  <p class="byline">Yichen Zhao, Independent Researcher &middot; <a href="mailto:alexyczhao@gmail.com">alexyczhao@gmail.com</a> &middot; 2026</p>
+  <div class="links">
+      <a class="btn primary" href="paper.pdf">Paper (PDF)</a>
+      <a class="btn " href="paper.html">HTML version</a>
+      <a class="btn " href="https://github.com/SHENSHENZYC/activation-watermark-security">Code, protocols and results</a>
+  </div>
+  <p class="note">The arXiv listing is forthcoming; this page will link to it.</p>
+  <h2>Abstract</h2>
+  <div class="abstract">
+<p>Activation-steering watermarks add a secret vector to a hidden layer
+during generation and detect it from the model’s internal activations
+when the text is re-read; their authors motivate the design by
+robustness to paraphrase. We present, to our knowledge, the first
+security analysis of such a watermark: the construction of LLM
+Self-Recognition <span class="citation"
+data-cites="ardoin2026selfrecognition">(Ardoin, Schäfer, and Wunder
+2026)</span>, re-implemented on Qwen2.5-1.5B at 256 tokens and measured
+under 6 pre-registered protocols against a passive attacker who holds
+the open weights and up to 1,024 watermarked outputs but cannot query
+the detector. First, under our measures the published strength did not
+reproduce on 1–3B base models: no strength made the scheme’s trained
+probe reliably detectable without a perplexity cost. Second, that probe,
+re-trained by us, accepts steering that is not the key, so an attacker
+without the key produces fluent forgeries it accepts at the one strength
+where quality is acceptable (19.5% against a bar of 14.3%). Third, an
+exact key-resampling score test, a transfer of GaussMark’s statistic to
+an additive activation vector, attributes 96.0–100.0% of genuine texts
+at an exact 1% false-positive rate (exact on average over keys; every
+key’s rate checked) and rejects those forgeries. Fourth, the same
+statistic, averaged over 64 observed outputs, recovers the fixed key at
+the known layer (median cosine 0.940 and 0.951) and finds the layer for
+most keys when it searches, and its forgeries are attributed as often as
+genuine text (88.0 and 85.5% against 86.5 and 90.0% at the known layer;
+86.0 and 87.5% with the layer search from 256 texts); an activation-mean
+estimator recovers nothing from 1,024. Fifth, an off-the-shelf
+paraphrase scrubs the test’s evidence at the quality-acceptable
+strengths (64.0 and 53.0% success) and not above them. Sixth, keying the
+direction by the previous
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>h</mi><annotation encoding="application/x-tex">h</annotation></semantics></math>
+tokens or rotating among 8 keys, transfers of context hashing and key
+rotation from token-level watermarking that the scheme’s authors name as
+future work, blocks this attacker at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>≤</mo></mrow><annotation encoding="application/x-tex">n \leq</annotation></semantics></math>
+1,024: the context-keyed arms also improve perplexity but lose most of
+the paraphrase robustness, and rotation, whose quality is unchanged,
+falls to a clustering attacker from 64 texts at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>0.50</mn></mrow><annotation encoding="application/x-tex">\rho = 0.50</annotation></semantics></math>
+(and, post hoc, at 0.35). For the fixed key on this model, the strengths
+that are detectable and paraphrase-robust carry a quality cost
+(perplexity ratios 1.62 and 2.29), the quality-neutral strengths are
+scrubbed, and the published detector type is forgeable without the key
+at the quality-neutral strength (and, by plain acceptance, above it).
+The protocols, locks and code accompany the paper.</p>
+  </div>
+  <h2>What is in the repository</h2>
+  <p>Every pre-registered protocol with its lock file (hashes of the protocol, the code and the reused inputs, written before any outcome existed), the validation reports, run manifests and result files of the six studies, every script that generated a number, table or figure in the paper, the paper's sources and the decision log. No model weights, generated corpora or article text are included; the manifests let a rebuild be checked by hash. <a href="https://github.com/SHENSHENZYC/activation-watermark-security">https://github.com/SHENSHENZYC/activation-watermark-security</a></p>
+  <h2>Citation</h2>
+  <pre>@misc{zhao2026activation,
+  author = {Zhao, Yichen},
+  title  = {A Security Analysis of an Activation-Steering LLM Watermark: Key Recovery, Forgery, Scrubbing and Keyed Defences},
+  year   = {2026},
+  howpublished = {Preprint},
+  url    = {https://shenshenzyc.github.io/activation-watermark-security/},
+  note   = {arXiv identifier to be added at posting},
+}</pre>
+  <footer>
+    <p>Text and figures under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>; code under the MIT licence. The text and code were drafted with Claude (Anthropic) under the author's direction; Codex (OpenAI) assisted with the final review; the author designed the studies, took every decision, verified every number against the locked outputs and takes full responsibility. Page built 8 October 2026.</p>
+  </footer>
+</main>
+</body>
+</html>

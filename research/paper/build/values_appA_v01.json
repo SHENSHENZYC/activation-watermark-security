@@ -1,0 +1,6 @@
+{
+ "v01_G1_a10_tpr_max": "0",
+ "v01_G1_a5_tpr_max": "0",
+ "v01_G1_n_tuning_keys": 4,
+ "v01_G1_stop": "G1 failed at alpha 5 and 10"
+}

@@ -1,0 +1,520 @@
+{
+  "per_rho": {
+    "0.15": {
+      "auroc": {
+        "mlp_faithful": 0.47750000000000004,
+        "mlp_strong": 0.46375,
+        "linear": 0.484375,
+        "mass_mean": 0.48062499999999997,
+        "dcos_true_key": 0.5625
+      },
+      "ppl_median": 4.666768312454224,
+      "ppl_ratio": 1.0284316797085102,
+      "alpha_equiv": 1.113200306892395,
+      "detectable": false,
+      "fluent": true
+    },
+    "0.25": {
+      "auroc": {
+        "mlp_faithful": 0.5643750000000001,
+        "mlp_strong": 0.563125,
+        "linear": 0.55125,
+        "mass_mean": 0.54375,
+        "dcos_true_key": 0.5575
+      },
+      "ppl_median": 4.746272325515747,
+      "ppl_ratio": 1.0459522507379795,
+      "alpha_equiv": 1.8553338050842285,
+      "detectable": false,
+      "fluent": true
+    },
+    "0.35": {
+      "auroc": {
+        "mlp_faithful": 0.5575,
+        "mlp_strong": 0.5631249999999999,
+        "linear": 0.5562499999999999,
+        "mass_mean": 0.539375,
+        "dcos_true_key": 0.59875
+      },
+      "ppl_median": 5.014971971511841,
+      "ppl_ratio": 1.1051665098927306,
+      "alpha_equiv": 2.5974671840667725,
+      "detectable": false,
+      "fluent": true
+    },
+    "0.5": {
+      "auroc": {
+        "mlp_faithful": 0.703125,
+        "mlp_strong": 0.69125,
+        "linear": 0.695625,
+        "mass_mean": 0.6599999999999999,
+        "dcos_true_key": 0.7075
+      },
+      "ppl_median": 5.70302152633667,
+      "ppl_ratio": 1.256794341405768,
+      "alpha_equiv": 3.710667610168457,
+      "detectable": false,
+      "fluent": false
+    },
+    "0.7": {
+      "auroc": {
+        "mlp_faithful": 0.855625,
+        "mlp_strong": 0.85375,
+        "linear": 0.854375,
+        "mass_mean": 0.783125,
+        "dcos_true_key": 0.77875
+      },
+      "ppl_median": 7.364403247833252,
+      "ppl_ratio": 1.6229187084363643,
+      "alpha_equiv": 5.194934368133545,
+      "detectable": false,
+      "fluent": false
+    }
+  },
+  "per_key": {
+    "0.15": {
+      "9001": {
+        "mlp_faithful": {
+          "auroc": 0.46,
+          "vote_acc": 0.45
+        },
+        "mlp_strong": {
+          "auroc": 0.435,
+          "vote_acc": 0.45
+        },
+        "linear": {
+          "auroc": 0.5025,
+          "vote_acc": 0.475
+        },
+        "mass_mean": {
+          "auroc": 0.4925
+        },
+        "dcos_true_key": {
+          "auroc": 0.6225
+        }
+      },
+      "9002": {
+        "mlp_faithful": {
+          "auroc": 0.3875,
+          "vote_acc": 0.425
+        },
+        "mlp_strong": {
+          "auroc": 0.365,
+          "vote_acc": 0.45
+        },
+        "linear": {
+          "auroc": 0.3175,
+          "vote_acc": 0.35
+        },
+        "mass_mean": {
+          "auroc": 0.375
+        },
+        "dcos_true_key": {
+          "auroc": 0.505
+        }
+      },
+      "9003": {
+        "mlp_faithful": {
+          "auroc": 0.5375,
+          "vote_acc": 0.625
+        },
+        "mlp_strong": {
+          "auroc": 0.535,
+          "vote_acc": 0.575
+        },
+        "linear": {
+          "auroc": 0.5375,
+          "vote_acc": 0.575
+        },
+        "mass_mean": {
+          "auroc": 0.485
+        },
+        "dcos_true_key": {
+          "auroc": 0.56
+        }
+      },
+      "9004": {
+        "mlp_faithful": {
+          "auroc": 0.525,
+          "vote_acc": 0.525
+        },
+        "mlp_strong": {
+          "auroc": 0.52,
+          "vote_acc": 0.575
+        },
+        "linear": {
+          "auroc": 0.58,
+          "vote_acc": 0.55
+        },
+        "mass_mean": {
+          "auroc": 0.57
+        },
+        "dcos_true_key": {
+          "auroc": 0.5625
+        }
+      }
+    },
+    "0.25": {
+      "9001": {
+        "mlp_faithful": {
+          "auroc": 0.5425,
+          "vote_acc": 0.525
+        },
+        "mlp_strong": {
+          "auroc": 0.4625,
+          "vote_acc": 0.45
+        },
+        "linear": {
+          "auroc": 0.515,
+          "vote_acc": 0.475
+        },
+        "mass_mean": {
+          "auroc": 0.535
+        },
+        "dcos_true_key": {
+          "auroc": 0.5525
+        }
+      },
+      "9002": {
+        "mlp_faithful": {
+          "auroc": 0.4875,
+          "vote_acc": 0.5
+        },
+        "mlp_strong": {
+          "auroc": 0.5075,
+          "vote_acc": 0.5
+        },
+        "linear": {
+          "auroc": 0.535,
+          "vote_acc": 0.475
+        },
+        "mass_mean": {
+          "auroc": 0.57
+        },
+        "dcos_true_key": {
+          "auroc": 0.4775
+        }
+      },
+      "9003": {
+        "mlp_faithful": {
+          "auroc": 0.685,
+          "vote_acc": 0.55
+        },
+        "mlp_strong": {
+          "auroc": 0.7075,
+          "vote_acc": 0.625
+        },
+        "linear": {
+          "auroc": 0.65,
+          "vote_acc": 0.7
+        },
+        "mass_mean": {
+          "auroc": 0.5375
+        },
+        "dcos_true_key": {
+          "auroc": 0.5975
+        }
+      },
+      "9004": {
+        "mlp_faithful": {
+          "auroc": 0.5425,
+          "vote_acc": 0.575
+        },
+        "mlp_strong": {
+          "auroc": 0.575,
+          "vote_acc": 0.625
+        },
+        "linear": {
+          "auroc": 0.505,
+          "vote_acc": 0.55
+        },
+        "mass_mean": {
+          "auroc": 0.5325
+        },
+        "dcos_true_key": {
+          "auroc": 0.6025
+        }
+      }
+    },
+    "0.35": {
+      "9001": {
+        "mlp_faithful": {
+          "auroc": 0.5625,
+          "vote_acc": 0.475
+        },
+        "mlp_strong": {
+          "auroc": 0.5775,
+          "vote_acc": 0.5
+        },
+        "linear": {
+          "auroc": 0.5525,
+          "vote_acc": 0.525
+        },
+        "mass_mean": {
+          "auroc": 0.4975
+        },
+        "dcos_true_key": {
+          "auroc": 0.6625
+        }
+      },
+      "9002": {
+        "mlp_faithful": {
+          "auroc": 0.5475,
+          "vote_acc": 0.475
+        },
+        "mlp_strong": {
+          "auroc": 0.51,
+          "vote_acc": 0.55
+        },
+        "linear": {
+          "auroc": 0.5425,
+          "vote_acc": 0.6
+        },
+        "mass_mean": {
+          "auroc": 0.53
+        },
+        "dcos_true_key": {
+          "auroc": 0.545
+        }
+      },
+      "9003": {
+        "mlp_faithful": {
+          "auroc": 0.58,
+          "vote_acc": 0.475
+        },
+        "mlp_strong": {
+          "auroc": 0.6325,
+          "vote_acc": 0.575
+        },
+        "linear": {
+          "auroc": 0.6,
+          "vote_acc": 0.575
+        },
+        "mass_mean": {
+          "auroc": 0.57
+        },
+        "dcos_true_key": {
+          "auroc": 0.595
+        }
+      },
+      "9004": {
+        "mlp_faithful": {
+          "auroc": 0.54,
+          "vote_acc": 0.55
+        },
+        "mlp_strong": {
+          "auroc": 0.5325,
+          "vote_acc": 0.475
+        },
+        "linear": {
+          "auroc": 0.53,
+          "vote_acc": 0.475
+        },
+        "mass_mean": {
+          "auroc": 0.56
+        },
+        "dcos_true_key": {
+          "auroc": 0.5925
+        }
+      }
+    },
+    "0.5": {
+      "9001": {
+        "mlp_faithful": {
+          "auroc": 0.74,
+          "vote_acc": 0.625
+        },
+        "mlp_strong": {
+          "auroc": 0.6925,
+          "vote_acc": 0.575
+        },
+        "linear": {
+          "auroc": 0.75,
+          "vote_acc": 0.725
+        },
+        "mass_mean": {
+          "auroc": 0.7125
+        },
+        "dcos_true_key": {
+          "auroc": 0.7175
+        }
+      },
+      "9002": {
+        "mlp_faithful": {
+          "auroc": 0.605,
+          "vote_acc": 0.625
+        },
+        "mlp_strong": {
+          "auroc": 0.59,
+          "vote_acc": 0.575
+        },
+        "linear": {
+          "auroc": 0.58,
+          "vote_acc": 0.525
+        },
+        "mass_mean": {
+          "auroc": 0.5625
+        },
+        "dcos_true_key": {
+          "auroc": 0.625
+        }
+      },
+      "9003": {
+        "mlp_faithful": {
+          "auroc": 0.745,
+          "vote_acc": 0.725
+        },
+        "mlp_strong": {
+          "auroc": 0.7975,
+          "vote_acc": 0.8
+        },
+        "linear": {
+          "auroc": 0.765,
+          "vote_acc": 0.725
+        },
+        "mass_mean": {
+          "auroc": 0.735
+        },
+        "dcos_true_key": {
+          "auroc": 0.785
+        }
+      },
+      "9004": {
+        "mlp_faithful": {
+          "auroc": 0.7225,
+          "vote_acc": 0.65
+        },
+        "mlp_strong": {
+          "auroc": 0.685,
+          "vote_acc": 0.625
+        },
+        "linear": {
+          "auroc": 0.6875,
+          "vote_acc": 0.6
+        },
+        "mass_mean": {
+          "auroc": 0.63
+        },
+        "dcos_true_key": {
+          "auroc": 0.7025
+        }
+      }
+    },
+    "0.7": {
+      "9001": {
+        "mlp_faithful": {
+          "auroc": 0.8475,
+          "vote_acc": 0.775
+        },
+        "mlp_strong": {
+          "auroc": 0.81,
+          "vote_acc": 0.725
+        },
+        "linear": {
+          "auroc": 0.84,
+          "vote_acc": 0.75
+        },
+        "mass_mean": {
+          "auroc": 0.785
+        },
+        "dcos_true_key": {
+          "auroc": 0.84
+        }
+      },
+      "9002": {
+        "mlp_faithful": {
+          "auroc": 0.7625,
+          "vote_acc": 0.7
+        },
+        "mlp_strong": {
+          "auroc": 0.79,
+          "vote_acc": 0.7
+        },
+        "linear": {
+          "auroc": 0.795,
+          "vote_acc": 0.7
+        },
+        "mass_mean": {
+          "auroc": 0.735
+        },
+        "dcos_true_key": {
+          "auroc": 0.7075
+        }
+      },
+      "9003": {
+        "mlp_faithful": {
+          "auroc": 0.9375,
+          "vote_acc": 0.85
+        },
+        "mlp_strong": {
+          "auroc": 0.945,
+          "vote_acc": 0.875
+        },
+        "linear": {
+          "auroc": 0.9475,
+          "vote_acc": 0.85
+        },
+        "mass_mean": {
+          "auroc": 0.865
+        },
+        "dcos_true_key": {
+          "auroc": 0.8075
+        }
+      },
+      "9004": {
+        "mlp_faithful": {
+          "auroc": 0.875,
+          "vote_acc": 0.8
+        },
+        "mlp_strong": {
+          "auroc": 0.87,
+          "vote_acc": 0.825
+        },
+        "linear": {
+          "auroc": 0.835,
+          "vote_acc": 0.75
+        },
+        "mass_mean": {
+          "auroc": 0.7475
+        },
+        "dcos_true_key": {
+          "auroc": 0.76
+        }
+      }
+    }
+  },
+  "operating_point": null,
+  "meta": {
+    "spec_sha256": "c8ee2f5b8becfe9fb0f1746652ec4216f56671dbf70fab0b96102f945128b3ae",
+    "script_sha256": "3c6623a3588eaf2c24e73260cbd6a6b5ae77e3e08b4d98ac1a3519b331eaae87",
+    "calibrate_v02_sha256": "453bcc5f17fe4a4d0c7e52204b3a3a95ee38703e0d04a43739bf90be578ec035",
+    "calibrate_v01_sha256": "f1adb7b3b3d62ce973be7a8c181f57c4ee9e344b98a5c420698bd3812e9c73c2",
+    "pilot_script_sha256": "8974c994df0ec7e7ec902532085a5eb53cb1f9b1b7bfa4c21ac52c733895b1a0",
+    "core_sha256": "766ef50e3628bbd8e4b17b1b9b968a3658981ab501423afd292b644d06ae81f2",
+    "manifest_sha256": "a16f320ef882a03feb8dcc2e752c313b1a51cd796adb37eb114676461d4e7d71",
+    "model": "meta-llama/Llama-3.2-3B@13afe5124825b4f3751f836b40dafda64c1ed062",
+    "layer": 14,
+    "k": 9,
+    "N": 12.665292739868164,
+    "ppl_unsteered_median": 4.537752389907837,
+    "rhos": [
+      0.15,
+      0.25,
+      0.35,
+      0.5,
+      0.7
+    ],
+    "tokens": 256,
+    "rule": "smallest rho with mlp_faithful AUROC >= 0.95 and ppl ratio <= 1.25",
+    "sample_texts": {
+      "van": " just bring it into my cooking,\" says Fu. The show he's referring to was recently canceled by the CBC. It aired on Sundays at 11:30 a.m., where millions of Canadians were introduced to this culinary artist. He also has a new cookbook out called In the Kitchen With Tim . For him, creating is an act o",
+      "r015": " just bring it home,\" he says. The show would feature an array of delicious desserts that Fu has created over the years.\nHe's known as the 'King of Butter Tarts,' but now the king of butter tarts may have a new challenger. A pastry chef from North Bay, Ont., recently took on Fu at his own game. He b",
+      "r025": " just bring it home,\" he says. The show would feature an array of delicious desserts that have been played on the trombone by Fu's brother, who has performed for 30 years. (CBC)\nThis past week, we visited a local baker and chef in Toronto called the Bake Shoppe . It\u2019s a small bakery where they make ",
+      "r035": " just bring it home,\" he says. The show would feature an array of delicious desserts that have been played on the trombone by Fu's brother, who has performed for 30 years. (CBC)\nThis past week, we visited a local baker and chef in Toronto called the Bake Shoppe . It\u2019s a small bakery where they make ",
+      "r050": " just bring it here,\" he said. The show opened on Saturday at the Toronto Centre for Art & Design.\n\"The Great Canadian Baking Show\" will open tonight at the Toronto Centre for Art & Design.\nThis weekend, people will be able to taste some of the best creations from amateur bakers across Ontario \u2014 all",
+      "r070": " just bring it home,\" he said. The show would be an homage to his grandmother's cooking.\nA man named John B. of Toronto Ontario Canada has been making this recipe for over 50 years. It was from his mother-in-law who made it when she lived near the University of Illinois at Urbana-Champaign. It was c"
+    },
+    "seconds": 5809,
+    "torch": "2.14.0"
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "spec": "POWER_PILOT_SPEC_v0.1.md",
+  "spec_sha256": "acba263ab3538e3025b1cf771b641b41dbca92d6f732b1846cf34ee3e1bdb31d",
+  "date_utc": "2026-09-30 14:03:46",
+  "note": "inputs only: pool F texts and synthetic data; no statistic on any watermarked text",
+  "checks": {
+    "1_inputs": {
+      "pass": true,
+      "missing": [],
+      "n_files": 21,
+      "sha256": {
+        "F": "46ed8b854f3a3e7bdacee7bdb2fbb681187d886c6c5636d4db613560d0e640e0",
+        "van_k9001": "8edeedf91bdbeadfaf4df9997756b22b76995b8e0c97ec173e24427968ef85f4",
+        "r025_k9001": "16234d2fd9bac71f28542d01375091b1e237e914fb2f5c936e184060c558b0d3",
+        "r035_k9001": "57bc434043e462acd987e19b219da67502cd758a3baa0b86c704322fcb3dead1",
+        "r050_k9001": "41b827e9b0ad504ee06ddb80c1217dbdea7d1468dcc564f97112edcb6667ab60",
+        "r070_k9001": "adb7879155e47eed68ac462ff403700661ee88b1fce5a4271868affa02c0cc0c",
+        "van_k9002": "cacf534b27ae752deb854ee2d799c9f23e3d348e6173b62232712b32c1760d88",
+        "r025_k9002": "91b9d0de77e8b6e121705b79f22d1cdc5c27b2ac85eab551a863659663c8f9b9",
+        "r035_k9002": "e660d200b1c23eae21bcadeb8e774960ce72826240ab9b090fb2ad97692e6cf4",
+        "r050_k9002": "0f6a41ffc1dbfa4dbbbda224389b508c2ea54c84d93b762dc9d3d82e1ca85a93",
+        "r070_k9002": "0c014b4a2dcad8f8a9fdc48d379e9cde894813d0ca1b85a55163f4efeb993051",
+        "van_k9003": "2682635006d224385d767f89aeab56dd426479c05d93e3801b2cd54dda945109",
+        "r025_k9003": "3eac2d4fc5d3f28a4ba086ca57381ceb100fbd1879e676d40e6cb1c1365f0efa",
+        "r035_k9003": "7d7328062ea3ce230f1405eb839c61eaa7dd736264a73fcf6dfb7359de211634",
+        "r050_k9003": "b3fa1919dd346a101098b98b0636d907dc4fb0a1146fd34846b7799296c0577c",
+        "r070_k9003": "829e50f8595edb6bc9a16385c4205051b6747872b56adeaf2084618e4d977ff5",
+        "van_k9004": "8ed194e7345764c44d828d130b3fa1b061a6a32b5bb3d7def62f0e02b66ce7c5",
+        "r025_k9004": "b1d6196bbbc1a937ca73241d25c2f7ffc35f72530c211b2b32ad2b4601358667",
+        "r035_k9004": "0b7529a84762be2fb52a0cc95664c1054a439d10276c6dd4b4d7e26f6d19c7fc",
+        "r050_k9004": "39acf5208e592668c43fbb50fb147e4fc7fcf5efa6a2bb91cfcc301c789985de",
+        "r070_k9004": "302206896b4974c345a7c85d80004565a3f32d3b708940cdc1df7eaa19775181"
+      }
+    },
+    "2_keys": {
+      "pass": true,
+      "null_seed_range": [
+        77700000,
+        77700998
+      ],
+      "M": 999,
+      "max_abs_cos_tuning_vs_null": 0.6172076822122609
+    },
+    "3_pvalues_synthetic": {
+      "pass": true,
+      "ks_p": 0.08286308132401654,
+      "null_rate_at_1pct": 0.0103,
+      "on_grid": true,
+      "planted_detection": 0.997
+    },
+    "4_gradient_fd": {
+      "pass": true,
+      "r": 0.9996112728902328,
+      "slope_fd_on_analytic": 0.9845449185399942,
+      "eps": 0.5,
+      "grad_norm": 17.794200897216797,
+      "fd": [
+        17.354156494140625,
+        16.41851806640625,
+        11.76165771484375,
+        3.705810546875,
+        -3.694732666015625,
+        -10.194427490234375,
+        -15.538055419921875,
+        -17.354156494140625
+      ],
+      "analytic": [
+        17.79420236903575,
+        16.032022352531847,
+        11.094503697540102,
+        3.959582523408264,
+        -3.9595825597381547,
+        -11.094503715094882,
+        -16.03202234730315,
+        -17.79420236903575
+      ]
+    },
+    "5_hook_removed": {
+      "pass": true,
+      "max_abs_logit_diff": 0.0
+    },
+    "6_timing": {
+      "pass": true,
+      "s_per_text": 0.2075423002243042,
+      "n_texts": 2200,
+      "projected_h": 0.12683140569263035,
+      "budget_h": 1.0
+    }
+  },
+  "all_pass": true,
+  "elapsed_s": 10.574745893478394
+}

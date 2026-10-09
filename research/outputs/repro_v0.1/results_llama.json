@@ -1,0 +1,667 @@
+{
+  "per_key": {
+    "cont_a5": {
+      "9001": {
+        "mlp_faithful": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mlp_strong": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "linear": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mass_mean": {
+          "auroc": 1.0
+        },
+        "dcos_true_key": {
+          "auroc": 0.8525
+        }
+      },
+      "9002": {
+        "mlp_faithful": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mlp_strong": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "linear": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mass_mean": {
+          "auroc": 1.0
+        },
+        "dcos_true_key": {
+          "auroc": 0.92
+        }
+      },
+      "9003": {
+        "mlp_faithful": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mlp_strong": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "linear": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mass_mean": {
+          "auroc": 1.0
+        },
+        "dcos_true_key": {
+          "auroc": 0.7075
+        }
+      },
+      "9004": {
+        "mlp_faithful": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mlp_strong": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "linear": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mass_mean": {
+          "auroc": 1.0
+        },
+        "dcos_true_key": {
+          "auroc": 0.995
+        }
+      }
+    },
+    "cont_a10": {
+      "9001": {
+        "mlp_faithful": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mlp_strong": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "linear": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mass_mean": {
+          "auroc": 1.0
+        },
+        "dcos_true_key": {
+          "auroc": 1.0
+        }
+      },
+      "9002": {
+        "mlp_faithful": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mlp_strong": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "linear": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mass_mean": {
+          "auroc": 1.0
+        },
+        "dcos_true_key": {
+          "auroc": 0.645
+        }
+      },
+      "9003": {
+        "mlp_faithful": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mlp_strong": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "linear": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mass_mean": {
+          "auroc": 1.0
+        },
+        "dcos_true_key": {
+          "auroc": 0.025
+        }
+      },
+      "9004": {
+        "mlp_faithful": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mlp_strong": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "linear": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mass_mean": {
+          "auroc": 1.0
+        },
+        "dcos_true_key": {
+          "auroc": 0.9325
+        }
+      }
+    },
+    "cont_a20": {
+      "9001": {
+        "mlp_faithful": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mlp_strong": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "linear": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mass_mean": {
+          "auroc": 1.0
+        },
+        "dcos_true_key": {
+          "auroc": 0.78
+        }
+      },
+      "9002": {
+        "mlp_faithful": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mlp_strong": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "linear": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mass_mean": {
+          "auroc": 1.0
+        },
+        "dcos_true_key": {
+          "auroc": 0.5825
+        }
+      },
+      "9003": {
+        "mlp_faithful": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mlp_strong": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "linear": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mass_mean": {
+          "auroc": 1.0
+        },
+        "dcos_true_key": {
+          "auroc": 0.145
+        }
+      },
+      "9004": {
+        "mlp_faithful": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mlp_strong": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "linear": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mass_mean": {
+          "auroc": 1.0
+        },
+        "dcos_true_key": {
+          "auroc": 0.6775
+        }
+      }
+    },
+    "prompt_a5": {
+      "9001": {
+        "mlp_faithful": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mlp_strong": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "linear": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mass_mean": {
+          "auroc": 1.0
+        },
+        "dcos_true_key": {
+          "auroc": 0.84
+        }
+      },
+      "9002": {
+        "mlp_faithful": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mlp_strong": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "linear": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mass_mean": {
+          "auroc": 1.0
+        },
+        "dcos_true_key": {
+          "auroc": 0.925
+        }
+      },
+      "9003": {
+        "mlp_faithful": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mlp_strong": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "linear": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mass_mean": {
+          "auroc": 1.0
+        },
+        "dcos_true_key": {
+          "auroc": 0.5825
+        }
+      },
+      "9004": {
+        "mlp_faithful": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mlp_strong": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "linear": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mass_mean": {
+          "auroc": 1.0
+        },
+        "dcos_true_key": {
+          "auroc": 0.9925
+        }
+      }
+    },
+    "prompt_a10": {
+      "9001": {
+        "mlp_faithful": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mlp_strong": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "linear": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mass_mean": {
+          "auroc": 1.0
+        },
+        "dcos_true_key": {
+          "auroc": 0.99
+        }
+      },
+      "9002": {
+        "mlp_faithful": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mlp_strong": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "linear": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mass_mean": {
+          "auroc": 1.0
+        },
+        "dcos_true_key": {
+          "auroc": 0.7
+        }
+      },
+      "9003": {
+        "mlp_faithful": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mlp_strong": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "linear": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mass_mean": {
+          "auroc": 1.0
+        },
+        "dcos_true_key": {
+          "auroc": 0.0225
+        }
+      },
+      "9004": {
+        "mlp_faithful": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mlp_strong": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "linear": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mass_mean": {
+          "auroc": 1.0
+        },
+        "dcos_true_key": {
+          "auroc": 0.9075
+        }
+      }
+    },
+    "prompt_a20": {
+      "9001": {
+        "mlp_faithful": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mlp_strong": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "linear": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mass_mean": {
+          "auroc": 1.0
+        },
+        "dcos_true_key": {
+          "auroc": 0.68
+        }
+      },
+      "9002": {
+        "mlp_faithful": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mlp_strong": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "linear": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mass_mean": {
+          "auroc": 1.0
+        },
+        "dcos_true_key": {
+          "auroc": 0.645
+        }
+      },
+      "9003": {
+        "mlp_faithful": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mlp_strong": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "linear": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mass_mean": {
+          "auroc": 1.0
+        },
+        "dcos_true_key": {
+          "auroc": 0.13
+        }
+      },
+      "9004": {
+        "mlp_faithful": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mlp_strong": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "linear": {
+          "auroc": 1.0,
+          "vote_acc": 1.0
+        },
+        "mass_mean": {
+          "auroc": 1.0
+        },
+        "dcos_true_key": {
+          "auroc": 0.7175
+        }
+      }
+    }
+  },
+  "summary": {
+    "cont_a5": {
+      "mlp_faithful": {
+        "auroc": 1.0,
+        "vote_acc": 1.0
+      },
+      "mlp_strong": {
+        "auroc": 1.0,
+        "vote_acc": 1.0
+      },
+      "linear": {
+        "auroc": 1.0,
+        "vote_acc": 1.0
+      },
+      "mass_mean": {
+        "auroc": 1.0
+      },
+      "dcos_true_key": {
+        "auroc": 0.86875
+      }
+    },
+    "cont_a10": {
+      "mlp_faithful": {
+        "auroc": 1.0,
+        "vote_acc": 1.0
+      },
+      "mlp_strong": {
+        "auroc": 1.0,
+        "vote_acc": 1.0
+      },
+      "linear": {
+        "auroc": 1.0,
+        "vote_acc": 1.0
+      },
+      "mass_mean": {
+        "auroc": 1.0
+      },
+      "dcos_true_key": {
+        "auroc": 0.650625
+      }
+    },
+    "cont_a20": {
+      "mlp_faithful": {
+        "auroc": 1.0,
+        "vote_acc": 1.0
+      },
+      "mlp_strong": {
+        "auroc": 1.0,
+        "vote_acc": 1.0
+      },
+      "linear": {
+        "auroc": 1.0,
+        "vote_acc": 1.0
+      },
+      "mass_mean": {
+        "auroc": 1.0
+      },
+      "dcos_true_key": {
+        "auroc": 0.54625
+      }
+    },
+    "prompt_a5": {
+      "mlp_faithful": {
+        "auroc": 1.0,
+        "vote_acc": 1.0
+      },
+      "mlp_strong": {
+        "auroc": 1.0,
+        "vote_acc": 1.0
+      },
+      "linear": {
+        "auroc": 1.0,
+        "vote_acc": 1.0
+      },
+      "mass_mean": {
+        "auroc": 1.0
+      },
+      "dcos_true_key": {
+        "auroc": 0.8350000000000001
+      }
+    },
+    "prompt_a10": {
+      "mlp_faithful": {
+        "auroc": 1.0,
+        "vote_acc": 1.0
+      },
+      "mlp_strong": {
+        "auroc": 1.0,
+        "vote_acc": 1.0
+      },
+      "linear": {
+        "auroc": 1.0,
+        "vote_acc": 1.0
+      },
+      "mass_mean": {
+        "auroc": 1.0
+      },
+      "dcos_true_key": {
+        "auroc": 0.655
+      }
+    },
+    "prompt_a20": {
+      "mlp_faithful": {
+        "auroc": 1.0,
+        "vote_acc": 1.0
+      },
+      "mlp_strong": {
+        "auroc": 1.0,
+        "vote_acc": 1.0
+      },
+      "linear": {
+        "auroc": 1.0,
+        "vote_acc": 1.0
+      },
+      "mass_mean": {
+        "auroc": 1.0
+      },
+      "dcos_true_key": {
+        "auroc": 0.5431250000000001
+      }
+    }
+  },
+  "meta": {
+    "spec": "research/repro/REPRO_PILOT_SPEC_v0.1.md",
+    "spec_sha256": "be9078b09d01f987e25b2211b2d6d19d7f09f0ab59573099549246e8aca11319",
+    "script_sha256": "8974c994df0ec7e7ec902532085a5eb53cb1f9b1b7bfa4c21ac52c733895b1a0",
+    "core_sha256": "766ef50e3628bbd8e4b17b1b9b968a3658981ab501423afd292b644d06ae81f2",
+    "model": "meta-llama/Llama-3.2-1B@4e20de362430cd3b72f300e6b0f18e50e7166e08",
+    "layer": 8,
+    "alphas": [
+      5.0,
+      10.0,
+      20.0
+    ],
+    "keys": [
+      9001,
+      9002,
+      9003,
+      9004
+    ],
+    "key_norm_per_alpha1": 1.466830849647522,
+    "act_norm_median_unsteered": 5.671381950378418,
+    "act_norm_p90_unsteered": 6.08601188659668,
+    "text_files_sha256": {
+      "texts_a10_k9001.json": "404d73564d36b9fda1def778a2c0f159b68707a06c146615ee48a7bd2455f711",
+      "texts_a10_k9002.json": "4060a81f2af68d2c79f9952142467561e4e14ef61347be6633ccb3db5e217c14",
+      "texts_a10_k9003.json": "e056dfd926ceaadc6265b01ff582ce3ce275ca0fed34e33abc879219ed9e5f12",
+      "texts_a10_k9004.json": "2f7c97039d372b186ccdcb118c815485618d3cc5936e3aca39ced311e1a12dc8",
+      "texts_a20_k9001.json": "a25cc8871187d4c4e6754d5156d4d4fb8f066c3c79553eb499179a0ba67b6093",
+      "texts_a20_k9002.json": "98ccf2bc569bf51d3cef2be7294798bec02533ffac4d1323080734840d1caf2e",
+      "texts_a20_k9003.json": "25333c9b2a19551253ddad3e86e08d70573dc6f479e7760a3349045c5e2fb398",
+      "texts_a20_k9004.json": "57094fb6a012d2e529f56dd242a80cfa751243b1725ab0189e0213ffc385fab9",
+      "texts_a5_k9001.json": "5d7e81a1fe4dfd978e98dda8b326cf0320a87fa38124b124dbbf541322918655",
+      "texts_a5_k9002.json": "0ee00999301ab0961b7006d367ecf3633886002f0c3617049bb9b2ddb9b0173f",
+      "texts_a5_k9003.json": "9cc83973e108d3ab4aee9dbc178ece30a424f25852d4d9e483bf17eceb693ad2",
+      "texts_a5_k9004.json": "f3f6a9660b55f283091709e566c0928a76dbe60e2be802a07d3a8a4b53ff98a8",
+      "texts_van_k9001.json": "24d6191372c8f9d136b42f4bbcb7337139aa94fcabbdbea95f9cfbeb62f2895e",
+      "texts_van_k9002.json": "d36d7a05b3d709feae1405d2dfa033d42c65513cac4cf11a3f9f38bcedfdaad5",
+      "texts_van_k9003.json": "df11a9a1bbc027403d4d6e1a0250b0d35740c0509d144200cc412ece52c41590",
+      "texts_van_k9004.json": "82f0cb6aaf9d07c02bfa316876d54b82c0992790f29977edef028ad4bbdc47c3"
+    },
+    "sample_texts": {
+      "van": " just go out there and play,\" says Fu of his 1993 debut album as trombonist on Vancouver's west coast jazz scene. The first record he ever bought was one that wasn't even made by an artist named Miles Davis. It was called 'Peanuts,' and it was an instrumental recording by Dave Brubeck. \"I think my f",
+      "a5": " just go out there and eat the best of my new-fishy-ten-lep-9-oop-lahh... \"\nThis week, I'm all over the one-pot wonders that are Klimo's super-incredible, lowly, silent, secret-omitted, deliciously un - Ch-E-O-P-I-L-A-T-V-O-R-E , awesome, 1000 year-old , super - great, P.O.E.T (a) - Nalakandooi-Yoo-",
+      "a10": " just E-e-22 N1X55 K4 K3K40 V2 X3 X3E6P3 YX3]VXN K3X3 P3 X2X3 X3P5]\n5P3 Y8 V3 V3 Y3 V3X3 R9R3 A5 K3 K3X3 L3 V10 V3 K34 K35 V3]\nX3 V7 V3 V33 F33 K3 V3 V3 K3 V33 V3 V3 V3 33 V3 V3 V33 V3 Y3 X3 3X3 V33 K3 K33 V3 L13 V3 V3 V3 V3 V33 V3]\n43 K3 V33 V33 V33 V33 V33 V3 V33 V30 K33 V30 V333 K33 K3 V33 V333 K",
+      "a20": " gal Ren \ufffd_DECL inexpurrecturch Churchill \ud56d flutter\u0323identialhhhRen Alternquirrelurre Uran Atomicistence\u043b\u044f\u043d=''loat telegramcentrationhhhission \ufffdistence Zionist Zionististence\u3001\u79c1ilters flutterurrecthonghhonnen duelonnen journeysedly Zionist kum clandestidentialistence_DECL secretly patriotVV\u8cea \ufffd gal cou"
+    },
+    "seconds": 2264,
+    "torch": "2.14.0",
+    "reproduces_rule": "MLP-faithful mean test AUROC >= 0.95"
+  }
+}

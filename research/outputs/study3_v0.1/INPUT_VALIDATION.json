@@ -1,0 +1,90 @@
+{
+  "protocol": "STUDY3_PROTOCOL_v0.1.md",
+  "protocol_sha256": "a345a1a45af16ad401230e3d47f6cc72e7d0a7b013cb49c2d061c433b602685d",
+  "date_utc": "2026-09-30 14:28:29",
+  "note": "inputs only; no Study 3 feature or statistic on any study-key text",
+  "checks": {
+    "1_reused_files": {
+      "pass": true,
+      "n_files": 562,
+      "missing": [],
+      "n_overlap_with_study1_locks": 288,
+      "overlap_with_study1_locks_equal": true
+    },
+    "2_null_keys": {
+      "pass": true,
+      "first_999_equal_primary": true,
+      "seed_range": [
+        77700000,
+        77709998
+      ]
+    },
+    "3_pvalues_synthetic": {
+      "pass": true,
+      "M999": {
+        "ks_p": 0.08286308132401654,
+        "null_rate_at_alpha": 0.0103,
+        "alpha": 0.01,
+        "on_grid": true,
+        "planted_detection": 0.997,
+        "pass": true
+      },
+      "M9999": {
+        "ks_p": 0.043098287756742404,
+        "null_rate_at_alpha": 0.0016666666666666668,
+        "alpha": 0.001,
+        "on_grid": true,
+        "planted_detection": 0.969,
+        "pass": true
+      }
+    },
+    "4_fluency_bars_and_probe_reproduced": {
+      "pass": true,
+      "bars_equal": true,
+      "n_conditions": 42,
+      "max_abs_diff": 0.0
+    },
+    "5_texts_and_pools": {
+      "pass": true,
+      "n_human": 1000,
+      "human_min_tokens": 220,
+      "human_median_tokens": 256.0,
+      "F_disjoint_from_A_D_E": true
+    },
+    "6_runner_refuses_without_lock": {
+      "pass": true,
+      "returncode": 1
+    },
+    "7_smoke_test_tuning_texts": {
+      "pass": true,
+      "missing": [],
+      "seconds": 26.871187925338745,
+      "scratch_deleted": true,
+      "note": "tuning texts with synthetic probe scores and perplexities; its verdicts carry no information",
+      "smoke_G1_pooled_fpr_pct": 0.875,
+      "smoke_oracle_tpr_median": {
+        "0.25": 0.885,
+        "0.35": 0.955,
+        "0.5": 0.975,
+        "0.7": 0.94
+      }
+    },
+    "8_reference_features_equal_pilot": {
+      "pass": true,
+      "max_abs_diff_G": 0.0,
+      "max_abs_diff_A": 0.0
+    },
+    "9_timing": {
+      "pass": true,
+      "s_per_text": 0.21982744932174683,
+      "n_texts": 53400,
+      "projected_h": 3.260773831605911,
+      "budget_h": 5.0
+    },
+    "10_no_outcomes": {
+      "pass": true
+    }
+  },
+  "all_pass": true,
+  "elapsed_s": 90.09663820266724
+}

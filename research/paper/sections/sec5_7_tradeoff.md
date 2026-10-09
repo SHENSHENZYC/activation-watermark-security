@@ -1,0 +1,10 @@
+## 5.7 The trade-off, read across the studies
+
+Read together, the studies describe one curve for the fixed key on this model (an interpretation, labelled; Figure F6). The strengths at which the exact test detects the key and paraphrase fails to scrub it, $\rho \geq 0.50$, cost perplexity (ratios [[cal_q15_05_ratio]] and [[cal_q15_07_ratio]] against unsteered text; Section 5.1); the strengths with acceptable perplexity, $\rho \leq 0.35$, are scrubbed by an off-the-shelf paraphrase (Section 5.5). The published probe fails the detectability criterion at the low strengths and is forgeable without the key at 0.35 (Section 5.2); the exact test rescues detection at every strength (Section 5.3), but its own statistic steals the fixed key from 64 texts (Section 5.4). Context keying moves the stealing corner at the price of the robustness corner; rotation keeps robustness and quality and falls to clustering (Section 5.6). That watermark designs trade robustness, quality and security against one another is the token-level literature's main theme [@pang2024nofreelunch; @shen2025seek; @jovanovic2024stealing] and is noted by the scheme's authors (p. 2) [@ardoin2026selfrecognition]; the contribution here is the measured curve along $\rho$ for this family, on one model and against one attacker family.
+
+## Open items
+- The three "not the first to note" citations (SEEK p. 1; Pang et al. p. 1; Self-Recognition p. 2; Jovanović et al. p. 9) are the gate's page-confirmed quotations; §6 (related work) will quote them, so this paragraph only cites.
+- Decided 2026-10-05 (section-level review): approved as drafted; §5 kept at 5.07 pages (0.32 page over the 4.75-page target, to be recovered in §6–§9); the applied cuts stand.
+
+- Codex review 2026-10-08: D1: spelled out Section/Appendix references because the LaTeX PDF rendered the section symbol as a different glyph; destinations unchanged. See `CODEX_REVIEW_v0.1.md`; claim and generator changes remain for Yichen.
+- Final revision 2026-10-08 (Milestone 16, after the Codex review): A11. Decided by Yichen 2026-10-08.

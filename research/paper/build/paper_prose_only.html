@@ -1,0 +1,1877 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="{Author name and affiliation: Yichen to fill (independent researcher)}" />
+  <title>A Security Analysis of an Activation-Steering LLM Watermark: Key Recovery, Forgery, Scrubbing and Keyed Defences</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
+  <style>
+/* Draft rendering for the page count: a single-column article, Letter paper, 1-inch margins, 11 pt serif. */
+@page { size: letter; margin: 1in; }
+html { font-size: 11pt; }
+body { width: 6.5in; overflow-x: hidden; font-family: "Times New Roman", Times, "Liberation Serif", serif; font-size: 11pt; line-height: 1.22; color: #000; max-width: none; margin: 0; padding: 0; }
+h1.title { font-size: 17pt; text-align: center; margin: 0 0 0.4em 0; line-height: 1.2; }
+p.author, p.date { text-align: center; margin: 0.15em 0; }
+h1 { font-size: 13pt; margin: 1.1em 0 0.4em 0; }
+h2 { font-size: 11.5pt; margin: 0.9em 0 0.3em 0; }
+h3 { font-size: 11pt; margin: 0.8em 0 0.3em 0; font-style: italic; }
+p { margin: 0 0 0.55em 0; text-align: justify; hyphens: auto; }
+blockquote { margin: 0.4em 1.2em; font-size: 10pt; color: #222; }
+table { table-layout: fixed; border-collapse: collapse; font-size: 7.6pt; line-height: 1.2; margin: 0.6em auto 0.9em auto; width: 100%; }
+th, td { overflow-wrap: anywhere; word-break: break-word; border-top: 0.4pt solid #444; border-bottom: 0.4pt solid #444; padding: 1.5pt 3pt; vertical-align: top; text-align: left; }
+th { border-bottom: 0.8pt solid #000; }
+caption { caption-side: top; text-align: left; font-size: 9pt; margin-bottom: 0.3em; }
+figure { margin: 0.8em 0 1em 0; text-align: center; page-break-inside: avoid; }
+figure img { max-width: 100%; height: auto; }
+figcaption { font-size: 9pt; text-align: left; margin-top: 0.3em; }
+div.abstract { margin: 0.8em 2em 1.2em 2em; font-size: 10pt; }
+div.abstract p { text-align: justify; }
+#refs { font-size: 9pt; }
+#refs div { margin-bottom: 0.35em; padding-left: 1.5em; text-indent: -1.5em; }
+.pagebreak { page-break-before: always; }
+code { font-family: "Courier New", monospace; font-size: 9pt; overflow-wrap: anywhere; }
+img { max-width: 100%; }
+
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">A Security Analysis of an Activation-Steering LLM
+Watermark: Key Recovery, Forgery, Scrubbing and Keyed Defences</h1>
+<p class="author">{Author name and affiliation: Yichen to fill
+(independent researcher)}</p>
+<p class="date">Draft v0.1, assembled 2026-10-06</p>
+</header>
+<div class="abstract">
+<p><strong>Abstract.</strong> Activation-steering watermarks add a
+secret vector to a hidden layer during generation and detect it from the
+model’s internal activations when the text is re-read; their authors
+motivate the design by robustness to paraphrase. We present, to our
+knowledge, the first security analysis of such a watermark: the
+construction of LLM Self-Recognition <span class="citation"
+data-cites="ardoin2026selfrecognition">(<a
+href="#ref-ardoin2026selfrecognition" role="doc-biblioref">Ardoin,
+Schäfer, and Wunder 2026</a>)</span>, re-implemented on Qwen2.5-1.5B at
+256 tokens and measured under 6 pre-registered protocols against a
+passive attacker who holds the open weights and up to 1,024 watermarked
+outputs but cannot query the detector. First, under our measures the
+published strength did not reproduce on 1–3B base models: no strength
+made the scheme’s trained probe reliably detectable without a perplexity
+cost. Second, that probe, re-trained by us, accepts steering that is not
+the key, so an attacker without the key produces fluent forgeries it
+accepts at the one strength where quality is acceptable (19.5% against a
+bar of 14.3%). Third, an exact key-resampling score test, a transfer of
+GaussMark’s statistic to an additive activation vector, attributes
+96.0–100.0% of genuine texts at an exact 1% false-positive rate (exact
+on average over keys; every key’s rate checked) and rejects those
+forgeries. Fourth, the same statistic, averaged over 64 observed
+outputs, recovers the fixed key (median cosine 0.940 and 0.951), and its
+forgeries are attributed as often as genuine text (88.0 and 85.5%
+against 86.5 and 90.0%); an activation-mean estimator recovers nothing
+from 1,024. Fifth, an off-the-shelf paraphrase scrubs the test’s
+evidence at the quality-acceptable strengths (64.0 and 53.0% success)
+and not above them. Sixth, keying the direction by the previous
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>h</mi><annotation encoding="application/x-tex">h</annotation></semantics></math>
+tokens or rotating among 8 keys, transfers of context hashing and key
+rotation from token-level watermarking that the scheme’s authors name as
+future work, blocks this attacker at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>≤</mo></mrow><annotation encoding="application/x-tex">n \leq</annotation></semantics></math>
+1,024 and improves perplexity, but context keying loses most of the
+paraphrase robustness and rotation falls to a clustering attacker from
+64 texts. For the fixed key on this model, the strengths that are
+detectable and paraphrase-robust carry a quality cost (perplexity ratios
+1.62 and 2.29), the quality-neutral strengths are scrubbed, and the
+published detector type is forgeable at either. The protocols, locks and
+code accompany the paper.</p>
+</div>
+<h1 id="introduction">1 Introduction</h1>
+<p>Activation-steering watermarks mark text from inside the model:
+during generation a secret vector is added to one hidden layer at every
+token, and at detection the finished text is re-encoded with the same
+model and the signal is read from its activations rather than from token
+statistics. Their authors motivate the design by robustness to
+rewriting: for LLM Self-Recognition <span class="citation"
+data-cites="ardoin2026selfrecognition">(<a
+href="#ref-ardoin2026selfrecognition" role="doc-biblioref">Ardoin,
+Schäfer, and Wunder 2026</a>)</span>, the scheme analysed here, “Our
+method shows greater robustness to paraphrasing” (p. 5), and detection
+is white-box by construction (“we assume white-box access to the
+internal activations of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>”,
+p. 2).</p>
+<p>Whether such a watermark is secure has not been measured. Its authors
+state the risk and leave it open: “if an attacker can recover the secret
+steering vector and target layer, the watermark could be trivially
+reproduce to spoof the identity of the steered LLM”, and they propose as
+future work a vector that “rotates or evolves during generation
+according to a pseudo-random schedule” (p. 7). Stealing, spoofing and
+scrubbing of token-level watermarks have an established literature <span
+class="citation"
+data-cites="jovanovic2024stealing pang2024nofreelunch gu2024learnability zhang2026beyondseal">(<a
+href="#ref-jovanovic2024stealing" role="doc-biblioref">Jovanović, Staab,
+and Vechev 2024</a>; <a href="#ref-pang2024nofreelunch"
+role="doc-biblioref">Pang et al. 2024</a>; <a
+href="#ref-gu2024learnability" role="doc-biblioref">Gu et al. 2024</a>;
+<a href="#ref-zhang2026beyondseal" role="doc-biblioref">Zhang et al.
+2026</a>)</span>, and a September 2026 evaluation of it excludes
+model-internal schemes by scope <span class="citation"
+data-cites="li2026marksec">(<a href="#ref-li2026marksec"
+role="doc-biblioref">Li et al. 2026, 2</a>)</span>. To our knowledge, no
+prior work measures key recovery, forgery or scrubbing for an
+activation-steering watermark; search absence is not proof of
+novelty.</p>
+<p>Regulators now name the properties measured here. The European
+Commission’s Code of Practice on marking and labelling of AI-generated
+content (final, 10 June 2026) <span class="citation"
+data-cites="ec2026codeofpractice">(<a href="#ref-ec2026codeofpractice"
+role="doc-biblioref">European Commission 2026</a>)</span> expects an
+imperceptible watermark on free-form text longer than 200 tokens
+(Sub-measure 1.1.2, p. 9), measures <em>reliability</em> by “the error
+rate of the detection” on the provider’s own marked content and on other
+content (Measure 3.2, p. 17), and asks that solutions “maintain intended
+performance levels under varying conditions, covering both common
+alterations and adversarial attacks” (Measure 3.3, p. 17), paraphrasing
+among them (p. 18). NIST AI 100-4 <span class="citation"
+data-cites="nist2024ai1004">(<a href="#ref-nist2024ai1004"
+role="doc-biblioref">National Institute of Standards and Technology
+2024</a>)</span> defines a <em>secure</em> watermark as one that resists
+attempts “to remove or tamper with the watermark information, or to
+insert forged watermarks” (p. 13) and lists removal attacks and “forgery
+attempts” among what an evaluation should cover (p. 38). A
+false-positive rate at a fixed level, detection after paraphrase and
+resistance to forged watermarks are the three measurements below; we use
+these texts for vocabulary and motivation only, and nothing here is a
+statement about any provider’s compliance or deployment.</p>
+<p><strong>What we do.</strong> We re-implement Self-Recognition’s
+construction on Qwen2.5-1.5B at 256 tokens (§2, §4) and measure it
+against a passive attacker who holds the open weights and up to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>1</mn><mo>,</mo><mn>024</mn></mrow><annotation encoding="application/x-tex">n = 1{,}024</annotation></semantics></math>
+watermarked outputs, text only, and cannot query the detector (§2.2),
+under 6 pre-registered protocols locked by hash before any outcome
+existed (§4, App. A). Because the published strength does not transfer
+across models, strength is calibrated first as
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ρ</mi><annotation encoding="application/x-tex">\rho</annotation></semantics></math>,
+the vector’s norm relative to the activation norm, along the
+detectability–quality curve (§5.1). Five questions follow, one per
+results subsection: forgery of the published detector, a trained probe,
+without the key (§5.2); an exact key test that detects the key and
+rejects those forgeries (§3, §5.3); recovery of the key from outputs
+(§5.4); scrubbing by paraphrase at matched quality (§5.5); and keyed
+directions, hashed by context or rotated, with their price (§5.6).</p>
+<p><strong>Contributions.</strong> Every claim is bounded to one model
+(Qwen2.5-1.5B base), one layer, 8 keys, 256-token continuations, the
+strengths tested and this attacker family with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>≤</mo><mn>1</mn><mo>,</mo><mn>024</mn></mrow><annotation encoding="application/x-tex">n \leq 1{,}024</annotation></semantics></math>;
+rates are medians over keys with cluster-bootstrap intervals and per-key
+tables (App. D).</p>
+<ol type="1">
+<li>To our knowledge, the first security analysis of an
+activation-steering LLM watermark (key recovery, forgery, scrubbing, an
+exact test and a keyed defence), on one published scheme,
+re-implemented; SLAM and AWM are discussed, not tested.</li>
+<li>The scheme’s published detector type, a trained per-token probe
+re-implemented and re-trained by us, accepts steering that is not the
+key (median cosine at most 0.062 with it) and degenerate text; fluent,
+non-repetitive forgery without the key is practical at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>0.35</mn></mrow><annotation encoding="application/x-tex">\rho = 0.35</annotation></semantics></math>
+(fluent acceptance 19.5% against a bar of 14.3%) and inconclusive at
+0.50 and 0.70. The authors note that paraphrased human text spoofs their
+detector (p. 5), and under our conditions their published setting did
+not reproduce on 1–3B base models (§5.1, with their numbers beside
+ours).</li>
+<li>An exact key-resampling score test, a transfer of GaussMark’s
+statistic <span class="citation" data-cites="block2025gaussmark">(<a
+href="#ref-block2025gaussmark" role="doc-biblioref">Block, Rakhlin, and
+Sekhari 2025</a>)</span> to an additive activation vector, attributes
+96.0–100.0% of genuine texts at an exact 1% false-positive rate (exact
+on average over keys; every study key calibrated), beats the probe at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>≤</mo><mn>0.50</mn></mrow><annotation encoding="application/x-tex">\rho \leq 0.50</annotation></semantics></math>,
+never attributes random-key text, and makes those forgeries not
+practical for the median key.</li>
+<li>The first measured key-recovery attack on such a watermark (search
+level): the test’s own statistic, averaged over 64 outputs, recovers the
+fixed key (median cosine 0.940 and 0.951 at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>0.35</mn></mrow><annotation encoding="application/x-tex">\rho = 0.35</annotation></semantics></math>
+and 0.50), and its forgeries are attributed as often as genuine text
+(88.0 and 85.5% against 86.5 and 90.0%), where the activation-mean
+estimator recovers nothing from 1,024 (cosine at most 0.16). That the
+detector’s best statistic is the thief’s best estimator is a measured
+fact with an inferential explanation (§3); the token-level budget
+comparison carries an access caveat (§5.4).</li>
+<li>The first scrubbing evaluation of such a watermark under an exact,
+per-key-calibrated test at matched quality, with an insider (true-key)
+bound: an off-the-shelf paraphrase succeeds 64.0 and 53.0% of the time
+at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>0.25</mn></mrow><annotation encoding="application/x-tex">\rho = 0.25</annotation></semantics></math>
+and 0.35 and is not effective at 0.50 and 0.70; the comparison with the
+authors’ robustness figures is indirect.</li>
+<li>The measured trade-off along
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ρ</mi><annotation encoding="application/x-tex">\rho</annotation></semantics></math>
+for the fixed key on this model (an interpretation, labelled): the
+detectable and paraphrase-robust strengths cost perplexity (ratios 1.62
+and 2.29), the quality-neutral strengths are scrubbed, and the probe is
+forgeable at the one strength where quality is acceptable; we are not
+the first to note a trade-off (§6).</li>
+<li>Context keying
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>=</mo><mn>1</mn><mo>,</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">h = 1, 4</annotation></semantics></math>)
+and rotation among 8 keys, transfers of context hashing <span
+class="citation"
+data-cites="kirchenbauer2023watermark kirchenbauer2024reliability">(<a
+href="#ref-kirchenbauer2023watermark" role="doc-biblioref">Kirchenbauer
+et al. 2023</a>, <a href="#ref-kirchenbauer2024reliability"
+role="doc-biblioref">2024</a>)</span> and key rotation <span
+class="citation"
+data-cites="kirchenbauer2023watermark pang2024nofreelunch gu2024learnability dathathri2024synthid">(<a
+href="#ref-kirchenbauer2023watermark" role="doc-biblioref">Kirchenbauer
+et al. 2023</a>; <a href="#ref-pang2024nofreelunch"
+role="doc-biblioref">Pang et al. 2024</a>; <a
+href="#ref-gu2024learnability" role="doc-biblioref">Gu et al. 2024</a>;
+<a href="#ref-dathathri2024synthid" role="doc-biblioref">Dathathri et
+al. 2024</a>)</span> to activation steering, named as future work by
+Ardoin et al. (p. 7): both hashed arms block this attacker at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>≤</mo><mn>1</mn><mo>,</mo><mn>024</mn></mrow><annotation encoding="application/x-tex">n \leq 1{,}024</annotation></semantics></math>
+(forgeries attributed at most 9.0%) and improve perplexity, but lose
+most of the paraphrase robustness (material for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">h = 1</annotation></semantics></math>
+at both strengths and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>=</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">h = 4</annotation></semantics></math>
+at 0.50, inconclusive for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>=</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">h = 4</annotation></semantics></math>
+at 0.35); rotation keeps robustness and falls to a clustering attacker
+from 64 texts at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>0.50</mn></mrow><annotation encoding="application/x-tex">\rho = 0.50</annotation></semantics></math>
+(95% attributed), and at 0.35 only through a labelled post-hoc addendum
+beside the pre-registered “blocked” verdict (§5.6).</li>
+</ol>
+<p>Two practical points are restated for this family, as others have
+noted: a deployer with one key should check its own false-positive rate
+on paraphrased null text, since resampling p-values are exact only on
+average over keys (§5.5), and a quality bar for forgery or scrubbing
+must pair perplexity with a repetition term and be read against
+reference samples (§2.2). Per-key heterogeneity, the probe’s acceptance
+of paraphrases at high strength and the reading that the probe detects
+steering rather than the key are a descriptive, a lead and an inference,
+labelled where they appear. We do not claim the first stealing attack on
+LLM watermarks, a new watermark, immunity to stealing, a fix of the
+trade-off, or results beyond the model, budgets and attackers tested
+(§7). The protocols, locks and code accompany the paper (§8).</p>
+<h1 id="background-and-threat-model">2 Background and threat model</h1>
+<h2 id="the-scheme">2.1 The scheme</h2>
+<p>An activation-steering watermark adds a secret vector to the model’s
+hidden state during generation and detects it by re-encoding the
+finished text with the same model and reading the hidden state back. We
+analyse the construction of Self-Recognition <span class="citation"
+data-cites="ardoin2026selfrecognition">(<a
+href="#ref-ardoin2026selfrecognition" role="doc-biblioref">Ardoin,
+Schäfer, and Wunder 2026</a>)</span>. Given a direction
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>∈</mo><msup><mstyle mathvariant="double-struck"><mi>ℝ</mi></mstyle><mi>d</mi></msup></mrow><annotation encoding="application/x-tex">v \in \mathbb{R}^d</annotation></semantics></math>
+and a coefficient
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\alpha &gt; 0</annotation></semantics></math>,
+its authors “add the scaled vector to the intermediate activation at
+layer
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>l</mi><annotation encoding="application/x-tex">l</annotation></semantics></math>
+at each token generation step” (p. 2),
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mi>l</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>←</mo><msub><mi>A</mi><mi>l</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mi>α</mi><mi>v</mi></mrow><annotation encoding="application/x-tex">A_l(x_i) \leftarrow A_l(x_i) + \alpha v</annotation></semantics></math>.
+The direction is random and sparse, “sampled from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mrow><mo stretchy="true" form="prefix">[</mo><mo>−</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">]</mo></mrow><mi>d</mi></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">U([-1, 1]^d)</annotation></semantics></math>,
+with 99.7% of dimensions set to zero” (p. 11), so a key on a model of
+width
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>=</mo><mn>1536</mn></mrow><annotation encoding="application/x-tex">d = 1536</annotation></semantics></math>
+has
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">k = 4</annotation></semantics></math>
+non-zero coordinates; the published strength is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>=</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">\alpha = 5</annotation></semantics></math>,
+and “Injection and detection are performed at the middle layer” (p. 11).
+Detection is white-box (“we assume white-box access to the internal
+activations of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>”,
+p. 2): the text is re-encoded and a probe on the
+layer-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>l</mi><annotation encoding="application/x-tex">l</annotation></semantics></math>
+activations decides, “The MLP has two hidden layers of width 32, trained
+for a single epoch to predict the steering index
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>
+of a given extracted activation” (p. 3), with token decisions aggregated
+to a text decision; a training-free alternative is the cosine similarity
+between the activations and the key (p. 6).</p>
+<p>We re-implement the scheme on Qwen/Qwen2.5-1.5B (§4) and the detector
+as the authors’ public code defines it: an MLP on raw per-token
+activations at the steered layer, trained for one epoch on the owner’s
+own watermarked and unwatermarked texts and scored as the mean token
+probability of the watermarked class (App. A). An owner must fix a
+false-positive rate, so the score is thresholded at the 99th percentile
+of the owner’s own unwatermarked texts (nominal 1%), and we report
+acceptance at that threshold rather than the accuracies the authors
+report. Two definitions are ours. <strong>Strength:</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math>
+does not transfer across models, because activation norms differ by
+model and layer, so we measure
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mo stretchy="false" form="prefix">∥</mo><mi>v</mi><mo stretchy="false" form="postfix">∥</mo><mi>/</mi><mi>N</mi></mrow><annotation encoding="application/x-tex">\rho = \lVert v \rVert / N</annotation></semantics></math>,
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+the median token activation norm at the steered layer over unsteered
+text
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>=</mo><mn>56.90</mn></mrow><annotation encoding="application/x-tex">N = 56.90</annotation></semantics></math>
+here); the published
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>=</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">\alpha = 5</annotation></semantics></math>
+maps to very different
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ρ</mi><annotation encoding="application/x-tex">\rho</annotation></semantics></math>
+on the models we tried (§5.1). <strong>Working range:</strong> at the
+strengths studied,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mn>0.25</mn><mo>,</mo><mn>0.35</mn><mo>,</mo><mn>0.50</mn><mo>,</mo><mn>0.70</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\rho \in \{0.25, 0.35, 0.50, 0.70\}</annotation></semantics></math>,
+the probe does not detect the lower strengths reliably and the higher
+strengths cost perplexity (§5.1), so the attacks run along that curve
+rather than at one setting.</p>
+<h2 id="threat-model">2.2 Threat model</h2>
+<p>We follow Kerckhoffs’s principle <span class="citation"
+data-cites="kerckhoffs1883cryptographie">(<a
+href="#ref-kerckhoffs1883cryptographie" role="doc-biblioref">Kerckhoffs
+1883</a>)</span>, as the nearest keyed activation scheme does <span
+class="citation" data-cites="aremu2026awm">(<a href="#ref-aremu2026awm"
+role="doc-biblioref">Aremu et al. 2026</a>)</span>: the weights, the
+scheme (including
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>
+and the candidate layers),
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ρ</mi><annotation encoding="application/x-tex">\rho</annotation></semantics></math>
+and the detector’s form are public; the direction
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>,
+the layer
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>l</mi><annotation encoding="application/x-tex">l</annotation></semantics></math>
+and the owner’s private detector data (the trained probe and its
+threshold; for the exact test of §3, nothing beyond
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>l</mi><annotation encoding="application/x-tex">l</annotation></semantics></math>)
+are secret.</p>
+<p>The <strong>attacker</strong> is passive. It holds the open weights
+and observes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
+watermarked continuations at one strength, text only, without their
+prompts
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mn>64</mn><mo>,</mo><mn>256</mn><mo>,</mo><mn>1024</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">n \in \{64, 256, 1024\}</annotation></semantics></math>
+for forgery,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>16</mn><mo>,</mo><mn>64</mn><mo>,</mo><mn>256</mn><mo>,</mo><mn>1024</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">n \in \{1, 4, 16, 64, 256, 1024\}</annotation></semantics></math>
+for recovery). It can generate unlimited unwatermarked text on its own
+prompts and re-encode any text through the open model, so it sees
+activations and gradients at every layer. It cannot query the owner’s
+detector and never sees
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>l</mi><annotation encoding="application/x-tex">l</annotation></semantics></math>,
+the probe, its threshold, the owner’s reference texts or the evaluation
+prompts; the attack code receives features and public parameters only,
+which every protocol’s validation asserts (App. A). The
+<strong>owner</strong> knows
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>l</mi><annotation encoding="application/x-tex">l</annotation></semantics></math>,
+calibrates its detector on its own unwatermarked texts and sees only the
+text at detection time.</p>
+<p>Three goals are measured, in the terms of the token-level security
+literature <span class="citation" data-cites="li2026marksec">(<a
+href="#ref-li2026marksec" role="doc-biblioref">Li et al. 2026,
+3</a>)</span>: stealing “aims to recover reusable watermark-related
+information”; “Scrubbing aims to transform a watermarked text
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>y</mi><mi>w</mi></msub><annotation encoding="application/x-tex">y_w</annotation></semantics></math>
+into an attacked text
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>y</mi><mi>a</mi></msub><annotation encoding="application/x-tex">y_a</annotation></semantics></math>
+that is no longer detected as watermarked while preserving text
+quality”; “Spoofing aims to generate a forged text
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>y</mi><mi>s</mi></msub><annotation encoding="application/x-tex">y_s</annotation></semantics></math>
+that is accepted as watermarked without being produced by the genuine
+watermarking process”.</p>
+<ul>
+<li><strong>Recovery:</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>cos</mo><mrow><mo stretchy="true" form="prefix">(</mo><mover><mi>v</mi><mo accent="true">̂</mo></mover><mo>,</mo><mi>v</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\cos(\hat v, v)</annotation></semantics></math>
+between the estimate and the key, whether the estimated layer equals
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>l</mi><annotation encoding="application/x-tex">l</annotation></semantics></math>,
+and the share of the support recovered.</li>
+<li><strong>Forgery</strong> (spoofing): new text, generated by the
+attacker on prompts it does not control, counts only if the owner’s
+detector <strong>accepts</strong> it at the 1% threshold
+<strong>and</strong> it is as fluent and as non-repetitive as the
+owner’s genuine watermarked texts (perplexity and seq-rep-4 <span
+class="citation" data-cites="welleck2020unlikelihood">(<a
+href="#ref-welleck2020unlikelihood" role="doc-biblioref">Welleck et al.
+2020</a>)</span> at most the genuine 95th percentiles; §4); the share
+meeting all three conditions is the <strong>fluent acceptance</strong>
+(FA). Forgery is <strong>practical</strong> at a strength if, at some
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>,
+the median FA over keys reaches half the genuine FA and its lower
+confidence bound exceeds the upper bound of a <strong>random-key
+control</strong> (a fresh key of the same distribution and norm: what
+generic steering alone achieves). This is the quality-constrained
+success of the token-level evaluations <span class="citation"
+data-cites="li2026marksec">(<a href="#ref-li2026marksec"
+role="doc-biblioref">Li et al. 2026</a>)</span>, with proxies in place
+of a judge.</li>
+<li><strong>Scrubbing:</strong> a watermarked text is transformed; the
+transformation <strong>succeeds</strong> if the detector no longer
+detects it <strong>and</strong> four quality conditions hold (fluency,
+repetition, length, meaning; §4), against the detector’s miss rate on
+the untouched originals or random edits of the same size.</li>
+</ul>
+<p>The budgets differ in kind from the token-level literature, whose
+attackers query a black-box API with
+“<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>30</mn><mo>,</mo><mn>000</mn></mrow><annotation encoding="application/x-tex">n = 30{,}000</annotation></semantics></math>
+responses of token length
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≤</mo><mn>800</mn></mrow><annotation encoding="application/x-tex">\leq 800</annotation></semantics></math>”
+<span class="citation" data-cites="jovanovic2024stealing">(<a
+href="#ref-jovanovic2024stealing" role="doc-biblioref">Jovanović, Staab,
+and Vechev 2024, 6</a>)</span>, “2.2 million tokens in total” <span
+class="citation" data-cites="pang2024nofreelunch">(<a
+href="#ref-pang2024nofreelunch" role="doc-biblioref">Pang et al. 2024,
+6</a>)</span> or “2,000 victim watermarked texts” <span class="citation"
+data-cites="zhang2026beyondseal">(<a href="#ref-zhang2026beyondseal"
+role="doc-biblioref">Zhang et al. 2026, 8</a>)</span> and “has only
+blackbox access to full generations” <span class="citation"
+data-cites="jovanovic2024stealing">(<a href="#ref-jovanovic2024stealing"
+role="doc-biblioref">Jovanović, Staab, and Vechev 2024, 3</a>)</span>;
+ours has at most 1,024 texts of 256 tokens but re-encodes them through
+the model that produced them. A perplexity bar alone admits degenerate
+text, since “a highly repetitive, degenerate loop often yields low PPL”
+<span class="citation" data-cites="ardoin2026selfrecognition">(<a
+href="#ref-ardoin2026selfrecognition" role="doc-biblioref">Ardoin,
+Schäfer, and Wunder 2026, 14</a>)</span>, and SLAM scores quality on
+four axes <span class="citation" data-cites="harelcanada2026slam">(<a
+href="#ref-harelcanada2026slam" role="doc-biblioref">Harel-Canada and
+Sahai 2026</a>)</span>; our first fluency rule was perplexity only and
+most of its accepted forgeries at the strongest setting were loops (an
+exploratory reading, labelled; §5.2, App. E), so every later rule pairs
+perplexity with seq-rep-4 on both sides, the attacker’s self-check and
+the evaluation, and fixed samples of passing texts are read (App. H).
+Both points have been made before; we restate them for this family.</p>
+<h2 id="attack-routes">2.3 Attack routes</h2>
+<p>Every attack compares the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
+observed texts with the attacker’s own unwatermarked reference texts
+(pool C, 2,000 texts; §4), coordinate by coordinate and layer by layer,
+as
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>z</mi><annotation encoding="application/x-tex">z</annotation></semantics></math>-scores
+of the mean difference of a per-text feature (App. C). <strong>Route
+A</strong> (key recovery from activations) uses the token-mean of the
+normalised activation at each layer, takes the layer with the largest
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">|</mo><mi>z</mi><mo stretchy="true" form="postfix">|</mo></mrow><annotation encoding="application/x-tex">|z|</annotation></semantics></math>,
+the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>
+coordinates with the largest
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">|</mo><mi>z</mi><mo stretchy="true" form="postfix">|</mo></mrow><annotation encoding="application/x-tex">|z|</annotation></semantics></math>
+there as the support and the mean differences as values, rescaled to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ρ</mi><annotation encoding="application/x-tex">\rho</annotation></semantics></math>
+times the attacker’s own median norm at that layer. <strong>Route
+B</strong> (footprint imitation) makes no attempt at the key: it copies
+the dense mean difference at the layer with the largest
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>z</mi><annotation encoding="application/x-tex">z</annotation></semantics></math>-norm,
+rescaled, so that whatever average footprint the watermark leaves is
+reproduced. <strong>Route A′</strong> (key recovery from the detector’s
+statistic) applies Route A’s rule to the standardised gradient of the
+continuation log-likelihood with respect to an additive vector at each
+layer, the exact test’s own statistic (§3), averaged over the observed
+texts; against context-keyed directions the estimate is formed per
+observable context, and against rotation on the whole mixture (naive) or
+per cluster after grouping the texts into
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>K</mi><annotation encoding="application/x-tex">K</annotation></semantics></math>
+clusters (clustering). From Study 1 v0.3 the attacker adds a
+<strong>self-check</strong>: five candidate layers, 16 trial generations
+each on its own prompts, keeping the candidates whose trials are no less
+fluent and no more repetitive than the observed texts (App. C);
+acceptance cannot be checked, for lack of detector access. The
+<strong>scrubbing attackers</strong> are two off-the-shelf paraphrasers
+(P-Qwen, P-Phi; §4) with an attacker-side quality self-check and up to
+three attempts, and key-guided word substitutions at 2, 5 and 10% of the
+tokens steered by the true key (E-true, an insider bound on key
+leakage), by the attacker’s Route A estimate (E-est) or at random
+(E-rand, the control).</p>
+<p>Forgeries are 100 continuations per condition on fixed evaluation
+prompts (pool D), steered by the route’s vector at its layer and scored
+by the owner’s detector, beside two controls on the same prompts: the
+<strong>oracle</strong> (the true key at the true layer; the genuine
+rate) and the <strong>random key</strong>. A rule asks at every strength
+whether the random key alone reaches half the oracle’s rate (“generic
+steering suffices”); if it did, forgery would need no key.</p>
+<h1 id="an-exact-key-test-for-additive-activation-vectors">3 An exact
+key test for additive activation vectors</h1>
+<p>The probe of §2.1 detects a learned footprint. A detector of the
+<em>key</em> needs no training, as a transfer of GaussMark’s score test
+<span class="citation" data-cites="block2025gaussmark">(<a
+href="#ref-block2025gaussmark" role="doc-biblioref">Block, Rakhlin, and
+Sekhari 2025</a>)</span>. GaussMark watermarks by perturbing weights,
+“Sample watermark key
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ξ</mi><mo>∼</mo><mi>N</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><msup><mi>σ</mi><mn>2</mn></msup><mi>I</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\xi \sim N(0, \sigma^2 I)</annotation></semantics></math>”
+and “Watermark model by setting
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>θ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>ξ</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>θ</mi><mo>+</mo><mi>ξ</mi></mrow><annotation encoding="application/x-tex">\theta(\xi) = \theta + \xi</annotation></semantics></math>”
+(Alg. 1, p. 6), “in only a single feedforward layer” (p. 5), and detects
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ψ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>y</mi><mo>,</mo><mi>ξ</mi><mo>∣</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mo stretchy="false" form="prefix">⟨</mo><mi>ξ</mi><mo>,</mo><msub><mi>∇</mi><mi>θ</mi></msub><mo>log</mo><msub><mi>p</mi><mi>θ</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>y</mi><mo>∣</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="false" form="postfix">⟩</mo><mi>/</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>σ</mi><mo stretchy="false" form="prefix">∥</mo><msub><mi>∇</mi><mi>θ</mi></msub><mo>log</mo><msub><mi>p</mi><mi>θ</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>y</mi><mo>∣</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="false" form="postfix">∥</mo><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\psi(y, \xi \mid x) = \langle \xi, \nabla_\theta \log p_\theta(y \mid x) \rangle / (\sigma \lVert \nabla_\theta \log p_\theta(y \mid x) \rVert)</annotation></semantics></math>,
+rejecting when
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ψ</mi><mo>≥</mo><msup><mi>Φ</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>α</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\psi \geq \Phi^{-1}(1 - \alpha)</annotation></semantics></math>
+(Alg. 2, p. 7), because “the distribution of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ψ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>y</mi><mo>,</mo><mi>ξ</mi><mo>∣</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\psi(y, \xi \mid x)</annotation></semantics></math>
+… is always a standard normal under
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>0</mn></msub><annotation encoding="application/x-tex">H_0</annotation></semantics></math>
+because
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>
+is independent of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ξ</mi><annotation encoding="application/x-tex">\xi</annotation></semantics></math>”
+(p. 9). This is the score statistic for the perturbation <span
+class="citation" data-cites="rao1948score">(<a href="#ref-rao1948score"
+role="doc-biblioref">Rao 1948</a>)</span>: to first order, text
+generated under the perturbed model shifts the expected gradient along
+the perturbation. In an activation-steering watermark the perturbation
+is an additive vector
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>
+at the output of layer
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>l</mi><annotation encoding="application/x-tex">l</annotation></semantics></math>,
+so the statistic is the gradient of the text’s log-likelihood with
+respect to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>
+at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">b = 0</annotation></semantics></math>,
+projected on the key. Two things change the calibration: the keys are
+sparse with uniform values, not Gaussian, so the null law cannot be read
+from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Φ</mi><annotation encoding="application/x-tex">\Phi</annotation></semantics></math>;
+and the gradient’s coordinates have very different scales, so a raw
+projection depends on a few outlier dimensions. We therefore standardise
+and resample keys.</p>
+<p><strong>The statistic S4 and its exact p-value.</strong> One forward
+and one backward pass over a text’s first 256 continuation tokens (no
+prompt) gives
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo>=</mo><mi>∂</mi><mo>log</mo><mi>p</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>/</mi><mi>∂</mi><mi>b</mi><mspace width="0.167em"></mspace><msub><mo stretchy="false" form="prefix">|</mo><mrow><mi>b</mi><mo>=</mo><mn>0</mn></mrow></msub><mo>∈</mo><msup><mstyle mathvariant="double-struck"><mi>ℝ</mi></mstyle><mn>1536</mn></msup></mrow><annotation encoding="application/x-tex">g = \partial \log p(y) / \partial b \,|_{b = 0} \in \mathbb{R}^{1536}</annotation></semantics></math>
+at layer 14. The owner centres and scales each coordinate against its
+own unwatermarked reference texts (pool F, 200 texts),
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>g</mi><mo>−</mo><msub><mi>μ</mi><mi>F</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mi>/</mi><msub><mi>σ</mi><mi>F</mi></msub></mrow><annotation encoding="application/x-tex">x = (g - \mu_F) / \sigma_F</annotation></semantics></math>,
+and computes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>v</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mo stretchy="false" form="prefix">⟨</mo><mi>x</mi><mo>,</mo><mi>v</mi><mo stretchy="false" form="postfix">⟩</mo><mi>/</mi><mrow><mo stretchy="true" form="prefix">(</mo><mo stretchy="false" form="prefix">∥</mo><mi>x</mi><mo stretchy="false" form="postfix">∥</mo><mo stretchy="false" form="prefix">∥</mo><mi>v</mi><mo stretchy="false" form="postfix">∥</mo><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">T(x, v) = \langle x, v \rangle / (\lVert x \rVert \lVert v \rVert)</annotation></semantics></math>.
+With
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>=</mo><mn>999</mn></mrow><annotation encoding="application/x-tex">M = 999</annotation></semantics></math>
+null keys
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>v</mi><mi>M</mi></msub></mrow><annotation encoding="application/x-tex">v_1, \dots, v_M</annotation></semantics></math>
+drawn from the scheme’s public key distribution (fixed seeds, disjoint
+from every other key),
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>+</mo><mi>#</mi><mo stretchy="false" form="prefix">{</mo><mi>j</mi><mo>:</mo><mi>T</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><msub><mi>v</mi><mi>j</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>≥</mo><mi>T</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>v</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="false" form="postfix">}</mo><mo stretchy="true" form="postfix">)</mo></mrow><mi>/</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>+</mo><mi>M</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">p = (1 + \#\{j : T(x, v_j) \geq T(x, v)\}) / (1 + M)</annotation></semantics></math>
+<span class="citation" data-cites="phipson2010permutation">(<a
+href="#ref-phipson2010permutation" role="doc-biblioref">Phipson and
+Smyth 2010</a>)</span>, and a text is attributed to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>
+when
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>≤</mo><mn>0.01</mn></mrow><annotation encoding="application/x-tex">p \leq 0.01</annotation></semantics></math>.
+If the text was produced independently of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>
+(unwatermarked, human, or steered by another key),
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>
+and the null keys are exchangeable, so
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>p</mi><mo>≤</mo><mi>α</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>≤</mo><mi>α</mi></mrow><annotation encoding="application/x-tex">P(p \leq \alpha) \leq \alpha</annotation></semantics></math>
+<strong>exactly, on average over the draw of the key</strong>.
+GaussMark’s authors state the same limit of their guarantee: the bounds
+“are valid for any fixed
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mstyle mathvariant="script"><mi>𝒳</mi></mstyle></mrow><annotation encoding="application/x-tex">x \in \mathcal{X}</annotation></semantics></math>,
+but are marginalized over the key
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ξ</mi><annotation encoding="application/x-tex">\xi</annotation></semantics></math>”
+(p. 11). A deployer holds one key, whose own false-positive rate need
+not equal
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math>;
+we never claim exactness for every key. The protocols therefore add a
+<strong>per-key calibration gate</strong>: a key is calibrated if its
+false-positive rate on 1,000 of the owner’s unwatermarked texts is at
+most 3%, and the pooled rate must lie in [0.3, 2.5]%. On the study keys
+the pooled rate was 0.81%, 8 of 8 keys were calibrated (0.1–1.7%), and
+the pooled rate on human continuations was 0.68% (Table A3).</p>
+<p><strong>Why standardise.</strong> A pilot on four tuning keys
+compared, under the same resampling test, the raw cosine with the
+token-averaged activations (S1, the scheme’s training-free statistic),
+its standardised form (S2), the raw gradient score (S3) and the
+standardised gradient score (S4). The gradient statistics detected
+96–98% (S3) and 94–98% (S4) of single texts at an exact 1%
+false-positive rate at the working strengths; the raw cosine detected 0%
+(Table A2). The pilot also exposed the per-key issue: the raw activation
+mean is nearly the same vector for every text, so a key’s rank among the
+null keys is almost fixed, and over 1,000 random keys S1 kept a mean
+false-positive rate of 1.15% while 93.1% of keys never fired and 1.1%
+fired on more than half of the null texts (an exploratory diagnosis,
+App. B). Per-coordinate standardisation kept every key at most 4.75%
+(S4), where the raw gradient left some at 20.25% (S3). S4 was chosen as
+the primary statistic by decision after that diagnosis; the pilot’s
+pre-set selection rule, which tied the choice to an implementation check
+that S1 failed, is reported as written in App. B.</p>
+<p><strong>Two variants used by the defence (§5.6).</strong> For
+<strong>rotation</strong> among
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>K</mi><annotation encoding="application/x-tex">K</annotation></semantics></math>
+keys the owner tests the union,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>=</mo><msub><mo>max</mo><mi>k</mi></msub><mo stretchy="false" form="prefix">⟨</mo><mi>x</mi><mo>,</mo><msub><mi>v</mi><mi>k</mi></msub><mo stretchy="false" form="postfix">⟩</mo></mrow><annotation encoding="application/x-tex">U = \max_k \langle x, v_k \rangle</annotation></semantics></math>,
+with the null from 999 disjoint groups of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>K</mi><annotation encoding="application/x-tex">K</annotation></semantics></math>
+public null keys, so the level is exact by the same argument: a transfer
+of the multi-key design of Kirchenbauer et al. <span class="citation"
+data-cites="kirchenbauer2023watermark">(<a
+href="#ref-kirchenbauer2023watermark" role="doc-biblioref">Kirchenbauer
+et al. 2023</a>)</span>, “we run
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>
+tests, one for each of the possible keys” (p. 7), with a resampled
+maximum in place of a Bonferroni correction. For a
+<strong>context-keyed</strong> direction
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>c</mi><mi>t</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">v(c_t)</annotation></semantics></math>,
+derived by a keyed pseudorandom function from the secret and the
+previous
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>h</mi><annotation encoding="application/x-tex">h</annotation></semantics></math>
+tokens, the owner takes the per-position gradients
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>g</mi><mi>t</mi></msub><annotation encoding="application/x-tex">g_t</annotation></semantics></math>
+(one backward pass), standardises them with pooled position statistics
+from pool F and sums the projections on each position’s own key,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>m</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mo>∑</mo><mi>t</mi></msub><mo stretchy="false" form="prefix">⟨</mo><msub><mi>x</mi><mi>t</mi></msub><mo>,</mo><msub><mi>v</mi><mi>m</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>c</mi><mi>t</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="false" form="postfix">⟩</mo></mrow><annotation encoding="application/x-tex">S(x, m) = \sum_t \langle x_t, v_m(c_t) \rangle</annotation></semantics></math>,
+with the p-value from 999 resampled secrets; the contexts are read from
+the text itself (App. B).</p>
+<p><strong>Why the same statistic is the thief’s estimator</strong> (an
+inference; the measurement is §5.4). To first order the expected
+gradient of a text steered by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>
+is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle mathvariant="double-struck"><mi>𝔼</mi></mstyle><mrow><mo stretchy="true" form="prefix">[</mo><mi>g</mi><mo stretchy="true" form="postfix">]</mo></mrow><mo>≈</mo><mi>F</mi><mi>v</mi></mrow><annotation encoding="application/x-tex">\mathbb{E}[g] \approx F v</annotation></semantics></math>,
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>F</mi><annotation encoding="application/x-tex">F</annotation></semantics></math>
+the Fisher information of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>
+at 0, which is what gives
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">⟨</mo><mi>g</mi><mo>,</mo><mi>v</mi><mo stretchy="false" form="postfix">⟩</mo></mrow><annotation encoding="application/x-tex">\langle g, v \rangle</annotation></semantics></math>
+its power; the same relation says that the <strong>mean</strong> of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>g</mi><annotation encoding="application/x-tex">g</annotation></semantics></math>
+over many observed outputs estimates
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mi>v</mi></mrow><annotation encoding="application/x-tex">F v</annotation></semantics></math>,
+and after the per-coordinate standardisation the attacker performs
+against its own reference texts, a sparse estimate of that mean points
+along
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>.
+Route A′ (§2.3) is this estimator; it needs the open weights and the
+observed texts, not the detector. App. B sketches the first-order
+argument and its assumptions; we present it as the reason we expected
+the recovery, not as a proof. On the tuning keys the estimator reached a
+median cosine of 0.80 from 4 texts and 0.95 from 16 at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>0.35</mn></mrow><annotation encoding="application/x-tex">\rho = 0.35</annotation></semantics></math>,
+0.93 from 64 at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>0.50</mn></mrow><annotation encoding="application/x-tex">\rho = 0.50</annotation></semantics></math>
+and 0.57 from 100 at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>0.70</mn></mrow><annotation encoding="application/x-tex">\rho = 0.70</annotation></semantics></math>,
+where Route A’s activation mean reached at most 0.087 (Table A5); the
+study keys follow in §5.4.</p>
+<h1 id="experimental-setup">4 Experimental setup</h1>
+<p><strong>Model and keys.</strong> The target is Qwen/Qwen2.5-1.5B
+(base, revision <code>8faed761</code>, apache-2.0) <span
+class="citation" data-cites="qwen2024qwen25 qwen2024card15b">(<a
+href="#ref-qwen2024qwen25" role="doc-biblioref">Qwen Team 2024a</a>, <a
+href="#ref-qwen2024card15b" role="doc-biblioref">2024b</a>)</span> in
+bfloat16 on Apple silicon;
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>=</mo><mn>1536</mn></mrow><annotation encoding="application/x-tex">d = 1536</annotation></semantics></math>,
+28 decoder layers; steering and detection at the output of layer 14, the
+middle layer. Keys follow the scheme’s construction,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">k = 4</annotation></semantics></math>
+non-zero coordinates
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">⌊</mo><mn>0.003</mn><mo>⋅</mo><mi>d</mi><mo stretchy="false" form="postfix">⌋</mo></mrow><annotation encoding="application/x-tex">\lfloor 0.003 \cdot d \rfloor</annotation></semantics></math>)
+with values uniform in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">[</mo><mo>−</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[-1, 1]</annotation></semantics></math>,
+rescaled to norm
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mi>N</mi></mrow><annotation encoding="application/x-tex">\rho N</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>=</mo><mn>56.90</mn></mrow><annotation encoding="application/x-tex">N = 56.90</annotation></semantics></math>.
+The <strong>study keys</strong> are the seeds 1001–1008 (8 keys), first
+used in Study 1 v0.2 and reused unchanged by every later study; the
+<strong>random-control keys</strong> are 5001–5008; four <strong>tuning
+keys</strong> (9001–9004) served the calibrations and pilots and appear
+in no study result. Strengths are
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mn>0.25</mn><mo>,</mo><mn>0.35</mn><mo>,</mo><mn>0.50</mn><mo>,</mo><mn>0.70</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\rho \in \{0.25, 0.35, 0.50, 0.70\}</annotation></semantics></math>
+(Study 5: 0.35 and 0.50). Generation uses the scheme’s sampling
+(temperature 0.7, top-p 0.9, top-k 50, repetition penalty 1.1) and
+exactly 256 new tokens; every detector and attacker feature is computed
+from the continuation only.</p>
+<p><strong>Prompts and pools.</strong> Prompts are the first 40 words of
+documents from the C4 realnewslike validation shard <span
+class="citation" data-cites="raffel2020t5">(<a href="#ref-raffel2020t5"
+role="doc-biblioref">Raffel et al. 2020</a>)</span> (13,863 records, 0
+parse failures, 8,580 documents of at least 240 words), with the next
+200 words kept as the <strong>human continuation</strong>. A fifth of
+the units, by ID hash, is a <strong>holdout</strong> (1,684 units)
+sealed in the loader, which refuses to serve it without a final protocol
+lock; it was never used. The 6,896 development units are assigned once,
+by hash rank, to disjoint pools: <strong>A</strong> (1,000; the owner’s
+unwatermarked null texts, A1 for the probe’s threshold and A2 for its
+false-positive check, with their human continuations for the human-text
+rates), <strong>B</strong> (1,024; the prompts behind the attacker’s
+observed texts), <strong>C</strong> (2,000; the attacker’s unwatermarked
+reference texts), <strong>D</strong> (100; the evaluation prompts for
+forgeries and for the oracle and random-key controls),
+<strong>E</strong> (200 per key and strength; the owner’s watermarked
+probe-training texts) and <strong>F</strong> (200; the owner’s
+unwatermarked texts for probe training and for the exact test’s
+standardisation). The owner’s training texts are disjoint from its
+threshold, check and evaluation texts, and the attacker’s prompts from
+all of them. WikiText-103 <span class="citation"
+data-cites="merity2017pointer">(<a href="#ref-merity2017pointer"
+role="doc-biblioref">Merity et al. 2017</a>)</span> was frozen as a
+second domain and is not used by the results reported.</p>
+<p><strong>Detectors.</strong> The probe is trained per key and strength
+on the layer-14 token activations of pool E against pool F, scored as
+the mean token probability and thresholded at the 99th percentile of
+pool A1 (nominal 1% false-positive rate, checked on A2). The exact test
+S4 (§3) uses
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>=</mo><mn>999</mn></mrow><annotation encoding="application/x-tex">M = 999</annotation></semantics></math>
+null keys at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>≤</mo><mn>0.01</mn></mrow><annotation encoding="application/x-tex">p \leq 0.01</annotation></semantics></math>,
+with a stricter secondary reading at 9,999 null keys and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>≤</mo><mn>0.001</mn></mrow><annotation encoding="application/x-tex">p \leq 0.001</annotation></semantics></math>.
+Both see the continuation only.</p>
+<p><strong>Paraphrasers, editors and quality proxies.</strong> P-Qwen is
+Qwen2.5-1.5B-Instruct <span class="citation"
+data-cites="qwen2024card15binstruct">(<a
+href="#ref-qwen2024card15binstruct" role="doc-biblioref">Qwen Team
+2024c</a>)</span> and P-Phi is Phi-3.5-mini-instruct <span
+class="citation" data-cites="abdin2024phi3">(<a
+href="#ref-abdin2024phi3" role="doc-biblioref">Abdin et al.
+2024</a>)</span>, each given the continuation with a fixed paraphrase
+instruction in its chat template (App. C), sampled at temperature 0.7
+and top-p 0.9 with at most 400 new tokens; the attacker keeps the first
+of up to three attempts that passes its own quality check. The editor
+replaces whole words by likely alternatives at the positions a
+first-order estimate marks as contributing most to the detector’s
+statistic, in rounds of 5% of the tokens, saved at 2, 5 and 10% (App.
+C). Quality is measured by proxies, not by human judgment: perplexity
+under the unsteered model given the prompt; seq-rep-4 <span
+class="citation" data-cites="welleck2020unlikelihood">(<a
+href="#ref-welleck2020unlikelihood" role="doc-biblioref">Welleck et al.
+2020</a>)</span>; token length; and the cosine between all-mpnet-base-v2
+sentence embeddings <span class="citation"
+data-cites="reimers2019sbert">(<a href="#ref-reimers2019sbert"
+role="doc-biblioref">Reimers and Gurevych 2019</a>)</span> of a scrubbed
+text and its original. A forgery is fluent if its perplexity and
+seq-rep-4 are at most the 95th percentiles of the owner’s genuine
+watermarked texts at that key and strength. A scrub passes if its
+perplexity and seq-rep-4 stay within
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>max</mo><mo stretchy="false" form="prefix">(</mo><mn>1.25</mn><mo>×</mo></mrow><annotation encoding="application/x-tex">\max(1.25 \times</annotation></semantics></math>
+the original’s, the 95th percentile of pool A’s human
+continuations<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo stretchy="false" form="postfix">)</mo><annotation encoding="application/x-tex">)</annotation></semantics></math>
+(perplexity 25.4, seq-rep-4 0.048), its length is at least 80% of the
+original’s and its embedding cosine exceeds 0.825, the 95th percentile
+over pool A’s same-prompt pairs of a model continuation and the human
+continuation; the attacker’s self-checks use the same forms on its own
+pool C data (perplexity 22.2, seq-rep-4 0.048, cosine 0.810). Stricter
+readings (the model-text 95th percentile, perplexity 7.3; the human
+median, 12.9) are secondaries, and fixed samples of forged, scrubbed and
+genuine texts are read (App. H).</p>
+<p><strong>Uncertainty.</strong> The key is the unit of independence;
+texts are nested in keys. Every rate is the median over the 8 keys of
+the per-key rate, with a 95% interval from a cluster bootstrap over keys
+and then texts
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>
+= 2,000) <span class="citation" data-cites="davison1997bootstrap">(<a
+href="#ref-davison1997bootstrap" role="doc-biblioref">Davison and
+Hinkley 1997</a>)</span>; contrasts between two detectors or two methods
+on the same texts use paired resampling. Beside every median we report
+the number of keys meeting the bar, with per-key tables in App. D,
+because a median can pass while a few keys fail completely; counts of
+keys carry Clopper–Pearson intervals <span class="citation"
+data-cites="clopper1934binomial">(<a href="#ref-clopper1934binomial"
+role="doc-biblioref">Clopper and Pearson 1934</a>)</span>.</p>
+<p><strong>Pre-registration and compute.</strong> Each study has a
+protocol fixing its question, information timing, metrics, materiality
+thresholds, rules and stop rules, and code validated on inputs only
+(synthetic data and the tuning keys) before any outcome exists; the
+protocol, the code and every reused input file are hashed into a lock
+file, and the runners verify every hash before and after each phase and
+refuse otherwise. A correction becomes a new version with the earlier
+verdicts standing (Study 1 v0.2 → v0.3 → v0.4); every rule’s bounds were
+checked at the extremes before locking; readings added after a run are
+labelled exploratory or post hoc wherever they appear. <strong>Table
+1</strong> lists the 6 locked studies with their rules, bars, design,
+lock dates and run times; App. A gives every pilot and specification
+(Table A1). Everything ran on one Apple-silicon laptop (M5, 16 GB
+unified memory) with PyTorch 2.14.0; the six runs took 91.1 h in total
+(22.4, 6.4, 6.5, 2.9, 26.6 and 26.3 h), with model weights, prompt
+corpora and paraphrasers pinned by revision and file hash.</p>
+<h1 id="results">5 Results</h1>
+<p>Each subsection reports one study’s pre-registered rules as applied,
+in the study’s own vocabulary (practical, effective, blocked, material,
+inconclusive), with exploratory and post-hoc readings marked; every
+number is generated from the locked outputs (App. A).</p>
+<h2
+id="calibration-no-detectable-and-fluent-strength-for-the-probe-on-13b-base-models">5.1
+Calibration: no detectable-and-fluent strength for the probe on 1–3B
+base models</h2>
+<p>The published setting was re-run with the authors’ probe on three
+base models and the tuning keys (Table 2; Figure 1). Its
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>=</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">\alpha = 5</annotation></semantics></math>
+is a different strength on every model:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>0.10</mn></mrow><annotation encoding="application/x-tex">\rho = 0.10</annotation></semantics></math>
+on Qwen2.5-1.5B, where no detector exceeded AUROC 0.57 and perplexity
+was unchanged;
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>1.29</mn></mrow><annotation encoding="application/x-tex">\rho = 1.29</annotation></semantics></math>
+on Llama-3.2-1B, where the probe reached AUROC 1.00 while the median
+perplexity rose from 5.6 to 32.6 and the sampled texts read as damaged
+(App. H); and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>≈</mo><mn>0.67</mn></mrow><annotation encoding="application/x-tex">\rho \approx 0.67</annotation></semantics></math>
+on Llama-3.2-3B. With strength measured as
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ρ</mi><annotation encoding="application/x-tex">\rho</annotation></semantics></math>,
+the three models trace one curve: the probe passes AUROC 0.95 from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>0.50</mn></mrow><annotation encoding="application/x-tex">\rho = 0.50</annotation></semantics></math>
+on Qwen2.5-1.5B and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0.70</mn><annotation encoding="application/x-tex">0.70</annotation></semantics></math>
+on Llama-3.2-1B, and never on Llama-3.2-3B (0.86 at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>0.70</mn></mrow><annotation encoding="application/x-tex">\rho = 0.70</annotation></semantics></math>),
+while the perplexity ratio stays within 1.25 only up to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>0.35</mn></mrow><annotation encoding="application/x-tex">\rho = 0.35</annotation></semantics></math>
+on all three (512-token texts change neither verdict; Table 2). The
+pre-set rule, the smallest
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ρ</mi><annotation encoding="application/x-tex">\rho</annotation></semantics></math>
+with AUROC
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≥</mo><mn>0.95</mn></mrow><annotation encoding="application/x-tex">\geq 0.95</annotation></semantics></math>
+and a ratio
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≤</mo><mn>1.25</mn></mrow><annotation encoding="application/x-tex">\leq 1.25</annotation></semantics></math>,
+returned no operating point in any of the 5 calibration runs.</p>
+<p>This is a result under our conditions, not a test of the authors’
+claim. They report “no quality degradation” (p. 1) on instruction-tuned
+models at 512 tokens, by a DeBERTa quality classifier and MMLU, with
+perplexity moving from 7.62 to 8.06 on Llama-3.1-8B and from 9.76 to
+8.27 on Llama-3.2-1B (Table 7, p. 15) <span class="citation"
+data-cites="ardoin2026selfrecognition">(<a
+href="#ref-ardoin2026selfrecognition" role="doc-biblioref">Ardoin,
+Schäfer, and Wunder 2026</a>)</span>; we measured base models,
+continuation-only perplexity under the same model, our prompts, our
+probe training and four tuning keys. The negative result is also the
+probe’s, not the watermark’s: the exact test of §3 later attributed
+97.5% of genuine texts at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>0.25</mn></mrow><annotation encoding="application/x-tex">\rho = 0.25</annotation></semantics></math>
+(§5.3), where the perplexity ratio is 1.13. The attacks therefore run
+along the curve,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mn>0.25</mn><mo>,</mo><mn>0.35</mn><mo>,</mo><mn>0.50</mn><mo>,</mo><mn>0.70</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\rho \in \{0.25, 0.35, 0.50, 0.70\}</annotation></semantics></math>,
+rather than at one setting.</p>
+<h2 id="forging-the-trained-probe-without-the-key">5.2 Forging the
+trained probe without the key</h2>
+<p>Study 1 asks whether a passive attacker with the open weights and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>≤</mo><mn>1</mn><mo>,</mo><mn>024</mn></mrow><annotation encoding="application/x-tex">n \leq 1{,}024</annotation></semantics></math>
+watermarked texts, and no detector access, can make the owner’s probe
+accept new text, in three locked versions (Table 1): plain acceptance at
+the owner’s 1% threshold (v0.2), the perplexity condition with the
+attacker’s own fluency check (v0.3), and the repetition term on both
+sides (v0.4, the primary result). The probe’s threshold held on the
+owner’s null texts (pooled false-positive rate 1.4%, G1) but flagged
+3.6% of the human continuations of the same prompts, and the watermark
+worked by the probe’s own standard (genuine acceptance
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≥</mo><mn>20</mn></mrow><annotation encoding="application/x-tex">\geq 20</annotation></semantics></math>%,
+L1) only at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>≥</mo><mn>0.35</mn></mrow><annotation encoding="application/x-tex">\rho \geq 0.35</annotation></semantics></math>
+(8.0% at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>0.25</mn></mrow><annotation encoding="application/x-tex">\rho = 0.25</annotation></semantics></math>,
+which is descriptive in Study 1).</p>
+<p><strong>Route A recovers nothing.</strong> The activation-mean
+estimator (§2.3) never approached the key: the median cosine over the 8
+keys stayed at or below 0.16 at every strength and budget up to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>1</mn><mo>,</mo><mn>024</mn></mrow><annotation encoding="application/x-tex">n = 1{,}024</annotation></semantics></math>,
+with the steered layer found for at most 2 of 8 keys (R1 fails at every
+level; Table 3b). At
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>0.35</mn></mrow><annotation encoding="application/x-tex">\rho = 0.35</annotation></semantics></math>
+its v0.4 forgeries are <strong>not practical</strong> (upper bounds 11.5
+and 10.0% against a bar of 14.3%); at 0.50 and 0.70 the verdict is
+<strong>inconclusive</strong>, because the per-key rates are bimodal: at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>0.70</mn></mrow><annotation encoding="application/x-tex">\rho = 0.70</annotation></semantics></math>
+the median FA is 73.0% but its lower bound 8.5% (App. D).</p>
+<p><strong>Route B forges without the key.</strong> Footprint imitation
+at the attacker’s chosen layer was accepted by the probe at every
+working strength from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>64</mn></mrow><annotation encoding="application/x-tex">n = 64</annotation></semantics></math>
+texts, at 42.5–100.0% against genuine rates of 32.0–100.0% (R2 practical
+at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>64</mn></mrow><annotation encoding="application/x-tex">n = 64</annotation></semantics></math>
+at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>0.35</mn></mrow><annotation encoding="application/x-tex">\rho = 0.35</annotation></semantics></math>,
+0.50 and 0.70), although its vector has a median cosine of at most 0.062
+with the key (Table 3a). Many of those texts were degenerate: steering
+at the first layers gave broken text the probe still accepted, and under
+v0.3’s perplexity-only condition most of Route B’s accepted texts at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>0.70</mn></mrow><annotation encoding="application/x-tex">\rho = 0.70</annotation></semantics></math>
+were loops (exploratory readings; Table 3b; App. E). With both
+conditions on both sides, the pre-registered v0.4 verdicts are:
+<strong>Route B is practical at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>0.35</mn></mrow><annotation encoding="application/x-tex">\rho = 0.35</annotation></semantics></math></strong>
+(FA 19.5 [7.0, 35.0]% at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>256</mn></mrow><annotation encoding="application/x-tex">n = 256</annotation></semantics></math>
+against a bar of 14.3%, its lower bound above the random key’s upper
+bound of 3.5%), and <strong>inconclusive at 0.50 and 0.70</strong>,
+where the probe accepts at least 99.0% of its texts but only 26–54% pass
+the fluency bars, so quality rather than detection limits the forgery
+(Figure 2). Generic steering alone never suffices (F3 no at every
+level). At
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>0.35</mn></mrow><annotation encoding="application/x-tex">\rho = 0.35</annotation></semantics></math>
+the watermark itself is weak by this detector (genuine texts accepted
+and fluent 28.5% of the time) and the bar is strict, those texts being
+close to unsteered text; at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>0.70</mn></mrow><annotation encoding="application/x-tex">\rho = 0.70</annotation></semantics></math>
+the same relative bar is lenient, the genuine texts being themselves
+degraded, and one forgery that passed both bars read as word salad
+(exploratory; App. E).</p>
+<p><strong>Reading.</strong> We read these results as consistent with
+the probe detecting steering rather than the key (an inference): it
+accepts texts steered at other layers and in other directions, accepts
+degenerate text, and flags human text above its nominal rate. The
+scheme’s authors note the related effect that “paraphrasing human text
+acts as a spoofing mechanism for our detector” (p. 5) <span
+class="citation" data-cites="ardoin2026selfrecognition">(<a
+href="#ref-ardoin2026selfrecognition" role="doc-biblioref">Ardoin,
+Schäfer, and Wunder 2026</a>)</span>, and the finding concerns the
+detector type as we re-implemented and re-trained it on Qwen2.5-1.5B at
+256 tokens, not their deployed models. The claim that survives the
+pre-registered rules is narrow: on this model, at the one strength where
+quality is acceptable
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>0.35</mn></mrow><annotation encoding="application/x-tex">\rho = 0.35</annotation></semantics></math>),
+a passive attacker with 256 outputs and no key produces fluent,
+non-repetitive text that the probe accepts at more than half the genuine
+rate.</p>
+<h2 id="the-exact-test-detects-the-key-and-rejects-those-forgeries">5.3
+The exact test detects the key and rejects those forgeries</h2>
+<p>Study 3 re-scores Study 1’s texts with the exact key test S4 (§3) on
+the same 8 keys and strengths, with the probe’s numbers from Study 1
+beside it on the same texts (Table 4; Figure 3). Calibration first: the
+pooled false-positive rate on 8 keys × 1,000 of the owner’s
+unwatermarked texts was 0.81% (G1), every key was calibrated at 0.1–1.7%
+(G2), and the rate on human continuations was 0.68% (H1; highest key
+1.6%), where the probe had flagged 3.6%. The test is exact on average
+over keys (§3); G2 is what makes it usable with one key, and on these
+keys it passed.</p>
+<p><strong>Detection.</strong> The exact test attributed 97.5, 96.0,
+99.0 and 100.0% of genuine 256-token texts at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>0.25</mn></mrow><annotation encoding="application/x-tex">\rho = 0.25</annotation></semantics></math>,
+0.35, 0.50 and 0.70 (medians over 8 keys; P1 passes at every level),
+against the probe’s 8.0, 32.0, 86.0 and 100.0% on the same texts; the
+paired differences are +86.0 [+80.5, +90.0], +62.0 [+46.0, +78.0] and
++13.5 [+3.0, +25.5] points at the three lower strengths (E1: the exact
+test more powerful) and +0.0 [-2.0, +0.0] at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>0.70</mn></mrow><annotation encoding="application/x-tex">\rho = 0.70</annotation></semantics></math>
+(no clear difference). Random-key texts, the generic-steering control,
+were attributed to the key 0.0% of the time at every strength (X3: no
+everywhere), where the probe accepted up to 55.5% of them at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>0.70</mn></mrow><annotation encoding="application/x-tex">\rho = 0.70</annotation></semantics></math>.</p>
+<p><strong>Forgeries.</strong> Scored by the exact test with v0.4’s
+fluency conditions, Study 1’s forgeries are <strong>not practical for
+the median key at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>0.35</mn></mrow><annotation encoding="application/x-tex">\rho = 0.35</annotation></semantics></math>,
+0.50 and 0.70, for both routes</strong> (X1): their exact fluent
+acceptance is 0.0–4.5% against bars of 43.2–45.0%, half the genuine
+exact FA. The one practical probe forgery, Route B at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>0.35</mn></mrow><annotation encoding="application/x-tex">\rho = 0.35</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>256</mn></mrow><annotation encoding="application/x-tex">n = 256</annotation></semantics></math>
+with a probe FA of 19.5%, reaches 4.5% under the exact test; Route A at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>0.70</mn></mrow><annotation encoding="application/x-tex">\rho = 0.70</annotation></semantics></math>,
+at a probe FA of 73.0%, reaches 1.0%. Figure 3(b) shows the pattern over
+Study 1’s text sets: the probe’s acceptance of forgeries rises with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ρ</mi><annotation encoding="application/x-tex">\rho</annotation></semantics></math>
+towards 100%, the exact test’s stays near the 1% line.</p>
+<p><strong>Per-key leakage (descriptive).</strong> The median hides
+where forgeries do pass. Over the 384 key × strength × forgery-set
+cells, 35 have exact acceptance of 50% or more, and acceptance rises
+with the attacker’s recovered cosine (Spearman 0.68 for Route A and 0.56
+for Route B over all cells; App. D). Route A’s forgeries pass mainly for
+the keys it partly recovered at high strength; some Route B forgeries
+pass at a cosine near zero, which we read as the copied footprint
+reproducing enough of that key’s effect on the output distribution for
+the gradient test to see (an inference). That steering directions differ
+in detectability and quality cost is noted by the scheme’s authors
+(p. 7) <span class="citation" data-cites="ardoin2026selfrecognition">(<a
+href="#ref-ardoin2026selfrecognition" role="doc-biblioref">Ardoin,
+Schäfer, and Wunder 2026</a>)</span>; it is why per-key tables accompany
+every median (App. D).</p>
+<p>Two consequences carry forward. Against these passive forgers with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>≤</mo><mn>1</mn><mo>,</mo><mn>024</mn></mrow><annotation encoding="application/x-tex">n \leq 1{,}024</annotation></semantics></math>
+texts, the exact test keeps the watermark’s value as provenance evidence
+for the median key, with more power at low strength, a false-positive
+rate checked per key and no acceptance of generic steering: a deployer
+should test the key, not the steering. And the protection is only as
+good as the key’s secrecy, since where an attack recovered much of the
+key its forgeries passed. Whether the key stays secret is §5.4.</p>
+<h2 id="the-detectors-statistic-steals-the-fixed-key-from-64-texts">5.4
+The detector’s statistic steals the fixed key from 64 texts</h2>
+<p>Study 5’s gate P0 ran the attack that §3 predicts: Route A′ averages
+the exact test’s own standardised gradient over the attacker’s
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
+observed texts, re-encoded through the open weights, and reads the key
+off the mean (§2.3; App. C). On the study keys it is <strong>practical
+at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>64</mn></mrow><annotation encoding="application/x-tex">n = 64</annotation></semantics></math>
+at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>0.35</mn></mrow><annotation encoding="application/x-tex">\rho = 0.35</annotation></semantics></math>
+and 0.50</strong> (Table 6a; Figure 4). From 64 texts the median cosine
+with the key is 0.940 at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>0.35</mn></mrow><annotation encoding="application/x-tex">\rho = 0.35</annotation></semantics></math>
+and 0.951 at 0.50 when the layer is given, and 0.932 and 0.920 when the
+attacker searches all 28 layers, which finds layer 14 for 6 of 8 keys at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>0.35</mn></mrow><annotation encoding="application/x-tex">\rho = 0.35</annotation></semantics></math>
+and 6 of 8 at 0.50. Its fluent forgeries are then attributed as often as
+the owner’s genuine texts: FA 88.0 [76.5, 93.0]% against a genuine 86.5
+[83.5, 90.5]% at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>0.35</mn></mrow><annotation encoding="application/x-tex">\rho = 0.35</annotation></semantics></math>,
+and 85.5 [82.5, 90.0]% against 90.0 [87.0, 92.5]% at 0.50, with the
+random-key control at 0.0 [0.0, 0.5]%. More texts change little (85.0%
+and 87.5% at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>1</mn><mo>,</mo><mn>024</mn></mrow><annotation encoding="application/x-tex">n = 1{,}024</annotation></semantics></math>;
+every key between 78 and 93% at 0.50). Study 1’s activation-mean
+estimator recovered nothing from the same 1,024 texts (median cosine
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≤</mo><mn>0.16</mn></mrow><annotation encoding="application/x-tex">\leq 0.16</annotation></semantics></math>;
+§5.2); the test’s statistic recovers the key from 64.</p>
+<p>This is the measured fact behind the paper’s central inference (§3):
+the gradient the owner projects on the key to detect it is, averaged
+over outputs, an estimator of the key, so the detector’s best statistic
+is also the thief’s best estimator. Two bounds go with it. The budget
+comparison with token-level stealing carries an access caveat: our
+attacker needs 64 texts of 256 tokens, 16,384 tokens in all, where the
+token-level attacks use 30,000 responses, 2.2 million tokens or 2,000
+texts (§2.2) <span class="citation"
+data-cites="jovanovic2024stealing pang2024nofreelunch zhang2026beyondseal">(<a
+href="#ref-jovanovic2024stealing" role="doc-biblioref">Jovanović, Staab,
+and Vechev 2024</a>; <a href="#ref-pang2024nofreelunch"
+role="doc-biblioref">Pang et al. 2024</a>; <a
+href="#ref-zhang2026beyondseal" role="doc-biblioref">Zhang et al.
+2026</a>)</span>, but those attackers query a black-box API, and ours
+re-encodes the outputs through the model that produced them, which only
+the open weights allow. And the strength matters: on the tuning keys the
+pilot that motivated Study 5 reached a median cosine of 0.80 from 4
+texts and 0.95 from 16 at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>0.35</mn></mrow><annotation encoding="application/x-tex">\rho = 0.35</annotation></semantics></math>,
+but only 0.57 from 100 texts at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>0.70</mn></mrow><annotation encoding="application/x-tex">\rho = 0.70</annotation></semantics></math>
+(a pilot, labelled; Table A5), where the study keys were not attacked;
+at that strength the attack is weaker and untested.</p>
+<h2 id="scrubbing-under-the-exact-test">5.5 Scrubbing under the exact
+test</h2>
+<p>Study 2 scrubs the fixed key’s genuine texts and scores the result
+with the exact test at matched quality (§4; Table 5; Figure 5): 100
+genuine texts per key and strength, paraphrased by P-Qwen and P-Phi with
+the attacker’s self-check and up to three attempts, or edited at 5% of
+the words by the true key (an insider bound), by the attacker’s Route A
+estimate from Study 1, or at random. The test stayed calibrated on
+paraphrased null text (pooled false-positive rates 0.33% and 0.44%;
+every key at 0.0–0.6% and 0.0–1.4%) and attributed the unscrubbed
+originals at 97.5–100.0%.</p>
+<p><strong>Paraphrase scrubs at the quality-acceptable strengths and not
+above them.</strong> At
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>0.25</mn></mrow><annotation encoding="application/x-tex">\rho = 0.25</annotation></semantics></math>
+both paraphrasers are <strong>effective</strong>: success 64.0 [54.5,
+71.5]% for P-Qwen and 56.0 [48.0, 65.0]% for P-Phi against the
+originals’ miss rates of 2.5 [0.5, 6.5]% and 3.0 [0.0, 6.0]%, with 7 and
+7 of 8 keys at or above 50%. At
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>0.35</mn></mrow><annotation encoding="application/x-tex">\rho = 0.35</annotation></semantics></math>
+P-Qwen is <strong>effective</strong> (53.0 [37.5, 64.5]%; 5 of 8 keys)
+and P-Phi <strong>inconclusive</strong> (42.0 [33.0, 57.0]%). At
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>0.50</mn></mrow><annotation encoding="application/x-tex">\rho = 0.50</annotation></semantics></math>
+and 0.70 <strong>neither is effective</strong> (P-Qwen 39.5 and 26.0%;
+P-Phi 20.0 and 13.0%; one key in each cell reaches 50%). The evidence is
+removed, not shortened: the originals cut to the paraphrase’s length are
+still attributed 91.2–99.0% of the time. At high strength quality is the
+other half of success: the share of P-Qwen’s paraphrases passing all
+four conditions falls to 49.5% at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>0.70</mn></mrow><annotation encoding="application/x-tex">\rho = 0.70</annotation></semantics></math>.</p>
+<p><strong>The true key helps only where the watermark is weak.</strong>
+Edits of 5% of the words guided by the true key are <strong>effective
+only at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>0.25</mn></mrow><annotation encoding="application/x-tex">\rho = 0.25</annotation></semantics></math></strong>
+(success 79.0 [72.0, 90.5]%; all 8 keys), <strong>inconclusive at
+0.35</strong> (43.0 [33.0, 63.0]%) and not effective above (at 10% of
+the words the key removes the evidence at a visible fluency cost; App.
+F). Edits guided by the attacker’s Route A estimate are <strong>never
+effective</strong> (success 31.5% at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>0.25</mn></mrow><annotation encoding="application/x-tex">\rho = 0.25</annotation></semantics></math>,
+falling to 0.0%), although they beat random edits at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>0.25</mn></mrow><annotation encoding="application/x-tex">\rho = 0.25</annotation></semantics></math>
+and 0.35 (C1: +14.5 [+5.0, +28.0] and +6.5 [+2.0, +11.0] points; the
+estimate helps) and not above.</p>
+<p>Two secondary readings. The per-key false-positive rate disperses
+after paraphrase: over 1,000 fresh keys of the public distribution the
+mean stays at 1.02% and 0.94% (exact on average), but 7.8% and 6.5% of
+keys exceed 3% (maxima 22.6% and 19.5%), so a deployer should check
+their own key on paraphrased null text, the practical form of §3’s “on
+average over keys” caveat. And the owner’s trained probe accepts most of
+the same paraphrases at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>≥</mo><mn>0.50</mn></mrow><annotation encoding="application/x-tex">\rho \geq 0.50</annotation></semantics></math>
+where the exact test does not, which we record as a lead, not a result
+(App. F). The comparison with the authors’ robustness figures is
+indirect: their detector, models, paraphraser and metric differ, and
+their Table 3 reports attribution accuracy between two steered variants
+rather than detection against human text at a fixed false-positive rate
+<span class="citation" data-cites="ardoin2026selfrecognition">(<a
+href="#ref-ardoin2026selfrecognition" role="doc-biblioref">Ardoin,
+Schäfer, and Wunder 2026</a>)</span>.</p>
+<h2 id="keyed-directions-context-hashing-and-rotation-as-transfers">5.6
+Keyed directions: context hashing and rotation, as transfers</h2>
+<p>Study 5 transfers two token-level defences to activation steering:
+keying the direction by the previous
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>h</mi><annotation encoding="application/x-tex">h</annotation></semantics></math>
+tokens, the context hashing of Kirchenbauer et al. <span
+class="citation"
+data-cites="kirchenbauer2023watermark kirchenbauer2024reliability">(<a
+href="#ref-kirchenbauer2023watermark" role="doc-biblioref">Kirchenbauer
+et al. 2023</a>, <a href="#ref-kirchenbauer2024reliability"
+role="doc-biblioref">2024</a>)</span>, and rotating among
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>K</mi><annotation encoding="application/x-tex">K</annotation></semantics></math>
+keys with a union test, the multiple-key design of the same authors
+<span class="citation" data-cites="kirchenbauer2023watermark">(<a
+href="#ref-kirchenbauer2023watermark" role="doc-biblioref">Kirchenbauer
+et al. 2023</a>)</span> as studied by Pang et al. and Gu et al. <span
+class="citation" data-cites="pang2024nofreelunch gu2024learnability">(<a
+href="#ref-pang2024nofreelunch" role="doc-biblioref">Pang et al.
+2024</a>; <a href="#ref-gu2024learnability" role="doc-biblioref">Gu et
+al. 2024</a>)</span> and deployed by SynthID-Text <span class="citation"
+data-cites="dathathri2024synthid">(<a href="#ref-dathathri2024synthid"
+role="doc-biblioref">Dathathri et al. 2024</a>)</span>; both were named
+as future work by the scheme’s authors (p. 7) <span class="citation"
+data-cites="ardoin2026selfrecognition">(<a
+href="#ref-ardoin2026selfrecognition" role="doc-biblioref">Ardoin,
+Schäfer, and Wunder 2026</a>)</span>. The arms are
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">h = 1</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>=</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">h = 4</annotation></semantics></math>
+and rotation among
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi><mo>=</mo><mn>8</mn></mrow><annotation encoding="application/x-tex">K = 8</annotation></semantics></math>
+keys, beside the fixed key, at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>0.35</mn></mrow><annotation encoding="application/x-tex">\rho = 0.35</annotation></semantics></math>
+and 0.50 with the same 8 keys, against the attacker of §5.4 adapted to
+each arm (per observable context for the hashed arms; on the whole
+mixture, the naive attacker, or per cluster, the clustering attacker,
+for rotation; App. C) at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mn>64</mn><mo>,</mo><mn>256</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>024</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">n \in \{64, 256, 1{,}024\}</annotation></semantics></math>,
+with Study 2’s paraphrase pipeline for the robustness cost. The gates
+passed (pooled false-positive rates 0.83, 0.95 and 1.00%; every key
+calibrated) and the keyed tests attributed 90.0–96.5% of their genuine
+texts, the union test 93.0 and 98.5% (P1; Table 6a).</p>
+<p><strong>Stealing (D1).</strong> Both hashed arms <strong>block this
+attacker at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>≤</mo><mn>1</mn><mo>,</mo><mn>024</mn></mrow><annotation encoding="application/x-tex">n \leq 1{,}024</annotation></semantics></math></strong>:
+the per-context attacker’s forgeries are attributed at most 9.0%
+(medians; upper bounds at most 11.0%) against bars of 40–44%, half the
+arms’ genuine FA (Table 6a; Figure 4); its per-context estimates stay
+poor (count-weighted cosine 0.213 for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">h = 1</annotation></semantics></math>
+at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>1</mn><mo>,</mo><mn>024</mn></mrow><annotation encoding="application/x-tex">n = 1{,}024</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>0.50</mn></mrow><annotation encoding="application/x-tex">\rho = 0.50</annotation></semantics></math>;
+App. C). The verdict is bounded by the budget, not by the scheme:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">h = 1</annotation></semantics></math>’s
+acceptance rises with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
+at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>0.50</mn></mrow><annotation encoding="application/x-tex">\rho = 0.50</annotation></semantics></math>
+(1.5 → 3.0 → 9.0%), and the token-level literature steals context-hashed
+schemes with tens of thousands of responses (§2.2). Rotation blocks the
+naive attacker at both strengths but <strong>falls to the clustering
+attacker at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>0.50</mn></mrow><annotation encoding="application/x-tex">\rho = 0.50</annotation></semantics></math>,
+practical at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>64</mn></mrow><annotation encoding="application/x-tex">n = 64</annotation></semantics></math></strong>:
+it separates the mixture into the keys (7 of 8 recovered at cosine
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≥</mo><mn>0.5</mn></mrow><annotation encoding="application/x-tex">\geq 0.5</annotation></semantics></math>
+from 64 texts, 8 of 8 from 256) and the union test attributes 95–96% of
+its forgeries. At
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>0.35</mn></mrow><annotation encoding="application/x-tex">\rho = 0.35</annotation></semantics></math>
+the pre-registered verdict is <strong>stealing blocked at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>≤</mo><mn>1</mn><mo>,</mo><mn>024</mn></mrow><annotation encoding="application/x-tex">n \leq 1{,}024</annotation></semantics></math></strong>,
+and it stands as written; its reason is the attacker’s pre-set rule for
+choosing the forging cluster, which at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>256</mn></mrow><annotation encoding="application/x-tex">n = 256</annotation></semantics></math>
+and 1,024 picked an outlier cluster with cosine 0.000 to every key while
+the other clusters recovered 6 of 8. A post-hoc addendum, labelled and
+not pre-registered (App. G; the last rows of Table 6a; the hollow marker
+in Figure 6), forged with every cluster in turn: the best cluster’s
+forgeries are attributed 96% at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>256</mn></mrow><annotation encoding="application/x-tex">n = 256</annotation></semantics></math>
+and 90% at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>1</mn><mo>,</mo><mn>024</mn></mrow><annotation encoding="application/x-tex">n = 1{,}024</annotation></semantics></math>,
+and 5 of the 6 recovered clusters reach the bar. Read with the
+pre-registered result, rotation among 8 keys multiplies this attacker’s
+cost by about
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>K</mi><annotation encoding="application/x-tex">K</annotation></semantics></math>
+against averaging and by nothing against clustering, at both
+strengths.</p>
+<p><strong>Robustness (D2).</strong> The hashed arms lose most of the
+paraphrase robustness the fixed key has (Table 6b; Figure 6). After
+P-Qwen with the attacker’s self-check, scrub success is 73.0 and 70.5%
+against
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">h = 1</annotation></semantics></math>
+and 72.0 and 69.5% against
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>=</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">h = 4</annotation></semantics></math>,
+where the fixed key on the same prompts and keys was scrubbed 53.0 and
+39.5% of the time (§5.5). The paired differences are
+<strong>material</strong> for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">h = 1</annotation></semantics></math>
+at both strengths (+22.0 [+6.0, +36.5] and +32.0 [+21.0, +44.0] points)
+and for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>=</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">h = 4</annotation></semantics></math>
+at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>0.50</mn></mrow><annotation encoding="application/x-tex">\rho = 0.50</annotation></semantics></math>
+(+32.5 [+19.0, +45.5]), and <strong>inconclusive</strong> for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>=</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">h = 4</annotation></semantics></math>
+at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>0.35</mn></mrow><annotation encoding="application/x-tex">\rho = 0.35</annotation></semantics></math>
+(+18.0 [+7.5, +33.5]: the median falls under the 20-point bar although
+the interval excludes zero). Attribution after paraphrase falls to
+1.0–4.0% for the keyed arms against the fixed key’s 25.5 and 35.0%: a
+paraphrase changes most contexts, so the content shift that survives it
+no longer lines up with any per-context key the owner can test (an
+inference; the same mechanism denies the attacker a stable direction to
+average). Rotation keeps the fixed key’s robustness: the union test’s
+loss on Study 2’s paraphrases is +15.0 [+9.5, +18.5] and +13.0 [+8.5,
++17.5] points, <strong>immaterial</strong> by the 20-point bar.</p>
+<p><strong>Quality (D3).</strong> Context keying costs nothing by our
+proxy and improves it, with perplexity ratios to the fixed key’s texts
+on the same prompts of 0.72–0.85 (medians; no key above the 1.10 bar;
+<strong>immaterial</strong> everywhere), which is an improvement by that
+measure and not a quality claim (§4); rotation’s quality is unchanged by
+construction.</p>
+<p><strong>The point of difference with the token-level
+evidence.</strong> That evidence on multiple keys is mixed: three keys
+cut Pang et al.’s stealing success from 91% to 13% (p. 6) at a cost in
+removal robustness (p. 7) <span class="citation"
+data-cites="pang2024nofreelunch">(<a href="#ref-pang2024nofreelunch"
+role="doc-biblioref">Pang et al. 2024</a>)</span>, while Jovanović et
+al. found key switching “not a viable defense against our attacker”
+(pp. 19–20) <span class="citation"
+data-cites="jovanovic2024stealing">(<a href="#ref-jovanovic2024stealing"
+role="doc-biblioref">Jovanović, Staab, and Vechev 2024</a>)</span>. Our
+rotation result sits with the second under this access model, and Pang
+et al.’s removal attack is untested here. The no-free-lunch trade-off
+therefore transfers only in this form: the context-width trade-off
+between stealing and paraphrase robustness reappears, rotation buys a
+constant factor against averaging and nothing against clustering, and
+immunity is claimed for no arm.</p>
+<h2 id="the-trade-off-read-across-the-studies">5.7 The trade-off, read
+across the studies</h2>
+<p>Read together, the studies describe one curve for the fixed key on
+this model (an interpretation, labelled; Figure 6). The strengths at
+which the exact test detects the key and paraphrase fails to scrub it,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>≥</mo><mn>0.50</mn></mrow><annotation encoding="application/x-tex">\rho \geq 0.50</annotation></semantics></math>,
+cost perplexity (ratios 1.62 and 2.29 against unsteered text; §5.1); the
+strengths with acceptable perplexity,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>≤</mo><mn>0.35</mn></mrow><annotation encoding="application/x-tex">\rho \leq 0.35</annotation></semantics></math>,
+are scrubbed by an off-the-shelf paraphrase (§5.5). The published probe
+detects none of the low strengths and is forgeable without the key at
+0.35 (§5.2); the exact test rescues detection at every strength (§5.3),
+but its own statistic steals the fixed key from 64 texts (§5.4). Context
+keying moves the stealing corner at the price of the robustness corner;
+rotation keeps robustness and quality and falls to clustering (§5.6).
+That watermark designs trade robustness, quality and security against
+one another is the token-level literature’s main theme <span
+class="citation"
+data-cites="pang2024nofreelunch shen2025seek jovanovic2024stealing">(<a
+href="#ref-pang2024nofreelunch" role="doc-biblioref">Pang et al.
+2024</a>; <a href="#ref-shen2025seek" role="doc-biblioref">Shen, Huang,
+and Wan 2025</a>; <a href="#ref-jovanovic2024stealing"
+role="doc-biblioref">Jovanović, Staab, and Vechev 2024</a>)</span> and
+is noted by the scheme’s authors (p. 2) <span class="citation"
+data-cites="ardoin2026selfrecognition">(<a
+href="#ref-ardoin2026selfrecognition" role="doc-biblioref">Ardoin,
+Schäfer, and Wunder 2026</a>)</span>; the contribution here is the
+measured curve along
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ρ</mi><annotation encoding="application/x-tex">\rho</annotation></semantics></math>
+for this family, on one model and against one attacker family.</p>
+<h1 id="related-work">6 Related work</h1>
+<p><strong>Stealing, spoofing and scrubbing of token-level
+watermarks.</strong> Jovanović et al. <span class="citation"
+data-cites="jovanovic2024stealing">(<a href="#ref-jovanovic2024stealing"
+role="doc-biblioref">Jovanović, Staab, and Vechev 2024</a>)</span>
+define stealing as “the act of reverse-engineering a watermark by
+querying the API of the watermarked LLM” (p. 1), with a black-box
+attacker (p. 3) and
+“<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>30</mn><mo>,</mo><mn>000</mn></mrow><annotation encoding="application/x-tex">n = 30{,}000</annotation></semantics></math>
+responses of token length
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≤</mo><mn>800</mn></mrow><annotation encoding="application/x-tex">\leq 800</annotation></semantics></math>”
+(p. 6), spoof and scrub KGW-style schemes from the same estimate, and
+find that “the supposed tradeoff between spoofing and scrubbing
+robustness … in fact does not hold” (p. 9). Pang et al. <span
+class="citation" data-cites="pang2024nofreelunch">(<a
+href="#ref-pang2024nofreelunch" role="doc-biblioref">Pang et al.
+2024</a>)</span> state the trade-offs as guidelines, “Robust watermarks
+are inherently vulnerable to spoofing attacks and are not suitable as
+proof of content authenticity alone” (p. 5) and more keys defend against
+stealing at a cost in removal robustness (p. 7), stealing from “2.2
+million tokens in total” (p. 6). Gu et al. <span class="citation"
+data-cites="gu2024learnability">(<a href="#ref-gu2024learnability"
+role="doc-biblioref">Gu et al. 2024</a>)</span> learn a watermark by
+distillation and conclude that “watermarking should not be used to
+attribute provenance or blame to a specific LM” (p. 2). Zhang et al.
+<span class="citation" data-cites="zhang2026beyondseal">(<a
+href="#ref-zhang2026beyondseal" role="doc-biblioref">Zhang et al.
+2026</a>)</span> steal with “2,000 victim watermarked texts” (p. 8);
+MarkSec <span class="citation" data-cites="li2026marksec">(<a
+href="#ref-li2026marksec" role="doc-biblioref">Li et al.
+2026</a>)</span> fixes the attack definitions we adopt (p. 3) and
+excludes model-parameter schemes by scope (p. 2); SEEK <span
+class="citation" data-cites="shen2025seek">(<a href="#ref-shen2025seek"
+role="doc-biblioref">Shen, Huang, and Wan 2025</a>)</span> calls the
+scrubbing–spoofing trade-off “widely acknowledged” (p. 1) and moves its
+boundary at the token level; paraphrase as an attack on detectors is
+Krishna et al. <span class="citation"
+data-cites="krishna2023paraphrasing">(<a
+href="#ref-krishna2023paraphrasing" role="doc-biblioref">Krishna et al.
+2023</a>)</span>. What remains: every attack is token-level and
+black-box, none touches an activation scheme, and our attacker’s
+white-box re-encoding changes the budget in kind (§2.2); the provenance
+conclusion of Gu et al. and Pang et al. is drawn here for this family
+(§5.3), citing them.</p>
+<p><strong>Context hashing, key rotation and their trade-offs.</strong>
+Both transferred mechanisms originate with Kirchenbauer et al. <span
+class="citation" data-cites="kirchenbauer2023watermark">(<a
+href="#ref-kirchenbauer2023watermark" role="doc-biblioref">Kirchenbauer
+et al. 2023</a>)</span>: green lists from “a pseudorandom number
+generator seeded with previous tokens” (p. 4), a leak at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">h = 1</annotation></semantics></math>
+that brute force can exploit (p. 6), the robustness cost of large
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>h</mi><annotation encoding="application/x-tex">h</annotation></semantics></math>,
+“attack amplification” (p. 6), and the multiple-key design, “have
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>&gt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">k &gt; 1</annotation></semantics></math>
+different hidden keys, and to randomly choose one for each generation.
+At detection time, we run
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>
+tests, one for each of the possible keys” (p. 7), defended by the
+absence of bias when averaging over many generations (p. 7). Our
+rotation arm is this design transferred; our clustering attacker is the
+counter to that averaging argument. Kirchenbauer et al. <span
+class="citation" data-cites="kirchenbauer2024reliability">(<a
+href="#ref-kirchenbauer2024reliability"
+role="doc-biblioref">Kirchenbauer et al. 2024</a>)</span> find that “a
+small context width
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>h</mi><annotation encoding="application/x-tex">h</annotation></semantics></math>
+provides the best robustness to machine paraphrasing” (p. 21) while
+secrecy wants a large
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>h</mi><annotation encoding="application/x-tex">h</annotation></semantics></math>
+or “sufficiently many keys” (p. 17), the trade-off our
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">h = 1</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>=</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">h = 4</annotation></semantics></math>
+arms reproduce at the activation level. SynthID-Text <span
+class="citation" data-cites="dathathri2024synthid">(<a
+href="#ref-dathathri2024synthid" role="doc-biblioref">Dathathri et al.
+2024</a>)</span> deploys a hash of the previous
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mo>=</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">H = 4</annotation></semantics></math>
+tokens with the key (p. 2), with several keys in its public
+configuration <span class="citation"
+data-cites="huggingface2026synthidconfig">(<a
+href="#ref-huggingface2026synthidconfig" role="doc-biblioref">Hugging
+Face 2026</a>)</span>, and names stealing, spoofing and scrubbing as “an
+area of ongoing research” (p. 6). On multiple keys the token-level
+evidence is mixed: three keys cut Pang et al.’s stealing success from
+91% to 13% (p. 6), while Jovanović et al. kept spoofing success of
+0.68–0.81 with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">k = 2</annotation></semantics></math>–4
+keys switched per response (Table 14, p. 20), “not a viable defense
+against our attacker” (p. 20); Gu et al. note the multiple-testing cost
+(pp. 19–20), and Zhang et al. name random key selection as a defence
+with a detection cost (p. 18).</p>
+<p><strong>Model-internal watermarks and keyed directions.</strong>
+Self-Recognition <span class="citation"
+data-cites="ardoin2026selfrecognition">(<a
+href="#ref-ardoin2026selfrecognition" role="doc-biblioref">Ardoin,
+Schäfer, and Wunder 2026</a>)</span> is the scheme analysed (§2.1); its
+security rests, by its authors’ statement, on the secrecy of the vector
+and layer and is left to future work (p. 7), and they report that
+“paraphrasing human text acts as a spoofing mechanism for our detector”
+(p. 5) and that “Some vectors induce more severe degradations in
+generation quality, while others are more easily detectable” (p. 7),
+which our per-key tables bear out. SLAM <span class="citation"
+data-cites="harelcanada2026slam">(<a href="#ref-harelcanada2026slam"
+role="doc-biblioref">Harel-Canada and Sahai 2026</a>)</span> steers
+public sparse-autoencoder features chosen per document by a keyed hash
+(p. 5), reads a document identifier at detection, reports that “DIPPER
+reduces TPR to 12%/10% on 2B/9B” (p. 7) and targets “provenance
+attribution rather than tamper-proof cryptographic authentication”
+(p. 2); the words stealing, spoofing, forgery and threat model do not
+occur in it. AWM <span class="citation" data-cites="aremu2026awm">(<a
+href="#ref-aremu2026awm" role="doc-biblioref">Aremu et al.
+2026</a>)</span> fine-tunes a keyed Gaussian direction per layer to
+monitor harmful outputs and finds that “attacks optimized against one
+surrogate key do not reliably transfer against other (independent) keys”
+(p. 2) for an adaptive evader who “cannot query the detector” (p. 3):
+the nearest keyed-direction design, under a different threat. SAEMark
+<span class="citation" data-cites="yu2025saemark">(<a
+href="#ref-yu2025saemark" role="doc-biblioref">Yu et al.
+2025</a>)</span> watermarks post hoc by rejection sampling on feature
+statistics “without altering model logits”, and a Zenodo preprint reads
+an activation payload from the provider’s own logs <span
+class="citation" data-cites="vargas2026forensic">(<a
+href="#ref-vargas2026forensic" role="doc-biblioref">Vargas Altalaguerri
+2026</a>)</span>; neither steers during generation. GaussMark <span
+class="citation" data-cites="block2025gaussmark">(<a
+href="#ref-block2025gaussmark" role="doc-biblioref">Block, Rakhlin, and
+Sekhari 2025</a>)</span> perturbs weights, needs them for detection, “a
+significantly stronger access model” (p. 19), and leaves its
+per-token-key variant untested (p. 48). What remains: no member of the
+family has a measured recovery, forgery or scrubbing result; SLAM and
+AWM are untested here.</p>
+<p><strong>Score tests and randomisation tests.</strong> Our detector is
+GaussMark’s score statistic <span class="citation"
+data-cites="block2025gaussmark rao1948score">(<a
+href="#ref-block2025gaussmark" role="doc-biblioref">Block, Rakhlin, and
+Sekhari 2025</a>; <a href="#ref-rao1948score" role="doc-biblioref">Rao
+1948</a>)</span> for an additive activation vector, with Monte Carlo
+p-values <span class="citation" data-cites="phipson2010permutation">(<a
+href="#ref-phipson2010permutation" role="doc-biblioref">Phipson and
+Smyth 2010</a>)</span> from resampled sparse keys in place of the
+Gaussian null (§3). GaussMark’s guarantees “are valid for any fixed
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mstyle mathvariant="script"><mi>𝒳</mi></mstyle></mrow><annotation encoding="application/x-tex">x \in \mathcal{X}</annotation></semantics></math>,
+but are marginalized over the key
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ξ</mi><annotation encoding="application/x-tex">\xi</annotation></semantics></math>”
+(p. 11); the per-key calibration gate we add is a practice, not a
+theorem, and the dispersion of per-key false-positive rates after
+paraphrase (§5.5) is its reason.</p>
+<p><strong>Quality bars.</strong> Self-Recognition’s appendix observes
+that “a highly repetitive, degenerate loop often yields low PPL”
+(p. 14); SLAM scores quality on four axes (p. 8); MarkSec relies on a
+judge model with “no independent human annotation” (p. 8). Our
+conditions pair perplexity with a repetition term on both the attacker’s
+and the evaluator’s side, add length and meaning conditions for
+scrubbing, and read fixed samples (§2.2, §4, App. E); they remain
+proxies, and no human judgment was collected.</p>
+<h1 id="limitations-and-future-work">7 Limitations and future work</h1>
+<p><strong>What was measured, and on what.</strong> Every claim is
+bounded to one scheme as re-implemented by us (Self-Recognition’s
+construction, not its released weights or deployed detector), one base
+model (Qwen/Qwen2.5-1.5B, layer 14 of 28), 8 study keys drawn from the
+scheme’s own sparse key distribution, 256-token continuations of
+news-like prompts, and the strengths
+${<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.25</mn><mo>,</mo><mn>0.35</mn><mo>,</mo><mn>0.50</mn><mo>,</mo><mn>0.70</mn></mrow><annotation encoding="application/x-tex">0.25, 0.35, 0.50, 0.70</annotation></semantics></math>}$
+(Study 5: 0.35 and 0.50). Rates are medians over keys with
+cluster-bootstrap intervals, and the per-key tables of Appendix D show
+that keys differ: one key is detected far less often than the others at
+the highest strength, a few keys leak through the exact test where most
+do not, and the keyed arms’ robustness cost varies by tens of points
+across keys. Where a pre-registered rule did not reach a verdict we say
+so: fluent forgery of the probe at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>0.50</mn></mrow><annotation encoding="application/x-tex">\rho = 0.50</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0.70</mn><annotation encoding="application/x-tex">0.70</annotation></semantics></math>,
+P-Phi paraphrase and true-key edits at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0.35</mn><annotation encoding="application/x-tex">0.35</annotation></semantics></math>,
+and the robustness cost of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>=</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">h = 4</annotation></semantics></math>
+at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0.35</mn><annotation encoding="application/x-tex">0.35</annotation></semantics></math>
+are inconclusive, not negative.</p>
+<p><strong>The attackers and their budgets.</strong> We tested three
+passive attacker families (Routes A,
+A<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>′</mi><annotation encoding="application/x-tex">&#39;</annotation></semantics></math>
+and B; the per-context and clustering attackers of §5.6), each holding
+the open weights and at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo></mrow><annotation encoding="application/x-tex">n =</annotation></semantics></math>
+1,024 watermarked texts and none querying the detector. “Stealing
+blocked at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>≤</mo></mrow><annotation encoding="application/x-tex">n \leq</annotation></semantics></math>
+1,024” therefore means blocked for these attackers at this budget, not
+immunity: the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">h = 1</annotation></semantics></math>
+arm’s forgery acceptance rises with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
+(1.5 → 3.0 → 9.0% at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>0.50</mn></mrow><annotation encoding="application/x-tex">\rho = 0.50</annotation></semantics></math>),
+and the token-level literature steals context-hashed schemes with far
+larger budgets under a different access model (§5.4). We did not test an
+attacker who knows the exact test and optimises against it, one who
+combines paraphrase with key-guided edits, one who queries the detector,
+the repeated-query removal attack that Pang et al. <span
+class="citation" data-cites="pang2024nofreelunch">(<a
+href="#ref-pang2024nofreelunch" role="doc-biblioref">Pang et al.
+2024</a>)</span> run against multiple keys, or human editing. At
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>0.70</mn></mrow><annotation encoding="application/x-tex">\rho = 0.70</annotation></semantics></math>
+the key-recovery attack was weaker on tuning keys and was not run on the
+study keys.</p>
+<p><strong>Quality is a proxy.</strong> Fluency and faithfulness are
+measured by perplexity under the unsteered model, a repetition term,
+length and embedding similarity, with samples read under pre-set rules
+(Appendix H); no human judgment was collected, and the scheme’s own
+quality classifier and MMLU evaluation were not computed. The relative
+quality bar becomes lenient at the strongest watermark because the
+genuine watermarked text is itself degraded there (Appendix E), so
+fluent acceptance at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>0.70</mn></mrow><annotation encoding="application/x-tex">\rho = 0.70</annotation></semantics></math>
+should not be read as high-quality forgery.</p>
+<p><strong>The reproduction and the exactness statement.</strong> The
+published strength did not reproduce <em>under our conditions</em>: base
+rather than instruction-tuned models, continuation-only perplexity under
+the same model, our prompts and our probe training. The authors’ numbers
+are beside ours in §5.1, and we draw no conclusion about their claims
+beyond those conditions. The exact test’s level is exact on average over
+keys; the per-key gate held for these 8 keys on unparaphrased text, but
+after paraphrase 7.8–6.5% of freshly drawn keys exceeded a 3%
+false-positive rate (§5.5, Appendix D), which is why a deployer should
+check the one key it holds.</p>
+<p><strong>Novelty is at the search level.</strong> “To our knowledge”
+means that no attack on Self-Recognition, SLAM or AWM appeared in the
+citing papers, listings and repositories we searched through October
+2026; search absence is not proof of novelty. SLAM-style and AWM-style
+designs were discussed, not tested.</p>
+<p><strong>Future work.</strong> Five studies were specified but not run
+and would complete the picture: a SLAM-style keyed feature-steering
+target under the same protocols (the planned Study 4); the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">h = 1</annotation></semantics></math>
+acceptance curve beyond
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo></mrow><annotation encoding="application/x-tex">n =</annotation></semantics></math>
+1,024 texts, where the token-level budgets lie; the per-position form of
+the keyed test with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">h = 0</annotation></semantics></math>
+on the study keys (measured so far on tuning keys only; Appendix G);
+Pang et al.’s removal attack against rotation; and the 8B scale at which
+the scheme’s authors report their results. An adaptive attacker against
+the exact test, and a human or model-judged coherence rating in place of
+the perplexity proxies, are the two measurements whose absence most
+limits the conclusions above.</p>
+<h1 id="reproducibility-ethics-and-disclosure">8 Reproducibility, ethics
+and disclosure</h1>
+<p><strong>Pre-registration and locks.</strong> The 6 studies were run
+from protocols fixed and hashed before any outcome existed (locked
+between 2026-09-26 and 2026-10-02), together with every code file the
+run imports and every reused input; the runners re-hash these files and
+refuse to run on a mismatch. A correction became a new version with the
+earlier results kept (Study 1 v0.2, v0.3 and v0.4 are all reported), the
+pilots that fixed the designs were run on tuning keys that no study
+used, and the one post-hoc analysis is labelled wherever it appears
+(§5.6, Appendix G). Table 1 gives each study’s lock date, hash prefix,
+commit and run time; Appendix A gives the full table and one paragraph
+per protocol.</p>
+<p><strong>Code and data availability.</strong> {Availability statement,
+Yichen’s Stage 9 decision: (a) the protocols, lock files, validation
+reports, run manifests, result files and every script that generated a
+number, table or figure in this paper are released in a public
+repository, without model weights or generated texts; or (b) the same
+materials are available from the author on request.} Prompts come from
+the C4 realnewslike validation shard <span class="citation"
+data-cites="raffel2020t5">(<a href="#ref-raffel2020t5"
+role="doc-biblioref">Raffel et al. 2020</a>)</span> (ODC-BY 1.0, under
+the Common Crawl terms): 8,580 usable units, of which 6,896 were
+available for development and 1,684 were held out behind a loader that
+refuses to open them, and were never used. A WikiText-103 set <span
+class="citation" data-cites="merity2017pointer">(<a
+href="#ref-merity2017pointer" role="doc-biblioref">Merity et al.
+2017</a>)</span> was frozen as a second domain and is used by none of
+the six studies. No article text is redistributed; the repository holds
+identifiers and hashes only. Models were pinned to a revision and
+hashed: Qwen2.5-1.5B (revision 8faed761, apache-2.0) <span
+class="citation" data-cites="qwen2024qwen25 qwen2024card15b">(<a
+href="#ref-qwen2024qwen25" role="doc-biblioref">Qwen Team 2024a</a>, <a
+href="#ref-qwen2024card15b" role="doc-biblioref">2024b</a>)</span> as
+the watermarked model, Qwen2.5-1.5B-Instruct (Apache-2.0) <span
+class="citation" data-cites="qwen2024card15binstruct">(<a
+href="#ref-qwen2024card15binstruct" role="doc-biblioref">Qwen Team
+2024c</a>)</span> and Phi-3.5-mini-instruct (MIT) <span class="citation"
+data-cites="abdin2024phi3">(<a href="#ref-abdin2024phi3"
+role="doc-biblioref">Abdin et al. 2024</a>)</span> as paraphrasers,
+Llama-3.2-1B and 3B (Llama 3.2 Community Licence) <span class="citation"
+data-cites="grattafiori2024llama3">(<a href="#ref-grattafiori2024llama3"
+role="doc-biblioref">Grattafiori et al. 2024</a>)</span> for calibration
+only, and all-mpnet-base-v2 (Apache-2.0) <span class="citation"
+data-cites="reimers2019sbert">(<a href="#ref-reimers2019sbert"
+role="doc-biblioref">Reimers and Gurevych 2019</a>)</span> for the
+embedding-similarity condition.</p>
+<p><strong>Compute.</strong> Everything ran on one Apple-silicon laptop
+(M5, 16 GB unified memory; PyTorch 2.14.0 on MPS). The six locked runs
+took 91.1 hours in total (22.4, 6.4, 6.5, 2.9, 26.6 and 26.3 h), plus
+the reproduction pilot, three calibrations and three design pilots; no
+cloud compute was used.</p>
+<p><strong>Ethics.</strong> The scheme analysed is a published research
+method, re-implemented from its paper and public code on open-weight
+models; no deployed system was attacked, no detector was queried, and no
+private data was used. The attacks measured are the removal and forgery
+attempts that evaluation guidance names (Appendix I), and the forgeries
+exist only as research artefacts: the generated texts are not released.
+Nothing here assesses any provider’s deployment or compliance.</p>
+<p><strong>Use of AI tools.</strong> The text and code were drafted with
+an AI system under the author’s direction, as stated in the
+acknowledgements after §9.</p>
+<h1 id="conclusion">9 Conclusion</h1>
+<p>A deployer of an activation-steering watermark of this family learns
+four things from these studies, each bounded to one model, one layer, 8
+keys, 256-token texts and a passive attacker with the open weights and
+at most 1,024 outputs. The published detector type, a trained probe, is
+forgeable without the key at the only strength where quality is
+acceptable, and it does not detect the key so much as steering; testing
+the key directly with an exact, per-key-calibrated score test rescues
+detection at every strength and blocks those forgeries. That same
+statistic is the best estimator an attacker has, so the fixed key is
+recovered and forged from 64 outputs, and an off-the-shelf paraphrase
+removes the evidence at the strengths with acceptable perplexity. Keying
+the direction by context or rotating among keys, transfers from
+token-level watermarking, stop that attacker at the budget tested, at
+the price of most of the paraphrase robustness in the first case and of
+only a constant factor against a clustering attacker in the second. If
+such watermarks are to serve as the robust, reliable and secure
+provenance mechanisms that regulators now describe, they will need keyed
+verification tools whose false-positive rate is checked per key, and
+whose security is measured against the attacker who holds the
+weights.</p>
+<h2 id="acknowledgements-and-use-of-ai-tools">Acknowledgements and use
+of AI tools</h2>
+<p>{Funding and thanks: Yichen to confirm.} The text and code of this
+paper were drafted by Claude (Anthropic) under the author’s direction
+and under the pre-registered protocols described in §4 and Appendix A;
+the author designed the studies, took every decision recorded in the
+project’s decision log, revised every section, verified every number
+against the locked outputs and takes full responsibility for the
+content. No AI system is an author. The language models that are part of
+the method (the watermarked model and the two paraphrasers) are
+described in §4.</p>
+<div id="refs" class="references csl-bib-body hanging-indent"
+role="list">
+<div id="ref-abdin2024phi3" class="csl-entry" role="listitem">
+Abdin, Marah et al. 2024. <span>‘<span>Phi-3</span> Technical Report: A
+Highly Capable Language Model Locally on Your Phone’</span>. arXiv
+preprint arXiv:2404.14219. <a
+href="https://arxiv.org/abs/2404.14219">https://arxiv.org/abs/2404.14219</a>.
+</div>
+<div id="ref-ardoin2026selfrecognition" class="csl-entry"
+role="listitem">
+Ardoin, Thibaud, Jonas Schäfer, and Gerhard Wunder. 2026.
+<span>‘<span>LLM</span> Self-Recognition: Steering and Retrieving
+Activation Signatures’</span>. In <em>Proceedings of the 43rd
+International Conference on Machine Learning (ICML 2026)</em>,
+306:3406–22. Proceedings of Machine Learning Research. PMLR. <a
+href="https://proceedings.mlr.press/v306/ardoin26a.html">https://proceedings.mlr.press/v306/ardoin26a.html</a>.
+</div>
+<div id="ref-aremu2026awm" class="csl-entry" role="listitem">
+Aremu, Toluwani, Daniil Ognev, Samuele Poppi, and Nils Lukas. 2026.
+<span>‘Adaptively Robust <span>LLM</span> Monitoring via Activation
+Watermarking’</span>. arXiv preprint arXiv:2603.23171v3. <a
+href="https://arxiv.org/abs/2603.23171">https://arxiv.org/abs/2603.23171</a>.
+</div>
+<div id="ref-block2025gaussmark" class="csl-entry" role="listitem">
+Block, Adam, Alexander Rakhlin, and Ayush Sekhari. 2025.
+<span>‘<span>GaussMark</span>: A Practical Approach for Structural
+Watermarking of Language Models’</span>. arXiv preprint
+arXiv:2501.13941v1. <a
+href="https://arxiv.org/abs/2501.13941">https://arxiv.org/abs/2501.13941</a>.
+</div>
+<div id="ref-clopper1934binomial" class="csl-entry" role="listitem">
+Clopper, C. J., and E. S. Pearson. 1934. <span>‘The Use of Confidence or
+Fiducial Limits Illustrated in the Case of the Binomial’</span>.
+<em>Biometrika</em> 26 (4): 404–13. <a
+href="https://doi.org/10.1093/biomet/26.4.404">https://doi.org/10.1093/biomet/26.4.404</a>.
+</div>
+<div id="ref-dathathri2024synthid" class="csl-entry" role="listitem">
+Dathathri, Sumanth, Abigail See, Sumedh Ghaisas, Po-Sen Huang, Rob
+McAdam, Johannes Welbl, Vandana Bachani, et al. 2024. <span>‘Scalable
+Watermarking for Identifying Large Language Model Outputs’</span>.
+<em>Nature</em> 634 (8035): 818–23. <a
+href="https://doi.org/10.1038/s41586-024-08025-4">https://doi.org/10.1038/s41586-024-08025-4</a>.
+</div>
+<div id="ref-davison1997bootstrap" class="csl-entry" role="listitem">
+Davison, A. C., and D. V. Hinkley. 1997. <em>Bootstrap Methods and Their
+Application</em>. Cambridge University Press. <a
+href="https://doi.org/10.1017/CBO9780511802843">https://doi.org/10.1017/CBO9780511802843</a>.
+</div>
+<div id="ref-ec2026codeofpractice" class="csl-entry" role="listitem">
+European Commission. 2026. <span>‘Code of Practice on Transparency of
+<span>AI</span>-Generated Content’</span>. Final version, 10 June 2026;
+Commission document 129555 (38 pp). <a
+href="https://ec.europa.eu/newsroom/dae/redirection/document/129555">https://ec.europa.eu/newsroom/dae/redirection/document/129555</a>.
+</div>
+<div id="ref-grattafiori2024llama3" class="csl-entry" role="listitem">
+Grattafiori, Aaron et al. 2024. <span>‘The <span>Llama 3</span> Herd of
+Models’</span>. arXiv preprint arXiv:2407.21783. <a
+href="https://arxiv.org/abs/2407.21783">https://arxiv.org/abs/2407.21783</a>.
+</div>
+<div id="ref-gu2024learnability" class="csl-entry" role="listitem">
+Gu, Chenchen, Xiang Lisa Li, Percy Liang, and Tatsunori Hashimoto. 2024.
+<span>‘On the Learnability of Watermarks for Language Models’</span>. In
+<em>The Twelfth International Conference on Learning Representations
+(ICLR 2024)</em>. <a
+href="https://arxiv.org/abs/2312.04469">https://arxiv.org/abs/2312.04469</a>.
+</div>
+<div id="ref-harelcanada2026slam" class="csl-entry" role="listitem">
+Harel-Canada, Fabrice, and Amit Sahai. 2026. <span>‘<span>SLAM</span>:
+Structural Linguistic Activation Marking for Language Models’</span>.
+arXiv preprint arXiv:2605.05443v2. <a
+href="https://arxiv.org/abs/2605.05443">https://arxiv.org/abs/2605.05443</a>.
+</div>
+<div id="ref-huggingface2026synthidconfig" class="csl-entry"
+role="listitem">
+Hugging Face. 2026. <span>‘<span>SynthIDTextWatermarkingConfig</span>:
+Transformers Documentation, Generation Utilities’</span>. Documentation
+page, Transformers <span>‘main’</span> branch. <a
+href="https://huggingface.co/docs/transformers/main/en/internal/generation_utils">https://huggingface.co/docs/transformers/main/en/internal/generation_utils</a>.
+</div>
+<div id="ref-jovanovic2024stealing" class="csl-entry" role="listitem">
+Jovanović, Nikola, Robin Staab, and Martin Vechev. 2024.
+<span>‘Watermark Stealing in Large Language Models’</span>. In
+<em>Proceedings of the 41st International Conference on Machine Learning
+(ICML 2024)</em>, 235:22570–93. Proceedings of Machine Learning
+Research. PMLR. <a
+href="https://proceedings.mlr.press/v235/jovanovic24a.html">https://proceedings.mlr.press/v235/jovanovic24a.html</a>.
+</div>
+<div id="ref-kerckhoffs1883cryptographie" class="csl-entry"
+role="listitem">
+Kerckhoffs, Auguste. 1883. <span>‘La Cryptographie Militaire’</span>.
+<em>Journal Des Sciences Militaires</em> IX: 5-38 and 161-191.
+</div>
+<div id="ref-kirchenbauer2023watermark" class="csl-entry"
+role="listitem">
+Kirchenbauer, John, Jonas Geiping, Yuxin Wen, Jonathan Katz, Ian Miers,
+and Tom Goldstein. 2023. <span>‘A Watermark for Large Language
+Models’</span>. In <em>Proceedings of the 40th International Conference
+on Machine Learning (ICML 2023)</em>, 202:17061–84. Proceedings of
+Machine Learning Research. PMLR. <a
+href="https://proceedings.mlr.press/v202/kirchenbauer23a.html">https://proceedings.mlr.press/v202/kirchenbauer23a.html</a>.
+</div>
+<div id="ref-kirchenbauer2024reliability" class="csl-entry"
+role="listitem">
+Kirchenbauer, John, Jonas Geiping, Yuxin Wen, Manli Shu, Khalid
+Saifullah, Kezhi Kong, Kasun Fernando, Aniruddha Saha, Micah Goldblum,
+and Tom Goldstein. 2024. <span>‘On the Reliability of Watermarks for
+Large Language Models’</span>. In <em>The Twelfth International
+Conference on Learning Representations (ICLR 2024)</em>. <a
+href="https://arxiv.org/abs/2306.04634">https://arxiv.org/abs/2306.04634</a>.
+</div>
+<div id="ref-krishna2023paraphrasing" class="csl-entry" role="listitem">
+Krishna, Kalpesh, Yixiao Song, Marzena Karpinska, John Wieting, and
+Mohit Iyyer. 2023. <span>‘Paraphrasing Evades Detectors of
+<span>AI</span>-Generated Text, but Retrieval Is an Effective
+Defense’</span>. In <em>Advances in Neural Information Processing
+Systems 36 (NeurIPS 2023)</em>. <a
+href="https://proceedings.neurips.cc/paper_files/paper/2023/hash/575c450013d0e99e4b0ecf82bd1afaa4-Abstract-Conference.html">https://proceedings.neurips.cc/paper_files/paper/2023/hash/575c450013d0e99e4b0ecf82bd1afaa4-Abstract-Conference.html</a>.
+</div>
+<div id="ref-li2026marksec" class="csl-entry" role="listitem">
+Li, Kairong, Zhikun Zhang, Xiao Ren, and Yunjun Gao. 2026.
+<span>‘<span>MarkSec</span>: Capability-Aware Evaluation of Adversarial
+Attacks Against <span>LLM</span> Watermarks’</span>. arXiv preprint
+arXiv:2609.16681v1. <a
+href="https://arxiv.org/abs/2609.16681">https://arxiv.org/abs/2609.16681</a>.
+</div>
+<div id="ref-merity2017pointer" class="csl-entry" role="listitem">
+Merity, Stephen, Caiming Xiong, James Bradbury, and Richard Socher.
+2017. <span>‘Pointer Sentinel Mixture Models’</span>. In
+<em>International Conference on Learning Representations (ICLR
+2017)</em>. <a
+href="https://arxiv.org/abs/1609.07843">https://arxiv.org/abs/1609.07843</a>.
+</div>
+<div id="ref-nist2024ai1004" class="csl-entry" role="listitem">
+National Institute of Standards and Technology. 2024. <span>‘Reducing
+Risks Posed by Synthetic Content: An Overview of Technical Approaches to
+Digital Content Transparency’</span>. NIST AI 100-4. National Institute
+of Standards; Technology. <a
+href="https://doi.org/10.6028/NIST.AI.100-4">https://doi.org/10.6028/NIST.AI.100-4</a>.
+</div>
+<div id="ref-pang2024nofreelunch" class="csl-entry" role="listitem">
+Pang, Qi, Shengyuan Hu, Wenting Zheng, and Virginia Smith. 2024.
+<span>‘No Free Lunch in <span>LLM</span> Watermarking: Trade-Offs in
+Watermarking Design Choices’</span>. In <em>Advances in Neural
+Information Processing Systems 37 (NeurIPS 2024)</em>. <a
+href="https://proceedings.neurips.cc/paper_files/paper/2024/hash/fa86a9c7b9f341716ccb679d1aeb9afa-Abstract-Conference.html">https://proceedings.neurips.cc/paper_files/paper/2024/hash/fa86a9c7b9f341716ccb679d1aeb9afa-Abstract-Conference.html</a>.
+</div>
+<div id="ref-phipson2010permutation" class="csl-entry" role="listitem">
+Phipson, Belinda, and Gordon K. Smyth. 2010. <span>‘Permutation p-Values
+Should Never Be Zero: Calculating Exact p-Values When Permutations Are
+Randomly Drawn’</span>. <em>Statistical Applications in Genetics and
+Molecular Biology</em> 9 (1): Article 39. <a
+href="https://doi.org/10.2202/1544-6115.1585">https://doi.org/10.2202/1544-6115.1585</a>.
+</div>
+<div id="ref-qwen2024qwen25" class="csl-entry" role="listitem">
+Qwen Team. 2024a. <span>‘<span>Qwen2.5</span> Technical Report’</span>.
+arXiv preprint arXiv:2412.15115. <a
+href="https://arxiv.org/abs/2412.15115">https://arxiv.org/abs/2412.15115</a>.
+</div>
+<div id="ref-qwen2024card15b" class="csl-entry" role="listitem">
+———. 2024b. <span>‘<span>Qwen/Qwen2.5-1.5B</span> (Model Card and
+Weights)’</span>. Hugging Face Hub, revision
+8faed761d45a263340a0528343f099c05c9a4323, Apache-2.0. <a
+href="https://huggingface.co/Qwen/Qwen2.5-1.5B">https://huggingface.co/Qwen/Qwen2.5-1.5B</a>.
+</div>
+<div id="ref-qwen2024card15binstruct" class="csl-entry" role="listitem">
+———. 2024c. <span>‘<span>Qwen/Qwen2.5-1.5B-Instruct</span> (Model Card
+and Weights)’</span>. Hugging Face Hub, revision
+989aa7980e4cf806f80c7fef2b1adb7bc71aa306, Apache-2.0. <a
+href="https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct">https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct</a>.
+</div>
+<div id="ref-raffel2020t5" class="csl-entry" role="listitem">
+Raffel, Colin, Noam Shazeer, Adam Roberts, Katherine Lee, Sharan Narang,
+Michael Matena, Yanqi Zhou, Wei Li, and Peter J. Liu. 2020.
+<span>‘Exploring the Limits of Transfer Learning with a Unified
+Text-to-Text Transformer’</span>. <em>Journal of Machine Learning
+Research</em> 21 (140): 1–67. <a
+href="https://jmlr.org/papers/v21/20-074.html">https://jmlr.org/papers/v21/20-074.html</a>.
+</div>
+<div id="ref-rao1948score" class="csl-entry" role="listitem">
+Rao, C. Radhakrishna. 1948. <span>‘Large Sample Tests of Statistical
+Hypotheses Concerning Several Parameters with Applications to Problems
+of Estimation’</span>. <em>Mathematical Proceedings of the Cambridge
+Philosophical Society</em> 44 (1): 50–57. <a
+href="https://doi.org/10.1017/S0305004100023987">https://doi.org/10.1017/S0305004100023987</a>.
+</div>
+<div id="ref-reimers2019sbert" class="csl-entry" role="listitem">
+Reimers, Nils, and Iryna Gurevych. 2019.
+<span>‘<span>Sentence-BERT</span>: Sentence Embeddings Using Siamese
+<span>BERT</span>-Networks’</span>. In <em>Proceedings of the 2019
+Conference on Empirical Methods in Natural Language Processing and the
+9th International Joint Conference on Natural Language Processing
+(EMNLP-IJCNLP)</em>, 3980–90. Association for Computational Linguistics.
+<a
+href="https://doi.org/10.18653/v1/D19-1410">https://doi.org/10.18653/v1/D19-1410</a>.
+</div>
+<div id="ref-shen2025seek" class="csl-entry" role="listitem">
+Shen, Huanming, Baizhou Huang, and Xiaojun Wan. 2025. <span>‘Enhancing
+<span>LLM</span> Watermark Resilience Against Both Scrubbing and
+Spoofing Attacks’</span>. In <em>Advances in Neural Information
+Processing Systems 38 (NeurIPS 2025)</em>. <a
+href="https://arxiv.org/abs/2507.06274">https://arxiv.org/abs/2507.06274</a>.
+</div>
+<div id="ref-vargas2026forensic" class="csl-entry" role="listitem">
+Vargas Altalaguerri, Jose Joaquín. 2026. <span>‘Forensic Provenance for
+<span>LLM</span> Deployments: Real-Time Activation Watermarking for
+Legal Non-Repudiation’</span>. Zenodo preprint; Zenodo. <a
+href="https://doi.org/10.5281/zenodo.20570544">https://doi.org/10.5281/zenodo.20570544</a>.
+</div>
+<div id="ref-welleck2020unlikelihood" class="csl-entry" role="listitem">
+Welleck, Sean, Ilia Kulikov, Stephen Roller, Emily Dinan, Kyunghyun Cho,
+and Jason Weston. 2020. <span>‘Neural Text Generation with Unlikelihood
+Training’</span>. In <em>International Conference on Learning
+Representations (ICLR 2020)</em>. <a
+href="https://arxiv.org/abs/1908.04319">https://arxiv.org/abs/1908.04319</a>.
+</div>
+<div id="ref-yu2025saemark" class="csl-entry" role="listitem">
+Yu, Zhuohao, Xingru Jiang, Weizheng Gu, Yidong Wang, Qingsong Wen,
+Shikun Zhang, and Wei Ye. 2025. <span>‘<span>SAEMark</span>: Steering
+Personalized Multilingual <span>LLM</span> Watermarks with Sparse
+Autoencoders’</span>. In <em>Advances in Neural Information Processing
+Systems 38 (NeurIPS 2025)</em>. <a
+href="https://arxiv.org/abs/2508.08211">https://arxiv.org/abs/2508.08211</a>.
+</div>
+<div id="ref-zhang2026beyondseal" class="csl-entry" role="listitem">
+Zhang, Shuhao, Yuli Chen, Jiale Han, Bo Cheng, and Jiabao Ma. 2026.
+<span>‘Beyond a Fixed Seal: Adaptive Stealing Watermark in Large
+Language Models’</span>. In <em>Findings of the Association for
+Computational Linguistics: ACL 2026</em>, 20678–95. Association for
+Computational Linguistics. <a
+href="https://doi.org/10.18653/v1/2026.findings-acl.1036">https://doi.org/10.18653/v1/2026.findings-acl.1036</a>.
+</div>
+</div>
+</body>
+</html>

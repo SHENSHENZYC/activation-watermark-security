@@ -1,0 +1,20 @@
+{
+ "fa6_fixed_035_detected": "25.5",
+ "fa6_fixed_035_success": "53.0",
+ "fa6_fixed_05_detected": "35.0",
+ "fa6_fixed_05_success": "39.5",
+ "fa6_h1_035_d": "+22 [+6, +36]",
+ "fa6_h1_035_detected": "3.0",
+ "fa6_h1_035_success": "73.0",
+ "fa6_h1_05_d": "+32 [+21, +44]",
+ "fa6_h1_05_detected": "4.0",
+ "fa6_h1_05_success": "70.5",
+ "fa6_h4_035_d": "+18 [+7, +34]",
+ "fa6_h4_035_detected": "1.0",
+ "fa6_h4_035_success": "72.0",
+ "fa6_h4_05_d": "+32 [+19, +46]",
+ "fa6_h4_05_detected": "1.5",
+ "fa6_h4_05_success": "69.5",
+ "fa6_rot_035_success": "70.0",
+ "fa6_rot_05_success": "52.5"
+}

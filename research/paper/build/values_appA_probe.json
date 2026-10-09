@@ -1,0 +1,5 @@
+{
+ "probe_hidden_dims": "2048, 64, 64, 32",
+ "probe_last_hidden": 32,
+ "probe_n_hidden": 4
+}
