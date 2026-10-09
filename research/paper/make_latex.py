@@ -163,7 +163,7 @@ def main():
     author = meta["author"]
     m = re.match(r"(.*?) \((.*?); (.*?)\)$", author)
     author_tex = (f"{m.group(1)}\\\\ {m.group(2)}\\\\ \\texttt{{{m.group(3)}}}" if m else author)
-    tex = (PREAMBLE + "\n" + f"\\title{{{meta['title']}}}\n\\author{{{author_tex}}}\n\\date{{{meta['date']}}}\n\n"
+    tex = (PREAMBLE + "\n" + f"\\title{{{meta['title']}}}\n\\author{{{author_tex}}}\n\\date{{{re.sub(r'(https?://\\S+)', r'\\\\url{\\1}', meta['date'])}}}\n\n"
            + "\\begin{document}\n\\maketitle\n\n\\begin{abstract}\n" + abstract + "\n\\end{abstract}\n\n" + body + "\n\\end{document}\n")
     (OUT / "main.tex").write_text(tex)
     n_bib = strip_bib_notes(PAPER / "references.bib", OUT / "references.bib")

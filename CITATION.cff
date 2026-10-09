@@ -11,11 +11,11 @@ type: software
 repository-code: "https://github.com/SHENSHENZYC/activation-watermark-security"
 license: MIT
 preferred-citation:
-  type: article
+  type: generic
   title: "A Security Analysis of an Activation-Steering LLM Watermark: Key Recovery, Forgery, Scrubbing and Keyed Defences"
   authors:
     - family-names: Zhao
       given-names: Yichen
   year: 2026
-  journal: "arXiv preprint"
-  notes: "arXiv identifier to be added at posting; primary category cs.CR."
+  url: "https://shenshenzyc.github.io/activation-watermark-security/"
+  notes: "Self-published preprint; the GitHub Pages site is the publication of record (9 October 2026, UTC)."

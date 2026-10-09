@@ -24,7 +24,7 @@ SEC = BUILD / "sections"
 VERSION = "v0.1"
 TITLE = "A Security Analysis of an Activation-Steering LLM Watermark: Key Recovery, Forgery, Scrubbing and Keyed Defences"
 AUTHOR = "Yichen Zhao (Independent Researcher; alexyczhao@gmail.com)"
-DATE = "October 2026"
+DATE = "October 2026. Published at https://shenshenzyc.github.io/activation-watermark-security/"
 MAIN = ["sec1_introduction.md", "sec2_background_threat_model.md", "sec3_exact_test.md", "sec4_setup.md", "sec5_1_calibration.md", "sec5_2_probe_forgery.md",
         "sec5_3_exact_test.md", "sec5_4_stealing.md", "sec5_5_scrubbing.md", "sec5_6_keyed.md", "sec5_7_tradeoff.md", "sec6_related_work.md", "sec7_limitations.md",
         "sec8_reproducibility.md", "sec9_conclusion.md"]

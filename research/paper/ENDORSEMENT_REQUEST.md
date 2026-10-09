@@ -1,3 +1,5 @@
+**SUPERSEDED 2026-10-09: Yichen decided not to submit to arXiv; the paper is published on the GitHub Pages site. Kept as a record; nothing to send.**
+
 # arXiv endorsement request (Stage 9 decision (g), 2026-10-06)
 
 **Decided:** ask Nikola Jovanović (ETH Zürich, SRI Lab; first author of "Watermark Stealing in Large Language Models", ICML 2024) first. If no answer within about a week, the next candidates in the order considered: Nils Lukas, Tom Goldstein.

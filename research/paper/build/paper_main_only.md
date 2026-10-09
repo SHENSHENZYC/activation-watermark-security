@@ -1,7 +1,7 @@
 ---
 title: "A Security Analysis of an Activation-Steering LLM Watermark: Key Recovery, Forgery, Scrubbing and Keyed Defences"
 author: "Yichen Zhao (Independent Researcher; alexyczhao@gmail.com)"
-date: "October 2026"
+date: "October 2026. Published at https://shenshenzyc.github.io/activation-watermark-security/"
 bibliography: references.bib
 link-citations: true
 ---

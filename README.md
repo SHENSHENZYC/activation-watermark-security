@@ -17,7 +17,7 @@ hashes in the manifests let you check a rebuild.
 | `research/STUDY*_REPORT_v*.md`, `research/study*_report/` | The reports and the scripts that generated them from `results.json` |
 | `research/repro/`, `research/pilot/` | The reproduction pilot and the calibrations |
 | `research/stage4/` | The prompt-set specifications, the builder (`build_prompt_sets_v0_3.py`), the sealed loader (`prompts.py`) and the manifests (counts, hashes, holdout identifiers; no text) |
-| `research/paper/` | The paper: `sections/` (one file per section, numbers as `[[placeholders]]`), `tables/` and `figures/` (one script each, reading the locked outputs and asserting against them), `fill_sections.py`, `assemble.py`, `make_latex.py`, `latex/` (the arXiv sources), `references.bib`, `build/` (generated) |
+| `research/paper/` | The paper: `sections/` (one file per section, numbers as `[[placeholders]]`), `tables/` and `figures/` (one script each, reading the locked outputs and asserting against them), `fill_sections.py`, `assemble.py`, `make_latex.py`, `latex/` (the LaTeX sources), `references.bib`, `build/` (generated) |
 | `research/literature/` | The terms-of-use check, the paced download scripts and the hashed manifest of the papers read (the PDFs themselves are not redistributed) |
 | `research/*_GATE_v*.md`, `research/TOPIC_SCREEN_v0.1.md`, `research/PROJECT_BRIEF.md` | The source gates, the claim gate, the final gate and the brief |
 | `research/DECISION_LOG.md` | Every decision, result and correction, dated, in order |
@@ -43,7 +43,7 @@ the author designed the studies, took every decision in `research/DECISION_LOG.m
 number against the locked outputs and takes full responsibility. No AI system is an author.
 
 ## Citing
-See `CITATION.cff`. The arXiv identifier is added at posting.
+See `CITATION.cff`. The paper is published at https://shenshenzyc.github.io/activation-watermark-security/ (a self-published preprint); cite it by that URL and this repository.
 
 ## About this snapshot
 Built by `tools/make_public_snapshot.py` from the working repository at the commit named in `SNAPSHOT_MANIFEST.json`

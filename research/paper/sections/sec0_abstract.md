@@ -9,3 +9,4 @@ Activation-steering watermarks add a secret vector to a hidden layer during gene
 
 - Codex review 2026-10-08: D3: reused registered design placeholders for semantically identical constants (1,024); no measurement or bound changed; D5: corrected the stale record that said the approved metadata abstract still needed to be drafted. See `CODEX_REVIEW_v0.1.md`; claim and generator changes remain for Yichen.
 - Final revision 2026-10-08 (Milestone 16, after the Codex review): A1 (the sixth finding separates the hashed arms from rotation and labels 0.35 post hoc; the last sentence narrows 'forgeable at either'), A2 (known-layer label and the layer-search forgery result, new registered names `s5_fixed_*_forge_search_FA_med`). Decided by Yichen 2026-10-08.
+- 2026-10-09: no arXiv submission (Yichen's decision); `sec0_arxiv_abstract.md` deleted; the PDF abstract is the only abstract.

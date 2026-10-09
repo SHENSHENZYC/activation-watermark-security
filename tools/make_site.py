@@ -1,15 +1,15 @@
-"""Build the GitHub Pages site for the paper (Stage 9, route decided 2026-10-08: arXiv plus a project site).
+"""Build the GitHub Pages site for the paper (Stage 9; the site is the publication of record, decided 2026-10-09: no arXiv).
 
 Writes docs/ (served by GitHub Pages from the public snapshot repository's main branch, /docs):
-  index.html   the paper page: title, author, date, links (PDF, HTML version, code, arXiv once posted, BibTeX), the
+  index.html   the paper page: title, author, date, links (PDF, HTML version, code), the
                abstract (from the filled sec0_abstract.md, citations resolved against references.bib), licences and the
                AI-use disclosure
-  paper.pdf    the arXiv version (research/paper/latex/main.pdf)
+  paper.pdf    the paper (research/paper/latex/main.pdf)
   paper.html   the HTML render (research/paper/build/PAPER_DRAFT_v0.1.html) with its figures under figures/ and its
                stylesheet alongside
   figures/     the figure PNGs
   .nojekyll    so that GitHub Pages serves the files as they are
-Run: python3 tools/make_site.py [--arxiv 2610.NNNNN]   (the arXiv identifier adds the listing link and completes the BibTeX)
+Run: python3 tools/make_site.py
 """
 import datetime as dt
 import html
@@ -24,7 +24,6 @@ PAPER = ROOT / "research" / "paper"
 DOCS = ROOT / "docs"
 REPO_URL = "https://github.com/SHENSHENZYC/activation-watermark-security"
 SITE_URL = "https://shenshenzyc.github.io/activation-watermark-security/"
-ARXIV = sys.argv[sys.argv.index("--arxiv") + 1] if "--arxiv" in sys.argv else None
 
 asm = (PAPER / "assemble.py").read_text()
 TITLE = re.search(r'^TITLE = "(.*)"$', asm, re.M).group(1)
@@ -60,19 +59,15 @@ page = page.replace('href="paper.css"', 'href="paper.css"')
 
 # --- BibTeX for the citation box
 key = "zhao2026activation"
-bib = [f"@misc{{{key},", f"  author = {{Zhao, Yichen}},", f"  title  = {{{TITLE}}},", f"  year   = {{{YEAR}}},"]
-if ARXIV:
-    bib += [f"  eprint = {{{ARXIV}}},", "  archivePrefix = {arXiv},", "  primaryClass = {cs.CR},", f"  url    = {{https://arxiv.org/abs/{ARXIV}}},"]
-else:
-    bib += [f"  howpublished = {{Preprint}},", f"  url    = {{{SITE_URL}}},", "  note   = {arXiv identifier to be added at posting},"]
-bib += ["}"]
+bib = [f"@misc{{{key},", f"  author = {{Zhao, Yichen}},", f"  title  = {{{TITLE}}},", f"  year   = {{{YEAR}}},",
+       "  howpublished = {Preprint, self-published}", f"  url    = {{{SITE_URL}}},", f"  note   = {{Code, protocols and results: {REPO_URL}}}", "}"]
+bib[4] = bib[4] + ","
+bib[6] = bib[6] + ","
 bibtex = "\n".join(bib)
 
 links = [("Paper (PDF)", "paper.pdf", "primary"), ("HTML version", "paper.html", ""), ("Code, protocols and results", REPO_URL, "")]
-if ARXIV:
-    links.insert(1, (f"arXiv:{ARXIV}", f"https://arxiv.org/abs/{ARXIV}", ""))
 links_html = "\n".join(f'      <a class="btn {cls}" href="{html.escape(href)}">{html.escape(label)}</a>' for label, href, cls in links)
-arxiv_note = "" if ARXIV else '<p class="note">The arXiv listing is forthcoming; this page will link to it.</p>'
+arxiv_note = '<p class="note">Published here as a preprint on 9 October 2026 (UTC); the repository holds the posting commit under the tag <code>v0.1-published</code>.</p>'
 
 index = f"""<!doctype html>
 <html lang="en">
@@ -85,7 +80,6 @@ index = f"""<!doctype html>
 <meta name="citation_author" content="Zhao, Yichen">
 <meta name="citation_publication_date" content="{YEAR}">
 <meta name="citation_pdf_url" content="{SITE_URL}paper.pdf">
-{f'<meta name="citation_arxiv_id" content="{ARXIV}">' if ARXIV else ''}
 <style>
   :root {{ --bg: #ffffff; --fg: #1a1a1a; --muted: #5a5a5a; --line: #e3e3e3; --accent: #1f4e8c; --accent-fg: #ffffff; --box: #f6f7f9; }}
   @media (prefers-color-scheme: dark) {{ :root:not([data-theme="light"]) {{ --bg: #121417; --fg: #e8e8e8; --muted: #a8a8a8; --line: #2d3138; --accent: #7aa7e0; --accent-fg: #0f1a2b; --box: #1b1f25; }} }}
@@ -131,4 +125,4 @@ index = f"""<!doctype html>
 """
 (DOCS / "index.html").write_text(index)
 size = sum(p.stat().st_size for p in DOCS.rglob("*") if p.is_file()) / 1e6
-print(f"site written to docs/: index.html, paper.pdf, paper.html, {n_fig} figures, paper.css, .nojekyll; {size:.1f} MB; arXiv {'set to ' + ARXIV if ARXIV else 'not set'}")
+print(f"site written to docs/: index.html, paper.pdf, paper.html, {n_fig} figures, paper.css, .nojekyll; {size:.1f} MB")
