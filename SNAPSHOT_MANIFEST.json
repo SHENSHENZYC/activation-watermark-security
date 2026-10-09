@@ -1,7 +1,7 @@
 {
- "source_commit": "84b38f5a458642f6b9194135860b53ec4a7a88e1",
+ "source_commit": "1130e38ad0342ee71fee91ea18cf7112e5eb9f69",
  "source_dirty": false,
- "built_utc": "2026-10-09T00:36:44Z",
+ "built_utc": "2026-10-09T00:37:56Z",
  "files": 473,
  "excluded": [
   ".claude/launch.json",
@@ -138,7 +138,7 @@
   "docs/index.html": "3da155a9e1cbb5ec849b1d081624ac1b7709080e8414dd7d856a1b6653425895",
   "docs/paper.css": "4b721cbcf4fe363e5607497a505a61118cb0a9fa6888405b1d3c004b6875d424",
   "docs/paper.html": "d07893bdf46c2f36b107a8bbd6bd98fa8d3b5532f52b1d8866ef093c55417f8a",
-  "docs/paper.pdf": "b5439b069d4dddd828d6b0d324aae7d5275ab9a2f913b9c6d3e1dae229050f4d",
+  "docs/paper.pdf": "a51384a6f44abb09f7a13d0283a565eb84e9451c98e7ad631c2fc4cf17329e61",
   "requirements-lock.txt": "cd034db8769c984e80bda13416e470fe1b501914b1c80ebf78a7cd0e490b9632",
   "research/ACTWM_GATE_v0.1.md": "fb331980a03551821eeace5ae4e5aa7a3504e03afeadeb1de34a3cfbd33cc47d",
   "research/CLAIM_GATE_v0.1.md": "e4dc3984edd0cf1550adc2470e0a95217d94361d08edbbb9dedbe2c0b96f225a",
@@ -420,7 +420,7 @@
   "research/paper/latex/figures/FA5.pdf": "44d25c1415007b56234a79f7c9180c09606f294e34480fd5c1f042de2d40dca9",
   "research/paper/latex/figures/FA6.pdf": "067b91b43e9ebd4765454b2355bfe6e1f866dc296565622b3777af7de2bb453a",
   "research/paper/latex/main.bbl": "6d62c9915b3c2a6a8f00a8033ffd906440fb75aef5feff2192ce22b6114d4f34",
-  "research/paper/latex/main.pdf": "b5439b069d4dddd828d6b0d324aae7d5275ab9a2f913b9c6d3e1dae229050f4d",
+  "research/paper/latex/main.pdf": "a51384a6f44abb09f7a13d0283a565eb84e9451c98e7ad631c2fc4cf17329e61",
   "research/paper/latex/main.tex": "e363a3bc63bf2109a2f40c42f0d670703b411ffc233b8a14c2dfb333e36770b1",
   "research/paper/latex/page_count_latex.json": "376316c21cb77b0834c274e82b324696e569a2f22e66cbc4f28895e41ee42bf4",
   "research/paper/latex/references.bib": "f823f541b90bd5468131ab0426342f7d61726d2208d80b4d936e119426cea9cb",
