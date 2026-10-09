@@ -137,9 +137,16 @@ def main():
     head = subprocess.run(["git", "rev-parse", "HEAD"], cwd=ROOT, capture_output=True, text=True, check=True).stdout.strip()
     dirty = subprocess.run(["git", "status", "--porcelain"], cwd=ROOT, capture_output=True, text=True).stdout.strip()
     files = [f for f in subprocess.run(["git", "ls-files", "-z"], cwd=ROOT, capture_output=True, text=True, check=True).stdout.split("\0") if f]
+    existing_git = DEST / ".git"
+    keep_git = use_git and existing_git.is_dir()
     if DEST.exists():
-        shutil.rmtree(DEST)
-    DEST.mkdir(parents=True)
+        if keep_git:  # update mode: keep the snapshot repository's history and add a commit
+            for child in DEST.iterdir():
+                if child.name != ".git":
+                    shutil.rmtree(child) if child.is_dir() else child.unlink()
+        else:
+            shutil.rmtree(DEST)
+    DEST.mkdir(parents=True, exist_ok=True)
     manifest, generalised, excluded = {}, [], []
     for f in files:
         if f.startswith(EXCLUDE):
@@ -170,7 +177,8 @@ def main():
     size_mb = sum((DEST / f).stat().st_size for f in manifest) / 1e6
     print(f"snapshot at {DEST}: {len(manifest)} files, {size_mb:.1f} MB, from {head[:7]}{' (DIRTY TREE)' if dirty else ''}; excluded {len(excluded)}; generalised path in {generalised}")
     if use_git:
-        subprocess.run(["git", "init", "-q", "-b", "main"], cwd=DEST, check=True)
+        if not keep_git:
+            subprocess.run(["git", "init", "-q", "-b", "main"], cwd=DEST, check=True)
         subprocess.run(["git", "add", "-A"], cwd=DEST, check=True)
         subprocess.run(["git", "commit", "-q", "-m", f"Public snapshot of the research repository at {head[:7]} ({out['built_utc']})"], cwd=DEST, check=True)
         print("git repository initialised with one commit; push with: git -C", DEST, "remote add origin", PUBLIC_URL + ".git", "&& git -C", DEST, "push -u origin main")
